@@ -1,0 +1,55 @@
+﻿@model List<Students>
+@{
+}
+
+@* Display the list of students. for confirmatiin: this is where should be the front-end *@
+
+<h2 class="text-center mb-5">Students</h2>
+
+<div class="row mb-5">
+    <!-- Button Column -->
+    <div class="col">
+        <a class="btn btn-primary" asp-controller="Students" asp-action="Create">Add Student</a>
+    </div>
+
+    <!-- Empty Column for Alignment -->
+    <div class="col"></div>
+</div>
+
+<!-- Header Section -->
+<div class="row mb-3">
+    <div class="col">
+        <h2>Student List</h2>
+    </div>
+</div>
+
+<!-- Table Section -->
+<div class="row">
+    <div class="col">
+        <table class="table table-bordered table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Student ID</th>
+                    <th>Name</th>
+                    <th>Date of Birth</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var student in Model)
+                {
+                    <tr>
+                        <td>@student.StudentId</td>
+                        <td>@student.Name</td>
+                        <td>@student.DateofBirth.ToString("MM/dd/yyyy")</td>
+                        <td>
+                            <a class="btn btn-primary btn-sm" asp-controller="Students" asp-action="Edit" asp-route-id="@student.StudentId">Edit</a>
+                            <a class="btn btn-danger btn-sm" asp-controller="Students" asp-action="Delete" asp-route-id="@student.StudentId">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
