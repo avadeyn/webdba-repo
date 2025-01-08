@@ -16,4 +16,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\FacultyPortal\" />
+    <Folder Include="Views\AdminPortal\" />
+  </ItemGroup>
+
 </Project>
