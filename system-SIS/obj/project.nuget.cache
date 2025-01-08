@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XO88gUC/1Os=",
+  "dgSpecHash": "jxB541v0j6s=",
   "success": true,
-  "projectFilePath": "C:\\OOPC#\\system-SIS\\system-SIS\\system-SIS.csproj",
+  "projectFilePath": "C:\\Users\\Nadine\\source\\legit-SISrepos\\webdba-repo\\system-SIS\\system-SIS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Nadine\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\Nadine\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

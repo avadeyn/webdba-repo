@@ -1,46 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\OOPC#\\system-SIS\\",
+  "WorkspaceRootPath": "C:\\Users\\Nadine\\source\\legit-SISrepos\\webdba-repo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{77E5E2FD-5C94-4113-8433-BC0959B74392}|system-SIS\\system-SIS.csproj|c:\\oopc#\\system-sis\\system-sis\\controllers\\studentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{77E5E2FD-5C94-4113-8433-BC0959B74392}|system-SIS\\system-SIS.csproj|solutionrelative:system-sis\\controllers\\studentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{77E5E2FD-5C94-4113-8433-BC0959B74392}|system-SIS\\system-SIS.csproj|c:\\users\\nadine\\source\\legit-sisrepos\\webdba-repo\\system-sis\\views\\studentsportal\\home.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{77E5E2FD-5C94-4113-8433-BC0959B74392}|system-SIS\\system-SIS.csproj|solutionrelative:system-sis\\views\\studentsportal\\home.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{77E5E2FD-5C94-4113-8433-BC0959B74392}|system-SIS\\system-SIS.csproj|c:\\oopc#\\system-sis\\system-sis\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{77E5E2FD-5C94-4113-8433-BC0959B74392}|system-SIS\\system-SIS.csproj|solutionrelative:system-sis\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{77E5E2FD-5C94-4113-8433-BC0959B74392}|system-SIS\\system-SIS.csproj|c:\\oopc#\\system-sis\\system-sis\\migrations\\applicationdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{77E5E2FD-5C94-4113-8433-BC0959B74392}|system-SIS\\system-SIS.csproj|solutionrelative:system-sis\\migrations\\applicationdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{77E5E2FD-5C94-4113-8433-BC0959B74392}|system-SIS\\system-SIS.csproj|c:\\oopc#\\system-sis\\system-sis\\migrations\\20250103184730_studentfirstmigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{77E5E2FD-5C94-4113-8433-BC0959B74392}|system-SIS\\system-SIS.csproj|solutionrelative:system-sis\\migrations\\20250103184730_studentfirstmigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{77E5E2FD-5C94-4113-8433-BC0959B74392}|system-SIS\\system-SIS.csproj|c:\\oopc#\\system-sis\\system-sis\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{77E5E2FD-5C94-4113-8433-BC0959B74392}|system-SIS\\system-SIS.csproj|solutionrelative:system-sis\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{77E5E2FD-5C94-4113-8433-BC0959B74392}|system-SIS\\system-SIS.csproj|c:\\oopc#\\system-sis\\system-sis\\models\\students.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{77E5E2FD-5C94-4113-8433-BC0959B74392}|system-SIS\\system-SIS.csproj|solutionrelative:system-sis\\models\\students.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{77E5E2FD-5C94-4113-8433-BC0959B74392}|system-SIS\\system-SIS.csproj|c:\\oopc#\\system-sis\\system-sis\\views\\students\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{77E5E2FD-5C94-4113-8433-BC0959B74392}|system-SIS\\system-SIS.csproj|solutionrelative:system-sis\\views\\students\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{77E5E2FD-5C94-4113-8433-BC0959B74392}|system-SIS\\system-SIS.csproj|c:\\oopc#\\system-sis\\system-sis\\models\\addstudent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{77E5E2FD-5C94-4113-8433-BC0959B74392}|system-SIS\\system-SIS.csproj|solutionrelative:system-sis\\models\\addstudent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{77E5E2FD-5C94-4113-8433-BC0959B74392}|system-SIS\\system-SIS.csproj|c:\\oopc#\\system-sis\\system-sis\\views\\students\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{77E5E2FD-5C94-4113-8433-BC0959B74392}|system-SIS\\system-SIS.csproj|solutionrelative:system-sis\\views\\students\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{77E5E2FD-5C94-4113-8433-BC0959B74392}|system-SIS\\system-SIS.csproj|c:\\oopc#\\system-sis\\system-sis\\views\\students\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{77E5E2FD-5C94-4113-8433-BC0959B74392}|system-SIS\\system-SIS.csproj|solutionrelative:system-sis\\views\\students\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{77E5E2FD-5C94-4113-8433-BC0959B74392}|system-SIS\\system-SIS.csproj|c:\\users\\nadine\\source\\legit-sisrepos\\webdba-repo\\system-sis\\controllers\\studentsportalcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{77E5E2FD-5C94-4113-8433-BC0959B74392}|system-SIS\\system-SIS.csproj|solutionrelative:system-sis\\controllers\\studentsportalcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,131 +18,33 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "20250103184730_studentFirstMigration.cs",
-              "DocumentMoniker": "C:\\OOPC#\\system-SIS\\system-SIS\\Migrations\\20250103184730_studentFirstMigration.cs",
-              "RelativeDocumentMoniker": "system-SIS\\Migrations\\20250103184730_studentFirstMigration.cs",
-              "ToolTip": "C:\\OOPC#\\system-SIS\\system-SIS\\Migrations\\20250103184730_studentFirstMigration.cs",
-              "RelativeToolTip": "system-SIS\\Migrations\\20250103184730_studentFirstMigration.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-05T19:12:27.445Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ApplicationDBContextModelSnapshot.cs",
-              "DocumentMoniker": "C:\\OOPC#\\system-SIS\\system-SIS\\Migrations\\ApplicationDBContextModelSnapshot.cs",
-              "RelativeDocumentMoniker": "system-SIS\\Migrations\\ApplicationDBContextModelSnapshot.cs",
-              "ToolTip": "C:\\OOPC#\\system-SIS\\system-SIS\\Migrations\\ApplicationDBContextModelSnapshot.cs",
-              "RelativeToolTip": "system-SIS\\Migrations\\ApplicationDBContextModelSnapshot.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAAwA0AAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-05T19:09:11.54Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\OOPC#\\system-SIS\\system-SIS\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "system-SIS\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\OOPC#\\system-SIS\\system-SIS\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "system-SIS\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-05T17:11:50.177Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\OOPC#\\system-SIS\\system-SIS\\Program.cs",
-              "RelativeDocumentMoniker": "system-SIS\\Program.cs",
-              "ToolTip": "C:\\OOPC#\\system-SIS\\system-SIS\\Program.cs",
-              "RelativeToolTip": "system-SIS\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
+              "Title": "StudentsPortalController.cs",
+              "DocumentMoniker": "C:\\Users\\Nadine\\source\\legit-SISrepos\\webdba-repo\\system-SIS\\Controllers\\StudentsPortalController.cs",
+              "RelativeDocumentMoniker": "system-SIS\\Controllers\\StudentsPortalController.cs",
+              "ToolTip": "C:\\Users\\Nadine\\source\\legit-SISrepos\\webdba-repo\\system-SIS\\Controllers\\StudentsPortalController.cs",
+              "RelativeToolTip": "system-SIS\\Controllers\\StudentsPortalController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-05T16:48:41.478Z",
+              "WhenOpened": "2025-01-08T14:16:10.823Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Edit.cshtml",
-              "DocumentMoniker": "C:\\OOPC#\\system-SIS\\system-SIS\\Views\\Students\\Edit.cshtml",
-              "RelativeDocumentMoniker": "system-SIS\\Views\\Students\\Edit.cshtml",
-              "ToolTip": "C:\\OOPC#\\system-SIS\\system-SIS\\Views\\Students\\Edit.cshtml",
-              "RelativeToolTip": "system-SIS\\Views\\Students\\Edit.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA/AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-03T23:27:16.373Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\OOPC#\\system-SIS\\system-SIS\\Views\\Students\\Create.cshtml",
-              "RelativeDocumentMoniker": "system-SIS\\Views\\Students\\Create.cshtml",
-              "ToolTip": "C:\\OOPC#\\system-SIS\\system-SIS\\Views\\Students\\Create.cshtml",
-              "RelativeToolTip": "system-SIS\\Views\\Students\\Create.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-03T20:58:01.228Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "AddStudent.cs",
-              "DocumentMoniker": "C:\\OOPC#\\system-SIS\\system-SIS\\Models\\AddStudent.cs",
-              "RelativeDocumentMoniker": "system-SIS\\Models\\AddStudent.cs",
-              "ToolTip": "C:\\OOPC#\\system-SIS\\system-SIS\\Models\\AddStudent.cs",
-              "RelativeToolTip": "system-SIS\\Models\\AddStudent.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-03T20:54:32.589Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\OOPC#\\system-SIS\\system-SIS\\Views\\Students\\Index.cshtml",
-              "RelativeDocumentMoniker": "system-SIS\\Views\\Students\\Index.cshtml",
-              "ToolTip": "C:\\OOPC#\\system-SIS\\system-SIS\\Views\\Students\\Index.cshtml",
-              "RelativeToolTip": "system-SIS\\Views\\Students\\Index.cshtml",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAC0AAACKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-03T18:58:46.797Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "StudentsController.cs",
-              "DocumentMoniker": "C:\\OOPC#\\system-SIS\\system-SIS\\Controllers\\StudentsController.cs",
-              "RelativeDocumentMoniker": "system-SIS\\Controllers\\StudentsController.cs",
-              "ToolTip": "C:\\OOPC#\\system-SIS\\system-SIS\\Controllers\\StudentsController.cs",
-              "RelativeToolTip": "system-SIS\\Controllers\\StudentsController.cs",
-              "ViewState": "AgIAAFAAAAAAAAAAAADwv3AAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-03T18:57:18.973Z",
+              "Title": "Home.cshtml",
+              "DocumentMoniker": "C:\\Users\\Nadine\\source\\legit-SISrepos\\webdba-repo\\system-SIS\\Views\\StudentsPortal\\Home.cshtml",
+              "RelativeDocumentMoniker": "system-SIS\\Views\\StudentsPortal\\Home.cshtml",
+              "ToolTip": "C:\\Users\\Nadine\\source\\legit-SISrepos\\webdba-repo\\system-SIS\\Views\\StudentsPortal\\Home.cshtml",
+              "RelativeToolTip": "system-SIS\\Views\\StudentsPortal\\Home.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-08T14:15:37.988Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Students.cs",
-              "DocumentMoniker": "C:\\OOPC#\\system-SIS\\system-SIS\\Models\\Students.cs",
-              "RelativeDocumentMoniker": "system-SIS\\Models\\Students.cs",
-              "ToolTip": "C:\\OOPC#\\system-SIS\\system-SIS\\Models\\Students.cs",
-              "RelativeToolTip": "system-SIS\\Models\\Students.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-03T18:36:55.884Z"
             }
           ]
         }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\OOPC#\\system-SIS\\system-SIS\\system-SIS.csproj": {}
+    "C:\\Users\\Nadine\\source\\legit-SISrepos\\webdba-repo\\system-SIS\\system-SIS.csproj": {}
   },
   "projects": {
-    "C:\\OOPC#\\system-SIS\\system-SIS\\system-SIS.csproj": {
+    "C:\\Users\\Nadine\\source\\legit-SISrepos\\webdba-repo\\system-SIS\\system-SIS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\OOPC#\\system-SIS\\system-SIS\\system-SIS.csproj",
+        "projectUniqueName": "C:\\Users\\Nadine\\source\\legit-SISrepos\\webdba-repo\\system-SIS\\system-SIS.csproj",
         "projectName": "system-SIS",
-        "projectPath": "C:\\OOPC#\\system-SIS\\system-SIS\\system-SIS.csproj",
+        "projectPath": "C:\\Users\\Nadine\\source\\legit-SISrepos\\webdba-repo\\system-SIS\\system-SIS.csproj",
         "packagesPath": "C:\\Users\\Nadine\\.nuget\\packages\\",
-        "outputPath": "C:\\OOPC#\\system-SIS\\system-SIS\\obj\\",
+        "outputPath": "C:\\Users\\Nadine\\source\\legit-SISrepos\\webdba-repo\\system-SIS\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
