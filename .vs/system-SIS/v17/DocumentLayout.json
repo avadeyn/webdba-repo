@@ -1,14 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Nadine\\source\\legit-SISrepos\\webdba-repo\\",
+  "WorkspaceRootPath": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{77E5E2FD-5C94-4113-8433-BC0959B74392}|system-SIS\\system-SIS.csproj|c:\\users\\nadine\\source\\legit-sisrepos\\webdba-repo\\system-sis\\views\\studentsportal\\home.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{77E5E2FD-5C94-4113-8433-BC0959B74392}|system-SIS\\system-SIS.csproj|solutionrelative:system-sis\\views\\studentsportal\\home.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{77E5E2FD-5C94-4113-8433-BC0959B74392}|system-SIS\\system-SIS.csproj|d:\\3rdyear\\1st sem\\web development\\system\\webdev\\system-sis\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{77E5E2FD-5C94-4113-8433-BC0959B74392}|system-SIS\\system-SIS.csproj|solutionrelative:system-sis\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{77E5E2FD-5C94-4113-8433-BC0959B74392}|system-SIS\\system-SIS.csproj|c:\\users\\nadine\\source\\legit-sisrepos\\webdba-repo\\system-sis\\controllers\\studentsportalcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{77E5E2FD-5C94-4113-8433-BC0959B74392}|system-SIS\\system-SIS.csproj|solutionrelative:system-sis\\controllers\\studentsportalcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{77E5E2FD-5C94-4113-8433-BC0959B74392}|system-SIS\\system-SIS.csproj|d:\\3rdyear\\1st sem\\web development\\system\\webdev\\system-sis\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{77E5E2FD-5C94-4113-8433-BC0959B74392}|system-SIS\\system-SIS.csproj|solutionrelative:system-sis\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,28 +23,64 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "StudentsPortalController.cs",
-              "DocumentMoniker": "C:\\Users\\Nadine\\source\\legit-SISrepos\\webdba-repo\\system-SIS\\Controllers\\StudentsPortalController.cs",
-              "RelativeDocumentMoniker": "system-SIS\\Controllers\\StudentsPortalController.cs",
-              "ToolTip": "C:\\Users\\Nadine\\source\\legit-SISrepos\\webdba-repo\\system-SIS\\Controllers\\StudentsPortalController.cs",
-              "RelativeToolTip": "system-SIS\\Controllers\\StudentsPortalController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-08T14:16:10.823Z",
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "system-SIS\\Views\\_ViewStart.cshtml",
+              "ToolTip": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "system-SIS\\Views\\_ViewStart.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-09T01:21:40.548Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Home.cshtml",
-              "DocumentMoniker": "C:\\Users\\Nadine\\source\\legit-SISrepos\\webdba-repo\\system-SIS\\Views\\StudentsPortal\\Home.cshtml",
-              "RelativeDocumentMoniker": "system-SIS\\Views\\StudentsPortal\\Home.cshtml",
-              "ToolTip": "C:\\Users\\Nadine\\source\\legit-SISrepos\\webdba-repo\\system-SIS\\Views\\StudentsPortal\\Home.cshtml",
-              "RelativeToolTip": "system-SIS\\Views\\StudentsPortal\\Home.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-08T14:15:37.988Z",
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\Program.cs",
+              "RelativeDocumentMoniker": "system-SIS\\Program.cs",
+              "ToolTip": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\Program.cs",
+              "RelativeToolTip": "system-SIS\\Program.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAwBkAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T03:12:10.089Z",
+              "IsPinned": true,
               "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             }
           ]
         }

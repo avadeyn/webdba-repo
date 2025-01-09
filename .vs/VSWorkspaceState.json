@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\system-SIS",
-    "\\system-SIS\\Controllers"
+    "\\system-SIS\\Controllers",
+    "\\system-SIS\\Views"
   ],
-  "SelectedNode": "\\system-SIS\\Controllers\\StudentsController.cs",
-  "PreviewInSolutionExplorer": false
+  "SelectedNode": "\\system-SIS.sln",
+  "PreviewInSolutionExplorer": true
 }
