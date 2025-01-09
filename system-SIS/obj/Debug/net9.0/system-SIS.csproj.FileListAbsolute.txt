@@ -681,5 +681,6 @@ D:\3RDYEAR\1ST SEM\Web Development\SYSTEM\Webdev\system-SIS\obj\Debug\net9.0\ref
 D:\3RDYEAR\1ST SEM\Web Development\SYSTEM\Webdev\system-SIS\obj\Debug\net9.0\scopedcss\Views\Shared\Faculty_Layout.cshtml.rz.scp.css
 D:\3RDYEAR\1ST SEM\Web Development\SYSTEM\Webdev\system-SIS\obj\Debug\net9.0\scopedcss\Views\Shared\Student_Layout.cshtml.rz.scp.css
 D:\3RDYEAR\1ST SEM\Web Development\SYSTEM\Webdev\system-SIS\obj\Debug\net9.0\scopedcss\Views\Shared\Admin_Layout.cshtml.rz.scp.css
-D:\3RDYEAR\1ST SEM\Web Development\SYSTEM\Webdev\system-SIS\obj\Debug\net9.0\compressed\0l1fwpklek-hvz2u8q4v2.gz
-D:\3RDYEAR\1ST SEM\Web Development\SYSTEM\Webdev\system-SIS\obj\Debug\net9.0\compressed\w5b3xbmfr7-hvz2u8q4v2.gz
+D:\3RDYEAR\1ST SEM\Web Development\SYSTEM\Webdev\system-SIS\obj\Debug\net9.0\scopedcss\Views\Shared\Account.cshtml.rz.scp.css
+D:\3RDYEAR\1ST SEM\Web Development\SYSTEM\Webdev\system-SIS\obj\Debug\net9.0\compressed\0l1fwpklek-rirylw4pw8.gz
+D:\3RDYEAR\1ST SEM\Web Development\SYSTEM\Webdev\system-SIS\obj\Debug\net9.0\compressed\w5b3xbmfr7-rirylw4pw8.gz

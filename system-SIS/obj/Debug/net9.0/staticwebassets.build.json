@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "6GatqY4MaEEzmPMVKhP+MjCbghaD2omb1Fu4disTWh0=",
+  "Hash": "+kwPgN2omz6IDcGr4dzzrILSH6ztC3waSZ7ncMVg9RM=",
   "Source": "system-SIS",
   "BasePath": "_content/system-SIS",
   "Mode": "Default",
@@ -38,12 +38,12 @@
       "OriginalItemSpec": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Identity": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\obj\\Debug\\net9.0\\compressed\\0l1fwpklek-hvz2u8q4v2.gz",
+      "Identity": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\obj\\Debug\\net9.0\\compressed\\0l1fwpklek-rirylw4pw8.gz",
       "SourceId": "system-SIS",
       "SourceType": "Computed",
       "ContentRoot": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/system-SIS",
-      "RelativePath": "system-SIS#[.{fingerprint=hvz2u8q4v2}]?.styles.css.gz",
+      "RelativePath": "system-SIS#[.{fingerprint=rirylw4pw8}]?.styles.css.gz",
       "AssetKind": "All",
       "AssetMode": "CurrentProject",
       "AssetRole": "Alternative",
@@ -52,8 +52,8 @@
       "RelatedAsset": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\obj\\Debug\\net9.0\\scopedcss\\bundle\\system-SIS.styles.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "fe693860ze",
-      "Integrity": "WRSyD9lx75jBn/kwxXnzgqUs/pdemBIMpJx4si1YbAM=",
+      "Fingerprint": "9a5v6tzpv1",
+      "Integrity": "gfaqwFdpCUQsW4MuKQtOM1I/CRghnZHoKIMZgm6spj0=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\obj\\Debug\\net9.0\\scopedcss\\bundle\\system-SIS.styles.css"
@@ -1214,12 +1214,12 @@
       "OriginalItemSpec": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Identity": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\obj\\Debug\\net9.0\\compressed\\w5b3xbmfr7-hvz2u8q4v2.gz",
+      "Identity": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\obj\\Debug\\net9.0\\compressed\\w5b3xbmfr7-rirylw4pw8.gz",
       "SourceId": "system-SIS",
       "SourceType": "Computed",
       "ContentRoot": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/system-SIS",
-      "RelativePath": "system-SIS#[.{fingerprint=hvz2u8q4v2}]!.bundle.scp.css.gz",
+      "RelativePath": "system-SIS#[.{fingerprint=rirylw4pw8}]!.bundle.scp.css.gz",
       "AssetKind": "All",
       "AssetMode": "Reference",
       "AssetRole": "Alternative",
@@ -1228,8 +1228,8 @@
       "RelatedAsset": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\system-SIS.bundle.scp.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "fe693860ze",
-      "Integrity": "WRSyD9lx75jBn/kwxXnzgqUs/pdemBIMpJx4si1YbAM=",
+      "Fingerprint": "9a5v6tzpv1",
+      "Integrity": "gfaqwFdpCUQsW4MuKQtOM1I/CRghnZHoKIMZgm6spj0=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\system-SIS.bundle.scp.css"
@@ -1375,8 +1375,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ApplicationBundle",
-      "Fingerprint": "hvz2u8q4v2",
-      "Integrity": "HcCvqY3d6Y0DOQzMjEbttqDeP5TlnYxQscKV+irX8dQ=",
+      "Fingerprint": "rirylw4pw8",
+      "Integrity": "0/RX4EFKK1wH/LrW7WOaCyaGA/faWnjEruHJV19kqy8=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\obj\\Debug\\net9.0\\scopedcss\\bundle\\system-SIS.styles.css"
@@ -1396,8 +1396,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ProjectBundle",
-      "Fingerprint": "hvz2u8q4v2",
-      "Integrity": "HcCvqY3d6Y0DOQzMjEbttqDeP5TlnYxQscKV+irX8dQ=",
+      "Fingerprint": "rirylw4pw8",
+      "Integrity": "0/RX4EFKK1wH/LrW7WOaCyaGA/faWnjEruHJV19kqy8=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\system-SIS.bundle.scp.css"
@@ -1443,6 +1443,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\wwwroot\\images\\bgjr.jpg",
+      "SourceId": "system-SIS",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\wwwroot\\",
+      "BasePath": "_content/system-SIS",
+      "RelativePath": "images/bgjr#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "gh6lnnn6al",
+      "Integrity": "FDcvrtm5o7RJFyIemPJaF+xKRflfGiZpqgVAEiC3q3g=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\bgjr.jpg"
     },
     {
       "Identity": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\wwwroot\\images\\logo.png",
@@ -3341,6 +3362,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-jcY0RXFOlcp4VNTCcYQtWVZZBlr+ZY+AOv6/0S5dnF8="
+        }
+      ]
+    },
+    {
+      "Route": "images/bgjr.gh6lnnn6al.jpg",
+      "AssetFile": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\wwwroot\\images\\bgjr.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "166760"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"FDcvrtm5o7RJFyIemPJaF+xKRflfGiZpqgVAEiC3q3g=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 09 Jan 2025 08:21:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "gh6lnnn6al"
+        },
+        {
+          "Name": "label",
+          "Value": "images/bgjr.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-FDcvrtm5o7RJFyIemPJaF+xKRflfGiZpqgVAEiC3q3g="
+        }
+      ]
+    },
+    {
+      "Route": "images/bgjr.jpg",
+      "AssetFile": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\wwwroot\\images\\bgjr.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "166760"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"FDcvrtm5o7RJFyIemPJaF+xKRflfGiZpqgVAEiC3q3g=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 09 Jan 2025 08:21:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-FDcvrtm5o7RJFyIemPJaF+xKRflfGiZpqgVAEiC3q3g="
         }
       ]
     },
@@ -21390,12 +21493,12 @@
     },
     {
       "Route": "system-SIS.bundle.scp.css",
-      "AssetFile": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\obj\\Debug\\net9.0\\compressed\\w5b3xbmfr7-hvz2u8q4v2.gz",
+      "AssetFile": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\obj\\Debug\\net9.0\\compressed\\w5b3xbmfr7-rirylw4pw8.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.001451378810"
+          "Quality": "0.001388888889"
         }
       ],
       "ResponseHeaders": [
@@ -21405,15 +21508,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "688"
+          "Value": "719"
         },
         {
           "Name": "ETag",
-          "Value": "\"WRSyD9lx75jBn/kwxXnzgqUs/pdemBIMpJx4si1YbAM=\""
+          "Value": "\"gfaqwFdpCUQsW4MuKQtOM1I/CRghnZHoKIMZgm6spj0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 09 Jan 2025 02:36:35 GMT"
+          "Value": "Thu, 09 Jan 2025 08:15:10 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -21433,13 +21536,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"HcCvqY3d6Y0DOQzMjEbttqDeP5TlnYxQscKV+irX8dQ=\""
+          "Value": "W/\"0/RX4EFKK1wH/LrW7WOaCyaGA/faWnjEruHJV19kqy8=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-HcCvqY3d6Y0DOQzMjEbttqDeP5TlnYxQscKV+irX8dQ="
+          "Value": "sha256-0/RX4EFKK1wH/LrW7WOaCyaGA/faWnjEruHJV19kqy8="
         }
       ]
     },
@@ -21454,7 +21557,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3403"
+          "Value": "3510"
         },
         {
           "Name": "Content-Type",
@@ -21462,11 +21565,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"HcCvqY3d6Y0DOQzMjEbttqDeP5TlnYxQscKV+irX8dQ=\""
+          "Value": "\"0/RX4EFKK1wH/LrW7WOaCyaGA/faWnjEruHJV19kqy8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 09 Jan 2025 02:36:35 GMT"
+          "Value": "Thu, 09 Jan 2025 08:15:10 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -21476,13 +21579,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-HcCvqY3d6Y0DOQzMjEbttqDeP5TlnYxQscKV+irX8dQ="
+          "Value": "sha256-0/RX4EFKK1wH/LrW7WOaCyaGA/faWnjEruHJV19kqy8="
         }
       ]
     },
     {
       "Route": "system-SIS.bundle.scp.css.gz",
-      "AssetFile": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\obj\\Debug\\net9.0\\compressed\\w5b3xbmfr7-hvz2u8q4v2.gz",
+      "AssetFile": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\obj\\Debug\\net9.0\\compressed\\w5b3xbmfr7-rirylw4pw8.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -21491,7 +21594,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "688"
+          "Value": "719"
         },
         {
           "Name": "Content-Type",
@@ -21499,11 +21602,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"WRSyD9lx75jBn/kwxXnzgqUs/pdemBIMpJx4si1YbAM=\""
+          "Value": "\"gfaqwFdpCUQsW4MuKQtOM1I/CRghnZHoKIMZgm6spj0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 09 Jan 2025 02:36:35 GMT"
+          "Value": "Thu, 09 Jan 2025 08:15:10 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -21521,18 +21624,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-WRSyD9lx75jBn/kwxXnzgqUs/pdemBIMpJx4si1YbAM="
+          "Value": "sha256-gfaqwFdpCUQsW4MuKQtOM1I/CRghnZHoKIMZgm6spj0="
         }
       ]
     },
     {
-      "Route": "system-SIS.hvz2u8q4v2.bundle.scp.css",
-      "AssetFile": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\obj\\Debug\\net9.0\\compressed\\w5b3xbmfr7-hvz2u8q4v2.gz",
+      "Route": "system-SIS.rirylw4pw8.bundle.scp.css",
+      "AssetFile": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\obj\\Debug\\net9.0\\compressed\\w5b3xbmfr7-rirylw4pw8.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.001451378810"
+          "Quality": "0.001388888889"
         }
       ],
       "ResponseHeaders": [
@@ -21542,15 +21645,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "688"
+          "Value": "719"
         },
         {
           "Name": "ETag",
-          "Value": "\"WRSyD9lx75jBn/kwxXnzgqUs/pdemBIMpJx4si1YbAM=\""
+          "Value": "\"gfaqwFdpCUQsW4MuKQtOM1I/CRghnZHoKIMZgm6spj0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 09 Jan 2025 02:36:35 GMT"
+          "Value": "Thu, 09 Jan 2025 08:15:10 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -21570,13 +21673,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"HcCvqY3d6Y0DOQzMjEbttqDeP5TlnYxQscKV+irX8dQ=\""
+          "Value": "W/\"0/RX4EFKK1wH/LrW7WOaCyaGA/faWnjEruHJV19kqy8=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "hvz2u8q4v2"
+          "Value": "rirylw4pw8"
         },
         {
           "Name": "label",
@@ -21584,12 +21687,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-HcCvqY3d6Y0DOQzMjEbttqDeP5TlnYxQscKV+irX8dQ="
+          "Value": "sha256-0/RX4EFKK1wH/LrW7WOaCyaGA/faWnjEruHJV19kqy8="
         }
       ]
     },
     {
-      "Route": "system-SIS.hvz2u8q4v2.bundle.scp.css",
+      "Route": "system-SIS.rirylw4pw8.bundle.scp.css",
       "AssetFile": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\system-SIS.bundle.scp.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -21599,7 +21702,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3403"
+          "Value": "3510"
         },
         {
           "Name": "Content-Type",
@@ -21607,11 +21710,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"HcCvqY3d6Y0DOQzMjEbttqDeP5TlnYxQscKV+irX8dQ=\""
+          "Value": "\"0/RX4EFKK1wH/LrW7WOaCyaGA/faWnjEruHJV19kqy8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 09 Jan 2025 02:36:35 GMT"
+          "Value": "Thu, 09 Jan 2025 08:15:10 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -21621,7 +21724,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "hvz2u8q4v2"
+          "Value": "rirylw4pw8"
         },
         {
           "Name": "label",
@@ -21629,13 +21732,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-HcCvqY3d6Y0DOQzMjEbttqDeP5TlnYxQscKV+irX8dQ="
+          "Value": "sha256-0/RX4EFKK1wH/LrW7WOaCyaGA/faWnjEruHJV19kqy8="
         }
       ]
     },
     {
-      "Route": "system-SIS.hvz2u8q4v2.bundle.scp.css.gz",
-      "AssetFile": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\obj\\Debug\\net9.0\\compressed\\w5b3xbmfr7-hvz2u8q4v2.gz",
+      "Route": "system-SIS.rirylw4pw8.bundle.scp.css.gz",
+      "AssetFile": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\obj\\Debug\\net9.0\\compressed\\w5b3xbmfr7-rirylw4pw8.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -21644,7 +21747,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "688"
+          "Value": "719"
         },
         {
           "Name": "Content-Type",
@@ -21652,11 +21755,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"WRSyD9lx75jBn/kwxXnzgqUs/pdemBIMpJx4si1YbAM=\""
+          "Value": "\"gfaqwFdpCUQsW4MuKQtOM1I/CRghnZHoKIMZgm6spj0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 09 Jan 2025 02:36:35 GMT"
+          "Value": "Thu, 09 Jan 2025 08:15:10 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -21674,7 +21777,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "hvz2u8q4v2"
+          "Value": "rirylw4pw8"
         },
         {
           "Name": "label",
@@ -21682,18 +21785,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-WRSyD9lx75jBn/kwxXnzgqUs/pdemBIMpJx4si1YbAM="
+          "Value": "sha256-gfaqwFdpCUQsW4MuKQtOM1I/CRghnZHoKIMZgm6spj0="
         }
       ]
     },
     {
-      "Route": "system-SIS.hvz2u8q4v2.styles.css",
-      "AssetFile": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\obj\\Debug\\net9.0\\compressed\\0l1fwpklek-hvz2u8q4v2.gz",
+      "Route": "system-SIS.rirylw4pw8.styles.css",
+      "AssetFile": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\obj\\Debug\\net9.0\\compressed\\0l1fwpklek-rirylw4pw8.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.001451378810"
+          "Quality": "0.001388888889"
         }
       ],
       "ResponseHeaders": [
@@ -21703,15 +21806,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "688"
+          "Value": "719"
         },
         {
           "Name": "ETag",
-          "Value": "\"WRSyD9lx75jBn/kwxXnzgqUs/pdemBIMpJx4si1YbAM=\""
+          "Value": "\"gfaqwFdpCUQsW4MuKQtOM1I/CRghnZHoKIMZgm6spj0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 09 Jan 2025 02:36:35 GMT"
+          "Value": "Thu, 09 Jan 2025 08:15:10 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -21731,13 +21834,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"HcCvqY3d6Y0DOQzMjEbttqDeP5TlnYxQscKV+irX8dQ=\""
+          "Value": "W/\"0/RX4EFKK1wH/LrW7WOaCyaGA/faWnjEruHJV19kqy8=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "hvz2u8q4v2"
+          "Value": "rirylw4pw8"
         },
         {
           "Name": "label",
@@ -21745,12 +21848,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-HcCvqY3d6Y0DOQzMjEbttqDeP5TlnYxQscKV+irX8dQ="
+          "Value": "sha256-0/RX4EFKK1wH/LrW7WOaCyaGA/faWnjEruHJV19kqy8="
         }
       ]
     },
     {
-      "Route": "system-SIS.hvz2u8q4v2.styles.css",
+      "Route": "system-SIS.rirylw4pw8.styles.css",
       "AssetFile": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\obj\\Debug\\net9.0\\scopedcss\\bundle\\system-SIS.styles.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -21760,7 +21863,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3403"
+          "Value": "3510"
         },
         {
           "Name": "Content-Type",
@@ -21768,11 +21871,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"HcCvqY3d6Y0DOQzMjEbttqDeP5TlnYxQscKV+irX8dQ=\""
+          "Value": "\"0/RX4EFKK1wH/LrW7WOaCyaGA/faWnjEruHJV19kqy8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 09 Jan 2025 02:36:35 GMT"
+          "Value": "Thu, 09 Jan 2025 08:15:10 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -21782,7 +21885,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "hvz2u8q4v2"
+          "Value": "rirylw4pw8"
         },
         {
           "Name": "label",
@@ -21790,13 +21893,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-HcCvqY3d6Y0DOQzMjEbttqDeP5TlnYxQscKV+irX8dQ="
+          "Value": "sha256-0/RX4EFKK1wH/LrW7WOaCyaGA/faWnjEruHJV19kqy8="
         }
       ]
     },
     {
-      "Route": "system-SIS.hvz2u8q4v2.styles.css.gz",
-      "AssetFile": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\obj\\Debug\\net9.0\\compressed\\0l1fwpklek-hvz2u8q4v2.gz",
+      "Route": "system-SIS.rirylw4pw8.styles.css.gz",
+      "AssetFile": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\obj\\Debug\\net9.0\\compressed\\0l1fwpklek-rirylw4pw8.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -21805,7 +21908,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "688"
+          "Value": "719"
         },
         {
           "Name": "Content-Type",
@@ -21813,11 +21916,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"WRSyD9lx75jBn/kwxXnzgqUs/pdemBIMpJx4si1YbAM=\""
+          "Value": "\"gfaqwFdpCUQsW4MuKQtOM1I/CRghnZHoKIMZgm6spj0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 09 Jan 2025 02:36:35 GMT"
+          "Value": "Thu, 09 Jan 2025 08:15:10 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -21835,7 +21938,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "hvz2u8q4v2"
+          "Value": "rirylw4pw8"
         },
         {
           "Name": "label",
@@ -21843,18 +21946,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-WRSyD9lx75jBn/kwxXnzgqUs/pdemBIMpJx4si1YbAM="
+          "Value": "sha256-gfaqwFdpCUQsW4MuKQtOM1I/CRghnZHoKIMZgm6spj0="
         }
       ]
     },
     {
       "Route": "system-SIS.styles.css",
-      "AssetFile": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\obj\\Debug\\net9.0\\compressed\\0l1fwpklek-hvz2u8q4v2.gz",
+      "AssetFile": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\obj\\Debug\\net9.0\\compressed\\0l1fwpklek-rirylw4pw8.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.001451378810"
+          "Quality": "0.001388888889"
         }
       ],
       "ResponseHeaders": [
@@ -21864,15 +21967,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "688"
+          "Value": "719"
         },
         {
           "Name": "ETag",
-          "Value": "\"WRSyD9lx75jBn/kwxXnzgqUs/pdemBIMpJx4si1YbAM=\""
+          "Value": "\"gfaqwFdpCUQsW4MuKQtOM1I/CRghnZHoKIMZgm6spj0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 09 Jan 2025 02:36:35 GMT"
+          "Value": "Thu, 09 Jan 2025 08:15:10 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -21892,13 +21995,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"HcCvqY3d6Y0DOQzMjEbttqDeP5TlnYxQscKV+irX8dQ=\""
+          "Value": "W/\"0/RX4EFKK1wH/LrW7WOaCyaGA/faWnjEruHJV19kqy8=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-HcCvqY3d6Y0DOQzMjEbttqDeP5TlnYxQscKV+irX8dQ="
+          "Value": "sha256-0/RX4EFKK1wH/LrW7WOaCyaGA/faWnjEruHJV19kqy8="
         }
       ]
     },
@@ -21913,7 +22016,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3403"
+          "Value": "3510"
         },
         {
           "Name": "Content-Type",
@@ -21921,11 +22024,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"HcCvqY3d6Y0DOQzMjEbttqDeP5TlnYxQscKV+irX8dQ=\""
+          "Value": "\"0/RX4EFKK1wH/LrW7WOaCyaGA/faWnjEruHJV19kqy8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 09 Jan 2025 02:36:35 GMT"
+          "Value": "Thu, 09 Jan 2025 08:15:10 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -21935,13 +22038,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-HcCvqY3d6Y0DOQzMjEbttqDeP5TlnYxQscKV+irX8dQ="
+          "Value": "sha256-0/RX4EFKK1wH/LrW7WOaCyaGA/faWnjEruHJV19kqy8="
         }
       ]
     },
     {
       "Route": "system-SIS.styles.css.gz",
-      "AssetFile": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\obj\\Debug\\net9.0\\compressed\\0l1fwpklek-hvz2u8q4v2.gz",
+      "AssetFile": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\obj\\Debug\\net9.0\\compressed\\0l1fwpklek-rirylw4pw8.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -21950,7 +22053,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "688"
+          "Value": "719"
         },
         {
           "Name": "Content-Type",
@@ -21958,11 +22061,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"WRSyD9lx75jBn/kwxXnzgqUs/pdemBIMpJx4si1YbAM=\""
+          "Value": "\"gfaqwFdpCUQsW4MuKQtOM1I/CRghnZHoKIMZgm6spj0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 09 Jan 2025 02:36:35 GMT"
+          "Value": "Thu, 09 Jan 2025 08:15:10 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -21980,7 +22083,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-WRSyD9lx75jBn/kwxXnzgqUs/pdemBIMpJx4si1YbAM="
+          "Value": "sha256-gfaqwFdpCUQsW4MuKQtOM1I/CRghnZHoKIMZgm6spj0="
         }
       ]
     }
