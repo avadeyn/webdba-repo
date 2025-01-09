@@ -8,5 +8,17 @@ namespace system_SIS.Controllers
 		{
 			return View();
 		}
-	}
+        public IActionResult Schedule()
+        {
+            return View();
+        }
+        public IActionResult Grades()
+        {
+            return View();
+        }
+        public IActionResult Forms()
+        {
+            return View();
+        }
+    }
 }
