@@ -24,17 +24,17 @@
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-Jtxf9L\u002B5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"5430"},{"Name":"Content-Type","Value":"image/x-icon"},{"Name":"ETag","Value":"\u0022Jtxf9L\u002B5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM=\u0022"},{"Name":"Last-Modified","Value":"Wed, 08 Jan 2025 15:19:11 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/system-SIS/images/bgjr.gh6lnnn6al.jpg">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\bgjr.jpg'))</AssetFile>
+    <StaticWebAssetEndpoint Include="_content/system-SIS/images/bgjr.phtcjj5743.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\bgjr.png'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"gh6lnnn6al"},{"Name":"integrity","Value":"sha256-FDcvrtm5o7RJFyIemPJaF\u002BxKRflfGiZpqgVAEiC3q3g="},{"Name":"label","Value":"_content/system-SIS/images/bgjr.jpg"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"166760"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022FDcvrtm5o7RJFyIemPJaF\u002BxKRflfGiZpqgVAEiC3q3g=\u0022"},{"Name":"Last-Modified","Value":"Thu, 09 Jan 2025 08:21:23 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"phtcjj5743"},{"Name":"integrity","Value":"sha256-s7C2/keqUSzBM/cJNBHaBW0pjdjC19qSOgR8\u002BTHLwdM="},{"Name":"label","Value":"_content/system-SIS/images/bgjr.png"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1153515"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022s7C2/keqUSzBM/cJNBHaBW0pjdjC19qSOgR8\u002BTHLwdM=\u0022"},{"Name":"Last-Modified","Value":"Thu, 09 Jan 2025 17:05:38 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/system-SIS/images/bgjr.jpg">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\bgjr.jpg'))</AssetFile>
+    <StaticWebAssetEndpoint Include="_content/system-SIS/images/bgjr.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\bgjr.png'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-FDcvrtm5o7RJFyIemPJaF\u002BxKRflfGiZpqgVAEiC3q3g="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"166760"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022FDcvrtm5o7RJFyIemPJaF\u002BxKRflfGiZpqgVAEiC3q3g=\u0022"},{"Name":"Last-Modified","Value":"Thu, 09 Jan 2025 08:21:23 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-s7C2/keqUSzBM/cJNBHaBW0pjdjC19qSOgR8\u002BTHLwdM="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"1153515"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022s7C2/keqUSzBM/cJNBHaBW0pjdjC19qSOgR8\u002BTHLwdM=\u0022"},{"Name":"Last-Modified","Value":"Thu, 09 Jan 2025 17:05:38 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/system-SIS/images/logo.kwf39tcnvl.png">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\logo.png'))</AssetFile>

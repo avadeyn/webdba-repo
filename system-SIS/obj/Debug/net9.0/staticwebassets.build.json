@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "+kwPgN2omz6IDcGr4dzzrILSH6ztC3waSZ7ncMVg9RM=",
+  "Hash": "3OycHMUPSw3SNGfUZ9q/4bezwB+w/RNIPPywMpZpjN0=",
   "Source": "system-SIS",
   "BasePath": "_content/system-SIS",
   "Mode": "Default",
@@ -1445,12 +1445,12 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\wwwroot\\images\\bgjr.jpg",
+      "Identity": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\wwwroot\\images\\bgjr.png",
       "SourceId": "system-SIS",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\wwwroot\\",
       "BasePath": "_content/system-SIS",
-      "RelativePath": "images/bgjr#[.{fingerprint}]?.jpg",
+      "RelativePath": "images/bgjr#[.{fingerprint}]?.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1459,11 +1459,11 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "gh6lnnn6al",
-      "Integrity": "FDcvrtm5o7RJFyIemPJaF+xKRflfGiZpqgVAEiC3q3g=",
+      "Fingerprint": "phtcjj5743",
+      "Integrity": "s7C2/keqUSzBM/cJNBHaBW0pjdjC19qSOgR8+THLwdM=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\bgjr.jpg"
+      "OriginalItemSpec": "wwwroot\\images\\bgjr.png"
     },
     {
       "Identity": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\wwwroot\\images\\logo.png",
@@ -3366,8 +3366,8 @@
       ]
     },
     {
-      "Route": "images/bgjr.gh6lnnn6al.jpg",
-      "AssetFile": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\wwwroot\\images\\bgjr.jpg",
+      "Route": "images/bgjr.phtcjj5743.png",
+      "AssetFile": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\wwwroot\\images\\bgjr.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3376,19 +3376,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "166760"
+          "Value": "1153515"
         },
         {
           "Name": "Content-Type",
-          "Value": "image/jpeg"
+          "Value": "image/png"
         },
         {
           "Name": "ETag",
-          "Value": "\"FDcvrtm5o7RJFyIemPJaF+xKRflfGiZpqgVAEiC3q3g=\""
+          "Value": "\"s7C2/keqUSzBM/cJNBHaBW0pjdjC19qSOgR8+THLwdM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 09 Jan 2025 08:21:23 GMT"
+          "Value": "Thu, 09 Jan 2025 17:05:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3398,21 +3398,21 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "gh6lnnn6al"
+          "Value": "phtcjj5743"
         },
         {
           "Name": "label",
-          "Value": "images/bgjr.jpg"
+          "Value": "images/bgjr.png"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-FDcvrtm5o7RJFyIemPJaF+xKRflfGiZpqgVAEiC3q3g="
+          "Value": "sha256-s7C2/keqUSzBM/cJNBHaBW0pjdjC19qSOgR8+THLwdM="
         }
       ]
     },
     {
-      "Route": "images/bgjr.jpg",
-      "AssetFile": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\wwwroot\\images\\bgjr.jpg",
+      "Route": "images/bgjr.png",
+      "AssetFile": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\wwwroot\\images\\bgjr.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3421,19 +3421,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "166760"
+          "Value": "1153515"
         },
         {
           "Name": "Content-Type",
-          "Value": "image/jpeg"
+          "Value": "image/png"
         },
         {
           "Name": "ETag",
-          "Value": "\"FDcvrtm5o7RJFyIemPJaF+xKRflfGiZpqgVAEiC3q3g=\""
+          "Value": "\"s7C2/keqUSzBM/cJNBHaBW0pjdjC19qSOgR8+THLwdM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 09 Jan 2025 08:21:23 GMT"
+          "Value": "Thu, 09 Jan 2025 17:05:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3443,7 +3443,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-FDcvrtm5o7RJFyIemPJaF+xKRflfGiZpqgVAEiC3q3g="
+          "Value": "sha256-s7C2/keqUSzBM/cJNBHaBW0pjdjC19qSOgR8+THLwdM="
         }
       ]
     },
