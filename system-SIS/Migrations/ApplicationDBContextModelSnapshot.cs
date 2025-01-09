@@ -24,11 +24,11 @@ namespace system_SIS.Migrations
 
             modelBuilder.Entity("system_SIS.Models.Students", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("StudentId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("StudentId"));
 
                     b.Property<DateOnly>("DateofBirth")
                         .HasColumnType("date");
@@ -38,7 +38,7 @@ namespace system_SIS.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.HasKey("Id");
+                    b.HasKey("StudentId");
 
                     b.ToTable("Students");
                 });
