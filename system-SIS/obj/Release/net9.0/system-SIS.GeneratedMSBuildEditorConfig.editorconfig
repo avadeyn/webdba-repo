@@ -17,53 +17,97 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = system_SIS
 build_property.RootNamespace = system_SIS
-build_property.ProjectDir = C:\Users\Nadine\source\legit-SISrepos\webdba-repo\system-SIS\
+build_property.ProjectDir = D:\3RDYEAR\1ST SEM\Web Development\SYSTEM\Webdev\system-SIS\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 9.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Nadine\source\legit-SISrepos\webdba-repo\system-SIS
+build_property.MSBuildProjectDirectory = D:\3RDYEAR\1ST SEM\Web Development\SYSTEM\Webdev\system-SIS
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/Nadine/source/legit-SISrepos/webdba-repo/system-SIS/Views/Home/Index.cshtml]
+[D:/3RDYEAR/1ST SEM/Web Development/SYSTEM/Webdev/system-SIS/Views/Account/ForgotPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3RDYEAR/1ST SEM/Web Development/SYSTEM/Webdev/system-SIS/Views/Account/Signin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxTaWduaW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3RDYEAR/1ST SEM/Web Development/SYSTEM/Webdev/system-SIS/Views/Account/Signup.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxTaWdudXAuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3RDYEAR/1ST SEM/Web Development/SYSTEM/Webdev/system-SIS/Views/AdmissionPortal/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaXNzaW9uUG9ydGFsXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3RDYEAR/1ST SEM/Web Development/SYSTEM/Webdev/system-SIS/Views/FacultyPortal/Forms.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFjdWx0eVBvcnRhbFxGb3Jtcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3RDYEAR/1ST SEM/Web Development/SYSTEM/Webdev/system-SIS/Views/FacultyPortal/Grades.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFjdWx0eVBvcnRhbFxHcmFkZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3RDYEAR/1ST SEM/Web Development/SYSTEM/Webdev/system-SIS/Views/FacultyPortal/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFjdWx0eVBvcnRhbFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3RDYEAR/1ST SEM/Web Development/SYSTEM/Webdev/system-SIS/Views/FacultyPortal/Schedule.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFjdWx0eVBvcnRhbFxTY2hlZHVsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3RDYEAR/1ST SEM/Web Development/SYSTEM/Webdev/system-SIS/Views/FacultyPortal/Student.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFjdWx0eVBvcnRhbFxTdHVkZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3RDYEAR/1ST SEM/Web Development/SYSTEM/Webdev/system-SIS/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nadine/source/legit-SISrepos/webdba-repo/system-SIS/Views/Home/Privacy.cshtml]
+[D:/3RDYEAR/1ST SEM/Web Development/SYSTEM/Webdev/system-SIS/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nadine/source/legit-SISrepos/webdba-repo/system-SIS/Views/Shared/Error.cshtml]
+[D:/3RDYEAR/1ST SEM/Web Development/SYSTEM/Webdev/system-SIS/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nadine/source/legit-SISrepos/webdba-repo/system-SIS/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/3RDYEAR/1ST SEM/Web Development/SYSTEM/Webdev/system-SIS/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nadine/source/legit-SISrepos/webdba-repo/system-SIS/Views/Students/Create.cshtml]
+[D:/3RDYEAR/1ST SEM/Web Development/SYSTEM/Webdev/system-SIS/Views/StudentsPortal/Home.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudHNQb3J0YWxcSG9tZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3RDYEAR/1ST SEM/Web Development/SYSTEM/Webdev/system-SIS/Views/Students/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudHNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nadine/source/legit-SISrepos/webdba-repo/system-SIS/Views/Students/Edit.cshtml]
+[D:/3RDYEAR/1ST SEM/Web Development/SYSTEM/Webdev/system-SIS/Views/Students/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudHNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nadine/source/legit-SISrepos/webdba-repo/system-SIS/Views/Students/Index.cshtml]
+[D:/3RDYEAR/1ST SEM/Web Development/SYSTEM/Webdev/system-SIS/Views/Students/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nadine/source/legit-SISrepos/webdba-repo/system-SIS/Views/_ViewImports.cshtml]
+[D:/3RDYEAR/1ST SEM/Web Development/SYSTEM/Webdev/system-SIS/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nadine/source/legit-SISrepos/webdba-repo/system-SIS/Views/_ViewStart.cshtml]
+[D:/3RDYEAR/1ST SEM/Web Development/SYSTEM/Webdev/system-SIS/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Nadine/source/legit-SISrepos/webdba-repo/system-SIS/Views/Shared/_Layout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = b-5b3azhh8dy
+[D:/3RDYEAR/1ST SEM/Web Development/SYSTEM/Webdev/system-SIS/Views/Shared/Faculty_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEZhY3VsdHlfTGF5b3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = b-hhjm7a9hn4
+
+[D:/3RDYEAR/1ST SEM/Web Development/SYSTEM/Webdev/system-SIS/Views/Shared/Student_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFN0dWRlbnRfTGF5b3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = b-pjohva3y0f

@@ -10516,28 +10516,29 @@
   "projectFileDependencyGroups": {
     "net9.0": [
       "Microsoft.AspNetCore.Mvc.TagHelpers >= 2.1.3",
+      "Microsoft.EntityFrameworkCore >= 9.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 9.0.0",
       "Microsoft.EntityFrameworkCore.Tools >= 9.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Nadine\\.nuget\\packages\\": {},
+    "C:\\Users\\Althea\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Nadine\\source\\legit-SISrepos\\webdba-repo\\system-SIS\\system-SIS.csproj",
+      "projectUniqueName": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\system-SIS.csproj",
       "projectName": "system-SIS",
-      "projectPath": "C:\\Users\\Nadine\\source\\legit-SISrepos\\webdba-repo\\system-SIS\\system-SIS.csproj",
-      "packagesPath": "C:\\Users\\Nadine\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Nadine\\source\\legit-SISrepos\\webdba-repo\\system-SIS\\obj\\",
+      "projectPath": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\system-SIS.csproj",
+      "packagesPath": "C:\\Users\\Althea\\.nuget\\packages\\",
+      "outputPath": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Nadine\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Althea\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -10573,6 +10574,10 @@
           "Microsoft.AspNetCore.Mvc.TagHelpers": {
             "target": "Package",
             "version": "[2.1.3, )"
+          },
+          "Microsoft.EntityFrameworkCore": {
+            "target": "Package",
+            "version": "[9.0.0, )"
           },
           "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
