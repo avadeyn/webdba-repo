@@ -40,6 +40,30 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxTaWdudXAuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/3RDYEAR/1ST SEM/Web Development/SYSTEM/Webdev/system-SIS/Views/AdminPortal/Enrollments.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Qb3J0YWxcRW5yb2xsbWVudHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3RDYEAR/1ST SEM/Web Development/SYSTEM/Webdev/system-SIS/Views/AdminPortal/Forms.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Qb3J0YWxcRm9ybXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3RDYEAR/1ST SEM/Web Development/SYSTEM/Webdev/system-SIS/Views/AdminPortal/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Qb3J0YWxcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3RDYEAR/1ST SEM/Web Development/SYSTEM/Webdev/system-SIS/Views/AdminPortal/Schedule.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Qb3J0YWxcU2NoZWR1bGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3RDYEAR/1ST SEM/Web Development/SYSTEM/Webdev/system-SIS/Views/AdminPortal/Student.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Qb3J0YWxcU3R1ZGVudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3RDYEAR/1ST SEM/Web Development/SYSTEM/Webdev/system-SIS/Views/AdminPortal/Subject.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Qb3J0YWxcU3ViamVjdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/3RDYEAR/1ST SEM/Web Development/SYSTEM/Webdev/system-SIS/Views/AdmissionPortal/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaXNzaW9uUG9ydGFsXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -80,8 +104,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/3RDYEAR/1ST SEM/Web Development/SYSTEM/Webdev/system-SIS/Views/StudentsPortal/Forms.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudHNQb3J0YWxcRm9ybXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3RDYEAR/1ST SEM/Web Development/SYSTEM/Webdev/system-SIS/Views/StudentsPortal/Grades.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudHNQb3J0YWxcR3JhZGVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/3RDYEAR/1ST SEM/Web Development/SYSTEM/Webdev/system-SIS/Views/StudentsPortal/Home.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudHNQb3J0YWxcSG9tZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3RDYEAR/1ST SEM/Web Development/SYSTEM/Webdev/system-SIS/Views/StudentsPortal/Schedule.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudHNQb3J0YWxcU2NoZWR1bGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/3RDYEAR/1ST SEM/Web Development/SYSTEM/Webdev/system-SIS/Views/Students/Create.cshtml]
@@ -103,6 +139,10 @@ build_metadata.AdditionalFiles.CssScope =
 [D:/3RDYEAR/1ST SEM/Web Development/SYSTEM/Webdev/system-SIS/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3RDYEAR/1ST SEM/Web Development/SYSTEM/Webdev/system-SIS/Views/Shared/Admin_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEFkbWluX0xheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = b-76lbuxgn7h
 
 [D:/3RDYEAR/1ST SEM/Web Development/SYSTEM/Webdev/system-SIS/Views/Shared/Faculty_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEZhY3VsdHlfTGF5b3V0LmNzaHRtbA==
