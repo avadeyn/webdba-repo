@@ -7,20 +7,16 @@
       "RelativeMoniker": "D:0:0:{77E5E2FD-5C94-4113-8433-BC0959B74392}|system-SIS\\system-SIS.csproj|solutionrelative:system-sis\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{77E5E2FD-5C94-4113-8433-BC0959B74392}|system-SIS\\system-SIS.csproj|d:\\3rdyear\\1st sem\\web development\\system\\webdev\\system-sis\\views\\shared\\account.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{77E5E2FD-5C94-4113-8433-BC0959B74392}|system-SIS\\system-SIS.csproj|solutionrelative:system-sis\\views\\shared\\account.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{77E5E2FD-5C94-4113-8433-BC0959B74392}|system-SIS\\system-SIS.csproj|d:\\3rdyear\\1st sem\\web development\\system\\webdev\\system-sis\\views\\shared\\admin_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{77E5E2FD-5C94-4113-8433-BC0959B74392}|system-SIS\\system-SIS.csproj|solutionrelative:system-sis\\views\\shared\\admin_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{77E5E2FD-5C94-4113-8433-BC0959B74392}|system-SIS\\system-SIS.csproj|d:\\3rdyear\\1st sem\\web development\\system\\webdev\\system-sis\\views\\account\\forgotpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{77E5E2FD-5C94-4113-8433-BC0959B74392}|system-SIS\\system-SIS.csproj|solutionrelative:system-sis\\views\\account\\forgotpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{77E5E2FD-5C94-4113-8433-BC0959B74392}|system-SIS\\system-SIS.csproj|d:\\3rdyear\\1st sem\\web development\\system\\webdev\\system-sis\\views\\shared\\faculty_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{77E5E2FD-5C94-4113-8433-BC0959B74392}|system-SIS\\system-SIS.csproj|solutionrelative:system-sis\\views\\shared\\faculty_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{77E5E2FD-5C94-4113-8433-BC0959B74392}|system-SIS\\system-SIS.csproj|d:\\3rdyear\\1st sem\\web development\\system\\webdev\\system-sis\\views\\account\\signin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{77E5E2FD-5C94-4113-8433-BC0959B74392}|system-SIS\\system-SIS.csproj|solutionrelative:system-sis\\views\\account\\signin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{77E5E2FD-5C94-4113-8433-BC0959B74392}|system-SIS\\system-SIS.csproj|d:\\3rdyear\\1st sem\\web development\\system\\webdev\\system-sis\\views\\account\\signup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{77E5E2FD-5C94-4113-8433-BC0959B74392}|system-SIS\\system-SIS.csproj|solutionrelative:system-sis\\views\\account\\signup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{77E5E2FD-5C94-4113-8433-BC0959B74392}|system-SIS\\system-SIS.csproj|d:\\3rdyear\\1st sem\\web development\\system\\webdev\\system-sis\\views\\shared\\student_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{77E5E2FD-5C94-4113-8433-BC0959B74392}|system-SIS\\system-SIS.csproj|solutionrelative:system-sis\\views\\shared\\student_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{77E5E2FD-5C94-4113-8433-BC0959B74392}|system-SIS\\system-SIS.csproj|d:\\3rdyear\\1st sem\\web development\\system\\webdev\\system-sis\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -50,13 +46,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "_ViewStart.cshtml",
               "DocumentMoniker": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\Views\\_ViewStart.cshtml",
               "RelativeDocumentMoniker": "system-SIS\\Views\\_ViewStart.cshtml",
               "ToolTip": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\Views\\_ViewStart.cshtml",
               "RelativeToolTip": "system-SIS\\Views\\_ViewStart.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-01-09T01:21:40.548Z",
               "IsPinned": true,
@@ -68,64 +64,51 @@
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\Program.cs",
               "RelativeDocumentMoniker": "system-SIS\\Program.cs",
-              "ToolTip": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\Program.cs",
-              "RelativeToolTip": "system-SIS\\Program.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAACUAAAANAAAAAAAAAA==",
+              "ToolTip": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\Program.cs*",
+              "RelativeToolTip": "system-SIS\\Program.cs*",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAACgAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-09T03:12:10.089Z",
+              "WhenOpened": "2025-01-09T09:51:15.854Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ForgotPassword.cshtml",
-              "DocumentMoniker": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\Views\\Account\\ForgotPassword.cshtml",
-              "RelativeDocumentMoniker": "system-SIS\\Views\\Account\\ForgotPassword.cshtml",
-              "ToolTip": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\Views\\Account\\ForgotPassword.cshtml",
-              "RelativeToolTip": "system-SIS\\Views\\Account\\ForgotPassword.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAACAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "Student_Layout.cshtml",
+              "DocumentMoniker": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\Views\\Shared\\Student_Layout.cshtml",
+              "RelativeDocumentMoniker": "system-SIS\\Views\\Shared\\Student_Layout.cshtml",
+              "ToolTip": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\Views\\Shared\\Student_Layout.cshtml",
+              "RelativeToolTip": "system-SIS\\Views\\Shared\\Student_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-09T08:16:15.645Z",
+              "WhenOpened": "2025-01-09T09:55:01.06Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Faculty_Layout.cshtml",
+              "DocumentMoniker": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\Views\\Shared\\Faculty_Layout.cshtml",
+              "RelativeDocumentMoniker": "system-SIS\\Views\\Shared\\Faculty_Layout.cshtml",
+              "ToolTip": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\Views\\Shared\\Faculty_Layout.cshtml",
+              "RelativeToolTip": "system-SIS\\Views\\Shared\\Faculty_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-09T09:54:59.87Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Account.cshtml",
-              "DocumentMoniker": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\Views\\Shared\\Account.cshtml",
-              "RelativeDocumentMoniker": "system-SIS\\Views\\Shared\\Account.cshtml",
-              "ToolTip": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\Views\\Shared\\Account.cshtml",
-              "RelativeToolTip": "system-SIS\\Views\\Shared\\Account.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAAAAAAAAAAAA==",
+              "Title": "Admin_Layout.cshtml",
+              "DocumentMoniker": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\Views\\Shared\\Admin_Layout.cshtml",
+              "RelativeDocumentMoniker": "system-SIS\\Views\\Shared\\Admin_Layout.cshtml",
+              "ToolTip": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\Views\\Shared\\Admin_Layout.cshtml",
+              "RelativeToolTip": "system-SIS\\Views\\Shared\\Admin_Layout.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAkAAABWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-09T08:11:43.55Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Signup.cshtml",
-              "DocumentMoniker": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\Views\\Account\\Signup.cshtml",
-              "RelativeDocumentMoniker": "system-SIS\\Views\\Account\\Signup.cshtml",
-              "ToolTip": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\Views\\Account\\Signup.cshtml",
-              "RelativeToolTip": "system-SIS\\Views\\Account\\Signup.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABLAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-09T08:09:02.865Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Signin.cshtml",
-              "DocumentMoniker": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\Views\\Account\\Signin.cshtml",
-              "RelativeDocumentMoniker": "system-SIS\\Views\\Account\\Signin.cshtml",
-              "ToolTip": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\Views\\Account\\Signin.cshtml",
-              "RelativeToolTip": "system-SIS\\Views\\Account\\Signin.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-09T07:55:30.683Z",
+              "WhenOpened": "2025-01-09T09:54:17.333Z",
               "EditorCaption": ""
             }
           ]
