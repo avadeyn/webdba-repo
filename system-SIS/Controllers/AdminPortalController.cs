@@ -14,9 +14,9 @@ namespace system_SIS.Controllers
             ViewData["ActiveMenu"] = "Enrollments";
             return View();
         }
-        public IActionResult Forms()
+        public IActionResult Faculty()
         {
-            ViewData["ActiveMenu"] = "Forms";
+            ViewData["ActiveMenu"] = "Faculty";
             return View();
         }
         public IActionResult Schedule()
@@ -75,6 +75,36 @@ namespace system_SIS.Controllers
         public IActionResult StudentDetail()
         {
             ViewData["ActiveMenu"] = "StudentDetail";
+            return View();
+        }
+        public IActionResult Unassign()
+        {
+            ViewData["ActiveMenu"] = "Unassign";
+            return View();
+        }
+        public IActionResult SubjectLoads()
+        {
+            ViewData["ActiveMenu"] = "SubjectLoads";
+            return View();
+        }
+        public IActionResult SISAccount()
+        {
+            ViewData["ActiveMenu"] = "SISAccount";
+            return View();
+        }
+        public IActionResult Admission()
+        {
+            ViewData["ActiveMenu"] = "Admission";
+            return View();
+        }
+        public IActionResult Classes()
+        {
+            ViewData["ActiveMenu"] = "Classes";
+            return View();
+        }
+        public IActionResult ReviewApp()
+        {
+            ViewData["ActiveMenu"] = "ReviewApp";
             return View();
         }
     }

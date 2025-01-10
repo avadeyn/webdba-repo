@@ -1,14 +1,15 @@
 ﻿@{
     Layout = "Admin_Layout"; // Specifies the layout to use
-    ViewData["Title"] = "Grade 9 Page"; // Ensure the title is descriptive
+    ViewData["Title"] = "Grade 7 Page"; // Ensure the title is descriptive
 }
 
-<body class="position-relative bg-image" style="font-family: 'Poppins', sans-serif; overflow-x: hidden;">
+<body class="position-relative bg-image" style="font-family: 'Poppins', sans-serif; overflow-x: hidden; height: 100vh; width: 100vw; margin: 0;">
     <!-- Background Image -->
     <img src="~/images/bgjr.png"
          alt="Decorative background representing Grade 7"
          class="img-fluid w-100"
-         style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
+         style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
+
 
 
     <!-- Main Content -->
@@ -16,7 +17,7 @@
         <section class="fixed ml-72 px-11 py-6 w-full top-20 left-0" style="font-weight: bold;">
             <p class="text-sm text-black">
                 <i class="fas fa-home text-black"></i>
-                <a asp-controller="AdminPortal" asp-action="Student" class="text-black" style="text-decoration: none;">Student</a> / Grade 9
+                <a asp-controller="AdminPortal" asp-action="Student" class="text-black" style="text-decoration: none;">Student</a> / Grade 9 
             </p>
         </section>
 
@@ -63,17 +64,15 @@
                 <!-- Filter Dropdown -->
                 <li class="nav-item ms-auto">
                     <select class="form-select" aria-label="Filter by Year">
-                        <option value="2020">2020</option>
-                        <option value="2021">2021</option>
-                        <option value="2022">2022</option>
-                        <option value="2023">2023</option>
-                        <option value="2024">2024</option>
-                        <option value="2025">2025</option>
+                        <option value="2020-2021">2020 - 2021</option>
+                        <option value="2021-2022">2021 - 2022</option>
+                        <option value="2022-2023">2022 - 2023</option>
+                        <option value="2023-2024">2023 - 2024</option>
+                        <option value="2024-2025">2024 - 2025</option>
                     </select>
                 </li>
             </ul>
         </div>
-
 
 
         <!-- Add Section Button -->
@@ -98,19 +97,20 @@
                     <td>Grade 7 - A</td>
                     <td>30</td>
                     <td>Mr. John Doe</td>
-                    <td align="center">
+                    <td>
                         <!-- Edit Button -->
-                        <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#editSectionModal">
+                        <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#editSectionModal" id="editBtn">
                             <i class="fas fa-edit"></i>
                         </button>
 
                         <!-- Delete Button -->
-                        <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteSectionModal">
+                        <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteSectionModal" id="deleteBtn">
                             <i class="fas fa-trash-alt"></i>
                         </button>
                     </td>
                 </tr>
             </tbody>
+
         </table>
     </div>
 
@@ -147,6 +147,7 @@
         </div>
     </div>
 
+
     <!-- Delete Section Modal -->
     <div class="modal fade" id="deleteSectionModal" tabindex="-1" aria-labelledby="deleteSectionModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -165,7 +166,6 @@
             </div>
         </div>
     </div>
-
 
     <!-- Modal for Adding Section -->
     <div class="modal fade" id="addSectionModal" tabindex="-1" aria-labelledby="addSectionModalLabel" aria-hidden="true">
@@ -199,49 +199,24 @@
         </div>
     </div>
 
-
-    <!-- Scripts for Modal -->
     <script>
-        // Function to save changes in the Edit Section Modal
-        function saveSection() {
-            const sectionName = document.getElementById('editSectionName').value;
-            const countOfStudents = document.getElementById('editCountOfStudents').value;
-            const adviser = document.getElementById('editAdviser').value;
+        // Select the buttons by their IDs
+        const editBtn = document.getElementById('editBtn');
+        const deleteBtn = document.getElementById('deleteBtn');
 
-            // Logic to save the section data (e.g., send data to the server)
-            console.log('Section saved:', sectionName, countOfStudents, adviser);
-
-            // Close the modal after saving
-            const editModal = new bootstrap.Modal(document.getElementById('editSectionModal'));
-            editModal.hide();
+        // Add event listeners to the buttons to stop event propagation
+        if (editBtn) {
+            editBtn.addEventListener('click', function(event) {
+                event.stopPropagation(); // Prevent row click from being triggered
+            });
         }
 
-        // Function to delete a section
-        function deleteSection() {
-            // Logic to delete the section (e.g., send a delete request to the server)
-            console.log('Section deleted');
-
-            // Close the modal after deleting
-            const deleteModal = new bootstrap.Modal(document.getElementById('deleteSectionModal'));
-            deleteModal.hide();
-        }
-
-        // Function to save new section from Add Section Modal
-        function saveNewSection() {
-            const sectionName = document.getElementById('addSectionName').value;
-            const countOfStudents = document.getElementById('addCountOfStudents').value;
-            const adviser = document.getElementById('addAdviser').value;
-
-            // Logic to add a new section (e.g., send data to the server)
-            console.log('New section added:', sectionName, countOfStudents, adviser);
-
-            // Close the modal after saving
-            const addModal = new bootstrap.Modal(document.getElementById('addSectionModal'));
-            addModal.hide();
+        if (deleteBtn) {
+            deleteBtn.addEventListener('click', function(event) {
+                event.stopPropagation(); // Prevent row click from being triggered
+            });
         }
     </script>
 
-
-
-
 </body>
+

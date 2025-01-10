@@ -38,37 +38,53 @@
                 <!-- Navigation Links -->
                 <div class="collapse navbar-collapse" id="navbarContent">
                     <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <!-- Home -->
                         <li class="nav-item me-3">
                             <a class="nav-link @(ViewData["ActiveMenu"]?.ToString() == "Index" || ViewData["ActiveMenu"] == null ? "active fw-bold" : "")" asp-area="" asp-controller="AdminPortal" asp-action="Index">
                                 <i class="fas fa-home"></i> Home
                             </a>
                         </li>
+
+                        <!-- Enrollments -->
                         <li class="nav-item me-3">
                             <a class="nav-link @(ViewData["ActiveMenu"]?.ToString() == "Enrollments" ? "active fw-bold" : "")" asp-area="" asp-controller="AdminPortal" asp-action="Enrollments">
                                 <i class="fas fa-user-check"></i> Enrollments
                             </a>
                         </li>
+
+                        <!-- Account -->
                         <li class="nav-item me-3">
-                            <a class="nav-link @(ViewData["ActiveMenu"]?.ToString() == "Student" ? "active fw-bold" : "")" asp-area="" asp-controller="AdminPortal" asp-action="Student">
-                                <i class="fas fa-user-graduate"></i> Student
+                            <a class="nav-link @(ViewData["ActiveMenu"]?.ToString() == "SISAccount" ? "active fw-bold" : "")" asp-area="" asp-controller="AdminPortal" asp-action="SISAccount">
+                                <i class="fas fa-user-circle"></i> SIS Accounts
                             </a>
                         </li>
-                        <li class="nav-item me-3">
-                            <a class="nav-link @(ViewData["ActiveMenu"]?.ToString() == "Subject" ? "active fw-bold" : "")" asp-area="" asp-controller="AdminPortal" asp-action="Subject">
-                                <i class="fas fa-book"></i> Subject
+
+                        <!-- Management Dropdown -->
+                        <li class="nav-item dropdown me-3">
+                            <a class="nav-link dropdown-toggle @(ViewData["ActiveMenu"]?.ToString() == "Management" ? "active fw-bold" : "")" href="#" id="managementDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-cogs"></i> Management
                             </a>
-                        </li>
-                        <li class="nav-item me-3">
-                            <a class="nav-link @(ViewData["ActiveMenu"]?.ToString() == "Schedule" ? "active fw-bold" : "")" asp-area="" asp-controller="AdminPortal" asp-action="Schedule">
-                                <i class="fas fa-calendar-alt"></i> Schedules
-                            </a>
-                        </li>
-                        <li class="nav-item me-3">
-                            <a class="nav-link @(ViewData["ActiveMenu"]?.ToString() == "Forms" ? "active fw-bold" : "")" asp-area="" asp-controller="AdminPortal" asp-action="Forms">
-                                <i class="fas fa-file-alt"></i> Forms
-                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="managementDropdown">
+                                <li>
+                                    <a class="dropdown-item @(ViewData["ActiveMenu"]?.ToString() == "Faculty" ? "active" : "")" asp-area="" asp-controller="AdminPortal" asp-action="Faculty">
+                                        <i class="fas fa-user"></i> Faculty
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item @(ViewData["ActiveMenu"]?.ToString() == "Admission" ? "active" : "")" asp-area="" asp-controller="AdminPortal" asp-action="Admission">
+                                        <i class="fas fa-book"></i> Admission
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item @(ViewData["ActiveMenu"]?.ToString() == "Student" ? "active" : "")" asp-area="" asp-controller="AdminPortal" asp-action="Student">
+                                        <i class="fas fa-user-graduate"></i> Students
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
                     </ul>
+
+
 
                     <!-- User Info -->
                     <div class="d-flex align-items-center">
@@ -89,8 +105,8 @@
         </main>
     </div>
 
-    <footer class="footer text-muted" style="height:50%; width: 100%;">
-        <div class="container">
+    <footer class="footer text-muted" >
+        <div>
             &copy; 2025 - system_SIS - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>

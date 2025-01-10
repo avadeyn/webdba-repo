@@ -3,9 +3,6 @@
     ViewData["Title"] = "Home Page";
 }
 
-<body class="position-relative bg-image" style="font-family: 'Poppins', sans-serif; overflow-x: hidden">
-    <img src="~/images/bgjr.png" alt="Background Image" class="img-fluid w-100" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
-
 <style>
     .container {
         background-color: #dce8fd;
@@ -14,7 +11,90 @@
     }
 </style>
 
-<div class="text-center">
-    <h1 class="display-4">Faculty Subject</h1>
-</div>
+
+<body class="position-relative bg-image" style="font-family: 'Poppins', sans-serif; overflow-x: hidden">
+    <img src="~/images/bgjr.png" alt="Background Image" class="img-fluid w-100" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
+
+    <section class="fixed ml-72 px-11 py-6 w-full top-20 left-0" style="font-weight: bold;">
+        <p class="text-sm text-black">
+            <i class="fas fa-home text-black"></i>
+            <a asp-controller="AdminPortal" asp-action="Student" class="text-black" style="text-decoration: none;">Student</a> / Student Information
+        </p>
+    </section>
+    
+
+    <!-- View Student Information -->
+    <div id="studentInfoView" class="container">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0">Student Information</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <!-- Personal Information -->
+                    <div class="col-md-6">
+                        <h6 class="text-secondary">Personal Information</h6>
+                        <div class="mb-2">
+                            <strong>First Name:</strong> <span id="viewFirstName">John</span>
+                        </div>
+                        <div class="mb-2">
+                            <strong>Middle Name:</strong> <span id="viewMiddleName">Doe</span>
+                        </div>
+                        <div class="mb-2">
+                            <strong>Last Name:</strong> <span id="viewLastName">Smith</span>
+                        </div>
+                        <div class="mb-2">
+                            <strong>Suffix:</strong> <span id="viewSuffix">Jr.</span>
+                        </div>
+                        <div class="mb-2">
+                            <strong>Date of Birth:</strong> <span id="viewDob">1990-01-01</span>
+                        </div>
+                        <div class="mb-2">
+                            <strong>Gender:</strong> <span id="viewGender">Male</span>
+                        </div>
+                        <div class="mb-2">
+                            <strong>Address:</strong> <span id="viewAddress">123 Main Street, Springfield</span>
+                        </div>
+                        <div class="mb-2">
+                            <strong>Contact:</strong> <span id="viewContactNumber">1234567890</span>
+                        </div>
+                        <div class="mb-2">
+                            <strong>Email:</strong> <span id="viewEmail">johnsmith@example.com</span>
+                        </div>
+                    </div>
+
+                    <!-- Parent/Guardian Information -->
+                    <div class="col-md-6">
+                        <h6 class="text-secondary">Parent/Guardian Information</h6>
+                        <div class="mb-2">
+                            <strong>Name:</strong> <span id="viewGuardianName">Jane Doe</span>
+                        </div>
+                        <div class="mb-2">
+                            <strong>Relationship:</strong> <span id="viewRelationship">Mother</span>
+                        </div>
+                        <div class="mb-2">
+                            <strong>Contact:</strong> <span id="viewGuardianContact">0987654321</span>
+                        </div>
+                        <div class="mb-2">
+                            <strong>Email:</strong> <span id="viewGuardianEmail">janedoe@example.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer text-end">
+                <button class="btn btn-secondary" onclick="goBack()">Back</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function goBack() {
+            // Redirect to the previous page or another route
+            window.history.back();
+        }
+    </script>
+
+
+
+
 </body>
