@@ -13,7 +13,7 @@ namespace system_SIS.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
     [Migration("20250108154554_test")]
-    partial class test
+    partial class Test
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

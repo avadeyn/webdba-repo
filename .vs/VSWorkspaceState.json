@@ -2,8 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\system-SIS",
-    "\\system-SIS\\Controllers",
-    "\\system-SIS\\Views"
+    "\\system-SIS\\Views",
+    "\\system-SIS\\Views\\Shared",
+    "\\system-SIS\\wwwroot",
+    "\\system-SIS\\wwwroot\\images"
   ],
   "SelectedNode": "\\system-SIS.sln",
   "PreviewInSolutionExplorer": true

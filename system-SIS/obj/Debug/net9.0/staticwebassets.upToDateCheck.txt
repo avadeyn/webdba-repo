@@ -62,6 +62,7 @@ D:\3RDYEAR\1ST SEM\Web Development\SYSTEM\Webdev\system-SIS\wwwroot\lib\bootstra
 D:\3RDYEAR\1ST SEM\Web Development\SYSTEM\Webdev\system-SIS\wwwroot\lib\bootstrap\dist\js\bootstrap.js.map
 wwwroot\css\site.css
 wwwroot\favicon.ico
+wwwroot\images\bgjr.png
 wwwroot\images\logo.png
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap.css

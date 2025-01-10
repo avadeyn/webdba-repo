@@ -2,7 +2,7 @@
   "Files": [
     {
       "Id": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\system-SIS.bundle.scp.css",
-      "PackagePath": "staticwebassets\\system-SIS.hvz2u8q4v2.bundle.scp.css"
+      "PackagePath": "staticwebassets\\system-SIS.rirylw4pw8.bundle.scp.css"
     },
     {
       "Id": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\wwwroot\\css\\site.css",
@@ -11,6 +11,10 @@
     {
       "Id": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\wwwroot\\images\\bgjr.png",
+      "PackagePath": "staticwebassets\\images\\bgjr.png"
     },
     {
       "Id": "D:\\3RDYEAR\\1ST SEM\\Web Development\\SYSTEM\\Webdev\\system-SIS\\wwwroot\\images\\logo.png",
