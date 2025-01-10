@@ -25,5 +25,6 @@ namespace system_SIS.Controllers
             ViewData["ActiveMenu"] = "Forms";
             return View();
         }
+       
     }
 }
