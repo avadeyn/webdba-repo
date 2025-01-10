@@ -362,3 +362,23 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 /.vs
+
+
+# Exclude obj folders and their contents
+**/obj/
+
+# Exclude static web assets removed files
+**/staticwebassets.removed.txt
+
+# Exclude assembly information and generated config files
+**/*.AssemblyInfo.cs
+**/*.GeneratedMSBuildEditorConfig.editorconfig
+
+# Exclude NuGet-related cache files
+**/project.assets.json
+**/project.nuget.cache
+**/*.nuget.dgspec.json
+**/*.nuget.g.props
+
+# Exclude debug builds
+**/Debug/
