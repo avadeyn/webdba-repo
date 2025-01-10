@@ -32,7 +32,14 @@ app.MapStaticAssets();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}")
+    //pattern: "{controller=Students}/{action=Index}/{id?}")
+    //pattern: "{controller=Account}/{action=Signin}/{id?}")
+    //pattern: "{controller=Account}/{action=Signup}/{id?}")
+    //PORTALS
+    pattern: "{controller=AdminPortal}/{action=Index}/{id?}")
+    //pattern: "{controller=FacultyPortal}/{action=Index}/{id?}")
+    //pattern: "{controller=StudentsPortal}/{action=Home}/{id?}")
+    //pattern: "{controller=AdmissionPortal}/{action=Index}/{id?}")
     .WithStaticAssets();
 
 app.Run();

@@ -1,23 +1,28 @@
 ﻿@{
-    ViewData["Title"] = "Sign in";
+    Layout = "Account";  // Specifies the layout to use
+    ViewData["Title"] = "Home Page";
 }
+<div class="d-flex justify-content-center align-items-center min-vh-100">
+        <div class="container">
+            <h2 class="text-center">Sign In</h2>
+            <form method="post" action="/your-login-action">
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" name="email" class="form-control" id="email" required />
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" name="password" class="form-control" id="password" required />
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Sign in</button>
+            </form>
 
-<div>image</div>
-<div>
-    <form>
-        <label>Email</label>
-        <input type="email" name="email" class="form-control" />
+            <div class="d-flex justify-content-between mt-3">
+                <a asp-controller="Account" asp-action="ForgotPassword">Forgot password</a>
 
-        <label>Password</label>
-        <input type="password" name="password" class="form-control" />
-    </form>
-</div>
+                <a href="@Url.Action("Signup", "Account")">Create an account</a>
+            </div>
+        </div>
+    </div>
 
-<button class="btn btn-primary">Sign in</button>
-
-<div class="flex-column align-items-center" >
-    <a href="">Forgot password?</a>
-
-    <a asp-action="Signup">Create an account</a>
-
-</div>
+   
