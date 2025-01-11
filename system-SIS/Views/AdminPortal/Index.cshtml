@@ -3,43 +3,160 @@
     ViewData["Title"] = "Home Page";
 }
 
-
-
 <div class="row mb-3">
-    <div class="col-12 welcome-container bg-secondary text-white rounded p-3 d-flex justify-content-between align-items-center">
-        <!-- Left Section: Text -->
-        <div class="welcome-text">
-            <h2 class="text-3xl md:text-4xl font-bold mt-1" style="font-family: 'Potta One', sans-serif;">Welcome to Jose Rizal High School</h2>
-            <p class="mt-3 text-sm md:text-base">Access the Administrator Portal to efficiently manage student enrollments, monitor academic progress, <br> schedule classes, and ensure smooth daily operations at Jose Rizal High School.</p>
+    <div class="col-12 p-4">
+        <div class="welcome-container bg-secondary text-white rounded p-4 d-flex flex-column flex-md-row justify-content-between align-items-center mx-3">
+            <!-- Left Section: Text -->
+            <div class="welcome-text text-center text-md-start">
+                <h2 class="text-3xl font-bold mt-1" style="font-family: 'Potta One', sans-serif;">Welcome to Jose Rizal High School</h2>
+                <p class="mt-3 text-sm md:text-base">
+                    Access the Administrator Portal to efficiently manage student enrollments, monitor academic progress, <br> schedule classes, and ensure smooth daily operations at Jose Rizal High School.
+                </p>
+            </div>
         </div>
     </div>
 </div>
 
+
+
 <div class="container">
-    <div class="row justify-content-between mb-3">
+    <div class="row g-4">
         <!-- Graph for Students -->
-        <div class="col-12 col-md-4 mb-3">
-            <div class="bg-white rounded p-3 shadow-sm">
-                <h3 class="text-center">Students</h3>
+        <div class="col-md-4">
+            <div class="chart-container bg-white rounded p-3 shadow">
+                <h3 class="text-center mb-3">Students</h3>
                 <canvas id="studentsChart" class="chart"></canvas>
             </div>
         </div>
 
         <!-- Graph for Faculty -->
-        <div class="col-12 col-md-4 mb-3">
-            <div class="bg-white rounded p-3 shadow-sm">
-                <h3 class="text-center">Faculty</h3>
+        <div class="col-md-4">
+            <div class="chart-container bg-white rounded p-3 shadow">
+                <h3 class="text-center mb-3">Faculty</h3>
                 <canvas id="facultyChart" class="chart"></canvas>
             </div>
         </div>
 
         <!-- Graph for Subjects -->
-        <div class="col-12 col-md-4 mb-3">
-            <div class="bg-white rounded p-3 shadow-sm">
-                <h3 class="text-center">Subjects</h3>
+        <div class="col-md-4">
+            <div class="chart-container bg-white rounded p-3 shadow">
+                <h3 class="text-center mb-3">Subjects</h3>
                 <canvas id="subjectsChart" class="chart"></canvas>
             </div>
         </div>
     </div>
 </div>
 
+
+<div class="container mt-4">
+    <div class="note bg-secondary p-2 rounded shadow-sm">
+        <div class="announce-section bg-white p-3 rounded shadow mb-2 transition-effect">
+            <h5 class="fw-bold mb-2 fs-5">New Enrollees</h5>
+            <p class="mb-0 fs-6">
+                Access the Administrator Portal to efficiently manage student enrollments, monitor academic progress,
+                schedule classes, and ensure smooth daily operations at Jose Rizal High School.
+            </p>
+        </div>
+        <div class="announce-section bg-white p-3 rounded shadow mb-2 transition-effect">
+            <h5 class="fw-bold mb-2 fs-5">New Enrollees</h5>
+            <p class="mb-0 fs-6">
+                Access the Administrator Portal to efficiently manage student enrollments, monitor academic progress,
+                schedule classes, and ensure smooth daily operations at Jose Rizal High School.
+            </p>
+        </div>
+    </div>
+</div>
+
+<style>
+    .transition-effect {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+        .transition-effect:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+        }
+</style>
+
+
+
+<script>
+    // Data for Students, Faculty, and Subjects
+    const studentsData = {
+        labels: ['Grade 7', 'Grade 8', 'Grade 9', 'Grade 10'],
+        datasets: [{
+            label: 'Number of Students',
+            data: [120, 200, 180, 150],  // Example data
+            backgroundColor: '#4CAF50',
+            borderColor: '#388E3C',
+            borderWidth: 1
+        }]
+    };
+
+    const facultyData = {
+        labels: ['Math', 'Science', 'History', 'English', 'Physical Ed', 'Chemistry', 'Biology', 'Computer Science'],
+        datasets: [{
+            label: 'Faculty Members',
+            data: [15, 20, 10, 12, 8, 14, 18, 9],
+            backgroundColor: '#2196F3',
+            borderColor: '#1976D2',
+            borderWidth: 1
+        }]
+    };
+
+    const subjectsData = {
+        labels: ['Mathematics', 'Biology', 'Physics', 'Chemistry', 'History'],
+        datasets: [{
+            label: 'Subjects Offered',
+            data: [10, 12, 8, 9, 7],
+            backgroundColor: '#FFC107',
+            borderColor: '#FF9800',
+            borderWidth: 1
+        }]
+    };
+
+    // Students Chart
+    const studentsCtx = document.getElementById('studentsChart').getContext('2d');
+    new Chart(studentsCtx, {
+        type: 'bar',
+        data: studentsData,
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    // Faculty Chart
+    const facultyCtx = document.getElementById('facultyChart').getContext('2d');
+    new Chart(facultyCtx, {
+        type: 'bar',
+        data: facultyData,
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    // Subjects Chart
+    const subjectsCtx = document.getElementById('subjectsChart').getContext('2d');
+    new Chart(subjectsCtx, {
+        type: 'bar',
+        data: subjectsData,
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>

@@ -1,6 +1,6 @@
 ﻿@{
-    Layout = "Admin_Layout";  // Specifies the layout to use
-    ViewData["Title"] = "Home Page";
+    Layout = "Admin_Layout"; // Specifies the layout to use
+    ViewData["Title"] = "Grade 7 Page"; // Ensure the title is descriptive
 }
 
 <body class="position-relative bg-image" style="font-family: 'Poppins', sans-serif; overflow-x: hidden; height: 100vh; width: 100vw; margin: 0;">
@@ -16,8 +16,8 @@
     <div style="background-color: rgba(220, 232, 253, 0.9); padding: 20px; border-radius: 10px;">
         <section class="fixed ml-72 px-11 py-6 w-full top-20 left-0" style="font-weight: bold;">
             <p class="text-sm text-black">
-                <i class="fas fa-Book text-black"></i>
-                <a asp-controller="AdminPortal" asp-action="Subject" class="text-black" style="text-decoration: none;">Subject</a>
+                <i class="fas fa-home text-black"></i>
+                <a asp-controller="AdminPortal" asp-action="Student" class="text-black" style="text-decoration: none;">Student</a> / Grade 10
             </p>
         </section>
 
@@ -64,18 +64,54 @@
                 <!-- Filter Dropdown -->
                 <li class="nav-item ms-auto">
                     <select class="form-select" aria-label="Filter by Year">
-                        <option value="2020">2020</option>
-                        <option value="2021">2021</option>
-                        <option value="2022">2022</option>
-                        <option value="2023">2023</option>
-                        <option value="2024">2024</option>
-                        <option value="2025">2025</option>
+                        <option value="2020-2021">2020 - 2021</option>
+                        <option value="2021-2022">2021 - 2022</option>
+                        <option value="2022-2023">2022 - 2023</option>
+                        <option value="2023-2024">2023 - 2024</option>
+                        <option value="2024-2025">2024 - 2025</option>
                     </select>
                 </li>
             </ul>
         </div>
 
 
+        <!-- Add Section Button -->
+        <button type="button" class="btn btn-primary  mt-4" data-bs-toggle="modal" data-bs-target="#addSectionModal">
+            Add Section
+        </button>
+
+        <!-- Table -->
+        <table class="table table-bordered mt-2">
+            <thead>
+                <tr>
+                    <th>Section Name</th>
+                    <th>Count of Students</th>
+                    <th>Adviser</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="@(ViewData["ActiveMenu"]?.ToString() == "Studentlist10" ? "active fw-bold" : "")"
+                    style="cursor: pointer;"
+                    onclick="window.location.href='@Url.Action("Studentlist10", "AdminPortal", new { area = "" })';">
+                    <td>Grade 7 - A</td>
+                    <td>30</td>
+                    <td>Mr. John Doe</td>
+                    <td>
+                        <!-- Edit Button -->
+                        <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#editSectionModal" id="editBtn">
+                            <i class="fas fa-edit"></i>
+                        </button>
+
+                        <!-- Delete Button -->
+                        <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteSectionModal" id="deleteBtn">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
     </div>
 
 
@@ -182,5 +218,5 @@
         }
     </script>
 
-
 </body>
+
