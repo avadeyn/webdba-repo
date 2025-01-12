@@ -1,0 +1,102 @@
+﻿@{
+    Layout = "Admin_Layout";  // Specifies the layout to use
+    ViewData["Title"] = "Home Page";
+}
+
+@{
+    Layout = "Admin_Layout";  // Specifies the layout to use
+    ViewData["Title"] = "Home Page";
+}
+
+<body class="position-relative bg-image" style="font-family: 'Poppins', sans-serif; overflow-x: hidden; height: 100vh; width: 100vw; margin: 0;">
+    <!-- Background Image -->
+    <img src="~/images/bgjr.png"
+         alt="Decorative background representing Grade 7"
+         class="img-fluid w-100"
+         style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
+
+    <!-- Main Content -->
+    <div style="background-color: rgba(220, 232, 253, 0.9); padding: 20px; border-radius: 10px;">
+        <section class="fixed ml-72 px-11 py-6 w-full top-20 left-0" style="font-weight: bold;">
+            <p class="text-sm text-black fs-5">
+                <i class="fas fa-user text-black"></i>
+                <a asp-controller="AdminPortal" asp-action="Admission" class="text-black" style="text-decoration: none;">Admission</a>
+            </p>
+        </section>
+
+        <h6 class="mb-0 me-3">Admission Management</h6>
+
+        <!-- Dropdown Section -->
+        <div class="row mb-3 justify-content-end align-items-center">
+            <!-- Incoming Grade -->
+            <div class="col-auto">
+                <label for="dropdownIncomingGradeLevel" class="form-label fs-6 visually-hidden">Select Incoming Grade</label>
+                <select class="form-select fs-6" id="dropdownIncomingGradeLevel" aria-label="Select Incoming Grade">
+                    <option value="" disabled selected>Select Incoming Grade</option>
+                    <option value="7">Grade 7</option>
+                    <option value="8">Grade 8</option>
+                    <option value="9">Grade 9</option>
+                    <option value="10">Grade 10</option>
+                </select>
+            </div>
+
+            <!-- Subject Dropdown -->
+            <div class="col-auto">
+                <label for="dropdownSubject" class="form-label fs-6 visually-hidden">Select Subject</label>
+                <select class="form-select fs-6" id="dropdownSubject">
+                    <option value="returnee">Returnee</option>
+                    <option value="regular">Regular</option>
+                    <option value="transferee">Transferee</option>
+                </select>
+            </div>
+
+            <!-- School Year Dropdown -->
+            <div class="col-auto">
+                <label for="dropdownSchoolYear" class="form-label fs-6 visually-hidden">Select School Year</label>
+                <select class="form-select fs-6" id="dropdownSchoolYear" aria-label="Select School Year">
+                    <option value="" disabled selected>Select School Year</option>
+                    <option value="2020-2021">2020 - 2021</option>
+                    <option value="2021-2022">2021 - 2022</option>
+                    <option value="2022-2023">2022 - 2023</option>
+                    <option value="2023-2024">2023 - 2024</option>
+                    <option value="2024-2025">2024 - 2025</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Table -->
+        <div class="table-responsive mt-3">
+            <table class="table">
+                <thead class="table-secondary text-white">
+                    <tr>
+                        <th>Learner's Name</th>
+                        <th>Grade Level to Enroll</th>
+                        <th>Date Submitted</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Jane Doe</td>
+                        <td>Grade 7</td>
+                        <td>2025-11-04</td>
+                        <td>Accepted</td>
+                        <td>
+                            <a asp-controller="AdminPortal" asp-action="ReviewApp">
+                                Review
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+
+        </div>
+    </div>
+</body>
+
+
+
+       

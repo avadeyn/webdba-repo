@@ -1,0 +1,192 @@
+﻿@{
+    Layout = "Admin_Layout";  // Specifies the layout to use
+    ViewData["Title"] = "Home Page";
+}
+
+
+<body class="position-relative bg-image" style="font-family: 'Poppins', sans-serif; overflow-x: hidden; height: 100vh; width: 100vw; margin: 0;">
+    <!-- Background Image -->
+    <img src="~/images/bgjr.png"
+         alt="Decorative background representing Grade 7"
+         class="img-fluid w-100"
+         style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
+
+
+
+    <!-- Main Content -->
+    <div style="background-color: rgba(220, 232, 253, 0.9); padding: 20px; border-radius: 10px;">
+        <section class="fixed ml-72 px-11 py-6 w-full top-20 left-0" style="font-weight: bold;">
+            <p class="text-sm text-black fs-5">
+                <i class="fas fa-user text-black"></i>
+                <a asp-controller="AdminPortal" asp-action="Faculty" class="text-black" style="text-decoration: none;">Faculty</a>
+            </p>
+        </section>
+
+        <!-- Table -->
+        <div class="table-responsive mt-3">
+            
+            <table class="table">
+                <thead class="table-secondary text-white">
+                    <tr>
+                        <!-- Header for Faculty Information -->
+                        <th>Faculty Name</th>
+                        <th>Position</th>
+                        <th>Status</th>
+                        <th>Section</th>
+                        <th>Department</th>
+                        <th>Actions</th> <!-- Added Actions column -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Jane Doe</td> <!-- Faculty Name -->
+                        <td>Instructor</td> <!-- Position -->
+                        <td>Active</td> <!-- Status -->
+                        <td>Palladium</td>
+                        <td>Mathematics</td> <!-- Department -->
+                        <td>
+                            <div class="dropdown">
+                                <!-- Ellipsis Icon to Trigger Dropdown with added margin -->
+                                <button class="btn btn-link p-0" type="button" id="actionMenu" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fas fa-ellipsis" style="margin-left: 20px;"></i> <!-- Ellipsis Icon -->
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="actionMenu">
+                                    <li>
+                                        <!-- Fix for Delete option -->
+                                        <a class="dropdown-item btn-outline-danger fw-bold" data-bs-toggle="modal" data-bs-target="#assignfacultyModal">
+                                            Assign
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="btn @(string.Equals(ViewData["ActiveMenu"]?.ToString(), "SubjectLoads", StringComparison.OrdinalIgnoreCase))"
+                                           style="@(string.Equals(ViewData["ActiveMenu"]?.ToString(), "SubjectLoads", StringComparison.OrdinalIgnoreCase))"
+                                           asp-area=""
+                                           asp-controller="AdminPortal"
+                                           asp-action="SubjectLoads">
+                                            Subject Loads
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="btn @(string.Equals(ViewData["ActiveMenu"]?.ToString(), "Unassign", StringComparison.OrdinalIgnoreCase))"
+                                           style="@(string.Equals(ViewData["ActiveMenu"]?.ToString(), "Unassign", StringComparison.OrdinalIgnoreCase))"
+                                           asp-area=""
+                                           asp-controller="AdminPortal"
+                                           asp-action="Unassign">
+                                            Unassign
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <!-- Fix for Delete option -->
+                                        <a class="dropdown-item btn-outline-danger fw-bold" data-bs-toggle="modal" data-bs-target="#deletefacultyModal">
+                                            Delete
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+
+
+
+        </div>
+    </div>
+
+    <!-- Delete Section Modal -->
+    <div class="modal fade" id="deletefacultyModal" tabindex="-1" aria-labelledby="deletefacultyModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deletefacultyModal">Confirm Deletion</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to delete this faculty member?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-danger" onclick="deletefaculty()">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Assigning Faculty to Subject -->
+    <div class="modal fade" id="assignfacultyModal" tabindex="-1" aria-labelledby="assignfacultyModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="assignfacultyModalLabel">Faculty Subject Assignment</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="assignFacultyForm">
+                        <!-- Assigned Faculty Name -->
+                        <div class="mb-3">
+                            <label for="assignedFaculty" class="form-label">Assigned Faculty</label>
+                            <input type="text" class="form-control" id="assignedFaculty" value="Nadine Borja" disabled>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="dropdownIncomingGradeLevel" class="form-label fs-6">Select Incoming Grade</label>
+                            <select class="form-select fs-6 w-100" id="dropdownIncomingGradeLevel" aria-label="Select Incoming Grade">
+                                <option value="" disabled selected>Select Incoming Grade</option>
+                                <option value="7">Grade 7</option>
+                                <option value="8">Grade 8</option>
+                                <option value="9">Grade 9</option>
+                                <option value="10">Grade 10</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="dropdownSubject" class="form-label fs-6">Select Subject</label>
+                            <select class="form-select fs-6 w-100" id="dropdownSubject" aria-label="Choose Subject">
+                                <option value="" disabled selected>Select Subject</option>
+                                <option value="english">English</option>
+                                <option value="math">Math</option>
+                                <option value="science">Science</option>
+                                <option value="history">History</option>
+                            </select>
+                        </div>
+
+                        <!-- Section Name -->
+                        <div class="mb-3">
+                            <label for="addSectionName" class="form-label">Section Name</label>
+                            <input type="text" class="form-control" id="addSectionName" placeholder="Enter Section Name">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="addCountOfStudents" class="form-label">Count of Students</label>
+                            <input type="number" class="form-control" id="addCountOfStudents" placeholder="Enter Count of Students">
+                        </div>
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="saveFacultySubjectAssignment()">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- JavaScript for handling dropdown -->
+    <script>
+        // Function to select/deselect all checkboxes
+        function selectAllCheckboxes(source) {
+            const checkboxes = document.querySelectorAll('.studentCheckbox');
+            checkboxes.forEach(checkbox => checkbox.checked = source.checked);
+        }
+
+         const deleteBtn = document.getElementById('deleteBtn');
+         if (deleteBtn) {
+            deleteBtn.addEventListener('click', function(event) {
+                event.stopPropagation(); // Prevent row click from being triggered
+            });
+        }
+    </script>
+</body>
