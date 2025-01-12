@@ -82,7 +82,6 @@
                 <thead class="table-secondary text-white">
                     <tr>
                         <th><input type="checkbox" id="selectAll" onclick="selectAllCheckboxes(this)" /></th>
-                        <th>#</th>
                         <th>LRN</th>
                         <th>Student Name</th>
                         <th>Gender</th>
@@ -90,11 +89,8 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="@(ViewData["ActiveMenu"]?.ToString() == "Studentlist7" ? "active fw-bold" : "")"
-                        style="cursor: pointer;"
-                        onclick="window.location.href='@Url.Action("Studentlist7", "AdminPortal", new { area = "" })';">
+                    <tr>
                         <td><input type="checkbox" class="studentCheckbox" /></td>
-                        <td>1</td>
                         <td>123456789</td>
                         <td>Jane Doe</td>
                         <td>Female</td>

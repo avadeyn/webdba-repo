@@ -10,15 +10,15 @@ namespace system_SIS.Controllers
             return View();
         }
 
-        public IActionResult Student()
+        public IActionResult Subject()
         {
-            ViewData["ActiveMenu"] = "Student";
+            ViewData["ActiveMenu"] = "Subject";
             return View();
         }
 
-        public IActionResult Schedule()
+        public IActionResult MasterList()
         {
-            ViewData["ActiveMenu"] = "Schedule";
+            ViewData["ActiveMenu"] = "MasterList";
             return View();
         }
 
@@ -34,5 +34,17 @@ namespace system_SIS.Controllers
             return View();
         }
 
+        public IActionResult ViewClassAd()
+        {
+            ViewData["ActiveMenu"] = "ViewClassAd";
+            return View();
+        }
+        public IActionResult ListReportCard()
+        {
+            ViewData["ActiveMenu"] = "ListReportCard";
+            return View();
+        }
+
     }
 }
+

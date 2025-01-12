@@ -24,6 +24,11 @@ namespace system_SIS.Controllers
             ViewData["ActiveMenu"] = "Schedule";
             return View();
         }
+        public IActionResult Scheduleclass()
+        {
+            ViewData["ActiveMenu"] = "Scheduleclass";
+            return View();
+        }
         public IActionResult Student()
         {
             ViewData["ActiveMenu"] = "Student";
@@ -32,6 +37,12 @@ namespace system_SIS.Controllers
         public IActionResult Subject()
         {
             ViewData["ActiveMenu"] = "Subject";
+            return View();
+        }
+
+        public IActionResult Classes()
+        {
+            ViewData["ActiveMenu"] = "Classes";
             return View();
         }
 
@@ -95,11 +106,6 @@ namespace system_SIS.Controllers
         public IActionResult Admission()
         {
             ViewData["ActiveMenu"] = "Admission";
-            return View();
-        }
-        public IActionResult Classes()
-        {
-            ViewData["ActiveMenu"] = "Classes";
             return View();
         }
         public IActionResult ReviewApp()

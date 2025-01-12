@@ -10,177 +10,155 @@
          class="img-fluid w-100"
          style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
 
-
-
     <!-- Main Content -->
     <div style="background-color: rgba(220, 232, 253, 0.9); padding: 20px; border-radius: 10px;">
         <section class="fixed ml-72 px-11 py-6 w-full top-20 left-0" style="font-weight: bold;">
-            <p class="text-sm text-black">
-                <i class="fas fa-Book text-black"></i>
+            <p class="text-sm text-black fs-5">
+                <i class="fas fa-user text-black"></i>
                 <a asp-controller="AdminPortal" asp-action="Subject" class="text-black" style="text-decoration: none;">Subject</a>
             </p>
         </section>
 
-        <div class="mt-4">
-            <!-- Navigation -->
-            <ul class="navbar-nav mx-auto mb-2 mb-lg-0 d-flex flex-row">
-                <li class="nav-item me-3">
-                    <a class="btn @(string.Equals(ViewData["ActiveMenu"]?.ToString(), "Student", StringComparison.OrdinalIgnoreCase) ? "fw-bold text-white" : "btn-outline-success fw-bold")"
-                       style="@(string.Equals(ViewData["ActiveMenu"]?.ToString(), "Student", StringComparison.OrdinalIgnoreCase) ? "background-color: green;" : "")"
-                       asp-area=""
-                       asp-controller="AdminPortal"
-                       asp-action="Student">
-                        Grade 7
-                    </a>
-                </li>
-                <li class="nav-item me-3">
-                    <a class="btn @(string.Equals(ViewData["ActiveMenu"]?.ToString(), "Grade8", StringComparison.OrdinalIgnoreCase) ? "fw-bold text-white" : "btn-outline-warning fw-bold text-yellow")"
-                       style="@(string.Equals(ViewData["ActiveMenu"]?.ToString(), "Grade8", StringComparison.OrdinalIgnoreCase) ? "background-color: yellow;" : "")"
-                       asp-area=""
-                       asp-controller="AdminPortal"
-                       asp-action="Grade8">
-                        Grade 8
-                    </a>
-                </li>
-                <li class="nav-item me-3">
-                    <a class="btn @(string.Equals(ViewData["ActiveMenu"]?.ToString(), "Grade9", StringComparison.OrdinalIgnoreCase) ? "fw-bold text-black" : "btn-outline-danger fw-bold")"
-                       style="@(string.Equals(ViewData["ActiveMenu"]?.ToString(), "Grade9", StringComparison.OrdinalIgnoreCase) ? "background-color: red;" : "")"
-                       asp-area=""
-                       asp-controller="AdminPortal"
-                       asp-action="Grade9">
-                        Grade 9
-                    </a>
-                </li>
-                <li class="nav-item me-3">
-                    <a class="btn @(string.Equals(ViewData["ActiveMenu"]?.ToString(), "Grade10", StringComparison.OrdinalIgnoreCase) ? "fw-bold text-white" : "btn-outline-primary fw-bold")"
-                       style="@(string.Equals(ViewData["ActiveMenu"]?.ToString(), "Grade10", StringComparison.OrdinalIgnoreCase) ? "background-color: blue;" : "")"
-                       asp-area=""
-                       asp-controller="AdminPortal"
-                       asp-action="Grade10">
-                        Grade 10
-                    </a>
-                </li>
+        <!-- Button to open the "Add Subject" Modal -->
+        <button type="button" class="btn btn-primary" style="position: relative; top: -4px; margin-left: auto; display: block;" data-bs-toggle="modal" data-bs-target="#addSubjectModal">+ Subject</button>
 
-                <!-- Filter Dropdown -->
-                <li class="nav-item ms-auto">
-                    <select class="form-select" aria-label="Filter by Year">
-                        <option value="2020">2020</option>
-                        <option value="2021">2021</option>
-                        <option value="2022">2022</option>
-                        <option value="2023">2023</option>
-                        <option value="2024">2024</option>
-                        <option value="2025">2025</option>
-                    </select>
-                </li>
-            </ul>
+        <div class="container mt-2">
+            <table class="table mt-2">
+                <thead class="table-secondary text-white">
+                    <tr>
+                        <th>Subject Name</th>
+                        <th>Abbreviation</th>
+                        <th>Grade Level</th>
+                        <th>Program</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="@Url.Action("SubjectDetails", "AdminPortal")" class="text-decoration-none text-black">English</a>
+                        </td>
+                        <td>ENG</td>
+                        <td>Grade 7</td>
+                        <td>Regular</td>
+                        <td>
+                            <div class="dropdown">
+                                <button class="btn btn-light btn-sm dropdown-toggle"
+                                        type="button"
+                                        id="dropdownMenuButton"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false"
+                                        style="border: none; background: none;">
+                                    <i class="fas fa-ellipsis-v"></i> <!-- Ellipsis icon -->
+                                </button>
+
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <li>
+                                        <a class="dropdown-item"
+                                           href="#"
+                                           data-bs-toggle="modal"
+                                           data-bs-target="#editSubjectModal"
+                                           id="editSubjectLink">
+                                            <i class="fas fa-edit me-2"></i> Edit
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-
-
     </div>
 
-
-    <!-- Edit Section Modal -->
-    <div class="modal fade" id="editSectionModal" tabindex="-1" aria-labelledby="editSectionModalLabel" aria-hidden="true">
+    <!-- Modal for adding a new subject -->
+    <div class="modal fade" id="addSubjectModal" tabindex="-1" aria-labelledby="addSubjectModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="editSectionModalLabel">Edit Section</h5>
+                    <h5 class="modal-title" id="addSubjectModalLabel">Add New Subject</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form id="editSectionForm">
+                    <form>
                         <div class="mb-3">
-                            <label for="editSectionName" class="form-label">Section Name</label>
-                            <input type="text" class="form-control" id="editSectionName" placeholder="Enter Section Name">
+                            <label for="subjectName" class="form-label">Subject Name</label>
+                            <input type="text" class="form-control" id="subjectName" placeholder="Enter Subject Name">
                         </div>
                         <div class="mb-3">
-                            <label for="editCountOfStudents" class="form-label">Count of Students</label>
-                            <input type="number" class="form-control" id="editCountOfStudents" placeholder="Enter Count of Students">
+                            <label for="abbreviation" class="form-label">Abbreviation</label>
+                            <input type="text" class="form-control" id="abbreviation" placeholder="Enter Abbreviation">
                         </div>
                         <div class="mb-3">
-                            <label for="editAdviser" class="form-label">Adviser</label>
-                            <input type="text" class="form-control" id="editAdviser" placeholder="Enter Adviser Name">
+                            <label for="gradeLevel" class="form-label">Grade Level</label>
+                            <select class="form-select" id="gradeLevel">
+                                <option value="7">Grade 7</option>
+                                <option value="8">Grade 8</option>
+                                <option value="9">Grade 9</option>
+                                <option value="10">Grade 10</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="program" class="form-label">Program</label>
+                            <select class="form-select" id="program">
+                                <option value="Regular">Regular</option>
+                                <option value="Transferee">Transferee</option>
+                                <option value="Returnee">Returnee</option>
+                            </select>
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" onclick="saveSection()">Save</button>
+                    <button type="button" class="btn btn-primary">Save Subject</button>
                 </div>
             </div>
         </div>
     </div>
 
-
-    <!-- Delete Section Modal -->
-    <div class="modal fade" id="deleteSectionModal" tabindex="-1" aria-labelledby="deleteSectionModalLabel" aria-hidden="true">
+    <!-- Edit Subject Modal -->
+    <div class="modal fade" id="editSubjectModal" tabindex="-1" aria-labelledby="editSubjectModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="deleteSectionModalLabel">Confirm Deletion</h5>
+                    <h5 class="modal-title" id="editSubjectModalLabel">Edit Subject</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <p>Are you sure you want to delete this section?</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-danger" onclick="deleteSection()">Delete</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal for Adding Section -->
-    <div class="modal fade" id="addSectionModal" tabindex="-1" aria-labelledby="addSectionModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="addSectionModalLabel">Add Section</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form id="addSectionForm">
+                    <form>
                         <div class="mb-3">
-                            <label for="addSectionName" class="form-label">Section Name</label>
-                            <input type="text" class="form-control" id="addSectionName" placeholder="Enter Section Name">
+                            <label for="subjectNameEdit" class="form-label">Subject Name</label>
+                            <input type="text" class="form-control" id="subjectNameEdit" value="English">
                         </div>
                         <div class="mb-3">
-                            <label for="addCountOfStudents" class="form-label">Count of Students</label>
-                            <input type="number" class="form-control" id="addCountOfStudents" placeholder="Enter Count of Students">
+                            <label for="abbreviationEdit" class="form-label">Abbreviation</label>
+                            <input type="text" class="form-control" id="abbreviationEdit" value="ENG">
                         </div>
                         <div class="mb-3">
-                            <label for="addAdviser" class="form-label">Adviser</label>
-                            <input type="text" class="form-control" id="addAdviser" placeholder="Enter Adviser Name">
+                            <label for="gradeLevelEdit" class="form-label">Grade Level</label>
+                            <select class="form-select" id="gradeLevelEdit">
+                                <option value="7" selected>Grade 7</option>
+                                <option value="8">Grade 8</option>
+                                <option value="9">Grade 9</option>
+                                <option value="10">Grade 10</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="programEdit" class="form-label">Program</label>
+                            <select class="form-select" id="programEdit">
+                                <option value="Regular" selected>Regular</option>
+                                <option value="Transferee">Transferee</option>
+                                <option value="Returnee">Returnee</option>
+                            </select>
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" onclick="saveNewSection()">Save Section</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
                 </div>
             </div>
         </div>
     </div>
-
-    <script>
-        // Select the buttons by their IDs
-        const editBtn = document.getElementById('editBtn');
-        const deleteBtn = document.getElementById('deleteBtn');
-
-        // Add event listeners to the buttons to stop event propagation
-        if (editBtn) {
-            editBtn.addEventListener('click', function(event) {
-                event.stopPropagation(); // Prevent row click from being triggered
-            });
-        }
-
-        if (deleteBtn) {
-            deleteBtn.addEventListener('click', function(event) {
-                event.stopPropagation(); // Prevent row click from being triggered
-            });
-        }
-    </script>
-
 
 </body>

@@ -17,73 +17,185 @@
         <section class="fixed ml-72 px-11 py-6 w-full top-20 left-0" style="font-weight: bold;">
             <p class="text-sm text-black fs-5">
                 <i class="fas fa-user text-black"></i>
-                <a asp-controller="AdminPortal" asp-action="Faculty" class="text-black" style="text-decoration: none;">Faculty</a>
+                <a asp-controller="AdminPortal" asp-action="Index" class="text-black" style="text-decoration: none;">Review Application</a>
             </p>
         </section>
 
-        <div class="container mt-5">
+       <div class="container mt-5">
             <!-- Application Section -->
             <div class="row mb-4">
-                <div class="col-md-4">
-                    <h4>Application</h4>
-                    <p><strong>Status:</strong> Accepted</p>
-                    <p><strong>Date Submitted:</strong> 2024-11-28</p>
-                    <p><strong>Date Review:</strong> 2024-12-01</p>
-                    <p><strong>Date Decision:</strong> 2024-12-01</p>
+                <div class="col-md-4" style="flex: 1;">
+                    <div style="display: block; margin-bottom: 5px;">
+                        <p style="display: inline; margin-right: 5px;"><strong>Status:</strong></p>
+                        <p style="display: inline;">Accepted</p>
+                    </div>
+                    <div style="display: block; margin-bottom: 5px;">
+                        <p style="display: inline; margin-right: 5px;"><strong>Date Submitted:</strong></p>
+                        <p style="display: inline;">2024-11-28</p>
+                    </div>
+                    <div style="display: block; margin-bottom: 5px;">
+                        <p style="display: inline; margin-right: 5px;"><strong>Date Review:</strong></p>
+                        <p style="display: inline;">2024-12-01</p>
+                    </div>
+                    <div style="display: block;">
+                        <p style="display: inline; margin-right: 5px;"><strong>Date Decision:</strong></p>
+                        <p style="display: inline;">2024-12-01</p>
+                    </div>
                 </div>
 
-                <div class="col-md-8">
+
+                <div class="col-md-8" style="flex: 1;">
                     <h4>Learner's Information</h4>
-                    <p><strong>LRN:</strong> 123456789121 | <strong>GWA:</strong> 98 | <strong>Grade Level to Enroll:</strong> 7 | <strong>Transferee:</strong> No</p>
-                    <p><strong>First Name:</strong> Althea &nbsp; | &nbsp; <strong>Middle Name:</strong> Amor &nbsp; | &nbsp; <strong>Last Name:</strong> Asis &nbsp; | &nbsp; <strong>Suffix:</strong> None</p>
-                    <p><strong>Gender:</strong> Female &nbsp; | &nbsp; <strong>Birthday:</strong> 2007-11-28 &nbsp; | &nbsp; <strong>Place of Birth:</strong> Quezon City</p>
-                    <p><strong>Phone Number:</strong> 09123456783</p>
-                    <p><strong>Email:</strong> altheaamor12@gmail.com</p>
+                    <div style="display: block; margin-bottom: 5px;">
+                        <p style="display: inline; margin-right: 5px;"><strong>LRN:</strong></p>
+                        <p style="display: inline;">123456789121</p>
+                        <span style="margin-right: 10px;">|</span>
+                        <p style="display: inline; margin-right: 5px;"><strong>GWA:</strong></p>
+                        <p style="display: inline;">98</p>
+                        <span style="margin-right: 10px;">|</span>
+                        <p style="display: inline; margin-right: 5px;"><strong>Grade Level to Enroll:</strong></p>
+                        <p style="display: inline;">7</p>
+                        <span style="margin-right: 10px;">|</span>
+                        <p style="display: inline; margin-right: 5px;"><strong>Transferee:</strong></p>
+                        <p style="display: inline;">No</p>
+                    </div>
+                    <div style="display: block; margin-bottom: 5px;">
+                        <p style="display: inline; margin-right: 5px;"><strong>First Name:</strong></p>
+                        <p style="display: inline;">Althea</p>
+                        <span style="margin-right: 10px;">|</span>
+                        <p style="display: inline; margin-right: 5px;"><strong>Middle Name:</strong></p>
+                        <p style="display: inline;">Amor</p>
+                        <span style="margin-right: 10px;">|</span>
+                        <p style="display: inline; margin-right: 5px;"><strong>Last Name:</strong></p>
+                        <p style="display: inline;">Asis</p>
+                        <span style="margin-right: 10px;">|</span>
+                        <p style="display: inline; margin-right: 5px;"><strong>Suffix:</strong></p>
+                        <p style="display: inline;">None</p>
+                    </div>
+                    <div style="display: block; margin-bottom: 5px;">
+                        <p style="display: inline; margin-right: 5px;"><strong>Gender:</strong></p>
+                        <p style="display: inline;">Female</p>
+                        <span style="margin-right: 10px;">|</span>
+                        <p style="display: inline; margin-right: 5px;"><strong>Birthday:</strong></p>
+                        <p style="display: inline;">2007-11-28</p>
+                        <span style="margin-right: 10px;">|</span>
+                        <p style="display: inline; margin-right: 5px;"><strong>Place of Birth:</strong></p>
+                        <p style="display: inline;">Quezon City</p>
+                    </div>
+                    <div style="display: block;">
+                        <p style="display: inline; margin-right: 5px;"><strong>Phone Number:</strong></p>
+                        <p style="display: inline;">09123456783</p>
+                    </div>
+                    <div style="display: block;">
+                        <p style="display: inline; margin-right: 5px;"><strong>Email:</strong></p>
+                        <p style="display: inline;">altheaamor12@gmail.com</p>
+                    </div>
                 </div>
+
             </div>
 
             <!-- Address Section -->
             <div class="row mb-4">
-                <div class="col-md-6">
+                <div class="col-md-6" style="flex: 1;">
                     <h5>Current Address</h5>
-                    <p><strong>Region:</strong> National Capital Region</p>
-                    <p><strong>Province:</strong> Metro Manila</p>
-                    <p><strong>Municipality/City:</strong> Quezon City</p>
-                    <p><strong>Barangay:</strong> Commonwealth</p>
-                    <p><strong>Zip Code:</strong> 1121</p>
-                    <p><strong>Street Address:</strong> Sto. Rosario St.</p>
+                    <div style="display: block; margin-bottom: 5px;">
+                        <p style="display: inline; margin-right: 5px;"><strong>Region:</strong></p>
+                        <p style="display: inline;">National Capital Region</p>
+                    </div>
+                    <div style="display: block; margin-bottom: 5px;">
+                        <p style="display: inline; margin-right: 5px;"><strong>Province:</strong></p>
+                        <p style="display: inline;">Metro Manila</p>
+                    </div>
+                    <div style="display: block; margin-bottom: 5px;">
+                        <p style="display: inline; margin-right: 5px;"><strong>Municipality/City:</strong></p>
+                        <p style="display: inline;">Quezon City</p>
+                    </div>
+                    <div style="display: block; margin-bottom: 5px;">
+                        <p style="display: inline; margin-right: 5px;"><strong>Barangay:</strong></p>
+                        <p style="display: inline;">Commonwealth</p>
+                    </div>
+                    <div style="display: block; margin-bottom: 5px;">
+                        <p style="display: inline; margin-right: 5px;"><strong>Zip Code:</strong></p>
+                        <p style="display: inline;">1121</p>
+                    </div>
+                    <div style="display: block;">
+                        <p style="display: inline; margin-right: 5px;"><strong>Street Address:</strong></p>
+                        <p style="display: inline;">Sto. Rosario St.</p>
+                    </div>
                 </div>
-                <div class="col-md-6">
+
+                <div class="col-md-6" style="flex: 1;">
                     <h5>Permanent Address</h5>
-                    <p><strong>Region:</strong> National Capital Region</p>
-                    <p><strong>Province:</strong> Metro Manila</p>
-                    <p><strong>Municipality/City:</strong> Quezon City</p>
-                    <p><strong>Barangay:</strong> Commonwealth</p>
-                    <p><strong>Zip Code:</strong> 1121</p>
-                    <p><strong>Street Address:</strong> Sto. Rosario St.</p>
+                    <div style="display: block; margin-bottom: 5px;">
+                        <p style="display: inline; margin-right: 5px;"><strong>Region:</strong></p>
+                        <p style="display: inline;">National Capital Region</p>
+                    </div>
+                    <div style="display: block; margin-bottom: 5px;">
+                        <p style="display: inline; margin-right: 5px;"><strong>Province:</strong></p>
+                        <p style="display: inline;">Metro Manila</p>
+                    </div>
+                    <div style="display: block; margin-bottom: 5px;">
+                        <p style="display: inline; margin-right: 5px;"><strong>Municipality/City:</strong></p>
+                        <p style="display: inline;">Quezon City</p>
+                    </div>
+                    <div style="display: block; margin-bottom: 5px;">
+                        <p style="display: inline; margin-right: 5px;"><strong>Barangay:</strong></p>
+                        <p style="display: inline;">Commonwealth</p>
+                    </div>
+                    <div style="display: block; margin-bottom: 5px;">
+                        <p style="display: inline; margin-right: 5px;"><strong>Zip Code:</strong></p>
+                        <p style="display: inline;">1121</p>
+                    </div>
+                    <div style="display: block;">
+                        <p style="display: inline; margin-right: 5px;"><strong>Street Address:</strong></p>
+                        <p style="display: inline;">Sto. Rosario St.</p>
+                    </div>
                 </div>
+
             </div>
 
             <!-- Parent/Guardian Section -->
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6" style="flex: 1;">
                     <h5>Parent's/Guardian's Information - Primary</h5>
-                    <p><strong>Full Name:</strong> Nadine Borja</p>
-                    <p><strong>Contact Number:</strong> 09234567234</p>
-                    <p><strong>Relationship:</strong> Mother</p>
+                    <div style="display: block; margin-bottom: 5px;">
+                        <p style="display: inline; margin-right: 5px;"><strong>Full Name:</strong></p>
+                        <p style="display: inline;">Nadine Borja</p>
+                    </div>
+                    <div style="display: block; margin-bottom: 5px;">
+                        <p style="display: inline; margin-right: 5px;"><strong>Contact Number:</strong></p>
+                        <p style="display: inline;">09234567234</p>
+                    </div>
+                    <div style="display: block;">
+                        <p style="display: inline; margin-right: 5px;"><strong>Relationship:</strong></p>
+                        <p style="display: inline;">Mother</p>
+                    </div>
                 </div>
-                <div class="col-md-6">
+
+                <div class="col-md-6" style="flex: 1;">
                     <h5>Parent's/Guardian's Information - Secondary</h5>
-                    <p><strong>Full Name:</strong> JM De Guzman</p>
-                    <p><strong>Contact Number:</strong> 09234567234</p>
-                    <p><strong>Relationship:</strong> Father</p>
+                    <div style="display: block; margin-bottom: 5px;">
+                        <p style="display: inline; margin-right: 5px;"><strong>Full Name:</strong></p>
+                        <p style="display: inline;">JM De Guzman</p>
+                    </div>
+                    <div style="display: block; margin-bottom: 5px;">
+                        <p style="display: inline; margin-right: 5px;"><strong>Contact Number:</strong></p>
+                        <p style="display: inline;">09234567234</p>
+                    </div>
+                    <div style="display: block;">
+                        <p style="display: inline; margin-right: 5px;"><strong>Relationship:</strong></p>
+                        <p style="display: inline;">Father</p>
+                    </div>
                 </div>
+
+            </div>
+
+            <!-- Action Buttons Positioned at Bottom-Right -->
+            <div class="d-flex justify-content-end p-3">
+                <button class="btn btn-success me-3">Accept</button>
+                <button class="btn btn-danger">Reject</button>
             </div>
         </div>
-
-
-       
-
 
     </div>
 </body>
