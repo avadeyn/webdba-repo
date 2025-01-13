@@ -21,53 +21,52 @@
             </p>
         </section>
 
-        <div class="container">
-            <div class="row mb-4">
-                <div class="col-12">
-                    <h2>Change Request Grade</h2>
-                </div>
-            </div>
-
-            <div class="row mb-4">
-                <div class="col-md-6 col-sm-12">
-                    <p><strong>School Year:</strong> 2019-2020</p>
-                    <p><strong>Section:</strong> Marigold</p>
-                </div>
-                <div class="col-md-6 col-sm-12">
-                    <p><strong>Grade Level:</strong> 11</p>
-                </div>
-            </div>
-
-            <div class="table-responsive">
-                <table class="table table-bordered">
-                    <thead class="table-header">
-                        <tr>
-                            <th>#</th>
-                            <th>Request Id</th>
-                            <th>Subject</th>
-                            <th>Quarter</th>
-                            <th>Date</th>
-                            <th>Status</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>REQ-602709</td>
-                            <td>Earth and Life Science</td>
-                            <td>1</td>
-                            <td>12/08/2024</td>
-                            <td>Pending</td>
-                            <td><button type="button" class="btn btn-sm btn-secondary"><i class="bi bi-three-dots"></i></button></td>
-                        </tr>
-                    </tbody>
-                </table>
-
-            </div>
-
+        <div class="col-6 col-md-3 mt-2 mb-3 mt-md-0 ms-auto">
+            <select class="form-select fs-6" id="dropdownSchoolYear">
+                <option value="All">All</option>
+                <option value="Pending">Pending</option>
+                <option value="On Hold">On Hold</option>
+                <option value="Declined">Declined</option>
+            </select>
         </div>
 
+
+
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead class="table-header">
+                    <tr>
+                        <th>#</th>
+                        <th>Request Id</th>
+                        <th>Faculty Name</th>
+                        <th>Section</th>
+                        <th>Subject</th>
+                        <th>Quarter</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>REQ-602709</td>
+                        <td>Nadine Borja</td>
+                        <td>Palladium</td>
+                        <td>Earth and Life Science</td>
+                        <td>1</td>
+                        <td>12/08/2024</td>
+                        <td>Pending</td>
+                        <td>
+                            <a style="cursor: pointer;" onclick="window.location.href='@Url.Action("RCgrades", "FacultyPortal", new { area = "", id = 1 })';">Review</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
+
+        
+        
 
 </body>

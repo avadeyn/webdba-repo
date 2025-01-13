@@ -62,6 +62,13 @@ namespace system_SIS.Controllers
             return View();
         }
 
+        public IActionResult RCgrades()
+        {
+            ViewData["ActiveMenu"] = "RCgrades";
+            return View();
+        }
+
+
 
     }
 }

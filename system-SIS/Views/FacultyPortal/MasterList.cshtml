@@ -13,7 +13,7 @@
 
     <!-- Main Content -->
     <div class="container-fluid px-3 py-4" style="background-color: rgba(220, 232, 253, 0.9); border-radius: 10px;">
-        <section class="fixed mt-4 ps-4 pe-2 py-3 w-100 top-20 left-0" style="font-weight: bold;">
+        <section class="fixed px-3 py-2 w-100 left-0" style="font-weight: bold;">
             <p class="text-sm text-black fs-5">
                 <i class="fas fa-users text-black"></i>
                 <a asp-controller="FacultyPortal" asp-action="Subject" class="text-black" style="text-decoration: none;">Masterlist</a>
@@ -21,9 +21,9 @@
         </section>
 
         <!-- Filter Controls -->
-        <div class="d-flex flex-column flex-md-row justify-content-between align-items-center mt-3">
+        <div class="d-flex flex-column flex-sm-row justify-content-end align-items-center">
             <!-- Incoming Grade -->
-            <div class="me-md-2 mb-3 mb-md-0 w-100 w-md-auto">
+            <div class="me-2 w-60">
                 <label for="dropdownIncomingGradeLevel" class="form-label fs-6 visually-hidden">Select Incoming Grade</label>
                 <select class="form-select fs-6" id="dropdownIncomingGradeLevel" aria-label="Select Incoming Grade">
                     <option value="" disabled selected>Select Incoming Grade</option>
@@ -35,7 +35,7 @@
             </div>
 
             <!-- School Year -->
-            <div class="w-100 w-md-auto">
+            <div class="w-60">
                 <label for="dropdownSchoolYear" class="form-label fs-6 visually-hidden">Select School Year</label>
                 <select class="form-select fs-6" id="dropdownSchoolYear" aria-label="Select School Year">
                     <option value="" disabled selected>Select School Year</option>
