@@ -44,6 +44,24 @@ namespace system_SIS.Controllers
             ViewData["ActiveMenu"] = "ListReportCard";
             return View();
         }
+        public IActionResult CardGradeReport()
+        {
+            ViewData["ActiveMenu"] = "CardGradeReport";
+            return View();
+        }
+
+        public IActionResult EncodeGrades()
+        {
+            ViewData["ActiveMenu"] = "EncodeGrades";
+            return View();
+        }
+
+        public IActionResult ChangeRG()
+        {
+            ViewData["ActiveMenu"] = "ChangeRG";
+            return View();
+        }
+
 
     }
 }

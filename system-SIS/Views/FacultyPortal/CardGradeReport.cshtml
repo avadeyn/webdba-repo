@@ -1,0 +1,105 @@
+﻿@{
+    Layout = "Faculty_Layout";  // Specifies the layout to use
+    ViewData["Title"] = "Home Page";
+}
+
+<body class="position-relative bg-image" style="font-family: 'Poppins', sans-serif; overflow-x: hidden; height: 100vh; margin: 0;">
+
+    <!-- Background Image -->
+    <img src="~/images/bgjr.png"
+         alt="Decorative background representing Grade 7"
+         class="img-fluid position-fixed w-100 h-100"
+         style="object-fit: cover; z-index: -1;">
+
+    <!-- Main Content -->
+    <div class="container-fluid p-3 bg-light bg-opacity-75 rounded">
+        <!-- Class Advisory -->
+        <section class="d-flex justify-content-start align-items-center mb-4">
+            <p class="text-sm text-black fs-5 mb-0">
+                <i class="fas fa-user-check text-black"></i>
+                <a asp-controller="FacultyPortal" asp-action="Index" class="text-black text-decoration-none" style="font-size: 14px;">Class Advisory</a>
+            </p>
+        </section>
+
+        <div class="container">
+            <!-- Grade, Subject, and Section -->
+            <div class="row mb-3">
+                <div class="col-md-4 mb-2">
+                    <h6 class="custom-font"><strong>Encoding Grade Status:</strong> <span>Closed</span></h6>
+                </div>
+                <div class="col-md-4 mb-2">
+                    <h6 class="custom-font"><strong>Subject:</strong> <span>Araling Panlipunan</span></h6>
+                </div>
+                <div class="col-md-4">
+                    <h6 class="custom-font"><strong>Section:</strong> <span>Mars</span></h6>
+                </div>
+            </div>
+
+            <!-- Grade Level and Program -->
+            <div class="row mb-3">
+                <div class="col-md-4 mb-2">
+                    <h6 class="custom-font"><strong>Grade Level:</strong> <span>7</span></h6>
+                </div>
+                <div class="col-md-4 mb-2">
+                    <h6 class="custom-font"><strong>Program:</strong> <span>Regular</span></h6>
+                </div>
+                <div class="col-md-4 text-md-end text-center">
+                    <!-- Ellipsis Dropdown -->
+                    <div class="dropdown">
+                        <button class="btn btn-link p-0 text-dark" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                            <li>
+                                <a class="dropdown-item @(ViewData["ActiveMenu"]?.ToString() == "EncodeGrades" ? "active fw-bold" : "")" asp-area="" asp-controller="FacultyPortal" asp-action="EncodeGrades">
+                                    <i class="fas fa-clipboard-list"></i> Encode Grades
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#reportCardModal">Export Grades</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item @(ViewData["ActiveMenu"]?.ToString() == "ChangeRG" ? "active fw-bold" : "")" asp-area="" asp-controller="FacultyPortal" asp-action="ChangeRG">
+                                    <i class="fas fa-clipboard-list"></i> Change of Grades
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grades Table -->
+            <div class="table-responsive">
+                <table class="table table-bordered text-center" style="font-size: 14px;">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Student No.</th>
+                            <th>LRN</th>
+                            <th>Student Name</th>
+                            <th>1st Quarter</th>
+                            <th>2nd Quarter</th>
+                            <th>3rd Quarter</th>
+                            <th>4th Quarter</th>
+                            <th>Final Grade</th>
+                            <th>Remark</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2024-SIS-462741</td>
+                            <td>523049392859</td>
+                            <td>Aspen, Abigail Reyes Sr.</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</body>

@@ -13,7 +13,7 @@
 
     <!-- Main Content -->
     <div class="container" style="background-color: rgba(220, 232, 253, 0.9); padding: 20px; border-radius: 10px;">
-        <section class="fixed ml-72 px-11 py-6 w-full top-20 left-0" style="font-weight: bold;">
+        <section class="fixed px-3 py-4 w-100 top-20 left-0" style="font-weight: bold;">
             <p class="text-sm text-black fs-5">
                 <i class="fas fa-user-check text-black"></i>
                 <a asp-controller="FacultyPortal" asp-action="Index" class="text-black" style="text-decoration: none;">Grades Report</a>
@@ -23,7 +23,7 @@
         <!-- Subject Dropdown -->
         <div class="row align-items-center">
             <!-- Dropdown on the left -->
-            <div class="col-12 col-md-3 mb-2">
+            <div class="col-12 col-md-4 mb-2">
                 <label for="dropdownSubject" class="form-label fs-6 visually-hidden">Select Subject</label>
                 <select class="form-select fs-6 w-100" id="dropdownSubject" aria-label="Choose Subject">
                     <option value="" disabled selected>Select Subject</option>
@@ -36,17 +36,13 @@
                     <option value="tle">Technology and Livelihood Education (TLE)</option>
                     <option value="mapeh">MAPEH</option>
                 </select>
-
             </div>
 
             <!-- H1 on the right -->
-            <div class="col-12 col-md-9 text-md-end text-center">
+            <div class="col-12 col-md-8 text-md-end text-center">
                 <h5><strong>Grade 7 - Mars | S.Y. 2019-2020</strong></h5>
             </div>
         </div>
-
-
-        
 
         <div class="container d-flex justify-content-center align-items-center mt-4">
             <table class="table table-bordered text-center">
@@ -144,68 +140,7 @@
                                 <td></td>
                                 <td></td>
                             </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Mathematics</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>Science</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>Araling Panlipunan(AP)</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>6</td>
-                                <td>Edukasyon sa Pagpapakatao(Esp)</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>7</td>
-                                <td>Technology and Livelihood Education(TLE)</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>8</td>
-                                <td>MAPEH</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-
-                           
+                            <!-- Add additional subjects here -->
                         </tbody>
                     </table>
                 </div>
@@ -216,7 +151,6 @@
             </div>
         </div>
     </div>
-
 
     <!-- View Student Modal -->
     <div class="modal fade" id="ViewStudent" tabindex="-1" aria-labelledby="ViewStudentLabel" aria-hidden="true">
@@ -235,42 +169,9 @@
                         <div class="col-md-6">
                             <div class="d-flex align-items-center mb-3">
                                 <label class="form-label me-3"><strong>LRN:</strong></label>
-                                <label class="form-label me-3"><strong>406494150200</strong></label>                              
+                                <label class="form-label me-3"><strong>406494150200</strong></label>
                             </div>
-                            <div class="d-flex align-items-center mb-3">
-                                <label class="form-label me-3"><strong>Admission Status:</strong></label>
-                                <label class="form-label me-3"><strong>Regular:</strong></label>
-                            </div>
-                            <div class="d-flex align-items-center mb-3">
-                                <label class="form-label me-3"><strong>Student Name:</strong></label>
-                                <p class="mb-0 me-2 border rounded px-2" contenteditable="true">Brooke, Alexander Cruz</p>
-                            </div>
-                            <div class="d-flex align-items-center mb-3">
-                                <label class="form-label me-3"><strong>Gender:</strong></label>
-                                <div class="d-flex align-items-center">
-                                    <select class="form-control me-2" style="width: auto;">
-                                        <option selected>Male</option>
-                                        <option>Female</option>
-                                    </select>
-                                    <i class="bi bi-caret-down ms-2 text-black"></i>
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-center mb-3">
-                                <label class="form-label me-3"><strong>Date of Birth:</strong></label>
-                                <input type="date" class="form-control me-2" value="2000-12-26" style="width: auto;">
-                            </div>
-                            <div class="d-flex align-items-center mb-3">
-                                <label class="form-label me-3"><strong>Place of Birth:</strong></label>
-                                <p class="mb-0 me-2 border rounded px-2" contenteditable="true">Pasay City, Metro Manila</p>
-                            </div>
-                            <div class="d-flex align-items-center mb-3">
-                                <label class="form-label me-3"><strong>Mobile No.:</strong></label>
-                                <p class="mb-0 me-2 border rounded px-2" contenteditable="true">9244316177</p>
-                            </div>
-                            <div class="d-flex align-items-center mb-3">
-                                <label class="form-label me-3"><strong>Email Address:</strong></label>
-                                <p class="mb-0 me-2 border rounded px-2" contenteditable="true">alexander@gmail.com</p>
-                            </div>
+                            <!-- Additional Student Information Here -->
                         </div>
 
                         <!-- Guardian Information -->
@@ -279,26 +180,7 @@
                                 <label class="form-label me-3"><strong>Parent/Guardian 1 Name:</strong></label>
                                 <p class="mb-0 me-2 border rounded px-2" contenteditable="true">Mendoza, Isabella Cruz (Father)</p>
                             </div>
-                            <div class="d-flex align-items-center mb-3">
-                                <label class="form-label me-3"><strong>Parent/Guardian 1 Contact:</strong></label>
-                                <p class="mb-0 me-2 border rounded px-2" contenteditable="true">9424501596</p>
-                            </div>
-                            <div class="d-flex align-items-center mb-3">
-                                <label class="form-label me-3"><strong>Parent/Guardian 2 Name:</strong></label>
-                                <p class="mb-0 me-2 border rounded px-2" contenteditable="true">Not specified</p>
-                            </div>
-                            <div class="d-flex align-items-center mb-3">
-                                <label class="form-label me-3"><strong>Parent/Guardian 2 Contact:</strong></label>
-                                <p class="mb-0 me-2 border rounded px-2" contenteditable="true">Not specified</p>
-                            </div>
-                            <div class="d-flex align-items-center mb-3">
-                                <label class="form-label me-3"><strong>Current Address:</strong></label>
-                                <p class="mb-0 me-2 border rounded px-2" contenteditable="true">202 Aguinaldo St., Santo Niño, Pasay, Rizal, CAR, 1004</p>
-                            </div>
-                            <div class="d-flex align-items-center mb-3">
-                                <label class="form-label me-3"><strong>Permanent Address:</strong></label>
-                                <p class="mb-0 me-2 border rounded px-2" contenteditable="true">202 Aguinaldo St., Santo Niño, Pasay, Rizal, CAR, 1004</p>
-                            </div>
+                            <!-- Additional Guardian Information Here -->
                         </div>
                     </div>
                 </div>
@@ -309,11 +191,6 @@
             </div>
         </div>
     </div>
-
-
-
-
-
 
     <!-- JavaScript -->
     <script>
