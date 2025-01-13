@@ -14,32 +14,25 @@
     <!-- Main Content -->
     <div style="background-color: rgba(220, 232, 253, 0.9); padding: 20px; border-radius: 10px;">
         <section class="fixed ml-72 px-11 py-6 w-full top-20 left-0" style="font-weight: bold;">
-            <p class="text-sm text-black">
-                <i class="fas fa-home text-black"></i>
-                <a asp-controller="AdminPortal" asp-action="Student" class="text-black" style="text-decoration: none;">Student</a>
-                <a asp-controller="AdminPortal" asp-action="Student" class="text-black" style="text-decoration: none;">/ Grade 7</a>/ Section Name
-            </p>
+            <div class="d-flex align-items-center">
+                <div>
+                    <i class="fas fa-home text-black"></i>
+                    <a asp-controller="AdminPortal" asp-action="Student" class="text-black" style="text-decoration: none;">Student</a>
+                    <a asp-controller="AdminPortal" asp-action="Student" class="text-black" style="text-decoration: none;">/ Grade 7</a>/ Section Name
+                </div>
+
+                <select class="form-select w-auto ms-auto" aria-label="Filter by Year">
+                    <option value="2020-2021">2020 - 2021</option>
+                    <option value="2021-2022">2021 - 2022</option>
+                    <option value="2022-2023">2022 - 2023</option>
+                    <option value="2023-2024">2023 - 2024</option>
+                    <option value="2024-2025">2024 - 2025</option>
+                </select>
+            </div>
         </section>
 
-        <!-- Container for inline elements -->
-        <div class="d-flex justify-content-between align-items-center mt-4">
-            <!-- Add Section Button -->
-            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addStudentModal">
-                Add Student
-            </button>
-
-            <!-- Filter Dropdown -->
-            <select class="form-select w-auto ms-auto" aria-label="Filter by Year">
-                <option value="2020-2021">2020 - 2021</option>
-                <option value="2021-2022">2021 - 2022</option>
-                <option value="2022-2023">2022 - 2023</option>
-                <option value="2023-2024">2023 - 2024</option>
-                <option value="2024-2025">2024 - 2025</option>
-            </select>
-        </div>
-
         <!-- Table -->
-        <table class="table table-bordered mt-2">
+        <table class="table mt-4">
             <thead>
                 <tr>
                     <th>Name</th>
@@ -48,9 +41,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr class="@(ViewData["ActiveMenu"]?.ToString() == "StudentDetail" ? "active fw-bold" : "")"
-                    style="cursor: pointer;"
-                    onclick="window.location.href='@Url.Action("StudentDetail", "AdminPortal", new { area = "" })';">
+                <tr>
                     <td>Grade 7 - A</td>
                     <td>406494150200</td>
                     <td>
@@ -184,102 +175,6 @@
                 </div>
             </div>
         </div>
-
-
-        <!-- Modal for Adding Name -->
-        <div class="modal fade" id="addStudentModal" tabindex="-1" aria-labelledby="addStudentModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="addStudentModalLabel">Add Student</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form id="studentInfoForm">
-                            <h5>Personal Information</h5>
-                            <div class="mb-3 row">
-                                <div class="col-md-3 col-sm-6 mb-2">
-                                    <label for="firstName" class="form-label">First Name</label>
-                                    <input type="text" class="form-control" id="firstName" placeholder="Enter First Name" required>
-                                </div>
-                                <div class="col-md-3 col-sm-6 mb-2">
-                                    <label for="middleName" class="form-label">Middle Name</label>
-                                    <input type="text" class="form-control" id="middleName" placeholder="Enter Middle Name" required>
-                                </div>
-                                <div class="col-md-3 col-sm-6 mb-2">
-                                    <label for="lastName" class="form-label">Last Name</label>
-                                    <input type="text" class="form-control" id="lastName" placeholder="Enter Last Name" required>
-                                </div>
-                                <div class="col-md-3 col-sm-6 mb-2">
-                                    <label for="suffix" class="form-label">Suffix (Optional)</label>
-                                    <input type="text" class="form-control" id="suffix" placeholder="Enter Suffix (e.g., Jr., Sr.)">
-                                </div>
-                            </div>
-
-                            <div class="mb-3 row">
-                                <div class="col-md-6 col-sm-12 mb-2">
-                                    <label for="dob" class="form-label">Date of Birth</label>
-                                    <input type="date" class="form-control" id="dob" required>
-                                </div>
-                                <div class="col-md-6 col-sm-12 mb-2">
-                                    <label for="gender" class="form-label">Gender</label>
-                                    <select class="form-select" id="gender" required>
-                                        <option value="male">Male</option>
-                                        <option value="female">Female</option>
-                                        <option value="other">Other</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="address" class="form-label">Address</label>
-                                <textarea class="form-control" id="address" rows="3" placeholder="Enter Address" required></textarea>
-                            </div>
-
-                            <div class="mb-3 row">
-                                <div class="col-md-6 col-sm-12 mb-2">
-                                    <label for="contactNumber" class="form-label">Contact Number</label>
-                                    <input type="tel" class="form-control" id="contactNumber" placeholder="Enter Contact Number" required pattern="[0-9]{10}">
-                                </div>
-                                <div class="col-md-6 col-sm-12 mb-2">
-                                    <label for="email" class="form-label">Email</label>
-                                    <input type="email" class="form-control" id="email" placeholder="Enter Email" required>
-                                </div>
-                            </div>
-
-                            <h5>Parent/Guardian Information</h5>
-                            <div class="mb-3 row">
-                                <div class="col-md-6 col-sm-12 mb-2">
-                                    <label for="guardianName" class="form-label">Parent/Guardian Name</label>
-                                    <input type="text" class="form-control" id="guardianName" placeholder="Enter Parent/Guardian Name" required>
-                                </div>
-                                <div class="col-md-6 col-sm-12 mb-2">
-                                    <label for="relationship" class="form-label">Relationship to Student</label>
-                                    <input type="text" class="form-control" id="relationship" placeholder="Enter Relationship to Student" required>
-                                </div>
-                            </div>
-
-                            <div class="mb-3 row">
-                                <div class="col-md-6 col-sm-12 mb-2">
-                                    <label for="guardianContact" class="form-label">Contact Number</label>
-                                    <input type="tel" class="form-control" id="guardianContact" placeholder="Enter Contact Number" required pattern="[0-9]{10}">
-                                </div>
-                                <div class="col-md-6 col-sm-12 mb-2">
-                                    <label for="guardianEmail" class="form-label">Email</label>
-                                    <input type="email" class="form-control" id="guardianEmail" placeholder="Enter Email" required>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary" onclick="saveNewSection()">Save</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
 
 
     <script>

@@ -14,32 +14,25 @@
     <!-- Main Content -->
     <div style="background-color: rgba(220, 232, 253, 0.9); padding: 20px; border-radius: 10px;">
         <section class="fixed ml-72 px-11 py-6 w-full top-20 left-0" style="font-weight: bold;">
-            <p class="text-sm text-black">
-                <i class="fas fa-home text-black"></i>
-                <a asp-controller="AdminPortal" asp-action="Student" class="text-black" style="text-decoration: none;">Student</a>
-                <a asp-controller="AdminPortal" asp-action="Grade7" class="text-black" style="text-decoration: none;">/ Grade 8</a>/ Section Name
-            </p>
+            <div class="d-flex align-items-center">
+                <div>
+                    <i class="fas fa-home text-black"></i>
+                    <a asp-controller="AdminPortal" asp-action="Student" class="text-black" style="text-decoration: none;">Student</a>
+                    <a asp-controller="AdminPortal" asp-action="Grade8" class="text-black" style="text-decoration: none;">/ Grade 8</a>/ Section Name
+                </div>
+
+                <select class="form-select w-auto ms-auto" aria-label="Filter by Year">
+                    <option value="2020-2021">2020 - 2021</option>
+                    <option value="2021-2022">2021 - 2022</option>
+                    <option value="2022-2023">2022 - 2023</option>
+                    <option value="2023-2024">2023 - 2024</option>
+                    <option value="2024-2025">2024 - 2025</option>
+                </select>
+            </div>
         </section>
 
-        <!-- Container for inline elements -->
-        <div class="d-flex justify-content-between align-items-center mt-4">
-            <!-- Add Section Button -->
-            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#addStudentModal">
-                Add Student
-            </button>
-
-            <!-- Filter Dropdown -->
-            <select class="form-select w-auto ms-auto" aria-label="Filter by Year">
-                <option value="2020-2021">2020 - 2021</option>
-                <option value="2021-2022">2021 - 2022</option>
-                <option value="2022-2023">2022 - 2023</option>
-                <option value="2023-2024">2023 - 2024</option>
-                <option value="2024-2025">2024 - 2025</option>
-            </select>
-        </div>
-
         <!-- Table -->
-        <table class="table table-bordered mt-2">
+        <table class="table mt-4">
             <thead>
                 <tr>
                     <th>Name</th>
@@ -48,9 +41,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr class="@(ViewData["ActiveMenu"]?.ToString() == "StudentDetail" ? "active fw-bold" : "")"
-                    style="cursor: pointer;"
-                    onclick="window.location.href='@Url.Action("StudentDetail", "AdminPortal", new { area = "" })';">
+                <tr>
                     <td>Grade 7 - A</td>
                     <td>406494150200</td>
                     <td>

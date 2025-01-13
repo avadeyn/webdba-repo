@@ -18,7 +18,6 @@
 </div>
 
 
-
 <div class="container">
     <div class="row g-4">
         <!-- Graph for Students -->
@@ -50,13 +49,18 @@
 
 <div class="container mt-4">
     <div class="note bg-secondary p-2 rounded shadow-sm">
-        <div class="announce-section bg-white p-3 rounded shadow mb-2 transition-effect">
-            <h5 class="fw-bold mb-2 fs-5">New Enrollees</h5>
-            <p class="mb-0 fs-6">
-                Access the Administrator Portal to efficiently manage student enrollments, monitor academic progress,
-                schedule classes, and ensure smooth daily operations at Jose Rizal High School.
-            </p>
+        <div class="d-flex justify-content-between align-items-center" style="padding-right: 10px; padding-top: 7px;">
+            <!-- Announcement Title on the Left -->
+            <h4 class="text-white">Announcement</h4>
+
+            <!-- Add Section Button on the Right -->
+            <button type="button" class="btn btn-primary rounded-circle mb-2"
+                    style="width: 40px; height: 40px; padding: 5px; display: flex; align-items: center; justify-content: center; margin-left: 10px;"
+                    data-bs-toggle="modal" data-bs-target="#addSectionModal">
+                +
+            </button>
         </div>
+
         <div class="announce-section bg-white p-3 rounded shadow mb-2 transition-effect">
             <h5 class="fw-bold mb-2 fs-5">New Enrollees</h5>
             <p class="mb-0 fs-6">
@@ -66,6 +70,44 @@
         </div>
     </div>
 </div>
+
+
+<div class="modal fade" id="addSectionModal" tabindex="-1" aria-labelledby="addSectionModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h5 class="modal-title" id="addSectionModalLabel">Add Announcement</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <!-- Modal Body -->
+            <div class="modal-body">
+                <form>
+                    <!-- Header Field -->
+                    <div class="mb-3">
+                        <label for="announcementHeader" class="form-label">Header</label>
+                        <input type="text" class="form-control" id="announcementHeader" placeholder="Enter header text">
+                    </div>
+                    <!-- Detailed Information Field -->
+                    <div class="mb-3">
+                        <label for="announcementDetails" class="form-label">Detailed Information</label>
+                        <textarea class="form-control" id="announcementDetails" rows="4" placeholder="Enter detailed information"></textarea>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 
 <style>
     .transition-effect {

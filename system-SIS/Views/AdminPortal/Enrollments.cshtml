@@ -13,18 +13,17 @@
     <!-- Main Content -->
     <div class="container" style="background-color: rgba(220, 232, 253, 0.9); padding: 20px; border-radius: 10px;">
         <section class="fixed ml-72 px-11 py-6 w-full top-20 left-0" style="font-weight: bold;">
-            <p class="text-sm text-black fs-5">
+            <p class="text-sm text-black fs-4">
                 <i class="fas fa-user-check text-black"></i>
                 <a asp-controller="AdminPortal" asp-action="Enrollment" class="text-black" style="text-decoration: none;">Enrollment</a>
             </p>
         </section>
 
-        <!-- Dropdown Section -->
-        <div class="row mb-3">
-            <!-- Incoming Grade -->
-            <div class="col-12 col-md-3 mb-2">
-                <label for="dropdownIncomingGradeLevel" class="form-label fs-6 visually-hidden">Select Incoming Grade</label>
-                <select class="form-select fs-6 w-100" id="dropdownIncomingGradeLevel" aria-label="Select Incoming Grade">
+        <div class="row d-flex justify-content-between">
+            <!-- Incoming Grade Dropdown -->
+            <div class="col-auto">
+                <label for="dropdownIncomingGradeLevel" class="form-label fs-4 visually-hidden">Select Incoming Grade</label>
+                <select class="form-select fs-6" id="dropdownIncomingGradeLevel" aria-label="Select Incoming Grade">
                     <option value="" disabled selected>Select Incoming Grade</option>
                     <option value="7">Grade 7</option>
                     <option value="8">Grade 8</option>
@@ -33,35 +32,10 @@
                 </select>
             </div>
 
-            <!-- School Year -->
-            <div class="col-12 col-md-3 mb-2">
-                <label for="dropdownSchoolYear" class="form-label fs-6 visually-hidden">Select School Year</label>
-                <select class="form-select fs-6 w-100" id="dropdownSchoolYear" aria-label="Select School Year">
-                    <option value="" disabled selected>Select School Year</option>
-                    <option value="2020-2021">2020 - 2021</option>
-                    <option value="2021-2022">2021 - 2022</option>
-                    <option value="2022-2023">2022 - 2023</option>
-                    <option value="2023-2024">2023 - 2024</option>
-                    <option value="2024-2025">2024 - 2025</option>
-                </select>
-            </div>
-
-            <!-- Subject Dropdown -->
-            <div class="col-12 col-md-3 mb-2">
-                <label for="dropdownSubject" class="form-label fs-6 visually-hidden">Select Subject</label>
-                <select class="form-select fs-6 w-100" id="dropdownSubject" aria-label="Choose Subject">
-                    <option value="" disabled selected>Select Subject</option>
-                    <option value="english">English</option>
-                    <option value="math">Math</option>
-                    <option value="science">Science</option>
-                    <option value="history">History</option>
-                </select>
-            </div>
-
             <!-- Section Dropdown -->
-            <div class="col-12 col-md-3 mb-2">
-                <label for="dropdownSection" class="form-label fs-6 visually-hidden">Select Section</label>
-                <select class="form-select fs-6 w-100" id="dropdownSection" aria-label="Select Section">
+            <div class="col-auto">
+                <label for="dropdownSection" class="form-label fs-4 visually-hidden">Select Section</label>
+                <select class="form-select fs-6" id="dropdownSection" aria-label="Select Section">
                     <option value="" disabled selected>Select Section</option>
                     <option value="palladium">Palladium</option>
                     <option value="ruby">Ruby</option>
@@ -69,12 +43,16 @@
                     <option value="sapphire">Sapphire</option>
                 </select>
             </div>
+
+            <!-- Add Section Button -->
+            <div class="col-auto ms-auto">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addSectionModal">
+                    Enroll Student
+                </button>
+            </div>
         </div>
 
-        <!-- Add Section Button -->
-        <button type="button" class="btn btn-primary mt-4" data-bs-toggle="modal" data-bs-target="#addSectionModal">
-            Enroll Student
-        </button>
+
 
         <!-- Table -->
         <div class="table-responsive mt-3">
