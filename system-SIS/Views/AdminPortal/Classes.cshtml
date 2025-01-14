@@ -17,14 +17,128 @@
         <section class="fixed ml-72 px-11 py-6 w-full top-20 left-0" style="font-weight: bold;">
             <p class="text-sm text-black fs-5">
                 <i class="fas fa-user text-black"></i>
-                <a asp-controller="AdminPortal" asp-action="Classes" class="text-black" style="text-decoration: none;">Classes</a>
+                <a asp-controller="AdminPortal" asp-action="Classes" class="text-black" style="text-decoration: none;">Class Management</a>
             </p>
         </section>
 
-        
+        <div class="d-flex justify-content-end align-items-center mb-3">
+            <!-- Button -->
+            <button type="button" class="btn btn-primary me-1" style="position: relative; top: -4px;" data-bs-toggle="modal" data-bs-target="#createClassModal">+ Class</button>
+            <!-- Incoming Grade -->
+            <div class="col-12 col-md-2 mb-2 me-2">
+                <label for="dropdownIncomingGradeLevel" class="form-label fs-6 visually-hidden">Select Incoming Grade</label>
+                <select class="form-select fs-6 w-80" id="dropdownIncomingGradeLevel" aria-label="Select Incoming Grade">
+                    <option value="7">Grade 7</option>
+                    <option value="8">Grade 8</option>
+                    <option value="9">Grade 9</option>
+                    <option value="10">Grade 10</option>
+                </select>
+            </div>
 
-       
+            <!-- School Year -->
+            <div class="col-12 col-md-3 mb-2">
+                <label for="dropdownSchoolYear" class="form-label fs-6 visually-hidden">Select School Year</label>
+                <select class="form-select fs-6 w-80" id="dropdownSchoolYear" aria-label="Select School Year">
+                    <option value="2020-2021">2020 - 2021</option>
+                    <option value="2021-2022">2021 - 2022</option>
+                    <option value="2022-2023">2022 - 2023</option>
+                    <option value="2023-2024">2023 - 2024</option>
+                    <option value="2024-2025">2024 - 2025</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="container">
+            <table class="table">
+                <thead class="table-secondary">
+                    <tr>
+                        <th>Subject</th>
+                        <th>Schedule</th>
+                        <th>Faculty</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="cursor: pointer;" onclick="window.location.href='@Url.Action("Scheduleclass", "AdminPortal", new { area = "", id = 1 })';">
+                        <td>MAPEH</td>
+                        <td>
+                            Tuesday 07:00 AM - 08:00 AM<br>
+                            Wednesday 07:00 AM - 08:00 AM<br>
+                            Monday 07:00 AM - 08:00 AM
+                        </td>
+                        <td>Ryan Deludo Vasquez</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
 
     </div>
+
+    <!-- + class -->
+    <div class="modal fade" id="createClassModal" tabindex="-1" aria-labelledby="createClassModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <!-- Reduced width -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="createClassModalLabel">Create Class</h5>
+                </div>
+
+                <div class="modal-body">
+                    <!-- Section and Subject Inline -->
+                    <div class="mb-3">
+                        <label for="dropdownSection" class="form-label fs-6">Select Section</label>
+                        <select class="form-select fs-6 w-100" id="dropdownSection" aria-label="Select Section">
+                            <option value="palladium">Palladium</option>
+                            <option value="ruby">Ruby</option>
+                            <option value="emerald">Emerald</option>
+                            <option value="sapphire">Sapphire</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="dropdownSubject" class="form-label fs-6">Select Subject</label>
+                        <select class="form-select fs-6 w-100" id="dropdownSubject" aria-label="Choose Subject">
+                            <option value="english">English</option>
+                            <option value="math">Math</option>
+                            <option value="science">Science</option>
+                            <option value="history">History</option>
+                        </select>
+                    </div>
+
+                    <!-- Faculty and Incoming Grade -->
+                    <div class="mb-3">
+                        <label for="faculty" class="form-label fs-6">Faculty</label>
+                        <select class="form-select" id="faculty">
+                            <option>Choose...</option>
+                            <!-- Add faculty options here -->
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="dropdownIncomingGradeLevel" class="form-label fs-6">Select Incoming Grade</label>
+                        <select class="form-select fs-6 w-100" id="dropdownIncomingGradeLevel" aria-label="Select Incoming Grade">
+                            <option value="7">Grade 7</option>
+                            <option value="8">Grade 8</option>
+                            <option value="9">Grade 9</option>
+                            <option value="10">Grade 10</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save Class</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    
+
+    
+
+
+   
+
+    
+
 </body>

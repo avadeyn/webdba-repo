@@ -15,8 +15,8 @@
     <div class="container-fluid px-3 py-4" style="background-color: rgba(220, 232, 253, 0.9); border-radius: 10px;">
         <section class="fixed px-3 py-2 w-100 left-0" style="font-weight: bold;">
             <p class="text-sm text-black fs-5">
-                <i class="fas fa-users text-black"></i>
-                <a asp-controller="FacultyPortal" asp-action="Subject" class="text-black" style="text-decoration: none;">Grades</a>
+                <i class="fas fa-book-open text-black"></i>
+                <a asp-controller="FacultyPortal" asp-action="Subject" class="text-black" style="text-decoration: none;">Subject</a>
             </p>
         </section>
 
@@ -47,9 +47,12 @@
             </div>
         </div>
 
-        <!-- Table Section -->
+
+
+
+        <!-- Responsive Table -->
         <div class="table-responsive mt-3">
-            <table class="table table-bordered">
+            <table class="table">
                 <thead class="table-secondary text-white">
                     <tr>
                         <th>#</th>
@@ -57,7 +60,6 @@
                         <th>Subject Name</th>
                         <th>Semester</th>
                         <th>Schedule</th>
-                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -66,24 +68,11 @@
                         <td>Araling Panlipunan</td>
                         <td>Regular</td>
                         <td>-</td>
-                        <td>
-                            Wednesday 02:00 PM - 03:00 PM<br>
-                            Monday 09:00 AM - 10:00 AM
-                        </td>
-                        <td class="text-center">
-                            <a class="btn @(string.Equals(ViewData["ActiveMenu"]?.ToString(), "ClassAdvisory", StringComparison.OrdinalIgnoreCase) ? "fw-bold text-white" : "btn-outline-primary fw-bold")"
-                               style="@(string.Equals(ViewData["ActiveMenu"]?.ToString(), "ClassAdvisory", StringComparison.OrdinalIgnoreCase) ? "background-color: #4E73DF;" : "")"
-                               asp-area=""
-                               asp-controller="FacultyPortal"
-                               asp-action="CardGradeReport">
-                                <i class="fas fa-eye"></i>
-                            </a>
-                        </td>
+                        <td>Wednesday 02:00 PM - 03:00 PM<br>Monday 09:00 AM - 10:00 AM</td>
                     </tr>
                 </tbody>
             </table>
         </div>
-
     </div>
 
 </body>

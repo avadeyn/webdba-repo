@@ -23,9 +23,9 @@
 
 </head>
 
-<body class="position-relative bg-image" style="background-image: url('./images/bgjr.png'); background-position: center; background-color: rgba(0, 0, 0, 0.3); font-family: 'Poppins', sans-serif; background-size: cover; overflow-x: hidden">
+<body class="position-relative bg-image" style="background-image: url('./images/bgjr.png'); background-position: center; background-color: rgba(0, 0, 0, 0.3); font-family: 'Poppins', sans-serif; background-size: cover; overflow-x: hidden; margin-bottom: 90px; padding-top: 120px;">
     <header class="bg-white" style="border-radius: 10px; width: 100%">
-        <nav class="navbar navbar-expand-sm navbar-light bg-white border-bottom shadow-sm mb-3">
+        <nav class="navbar navbar-expand-sm navbar-light bg-white border-bottom shadow-sm mb-3 fixed-top">
             <div class="container-fluid">
                 <!-- Logo -->
                 <img src="~/images/logo.png" alt="Admin Portal Logo" class="img-fluid" style="height: 90px;" />
@@ -78,6 +78,16 @@
                                 <li>
                                     <a class="dropdown-item @(ViewData["ActiveMenu"]?.ToString() == "Student" ? "active" : "")" asp-area="" asp-controller="AdminPortal" asp-action="Student">
                                         <i class="fas fa-user-graduate"></i> Students
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item @(ViewData["ActiveMenu"]?.ToString() == "Classes" ? "active" : "")" asp-area="" asp-controller="AdminPortal" asp-action="Classes">
+                                        <i class="fas fa-school"></i> Classes
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item @(ViewData["ActiveMenu"]?.ToString() == "Subject" ? "active" : "")" asp-area="" asp-controller="AdminPortal" asp-action="Subject">
+                                        <i class="fas fa-book-open"></i> Subject
                                     </a>
                                 </li>
                             </ul>

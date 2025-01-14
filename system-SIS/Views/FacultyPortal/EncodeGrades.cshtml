@@ -1,0 +1,123 @@
+﻿@{
+    Layout = "Faculty_Layout";  // Specifies the layout to use
+    ViewData["Title"] = "Home Page";
+}
+
+<body class="position-relative bg-image" style="font-family: 'Poppins', sans-serif; overflow-x: hidden; height: 100vh; margin: 0;">
+
+    <!-- Background Image -->
+    <img src="~/images/bgjr.png"
+         alt="Decorative background representing Grade 7"
+         class="img-fluid w-100"
+         style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
+
+    <!-- Main Content -->
+    <div class="container-fluid p-3" style="background-color: rgba(220, 232, 253, 0.9); border-radius: 10px;">
+        <section class="fixed ml-72 px-11 py-6 w-full top-20 left-0" style="font-weight: bold;">
+            <p class="text-sm text-black fs-5">
+                <i class="fas fa-user-check text-black"></i>
+                <a asp-controller="FacultyPortal" asp-action="Index" class="text-black" style="text-decoration: none; font-size: 14px;">Class Advisory</a>
+            </p>
+        </section>
+
+        <div class="container">
+            <style>
+                .custom-font {
+                    font-size: 13px;
+                    margin-bottom: 5px;
+                    color: #333;
+                }
+            </style>
+
+            <div class="row mb-2">
+                <div class="col-12 d-flex flex-wrap justify-content-between align-items-center">
+                    <!-- Encoding Grade Status -->
+                    <h6 class="me-2 custom-font">
+                        <strong>Encoding Grade Status:</strong>
+                        <span>Closed</span>
+                    </h6>
+                    <!-- Subject -->
+                    <h6 class="me-2 custom-font">
+                        <strong>Subject:</strong>
+                        <span>Araling Panlipunan</span>
+                    </h6>
+                    <!-- Section -->
+                    <h6 class="custom-font">
+                        <strong>Section:</strong>
+                        <span>Mars</span>
+                    </h6>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-12 d-flex flex-wrap align-items-center">
+                    <!-- Grade Level -->
+                    <h6 class="me-2 custom-font">
+                        <strong>Grade Level:</strong>
+                        <span>7</span>
+                    </h6>
+                    <!-- Program -->
+                    <h6 class="me-2 custom-font">
+                        <strong>Program:</strong>
+                        <span>Regular</span>
+                    </h6>
+                    <!-- Ellipsis Dropdown -->
+                    <div class="dropdown ms-auto">
+                        <button class="btn btn-link p-0 text-dark" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-ellipsis-v"></i> <!-- Ellipsis Icon -->
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                            <li class="nav-item me-3">
+                                <a class="nav-link @(ViewData["ActiveMenu"]?.ToString() == "EncodeGrades" ? "active fw-bold" : "")" asp-area="" asp-controller="FacultyPortal" asp-action="EncodeGrades">
+                                    <i class="fas fa-clipboard-list"></i> Encode Grades
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#reportCardModal">
+                                    Export Grades
+                                </a>
+                            </li>
+                            <li class="nav-item me-3">
+                                <a class="nav-link @(ViewData["ActiveMenu"]?.ToString() == "ChangeRG" ? "active fw-bold" : "")" asp-area="" asp-controller="FacultyPortal" asp-action="ChangeRG">
+                                    <i class="fas fa-clipboard-list"></i> Change Report Grades
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-bordered" style="font-size: 14px;">
+                    <thead>
+                        <tr>
+                            <th>Student No.</th>
+                            <th>LRN</th>
+                            <th>Student Name</th>
+                            <th>1st Quarter</th>
+                            <th>2nd Quarter</th>
+                            <th>3rd Quarter</th>
+                            <th>4th Quarter</th>
+                            <th>Final Grade</th>
+                            <th>Remark</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2024-SIS-462741</td>
+                            <td>523049392859</td>
+                            <td>Aspen, Abigail Reyes Sr.</td>
+                            <td><input type="text" class="form-control" style="font-size: 13px;" placeholder="Enter grade"></td>
+                            <td><input type="text" class="form-control" style="font-size: 13px;" placeholder="Enter grade"></td>
+                            <td><input type="text" class="form-control" style="font-size: 13px;" placeholder="Enter grade"></td>
+                            <td><input type="text" class="form-control" style="font-size: 13px;" placeholder="Enter grade"></td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</body>

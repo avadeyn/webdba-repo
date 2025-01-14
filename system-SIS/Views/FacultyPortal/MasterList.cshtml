@@ -16,10 +16,11 @@
         <section class="fixed px-3 py-2 w-100 left-0" style="font-weight: bold;">
             <p class="text-sm text-black fs-5">
                 <i class="fas fa-users text-black"></i>
-                <a asp-controller="FacultyPortal" asp-action="Subject" class="text-black" style="text-decoration: none;">Grades</a>
+                <a asp-controller="FacultyPortal" asp-action="Subject" class="text-black" style="text-decoration: none;">Masterlist</a>
             </p>
         </section>
 
+        <!-- Filter Controls -->
         <div class="d-flex flex-column flex-sm-row justify-content-end align-items-center">
             <!-- Incoming Grade -->
             <div class="me-2 w-60">
@@ -47,9 +48,9 @@
             </div>
         </div>
 
-        <!-- Table Section -->
+        <!-- Responsive Table Wrapper -->
         <div class="table-responsive mt-3">
-            <table class="table table-bordered">
+            <table class="table">
                 <thead class="table-secondary text-white">
                     <tr>
                         <th>#</th>
@@ -57,7 +58,7 @@
                         <th>Subject Name</th>
                         <th>Semester</th>
                         <th>Schedule</th>
-                        <th>Action</th>
+                        <th>File</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -66,18 +67,28 @@
                         <td>Araling Panlipunan</td>
                         <td>Regular</td>
                         <td>-</td>
+                        <td>Wednesday 02:00 PM - 03:00 PM<br>Monday 09:00 AM - 10:00 AM</td>
                         <td>
-                            Wednesday 02:00 PM - 03:00 PM<br>
-                            Monday 09:00 AM - 10:00 AM
-                        </td>
-                        <td class="text-center">
-                            <a class="btn @(string.Equals(ViewData["ActiveMenu"]?.ToString(), "ClassAdvisory", StringComparison.OrdinalIgnoreCase) ? "fw-bold text-white" : "btn-outline-primary fw-bold")"
-                               style="@(string.Equals(ViewData["ActiveMenu"]?.ToString(), "ClassAdvisory", StringComparison.OrdinalIgnoreCase) ? "background-color: #4E73DF;" : "")"
-                               asp-area=""
-                               asp-controller="FacultyPortal"
-                               asp-action="CardGradeReport">
-                                <i class="fas fa-eye"></i>
-                            </a>
+                            <div class="dropdown">
+                                <!-- Ellipsis Icon to Trigger Dropdown -->
+                                <button class="btn btn-black p-0" type="button" id="actionMenu" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fas fa-ellipsis" style="margin-left: 20px;"></i> <!-- Ellipsis Icon -->
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="actionMenu">
+                                    <!-- View Action -->
+                                    <li>
+                                        <a class="dropdown-item btn-outline-info fw-bold" data-bs-toggle="modal" data-bs-target="#viewFacultyModal">
+                                            PDF File
+                                        </a>
+                                    </li>
+                                    <!-- Edit Action -->
+                                    <li>
+                                        <a class="dropdown-item btn-outline-warning fw-bold" data-bs-toggle="modal" data-bs-target="#editFacultyModal">
+                                            CSV File
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
                         </td>
                     </tr>
                 </tbody>
