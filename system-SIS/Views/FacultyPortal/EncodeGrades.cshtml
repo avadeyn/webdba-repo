@@ -3,6 +3,8 @@
     ViewData["Title"] = "Home Page";
 }
 
+<script src="~/js/faculty_portal/encodegrades.js"></script>
+
 <body class="position-relative bg-image" style="font-family: 'Poppins', sans-serif; overflow-x: hidden; height: 100vh; margin: 0;">
 
     <!-- Background Image -->
@@ -21,14 +23,6 @@
         </section>
 
         <div class="container">
-            <style>
-                .custom-font {
-                    font-size: 13px;
-                    margin-bottom: 5px;
-                    color: #333;
-                }
-            </style>
-
             <div class="row mb-2">
                 <div class="col-12 d-flex flex-wrap justify-content-between align-items-center">
                     <!-- Encoding Grade Status -->
@@ -61,37 +55,13 @@
                         <strong>Program:</strong>
                         <span>Regular</span>
                     </h6>
-                    <!-- Ellipsis Dropdown -->
-                    <div class="dropdown ms-auto">
-                        <button class="btn btn-link p-0 text-dark" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fas fa-ellipsis-v"></i> <!-- Ellipsis Icon -->
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
-                            <li class="nav-item me-3">
-                                <a class="nav-link @(ViewData["ActiveMenu"]?.ToString() == "EncodeGrades" ? "active fw-bold" : "")" asp-area="" asp-controller="FacultyPortal" asp-action="EncodeGrades">
-                                    <i class="fas fa-clipboard-list"></i> Encode Grades
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#reportCardModal">
-                                    Export Grades
-                                </a>
-                            </li>
-                            <li class="nav-item me-3">
-                                <a class="nav-link @(ViewData["ActiveMenu"]?.ToString() == "ChangeRG" ? "active fw-bold" : "")" asp-area="" asp-controller="FacultyPortal" asp-action="ChangeRG">
-                                    <i class="fas fa-clipboard-list"></i> Change Report Grades
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
                 </div>
             </div>
 
             <div class="table-responsive">
-                <table class="table table-bordered" style="font-size: 14px;">
+                <table class="table align-items-center" style="font-size: 14px;">
                     <thead>
                         <tr>
-                            <th>Student No.</th>
                             <th>LRN</th>
                             <th>Student Name</th>
                             <th>1st Quarter</th>
@@ -104,20 +74,36 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>2024-SIS-462741</td>
-                            <td>523049392859</td>
+                            <!-- LRN as a read-only display -->
+                            <td>
+                                <span>523049392859</span>
+                            </td>
                             <td>Aspen, Abigail Reyes Sr.</td>
-                            <td><input type="text" class="form-control" style="font-size: 13px;" placeholder="Enter grade"></td>
-                            <td><input type="text" class="form-control" style="font-size: 13px;" placeholder="Enter grade"></td>
-                            <td><input type="text" class="form-control" style="font-size: 13px;" placeholder="Enter grade"></td>
-                            <td><input type="text" class="form-control" style="font-size: 13px;" placeholder="Enter grade"></td>
-                            <td>-</td>
-                            <td>-</td>
+                            <td>
+                                <input type="text" style="width: 90px; "
+                                class="form-control" maxlength="3" data-grade="true" oninput="validateGrade(this)">
+                            </td>
+                            <td>
+                                <input type="text" style="width: 90px;"
+                                class="form-control" maxlength="3" data-grade="true" oninput="validateGrade(this)">
+                            </td>
+                            <td>
+                                <input type="text" style="width: 90px;"
+                                class="form-control" maxlength="3" data-grade="true" oninput="validateGrade(this)">
+                            </td>
+                            <td>
+                                <input type="text" style="width: 90px;"
+                                class="form-control" maxlength="3" data-grade="true" oninput="validateGrade(this)">
+                            </td>
+                            <td class="final-grade">-</td>
+                            <td class="remark">-</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
+
+
+
         </div>
     </div>
-
 </body>
