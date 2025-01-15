@@ -18,5 +18,15 @@ namespace system_SIS.Controllers
 		{
 			return View();
 		}
+
+		public IActionResult EnterCode()
+		{
+			return View();
+		}
+
+		public IActionResult SetNewPassword()
+		{
+			return View();
+		}
 	}
 }
