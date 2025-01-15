@@ -3,29 +3,29 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - system_SIS</title>
+    <title>@ViewBag.Title</title>
     <script type="importmap"></script>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/system_SIS.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/account.css" asp-append-version="true" />
+    @* <link rel="stylesheet" href="~/system_SIS.styles.css" asp-append-version="true" /> *@
 
-    <style>
+
+    @* this style is moved into account.css file under css folder *@
+    @* <style> *@
       
-        body {
-            background-image: url('~/images/bgjr.jpg');
-            background-size: cover; 
-            background-position: center;
-            background-repeat: no-repeat; 
-            height: 100vh; 
-            margin: 0; 
-        }
-    </style>
+    @*     body { *@
+    @*         background-image: url('~/images/bgjr.jpg'); *@
+    @*         background-size: cover;  *@
+    @*         background-position: center; *@
+    @*         background-repeat: no-repeat;  *@
+    @*         height: 100vh;  *@
+    @*         margin: 0;  *@
+    @*     } *@
+    @* </style> *@
 </head>
 <body>
-    <div class="container">
-        <main role="main" class="pb-3">
+    <div>
             @RenderBody()
-        </main>
     </div>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
