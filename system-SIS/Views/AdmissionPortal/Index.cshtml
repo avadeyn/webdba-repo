@@ -1,23 +1,95 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admission Portal</title>
-    <link rel="icon" href="~/images/logo.png" sizes="48x48">
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/system_SIS.styles.css" asp-append-version="true" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Potta+One&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+﻿@{
+    Layout = "_AdmissionLayout";  // Specifies the layout to use
+    ViewData["Title"] = "Admission";
+}
 
-</head>
+<div class="container py-4">
+    <!-- Header -->
+    <div class="d-flex align-items-center mb-4">
+        <div class="logo me-3"></div>
+        <div>
+            <h5 class="mb-0">Nadine Borja</h5>
+            <p class="applicant-info text-muted mb-0">Applicant</p>
+        </div>
+        <div class="ms-auto">
+            <i class="bi bi-gear-fill fs-5"></i>
+        </div>
+    </div>
 
-<body class="position-relative bg-image" style="background-image: url('./images/bgjr.png'); background-position: center; background-color: rgba(0, 0, 0, 0.3); font-family: 'Poppins', sans-serif; background-size: cover; overflow-x: hidden">
-    
+    <!-- Main Section -->
+    <div class="row">
+        <!-- Left: General Instructions -->
+        <div class="col-md-4">
+            <div class="general-instructions">
+                <h6 class="fw-bold">General Instructions</h6>
+                <p class="text-primary">Date of Registration: January 09, 2025</p> 
+                <p>Please make sure that the information you provide is true and correct. <br />Ensure all required fields are filled out.</p>
+            </div>
+        </div>
 
-    
-</body>
-</html>
+        <!-- Right: Form -->
+        <div class="col-md-8">
+            <div class="form-container">
+                <!-- Application ID -->
+                <p class="text-primary fw-bold">Application Id: 123456789</p>
+
+                <!-- Progress Steps -->
+                <div class="form-progress">
+                    <div class="progress-step active">
+                        <div class="progress-circle active"></div>
+                        <small>Personal Information</small>
+                    </div>
+                    <div class="progress-step">
+                        <div class="progress-circle"></div>
+                        <small>Contact</small>
+                    </div>
+                    <div class="progress-step">
+                        <div class="progress-circle"></div>
+                        <small>Family</small>
+                    </div>
+                    <div class="progress-step">
+                        <div class="progress-circle"></div>
+                        <small>School</small>
+                    </div>
+                    <div class="progress-step">
+                        <div class="progress-circle"></div>
+                        <small>Documents</small>
+                    </div>
+                </div>
+
+                <!-- Form Fields -->
+                <form>
+                    <div class="row mb-3">
+                        <div class="col-md-3">
+                            <label for="firstName" class="form-label">First Name *</label>
+                            <input type="text" id="firstName" class="form-control form-input" required>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="middleName" class="form-label">Middle Name *</label>
+                            <input type="text" id="middleName" class="form-control form-input" required>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="lastName" class="form-label">Last Name *</label>
+                            <input type="text" id="lastName" class="form-control form-input" required>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="gender" class="form-label">Gender *</label>
+                            <input type="text" id="gender" class="form-control form-input" required>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-3">
+                            <label for="dob" class="form-label">Date of Birth *</label>
+                            <input type="date" id="dob" class="form-control form-input" required>
+                        </div>
+                    </div>
+
+                    <!-- Next Button -->
+                    <div class="text-end">
+                        <button type="button" class="btn-next">Next</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

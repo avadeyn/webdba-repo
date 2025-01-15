@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - system_SIS</title>
+    <script type="importmap"></script>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/system_SIS.styles.css" asp-append-version="true" />
+
+    <style>
+        body {
+            background-color: #EAF3FF;
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+            background-color: #0056D2;
+            border-radius: 50%;
+        }
+
+        .applicant-info {
+            font-size: 0.9rem;
+        }
+
+        .general-instructions {
+            background-color: #FFFFFF;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container {
+            background-color: #FFFFFF;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-progress {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .progress-step {
+            text-align: center;
+            color: #B0B0B0;
+        }
+
+            .progress-step.active {
+                color: #0056D2;
+            }
+
+        .progress-circle {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            border: 2px solid #B0B0B0;
+            margin: auto;
+        }
+
+            .progress-circle.active {
+                border-color: #0056D2;
+                background-color: #0056D2;
+            }
+
+        .form-input {
+            border: 2px solid #0056D2;
+            border-radius: 10px;
+        }
+
+        .btn-next {
+            background-color: #0056D2;
+            color: white;
+            border-radius: 10px;
+            padding: 10px 30px;
+            border: none;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
