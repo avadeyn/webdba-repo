@@ -3,73 +3,114 @@
     ViewData["Title"] = "Home Page";
 }
 
-<p>Student Portal</p>
-<h3>Forms</h3>
+<div class="container">
+    <div class="row g-4">
+        <!-- Document Card 1 -->
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0 rounded h-100">
+                <div class="card-body d-flex flex-column text-center">
+                    <img src="/images/forms.png" class="card-img-top mb-3" width="80" alt="Form Image">
+                    <h5 class="card-title" style="color:#172154">Admission Form</h5>
+                    <p class="text-secondary flex-grow-1">Fill out this form to apply for admission.</p>
+                    <a href="/path/to/form.pdf" class="btn btn-primary mt-3" style="color:#1566FF; background-color:#DCE8FD;" download>Download</a>
+                </div>
+            </div>
+        </div>
 
+        <!-- Document Card 2 -->
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0 rounded h-100">
+                <div class="card-body d-flex flex-column text-center">
+                    <img src="/images/forms.png" class="card-img-top mb-3" width="80" alt="Form Image">
+                    <h5 class="card-title" style="color:#172154">Enrollment Form</h5>
+                    <p class="text-secondary flex-grow-1">Complete this form to enroll in your chosen courses.</p>
+                    <a href="/path/to/form.pdf" class="btn btn-primary mt-3" style="color:#1566FF; background-color:#DCE8FD;" download>Download</a>
+                </div>
+            </div>
+        </div>
 
-<div class="container mt-4">
-    <table class="table table-bordered">
-        <thead class="table-header">
-            <tr>
-                <th>File Name</th>
-                <th>Type</th>
-                <th>Contractor Name</th>
-                <th>SSN/TIN</th>
-                <th>Status</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><i class="bi bi-file-earmark-pdf text-danger me-2"></i>Product Requirements</td>
-                <td>Individual</td>
-                <td>Brooklyn Simmons</td>
-                <td>196707209364</td>
-                <td><span class="badge bg-success">Active</span></td>
-                <td><i class="bi bi-download download-icon"></i></td>
-            </tr>
-            <tr>
-                <td><i class="bi bi-file-earmark-pdf text-danger me-2"></i>Contracts Rafiqu</td>
-                <td>Individual</td>
-                <td>Jerome Bell</td>
-                <td>196601292078</td>
-                <td><span class="badge bg-success">Active</span></td>
-                <td><i class="bi bi-download download-icon"></i></td>
-            </tr>
-            <tr>
-                <td><i class="bi bi-file-earmark-pdf text-primary me-2"></i>Apollo NDA Sabir</td>
-                <td>Individual</td>
-                <td>Marvin McKinney</td>
-                <td>198805076067</td>
-                <td><span class="badge bg-secondary">Completed</span></td>
-                <td><i class="bi bi-download download-icon"></i></td>
-            </tr>
-            <tr>
-                <td><i class="bi bi-file-earmark-pdf text-primary me-2"></i>Fillo Objectives</td>
-                <td>Individual</td>
-                <td>Marvin McKinney</td>
-                <td>199609077111</td>
-                <td><span class="badge bg-success">Active</span></td>
-                <td><i class="bi bi-download download-icon"></i></td>
-            </tr>
-        </tbody>
-    </table>
+        <!-- Document Card 3 -->
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0 rounded h-100">
+                <div class="card-body d-flex flex-column text-center">
+                    <img src="/images/forms.png" class="card-img-top mb-3" width="80" alt="Form Image">
+                    <h5 class="card-title" style="color:#172154">Scholarship Application</h5>
+                    <p class="text-secondary flex-grow-1">Apply for financial aid using this form.</p>
+                    <a href="/path/to/form.pdf" class="btn btn-primary mt-3" style="color:#1566FF; background-color:#DCE8FD;" download>Download</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
-<style>
-    .table-header {
-        background-color: #f8f9fa;
-        font-weight: bold;
-    }
 
-    .table {
-        border: 1px solid #dee2e6;
-        border-radius: 0.5rem;
-        overflow: hidden;
-    }
 
-    .download-icon {
-        color: #0d6efd;
-        cursor: pointer;
-    }
-</style>
+
+
+
+@* <div class="container mt-4"> *@
+@*     <table class="table table-bordered"> *@
+@*         <thead class="table-header"> *@
+@*             <tr> *@
+@*                 <th>File Name</th> *@
+@*                 <th>Type</th> *@
+@*                 <th>Contractor Name</th> *@
+@*                 <th>SSN/TIN</th> *@
+@*                 <th>Status</th> *@
+@*                 <th>Actions</th> *@
+@*             </tr> *@
+@*         </thead> *@
+@*         <tbody> *@
+@*             <tr> *@
+@*                 <td><i class="bi bi-file-earmark-pdf text-danger me-2"></i>Product Requirements</td> *@
+@*                 <td>Individual</td> *@
+@*                 <td>Brooklyn Simmons</td> *@
+@*                 <td>196707209364</td> *@
+@*                 <td><span class="badge bg-success">Active</span></td> *@
+@*                 <td><i class="bi bi-download download-icon"></i></td> *@
+@*             </tr> *@
+@*             <tr> *@
+@*                 <td><i class="bi bi-file-earmark-pdf text-danger me-2"></i>Contracts Rafiqu</td> *@
+@*                 <td>Individual</td> *@
+@*                 <td>Jerome Bell</td> *@
+@*                 <td>196601292078</td> *@
+@*                 <td><span class="badge bg-success">Active</span></td> *@
+@*                 <td><i class="bi bi-download download-icon"></i></td> *@
+@*             </tr> *@
+@*             <tr> *@
+@*                 <td><i class="bi bi-file-earmark-pdf text-primary me-2"></i>Apollo NDA Sabir</td> *@
+@*                 <td>Individual</td> *@
+@*                 <td>Marvin McKinney</td> *@
+@*                 <td>198805076067</td> *@
+@*                 <td><span class="badge bg-secondary">Completed</span></td> *@
+@*                 <td><i class="bi bi-download download-icon"></i></td> *@
+@*             </tr> *@
+@*             <tr> *@
+@*                 <td><i class="bi bi-file-earmark-pdf text-primary me-2"></i>Fillo Objectives</td> *@
+@*                 <td>Individual</td> *@
+@*                 <td>Marvin McKinney</td> *@
+@*                 <td>199609077111</td> *@
+@*                 <td><span class="badge bg-success">Active</span></td> *@
+@*                 <td><i class="bi bi-download download-icon"></i></td> *@
+@*             </tr> *@
+@*         </tbody> *@
+@*     </table> *@
+@* </div> *@
+
+@* <style> *@
+@*     .table-header { *@
+@*         background-color: #f8f9fa; *@
+@*         font-weight: bold; *@
+@*     } *@
+
+@*     .table { *@
+@*         border: 1px solid #dee2e6; *@
+@*         border-radius: 0.5rem; *@
+@*         overflow: hidden; *@
+@*     } *@
+
+@*     .download-icon { *@
+@*         color: #0d6efd; *@
+@*         cursor: pointer; *@
+@*     } *@
+@* </style> *@

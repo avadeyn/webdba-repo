@@ -3,75 +3,225 @@
     ViewData["Title"] = "Schedule";
 }
 
+<!-- Header Section -->
+<div class="text-center py-3" style="color: #172154; border-radius: 10px; margin-bottom: 20px;">
+    <h3 class="mb-2 fw-bold">Morning </h3>
+    <h3 class="mb-2 fw-bold">Grade Level - Section</h3>
+    <p class="mb-0" style="font-size: 1.1rem;">Adviser's Name</p>
+</div>
 
-
-    <div class="container-fluid vh-100 d-flex align-items-center justify-content-center">
-        <div class="container bg-white border shadow-sm p-4"
-             style="border-radius: 20px; max-width: 1200px; width: 95%;">
-            <div class="d-flex justify-content-between align-items-center mb-3">
-                <h5 class="m-0">Hello, Nadine!</h5>
-            </div>
-            <div class="table-responsive">
-                <table class="table table-bordered text-center">
-                    <thead>
-                        <tr>
-                            <th class="table-light">Time</th>
-                            <th class="table-light">Monday</th>
-                            <th class="table-light">Tuesday</th>
-                            <th class="table-light">Wednesday</th>
-                            <th class="table-light">Thursday</th>
-                            <th class="table-light">Friday</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="fw-bold text-secondary">7:10 - 7:30</td>
-                            <td colspan="5" class="bg-light">Flag Ceremony</td>
-                        </tr>
-                        <tr>
-                            <td class="fw-bold text-secondary">7:30 - 8:30</td>
-                            <td class="bg-success text-white">General Biology 1<br><small>REYNALYN. N. MENDEZ</small></td>
-                            <td class="bg-success text-white">General Biology 1<br><small>REYNALYN. N. MENDEZ</small></td>
-                            <td class="bg-success text-white">General Biology 1<br><small>REYNALYN. N. MENDEZ</small></td>
-                            <td class="bg-success text-white">Pagsulat sa Piling Larangan<br><small>JONEL B. BABASA</small></td>
-                            <td class="bg-success text-white">General Biology 1<br><small>REYNALYN. N. MENDEZ</small></td>
-                        </tr>
-                        <tr>
-                            <td class="fw-bold text-secondary">8:30 - 9:30</td>
-                            <td class="bg-danger text-white">General Physics 1<br><small>ANALIZA M. MARQUEZ</small></td>
-                            <td class="bg-info text-white">Media and Info Literacy<br><small>MICHELLE S. CARANZA</small></td>
-                            <td class="bg-danger text-white">General Physics 1<br><small>ANALIZA M. MARQUEZ</small></td>
-                            <td class="bg-warning text-white">Contemporary Philippine Arts<br><small>MANOLO B. DE ALDAY</small></td>
-                            <td class="bg-warning text-white">Contemporary Philippine Arts<br><small>MANOLO B. DE ALDAY</small></td>
-                        </tr>
-                        <tr>
-                            <td class="fw-bold text-secondary">9:30 - 9:50</td>
-                            <td colspan="5" class="bg-light">Morning Break</td>
-                        </tr>
-                        <tr>
-                            <td class="fw-bold text-secondary">9:50 - 10:50</td>
-                            <td class="bg-primary text-white">English for Academic Purposes<br><small>JANNAH I. ARROYO</small></td>
-                            <td class="bg-warning text-white">Contemporary Philippine Arts<br><small>MANOLO B. DE ALDAY</small></td>
-                            <td class="bg-info text-white">Media and Info Literacy<br><small>MICHELLE S. CARANZA</small></td>
-                            <td class="bg-warning text-white">Contemporary Philippine Arts<br><small>MANOLO B. DE ALDAY</small></td>
-                            <td class="bg-danger text-white">General Physics 1<br><small>ANALIZA M. MARQUEZ</small></td>
-                        </tr>
-                        <tr>
-                            <td class="fw-bold text-secondary">10:50 - 11:50</td>
-                            <td class="bg-secondary text-white">Pagsulat sa Piling Larangan<br><small>JONEL B. BABASA</small></td>
-                            <td class="bg-info text-white">Understanding Society<br><small>MARIE CRIS A. BISENIO</small></td>
-                            <td class="bg-secondary text-white">Pagsulat sa Piling Larangan<br><small>JONEL B. BABASA</small></td>
-                            <td class="bg-success text-white">21st Century Literature<br><small>NILLETE A. TINDUCAN</small></td>
-                            <td class="bg-success text-white">21st Century Literature<br><small>NILLETE A. TINDUCAN</small></td>
-                        </tr>
-                        <tr>
-                            <td class="fw-bold text-secondary">11:50 - 1:10</td>
-                            <td colspan="5" class="bg-light">Lunch Break</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+<div class="grades-card">
+    <div class="grades-header">Class Schedule</div>
+    <div class="information-bar"></div>
+    <div class="table-container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Monday</th>
+                    <th>Tuesday</th>
+                    <th>Wednesday</th>
+                    <th>Thursday</th>
+                    <th>Friday</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>7:10 - 7:30</td>
+                    <td colspan="5" class="bg-light">Flag Ceremony</td>
+                </tr>
+                <tr>
+                    <td>7:30 - 8:30</td>
+                    <td class="bg-success">General Biology 1<br><small>REYNALYN N. MENDEZ</small></td>
+                    <td class="bg-success">General Biology 1<br><small>REYNALYN N. MENDEZ</small></td>
+                    <td class="bg-success">General Biology 1<br><small>REYNALYN N. MENDEZ</small></td>
+                    <td class="bg-success">Pagsulat sa Piling Larangan<br><small>JONEL B. BABASA</small></td>
+                    <td class="bg-success">General Biology 1<br><small>REYNALYN N. MENDEZ</small></td>
+                </tr>
+                <tr>
+                    <td>8:30 - 9:30</td>
+                    <td class="bg-danger">General Physics 1<br><small>ANALIZA M. MARQUEZ</small></td>
+                    <td class="bg-info">Media and Info Literacy<br><small>MICHELLE S. CARANZA</small></td>
+                    <td class="bg-danger">General Physics 1<br><small>ANALIZA M. MARQUEZ</small></td>
+                    <td class="bg-warning">Contemporary Philippine Arts<br><small>MANOLO B. DE ALDAY</small></td>
+                    <td class="bg-warning">Contemporary Philippine Arts<br><small>MANOLO B. DE ALDAY</small></td>
+                </tr>
+                <tr>
+                    <td>9:30 - 9:50</td>
+                    <td colspan="5" class="bg-light">Morning Break</td>
+                </tr>
+                <tr>
+                    <td>9:50 - 10:50</td>
+                    <td class="bg-primary">English for Academic Purposes<br><small>JANNAH I. ARROYO</small></td>
+                    <td class="bg-warning">Contemporary Philippine Arts<br><small>MANOLO B. DE ALDAY</small></td>
+                    <td class="bg-info">Media and Info Literacy<br><small>MICHELLE S. CARANZA</small></td>
+                    <td class="bg-warning">Contemporary Philippine Arts<br><small>MANOLO B. DE ALDAY</small></td>
+                    <td class="bg-danger">General Physics 1<br><small>ANALIZA M. MARQUEZ</small></td>
+                </tr>
+                <tr>
+                    <td>10:50 - 11:50</td>
+                    <td class="bg-secondary">Pagsulat sa Piling Larangan<br><small>JONEL B. BABASA</small></td>
+                    <td class="bg-info">Understanding Society<br><small>MARIE CRIS A. BISENIO</small></td>
+                    <td class="bg-secondary">Pagsulat sa Piling Larangan<br><small>JONEL B. BABASA</small></td>
+                    <td class="bg-success">21st Century Literature<br><small>NILLETE A. TINDUCAN</small></td>
+                    <td class="bg-success">21st Century Literature<br><small>NILLETE A. TINDUCAN</small></td>
+                </tr>
+                <tr>
+                    <td>11:50 - 1:10</td>
+                    <td colspan="5" class="bg-light">Lunch Break</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
     </div>
 
 
+
+<style>
+    .container {
+        padding: 10px;
+    }
+
+    .grades-card {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow: hidden;
+        margin-bottom: 20px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        background-color: white;
+    }
+
+    .grades-header {
+        background-color: #DCE8FD;
+        color: #1566FF;
+        font-size: 1.25rem;
+        padding: 10px 15px;
+        font-weight: bold;
+    }
+
+    /* .information-bar { */
+    /*     height: 5px; */
+    /*     background-color: #DCE8FD; */
+    /* } */
+
+    .table-container {
+        padding: 15px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: center;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    th {
+        background-color: #DCE8FD;
+        color: #1566FF;
+    }
+
+    /* Custom Row Colors */
+    td.bg-light {
+        background-color: #f8f9fa !important;
+    }
+
+    td.bg-success {
+        background-color: #172154 !important;
+        color: #FAFAFA !important;
+    }
+
+    td.bg-danger {
+        background-color: #DCE8FD !important;
+        color: #172154 !important;
+    }
+
+    td.bg-warning {
+        background-color: #172154 !important;
+        color: #FAFAFA !important;
+    }
+
+    td.bg-info {
+        background-color: #DCE8FD !important;
+        color: #172154 !important;
+    }
+
+    td.bg-primary {
+        background-color: #172154 !important;
+        color: #FAFAFA !important;
+    }
+
+    td.bg-secondary {
+        background-color: #DCE8FD !important;
+        color: #172154 !important;
+    }
+</style>
+       
+
+
+
+@* <!-- Table Section --> *@
+@* <div class="table-responsive"> *@
+@*     <table class="table"> *@
+@*         <thead> *@
+@*             <tr> *@
+@*                 <th>Time</th> *@
+@*                 <th>Monday</th> *@
+@*                 <th>Tuesday</th> *@
+@*                 <th>Wednesday</th> *@
+@*                 <th>Thursday</th> *@
+@*                 <th>Friday</th> *@
+@*             </tr> *@
+@*         </thead> *@
+@*         <tbody> *@
+@*             <tr> *@
+@*                 <td>7:10 - 7:30</td> *@
+@*                 <td colspan="5" class="bg-light">Flag Ceremony</td> *@
+@*             </tr> *@
+@*             <tr> *@
+@*                 <td>7:30 - 8:30</td> *@
+@*                 <td class="bg-success">General Biology 1<br><small>REYNALYN N. MENDEZ</small></td> *@
+@*                 <td class="bg-success">General Biology 1<br><small>REYNALYN N. MENDEZ</small></td> *@
+@*                 <td class="bg-success">General Biology 1<br><small>REYNALYN N. MENDEZ</small></td> *@
+@*                 <td class="bg-success">Pagsulat sa Piling Larangan<br><small>JONEL B. BABASA</small></td> *@
+@*                 <td class="bg-success">General Biology 1<br><small>REYNALYN N. MENDEZ</small></td> *@
+@*             </tr> *@
+@*             <tr> *@
+@*                 <td>8:30 - 9:30</td> *@
+@*                 <td class="bg-danger">General Physics 1<br><small>ANALIZA M. MARQUEZ</small></td> *@
+@*                 <td class="bg-info">Media and Info Literacy<br><small>MICHELLE S. CARANZA</small></td> *@
+@*                 <td class="bg-danger">General Physics 1<br><small>ANALIZA M. MARQUEZ</small></td> *@
+@*                 <td class="bg-warning">Contemporary Philippine Arts<br><small>MANOLO B. DE ALDAY</small></td> *@
+@*                 <td class="bg-warning">Contemporary Philippine Arts<br><small>MANOLO B. DE ALDAY</small></td> *@
+@*             </tr> *@
+@*             <tr> *@
+@*                 <td>9:30 - 9:50</td> *@
+@*                 <td colspan="5" class="bg-light">Morning Break</td> *@
+@*             </tr> *@
+@*             <tr> *@
+@*                 <td>9:50 - 10:50</td> *@
+@*                 <td class="bg-primary">English for Academic Purposes<br><small>JANNAH I. ARROYO</small></td> *@
+@*                 <td class="bg-warning">Contemporary Philippine Arts<br><small>MANOLO B. DE ALDAY</small></td> *@
+@*                 <td class="bg-info">Media and Info Literacy<br><small>MICHELLE S. CARANZA</small></td> *@
+@*                 <td class="bg-warning">Contemporary Philippine Arts<br><small>MANOLO B. DE ALDAY</small></td> *@
+@*                 <td class="bg-danger">General Physics 1<br><small>ANALIZA M. MARQUEZ</small></td> *@
+@*             </tr> *@
+@*             <tr> *@
+@*                 <td>10:50 - 11:50</td> *@
+@*                 <td class="bg-secondary">Pagsulat sa Piling Larangan<br><small>JONEL B. BABASA</small></td> *@
+@*                 <td class="bg-info">Understanding Society<br><small>MARIE CRIS A. BISENIO</small></td> *@
+@*                 <td class="bg-secondary">Pagsulat sa Piling Larangan<br><small>JONEL B. BABASA</small></td> *@
+@*                 <td class="bg-success">21st Century Literature<br><small>NILLETE A. TINDUCAN</small></td> *@
+@*                 <td class="bg-success">21st Century Literature<br><small>NILLETE A. TINDUCAN</small></td> *@
+@*             </tr> *@
+@*             <tr> *@
+@*                 <td>11:50 - 1:10</td> *@
+@*                 <td colspan="5" class="bg-light">Lunch Break</td> *@
+@*             </tr> *@
+@*         </tbody> *@
+@*     </table> *@
+@* </div> *@
