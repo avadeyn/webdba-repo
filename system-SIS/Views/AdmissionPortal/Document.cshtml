@@ -1,0 +1,17 @@
+﻿@{
+    Layout = "_AdmissionLayout";  // Specifies the layout to use
+    ViewData["Title"] = "Admission";
+}
+
+<form>
+    <div class="container mt-4">
+        <p>nice</p>
+
+        <!-- Back and Next Buttons -->
+        <div class="text-end">
+            <a href="@Url.Action("School", "AdmissionPortal")" class="btn-next">Back</a>
+            <button asp-action="Finish" type="submit" class="btn-next">Next</button>
+        </div>
+
+
+</form>
