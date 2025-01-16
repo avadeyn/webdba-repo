@@ -1,0 +1,51 @@
+﻿@{
+    Layout = "_AdmissionLayout";  // Specifies the layout to use
+    ViewData["Title"] = "Admission";
+}
+
+<form>
+    <div class="container mt-4">
+        <!-- Mother's Information -->
+        <h6 class="fw-bold" style="color: #172154">Mother's Information</h6>
+        <div class="row mb-3">
+            <div class="col-md-4">
+                <label for="motherFirstName" class="form-label">Mother's Name <span style="color: red;">*</span></label>
+                <input type="text" id="motherFirstName" class="form-control form-input" required>
+            </div>
+            <div class="col-md-4">
+                <label for="maidenName" class="form-label">Maiden Name </label>
+                <input type="text" id="maidenName" class="form-control form-input">
+            </div>
+            <div class="col-md-4">
+                <label for="motherLastName" class="form-label">Last Name <span style="color: red;">*</span></label>
+                <input type="text" id="motherLastName" class="form-control form-input" required>
+            </div>
+        </div>
+
+        <!-- Father's Information -->
+        <h6 class="fw-bold" style="color: #172154">Father's Information</h6>
+        <div class="row mb-3">
+            <div class="col-md-4">
+                <label for="fatherFirstName" class="form-label">Father's Name <span style="color: red;">*</span></label>
+                <input type="text" id="fatherFirstName" class="form-control form-input" required>
+            </div>
+            <div class="col-md-4">
+                <label for="fatherMiddleName" class="form-label">Middle Name</label>
+                <input type="text" id="fatherMiddleName" class="form-control form-input">
+            </div>
+            <div class="col-md-4">
+                <label for="fatherLastName" class="form-label">Last Name <span style="color: red;">*</span></label>
+                <input type="text" id="fatherLastName" class="form-control form-input" required>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Back and Next Buttons -->
+    <div class="text-end">
+        <a href="@Url.Action("Contact", "AdmissionPortal")" class="btn-next">Back</a>
+        <button asp-action="School" type="submit" class="btn-next">Next</button>
+    </div>
+
+
+</form>

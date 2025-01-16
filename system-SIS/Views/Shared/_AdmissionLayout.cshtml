@@ -1,0 +1,195 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - system_SIS</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/system_SIS.styles.css" asp-append-version="true" />
+
+    <style>
+        body {
+            background-color: #EAF3FF;
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+            background-color: #0056D2;
+            border-radius: 50%;
+        }
+
+        .applicant-info {
+            font-size: 0.9rem;
+        }
+
+        .general-instructions {
+            background-color: #FFFFFF;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container {
+            background-color: #FFFFFF;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-progress {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .progress-step {
+            text-align: center;
+            color: #B0B0B0;
+        }
+
+            .progress-step.active {
+                color: #0056D2;
+            }
+
+        .progress-circle {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            border: 2px solid #B0B0B0;
+            margin: auto;
+        }
+
+            .progress-circle.active {
+                border-color: #0056D2;
+                background-color: #0056D2;
+            }
+
+        .form-input {
+            border: 2px solid #0056D2;
+            border-radius: 10px;
+        }
+
+        .signout-link {
+            font-size: 0.9rem; /* Adjust font size */
+            color: #6c757d; /* Default color (Bootstrap text-muted) */
+            transition: color 0.3s ease; /* Smooth transition for hover */
+        }
+
+            .signout-link:hover {
+                color: #dc3545; /* Change color to danger (red) on hover */
+                text-decoration: none; /* Ensure no underline on hover */
+            }
+
+
+
+        .btn-next {
+            background-color: #0056D2;
+            color: white;
+            border-radius: 10px;
+            padding: 10px 30px;
+            border: none;
+        }
+    </style>
+
+</head>
+<body>
+    <header class="bg-white shadow-sm py-2 px-3 mb-4">
+        <div class="d-flex align-items-center justify-content-between">
+            <!-- Left Section: Logo and School Name -->
+            <div class="d-flex align-items-center">
+                <img src="~/images/logo.png" alt="Logo" class="logo me-3" />
+                <h5 class="mb-0 fw-bold">Jose Rizal High School</h5> <!-- School Name -->
+            </div>
+
+            <!-- Right Section: Applicant Information and Sign Out -->
+            <div class="d-flex align-items-center">
+                <div class="text-end me-3">
+                    <h6 class="mb-0 fw-bold" style="color:#1566FF">Nadine Borja</h6> <!-- Applicant Name -->
+                    <small class="text-muted" style="color:#172154">Applicant</small> <!-- Label -->
+                </div>
+                <a href="/Account/Logout" class="d-flex align-items-center text-decoration-none text-muted signout-link">
+                    <i class="bi bi-box-arrow-right me-1"></i> <!-- Sign Out Icon -->
+                    <span>Sign Out</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="row">
+            <!-- Left: General Instructions -->
+            <div class="col-md-4">
+                <div class="general-instructions">
+                    <h6 class="fw-bold">General Instructions</h6>
+                    <p class="text-primary fw-bold px-3 py-2 rounded-pill"
+                       style="background-color: #DCE8FD; display: inline-block;">
+                        Date of Registration: January 09, 2025
+                    </p>
+                    <p>
+                        Please make sure that the information you provide is true and correct. <br />
+                        Ensure all required fields are filled out.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Right: Main Content -->
+            <div class="col-md-8">
+                <div class="form-container">
+                    <!-- Application ID -->
+                    <p class="text-primary fw-bold px-3 py-2 rounded-pill"
+                       style="background-color: #DCE8FD; display: inline-block;">
+                        Application Id: 123456789
+                    </p>
+                    <hr />
+
+
+                    <!-- Progress Steps -->
+                    <div class="form-progress">
+                        <div class="progress-step active">
+                            <div class="progress-circle active"></div>
+                            <small>Personal Information</small>
+                        </div>
+                        <div class="progress-step">
+                            <div class="progress-circle"></div>
+                            <small>Contact</small>
+                        </div>
+                        <div class="progress-step">
+                            <div class="progress-circle"></div>
+                            <small>Family</small>
+                        </div>
+                        <div class="progress-step">
+                            <div class="progress-circle"></div>
+                            <small>School</small>
+                        </div>
+                        <div class="progress-step">
+                            <div class="progress-circle"></div>
+                            <small>Documents</small>
+                        </div>
+                        <div class="progress-step">
+                            <div class="progress-circle"></div>
+                            <small>Finish</small>
+                        </div>
+                    </div>
+
+                    <hr />
+
+                    <!-- Dynamic Page Content -->
+                    <div class="container">
+                        <main role="main" class="pb-3">
+                            @RenderBody()
+                        </main>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

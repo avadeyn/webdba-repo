@@ -10,7 +10,45 @@ namespace system_SIS.Controllers
             return View();
      
 		}
-       
-        
-    }
+
+		public IActionResult Contact()
+		{
+			ViewData["ActiveMenu"] = "Contact";
+			return View();
+
+		}
+
+		public IActionResult Family()
+		{
+			ViewData["ActiveMenu"] = "Family";
+			return View();
+
+		}
+
+		public IActionResult School()
+		{
+			ViewData["ActiveMenu"] = "School";
+			return View();
+
+		}
+
+		public IActionResult Document()
+		{
+			ViewData["ActiveMenu"] = "Document";
+			return View();
+
+		}
+
+		public IActionResult Finish()
+		{
+			ViewData["ActiveMenu"] = "Finish";
+			return View();
+
+		}
+
+
+
+
+
+	}
 }

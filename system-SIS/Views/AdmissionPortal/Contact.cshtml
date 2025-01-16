@@ -1,0 +1,71 @@
+﻿@{
+    Layout = "_AdmissionLayout";  // Specifies the layout to use
+    ViewData["Title"] = "Admission";
+}
+
+<form>
+    <div class="container mt-4">
+        <!-- Contact Information -->
+        <h6 class="fw-bold" style="color: #172154">Contact Information</h6>
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label for="email" class="form-label">Email <span style="color: red;">*</span></label>
+                <input type="email" id="email" class="form-control form-input" required>
+            </div>
+            <div class="col-md-6">
+                <label for="phone" class="form-label">Phone Number <span style="color: red;">*</span></label>
+                <input type="text" id="phone" class="form-control form-input" required>
+            </div>
+        </div>
+
+        <!-- Address -->
+        <h6 class="fw-bold" style="color: #172154">Address</h6>
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label for="houseNo" class="form-label">House No./Lot/Block <span style="color: red;">*</span></label>
+                <input type="text" id="houseNo" class="form-control form-input" required>
+            </div>
+            <div class="col-md-6">
+                <label for="streetName" class="form-label">Street Name <span style="color: red;">*</span></label>
+                <input type="text" id="streetName" class="form-control form-input" required>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label for="village" class="form-label">Village/Subdivision <span style="color: red;">*</span></label>
+                <input type="text" id="village" class="form-control form-input" required>
+            </div>
+            <div class="col-md-6">
+                <label for="barangay" class="form-label">Barangay <span style="color: red;">*</span></label>
+                <input type="text" id="barangay" class="form-control form-input" required>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label for="city" class="form-label">City/Municipality <span style="color: red;">*</span></label>
+                <input type="text" id="city" class="form-control form-input" required>
+            </div>
+            <div class="col-md-6">
+                <label for="province" class="form-label">Province <span style="color: red;">*</span></label>
+                <input type="text" id="province" class="form-control form-input" required>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label for="zipcode" class="form-label">Zip Code <span style="color: red;">*</span></label>
+                <input type="text" id="zipcode" class="form-control form-input" required>
+            </div>
+        </div>
+
+
+    </div>
+
+    <!-- Back and Next Buttons -->
+    <div class="text-end">
+        <a href="@Url.Action("Index", "AdmissionPortal")" class="btn-next">Back</a>
+        <button asp-action="Family" type="submit" class="btn-next">Next</button>
+    </div>
+
+</form>
+
+
