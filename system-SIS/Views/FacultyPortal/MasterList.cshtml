@@ -1,17 +1,14 @@
 ﻿@{
-    Layout = "Faculty_Layout";  // Specifies the layout to use
-    ViewData["Title"] = "";
+    Layout = "Faculty_Layout";
+    ViewData["Title"] = "MasterList";
 }
 
 <body class="position-relative bg-image" style="font-family: 'Poppins', sans-serif; overflow-x: hidden; height: 100vh; margin: 0;">
-
-    <!-- Background Image -->
     <img src="~/images/bgjr.png"
          alt="Decorative background representing Grade 7"
          class="img-fluid w-100"
          style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
 
-    <!-- Main Content -->
     <div class="container-fluid px-3 py-4" style="background-color: rgba(220, 232, 253, 0.9); border-radius: 10px;">
         <section class="fixed px-3 py-2 w-100 left-0" style="font-weight: bold;">
             <p class="text-sm text-black fs-5">
@@ -20,40 +17,11 @@
             </p>
         </section>
 
-        <!-- Filter Controls -->
-        <div class="d-flex flex-column flex-sm-row justify-content-end align-items-center">
-            <!-- Incoming Grade -->
-            <div class="me-2 w-60">
-                <label for="dropdownIncomingGradeLevel" class="form-label fs-6 visually-hidden">Select Incoming Grade</label>
-                <select class="form-select fs-6" id="dropdownIncomingGradeLevel" aria-label="Select Incoming Grade">
-                    <option value="" disabled selected>Select Incoming Grade</option>
-                    <option value="7">Grade 7</option>
-                    <option value="8">Grade 8</option>
-                    <option value="9">Grade 9</option>
-                    <option value="10">Grade 10</option>
-                </select>
-            </div>
-
-            <!-- School Year -->
-            <div class="w-60">
-                <label for="dropdownSchoolYear" class="form-label fs-6 visually-hidden">Select School Year</label>
-                <select class="form-select fs-6" id="dropdownSchoolYear" aria-label="Select School Year">
-                    <option value="" disabled selected>Select School Year</option>
-                    <option value="2020-2021">2020 - 2021</option>
-                    <option value="2021-2022">2021 - 2022</option>
-                    <option value="2022-2023">2022 - 2023</option>
-                    <option value="2023-2024">2023 - 2024</option>
-                    <option value="2024-2025">2024 - 2025</option>
-                </select>
-            </div>
-        </div>
-
-        <!-- Responsive Table Wrapper -->
+        <!-- Table -->
         <div class="table-responsive mt-3">
             <table class="table">
                 <thead class="table-secondary text-white">
                     <tr>
-                        <th>#</th>
                         <th>Grade/Section</th>
                         <th>Subject Name</th>
                         <th>Semester</th>
@@ -66,35 +34,16 @@
                         <td>7-Mars</td>
                         <td>Araling Panlipunan</td>
                         <td>Regular</td>
-                        <td>-</td>
                         <td>Wednesday 02:00 PM - 03:00 PM<br>Monday 09:00 AM - 10:00 AM</td>
                         <td>
-                            <div class="dropdown">
-                                <!-- Ellipsis Icon to Trigger Dropdown -->
-                                <button class="btn btn-black p-0" type="button" id="actionMenu" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i class="fas fa-ellipsis" style="margin-left: 20px;"></i> <!-- Ellipsis Icon -->
-                                </button>
-                                <ul class="dropdown-menu" aria-labelledby="actionMenu">
-                                    <!-- View Action -->
-                                    <li>
-                                        <a class="dropdown-item btn-outline-info fw-bold" data-bs-toggle="modal" data-bs-target="#viewFacultyModal">
-                                            PDF File
-                                        </a>
-                                    </li>
-                                    <!-- Edit Action -->
-                                    <li>
-                                        <a class="dropdown-item btn-outline-warning fw-bold" data-bs-toggle="modal" data-bs-target="#editFacultyModal">
-                                            CSV File
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
+                            <a asp-controller="Faculty_Masterlist" asp-action="GeneratePdf" class="dropdown-item btn-outline-info">
+                                <i class="fas fa-download"></i> PDF File
+                            </a>
                         </td>
+
                     </tr>
                 </tbody>
             </table>
         </div>
-
     </div>
-
 </body>
