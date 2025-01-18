@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using system_SIS.Models;
 namespace system_SIS.Controllers
 {
     public class FacultyPortalController : Controller
@@ -69,8 +70,15 @@ namespace system_SIS.Controllers
 
         public IActionResult Profile()
         {
-            ViewData["ActiveMenu"] = "Profile";
+            var model = new Faculty_UserProfile();
+            return View(model);
+        }
+
+        public IActionResult Edit()
+        {
+            ViewData["ActiveMenu"] = "Edit";
             return View();
         }
+
     }
 }

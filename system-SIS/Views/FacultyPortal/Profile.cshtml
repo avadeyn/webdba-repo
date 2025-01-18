@@ -1,7 +1,10 @@
-﻿@{
-    Layout = "Faculty_Layout";  // Specifies the layout to use
-    ViewData["Title"] = "Home Page";
+﻿@model Faculty_UserProfile
+
+@{
+    Layout = "Faculty_Layout";
+    ViewData["Title"] = "Profile";
 }
+
 
 <body class="position-relative bg-image" style="font-family: 'Poppins', sans-serif; overflow-x: hidden; height: 100vh; margin: 0;">
 
@@ -56,36 +59,33 @@
                     </div>
                     <div class="card-body text-muted">
                         <div class="d-flex justify-content-between mb-2">
-                            <span>Name</span>
-                            <span class="text-dark fw-semibold">Althea Amor</span>
+                            <span>First Name</span>
+                            <span class="text-dark fw-semibold">@Model.FirstName</span>
                         </div>
                         <div class="d-flex justify-content-between mb-2">
                             <span>Middle Initial</span>
-                            <span class="text-dark fw-semibold">J</span>
+                            <span class="text-dark fw-semibold">@Model.MiddleName</span>
                         </div>
                         <div class="d-flex justify-content-between mb-2">
                             <span>Last Name</span>
-                            <span class="text-dark fw-semibold">Asis</span>
+                            <span class="text-dark fw-semibold">@Model.LastName</span>
                         </div>
                         <div class="d-flex justify-content-between mb-2">
                             <span>Bio</span>
-                            <span class="text-dark fw-semibold">Student</span>
+                            <span class="text-dark fw-semibold">@Model.Bio</span>
                         </div>
                         <div class="d-flex justify-content-between mb-2">
                             <span>Date of Birth</span>
-                            <span class="text-dark fw-semibold">March 02, 2004</span>
-                        </div>
-                        <div class="d-flex justify-content-between mb-2">
-                            <span>Email address</span>
-                            <span class="text-dark fw-semibold">altheaamorjasis@gmail.com</span>
+                            <span class="text-dark fw-semibold">@Model.DateOfBirth.ToString("MMMM dd, yyyy")</span>
                         </div>
                         <div class="d-flex justify-content-between mb-2">
                             <span>Phone No.</span>
-                            <span class="text-dark fw-semibold">+639123456789</span>
+                            <span class="text-dark fw-semibold">@Model.PhoneNumber</span>
                         </div>
                     </div>
                 </div>
             </div>
+
 
             <!-- Address Section -->
             <div class="col-12 col-md-6">
@@ -125,15 +125,11 @@
         </div>
 
         <!-- Logout Button - Positioned to the Right -->
-        <div class="text-end">
+        <div class="text-end mt-4">
             <form action="@Url.Action("Faculty_Logout", "Account")" method="post" style="display:inline;">
                 <button type="submit" class="btn btn-danger">Log Out</button>
             </form>
         </div>
-
-
-
-
 
     </div>
 
@@ -166,42 +162,43 @@
                     <h5 class="modal-title" id="editPIModalLabel">Edit Personal Information</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form>
+                <form asp-action="EditPersonalInfo" asp-controller="Faculty_UserProfile" method="post">
                     <div class="modal-body">
                         <div class="row">
                             <div class="col-md-4 mb-3">
                                 <label for="firstName" class="form-label">First Name</label>
-                                <input type="text" class="form-control" id="firstName" placeholder="Althea Amor">
+                                <input type="text" class="form-control" id="firstName" asp-for="FirstName">
                             </div>
                             <div class="col-md-4 mb-3">
                                 <label for="middleInitial" class="form-label">Middle Initial</label>
-                                <input type="text" class="form-control" id="middleInitial" placeholder="J">
+                                <input type="text" class="form-control" id="middleInitial" asp-for="MiddleName">
                             </div>
                             <div class="col-md-4 mb-3">
                                 <label for="lastName" class="form-label">Last Name</label>
-                                <input type="text" class="form-control" id="lastName" placeholder="Asis">
+                                <input type="text" class="form-control" id="lastName" asp-for="LastName">
                             </div>
                         </div>
                         <div class="mb-3">
                             <label for="phoneNo" class="form-label">Phone No.</label>
-                            <input type="text" class="form-control" id="phoneNo" placeholder="+639123456789">
+                            <input type="text" class="form-control" id="phoneNo" asp-for="PhoneNumber">
                         </div>
                         <div class="mb-3">
                             <label for="dob" class="form-label">Date of Birth</label>
-                            <input type="date" class="form-control" id="dob" value="2004-03-02">
+                            <input type="date" class="form-control" id="dob" asp-for="DateOfBirth" value="@Model.DateOfBirth.ToString("yyyy-MM-dd")">
                         </div>
                         <div class="mb-3">
                             <label for="bio" class="form-label">Bio</label>
-                            <textarea class="form-control" id="bio" rows="3" placeholder="I AM A STUDENT OF POLYTECHNIC UNIVERSITY OF THE PHILIPPINES"></textarea>
+                            <textarea class="form-control" id="bio" asp-for="Bio" rows="3"></textarea>
                         </div>
                     </div>
-                    <div class="modal-footer">
+                    <div class="modal-footer"> 
                         <button type="submit" class="btn btn-primary">Save</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
+
 
 
     <!-- Modal for Editing Address -->

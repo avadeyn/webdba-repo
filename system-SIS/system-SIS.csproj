@@ -39,6 +39,7 @@
 
   <ItemGroup>
     <Folder Include="Views\StudentsPortal\NewFolder\" />
+    <Folder Include="wwwroot\css\" />
   </ItemGroup>
 
 </Project>
