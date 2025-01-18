@@ -51,7 +51,7 @@ namespace system_SIS.Controllers
                     }
                     else
                     {
-                        throw; // Handle other exceptions
+                        throw; // Handle other exceptions   
                     }
                 }
                 return RedirectToAction(nameof(Index)); // Redirect after successful update

@@ -8,7 +8,7 @@ namespace system_SIS.Models
 
         [Required]
         [StringLength(50)]
-        public string FirstName { get; set; } = "";
+        public string FirstName { get; set; } = "";   
 
         [StringLength(50)]
         public string MiddleName { get; set; } = "";

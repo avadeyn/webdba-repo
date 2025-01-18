@@ -3,9 +3,9 @@ using system_SIS.Models;
 
 namespace system_SIS.Services
 {
-	public class ApplicationDBContext : DbContext
+	public class ApplicationDBContext : DbContext   
 	{
-		public ApplicationDBContext(DbContextOptions options) : base(options)
+		public ApplicationDBContext(DbContextOptions options) : base(options)   
 		{
 
 		}
