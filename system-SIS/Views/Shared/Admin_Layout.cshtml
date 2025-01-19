@@ -98,12 +98,16 @@
 
                     <!-- User Info -->
                     <div class="d-flex align-items-center">
-                        <img src="~/images/profile-placeholder.png" alt="User Photo" class="rounded-circle me-2" style="width: 40px; height: 40px; object-fit: cover;" />
+                        <a asp-controller="AdminPortal" asp-action="Profile" class="text-decoration-none">
+                            <img src="~/images/profile-placeholder.png" alt="User Photo" class="rounded-circle me-2" style="width: 40px; height: 40px; object-fit: cover;" />
+                        </a>
                         <div>
                             <p class="mb-0 fw-semibold text-primary">[NAME]</p>
-                            <p class="mb-0 small text-info">Administrator</p>
+                            <p class="mb-0 small text-info">Admission Admin</p>
                         </div>
                     </div>
+                    
+
                 </div>
             </div>
         </nav>
