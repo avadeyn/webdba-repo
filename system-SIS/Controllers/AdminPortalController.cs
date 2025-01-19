@@ -113,5 +113,10 @@ namespace system_SIS.Controllers
             ViewData["ActiveMenu"] = "ReviewApp";
             return View();
         }
+        public IActionResult Profile()
+        {
+            ViewData["ActiveMenu"] = "Profile";
+            return View();
+        }
     }
 }
