@@ -1,6 +1,9 @@
-﻿@{
+﻿@model SigninViewModel;
+
+@{
     Layout = "Account";  // Specifies the layout to use
     ViewData["Title"] = "Signin";
+ 
 }
 
 <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6">
@@ -16,20 +19,23 @@
                             </a>
                             <p class="text-center mb-4">Your Social Campaigns</p>
 
-                            <!-- Form Section -->
-                            <form>
+                            <!-- Form Section --> 
+                            <form asp-action="Sigin" method="post">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                                 <!-- Username Input -->
                                 <div class="mb-3">
-                                    <label for="email" class="form-label">Email</label>
-                                    <input type="email" class="form-control" id="email"
-                                           aria-describedby="emailHelp" placeholder="Enter your email">
+                                    <label asp-for="Email" class="form-label">Email</label>
+                                    <input asp-for="Email" class="form-control" id="email" placeholder="Enter your email">
+                                    <span asp-validation-for="Email" class="text-danger"></span>
                                 </div>
 
                                 <!-- Password Input -->
                                 <div class="mb-4">
-                                    <label for="password" class="form-label">Password</label>
-                                    <input type="password" class="form-control" id="password"
+                                    <label asp-for="Password" class="form-label">Password</label>
+                                    <input asp-for="Password" class="form-control" id="password"
                                            placeholder="Enter your password">
+                                    <span asp-validation-for="Password" class="text-danger"></span>
+                                          
                                 </div>
 
                                 <!-- Forgot Password Link -->
@@ -38,9 +44,10 @@
                                 </div>
 
                                 <!-- Sign In Button -->
-                                <button type="submit" class="btn btn-primary w-100 fs-4 mb-4 rounded-2">
-                                    Sign In
-                                </button>
+                                <input type="submit" value="Sigin" class="btn btn-primary w-100">
+                                @* <div class="text-center"> *@
+                                @*     <a asp-controller="StudentsPortal" asp-action="Home" class="" *@
+                                @* </div> *@
 
                                 <!-- Create Account Link -->
                                 <div class="d-flex align-items-center justify-content-center">
@@ -58,12 +65,14 @@
     </div>
 </div>
 
+@section Scripts {
 
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 
-
-
-
-
+}
+    
 
 
 

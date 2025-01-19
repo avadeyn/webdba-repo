@@ -1,5 +1,7 @@
 using system_SIS.Services;
-using Microsoft.EntityFrameworkCore;    
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
+using system_SIS.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +13,21 @@ builder.Services.AddDbContext<ApplicationDBContext>(options =>
 	var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 	options.UseSqlServer(connectionString);
 });
+
+builder.Services.AddIdentity<Users, IdentityRole>(options =>
+{
+    options.Password.RequireDigit = false;
+    options.Password.RequireLowercase = false;
+    options.Password.RequireUppercase = false;
+    options.Password.RequireNonAlphanumeric = false;
+    options.Password.RequiredLength = 6;
+    options.User.RequireUniqueEmail = true;
+	options.SignIn.RequireConfirmedEmail = false;
+    options.SignIn.RequireConfirmedAccount = false;
+
+})
+    .AddEntityFrameworkStores<ApplicationDBContext>()
+    .AddDefaultTokenProviders();
 
 var app = builder.Build();    
 
@@ -40,5 +57,13 @@ app.MapControllerRoute(
     //pattern: "{controller=StudentsPortal}/{action=Home}/{id?}")
     //pattern: "{controller=AdmissionPortal}/{action=Index}/{id?}")
     .WithStaticAssets();
+
+
+
+using (var scope = app.Services.CreateScope())
+{
+	
+}
+
 
 app.Run();
