@@ -1,0 +1,84 @@
+﻿@{
+    Layout = "_AdmissionLayout";  // Specifies the layout to use
+    ViewData["Title"] = "Admission";
+}
+
+
+<!-- Progress Steps -->
+<div class="form-progress">
+    <div class="progress-step">
+        <div class="progress-circle"></div>
+        <small>Personal Information</small>
+    </div>
+    <div class="progress-step">
+        <div class="progress-circle"></div>
+        <small>Contact</small>
+    </div>
+    <div class="progress-step">
+        <div class="progress-circle"></div>
+        <small>Family</small>
+    </div>
+    <div class="progress-step">
+        <div class="progress-circle"></div>
+        <small>School</small>
+    </div>
+    <div class="progress-step">
+        <div class="progress-circle"></div>
+        <small>Documents</small>
+    </div>
+    <div class="progress-step active">
+        <div class="progress-circle active"></div>
+        <small>Finish</small>
+    </div>
+</div>
+
+<hr />
+
+<form>
+    <div class="container mt-4">
+        <div class="card-body text-center">
+            <div class="my-4">
+                <i class="bi bi-check-circle-fill text-success" style="font-size: 4rem;"></i>
+                <h3 class="text-success mt-2">Application Submitted</h3>
+            </div>
+            <p class="mb-4">
+                The pen and paper examination is scheduled on <b>July 28, 2024</b>. The eligible Applicant will be listed in the Final Roster where his/her name will be posted along with other pertinent details related to the exam. The Final List of Test-Taker Applicants will be published online by <b>July 15, 2024</b>.
+            </p>
+            <p class="mb-4">
+                After you pass the exam and become eligible, secure a certification as a <b>JUNIOR HIGH SCHOOL STUDENT</b> to finalize your enrollment process. For early submission and validation of your data, the necessary forms and certificates will be provided during the evaluation period scheduled from <b>July until August 8, 2024</b>.
+            </p>
+
+            <!-- Form Section -->
+            <h5 class="text-start mb-3">Required Form:</h5>
+            <p class="text-start">
+                <b>CERTIFICATE OF ENROLLMENT AND GRADE LEVEL:</b> This certificate will be provided after passing the pen and paper examination. Once eligible, you will undergo a <b>Schedule of Confirmation</b> through your respective Office of the Principal. A specific set of forms and requirements will include a certificate of enrollment, parental consent forms, the schedule for orientation, and the signing of the <b>School Agreement Form</b>.
+            </p>
+
+            <!-- Notes Section -->
+            <div class="alert alert-info text-start">
+                <b>Help:</b> Complete the Student Survey by clicking the link to fill up the short survey found in this link: <a href="https://tinyurl.com/PLS-SurveyData" target="_blank">https://tinyurl.com/PLS-SurveyData</a>
+                <br><br>
+                Rest assured that your survey response will be handled with utmost confidentiality and will be used only to improve the application process and student services.
+            </div>
+        </div>
+
+
+        <!-- Back and Next Buttons -->
+        <div class="text-end">
+            <!-- Back Button -->
+            <a href="@Url.Action("Finish", "AdmissionPortal")" class="btn-next text-decoration-none">Back</a>
+
+            <!-- OK Button -->
+            <button type="button" class="btn btn-success" onclick="showMessage()">Ok</button>
+        </div>
+
+        <!-- JavaScript -->
+        <script>
+            function showMessage() {
+                alert("Wait for further announcement.");
+            }
+        </script>
+
+    </div>
+
+</form>

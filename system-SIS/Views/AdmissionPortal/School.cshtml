@@ -3,15 +3,85 @@
     ViewData["Title"] = "Admission";
 }
 
+
+
+<!-- Progress Steps -->
+<div class="form-progress">
+    <div class="progress-step">
+        <div class="progress-circle"></div>
+        <small>Personal Information</small>
+    </div>
+    <div class="progress-step">
+        <div class="progress-circle"></div>
+        <small>Contact</small>
+    </div>
+    <div class="progress-step">
+        <div class="progress-circle"></div>
+        <small>Family</small>
+    </div>
+    <div class="progress-step active">
+        <div class="progress-circle active"></div>
+        <small>School</small>
+    </div>
+    <div class="progress-step">
+        <div class="progress-circle"></div>
+        <small>Documents</small>
+    </div>
+    <div class="progress-step">
+        <div class="progress-circle"></div>
+        <small>Finish</small>
+    </div>
+</div>
+
+<hr />
+
 <form>
     <div class="container mt-4">
-        <p>gello</p>
-        
-    <!-- Back and Next Buttons -->
-    <div class="text-end">
-        <a href="@Url.Action("Family", "AdmissionPortal")" class="btn-next">Back</a>
-        <button asp-action="Document" type="submit" class="btn-next">Next</button>
-    </div>
+        <h4 class="fw-bold" style="color: #172154">PREVIOUS SCHOOL INFORMATION</h4>
+        <div class="container mt-4">
+            <!-- Previous School Information -->
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <label for="schoolName" class="form-label">Name of Previous School <span style="color: red;">*</span></label>
+                    <input type="text" id="schoolName" class="form-control form-input" required>
+                </div>
+                <div class="col-md-4">
+                    <label for="schoolAddress" class="form-label">School Address <span style="color: red;">*</span></label>
+                    <input type="text" id="schoolAddress" class="form-control form-input" required>
+                </div>
+                <div class="col-md-4">
+                    <label for="schoolContact" class="form-label">School Contact Number <span style="color: red;">*</span></label>
+                    <input type="text" id="schoolContact" class="form-control form-input" required>
+                </div>
+            </div>
 
+            <!-- School Type and School Year -->
+            <div class="row mb-3">  
+                <div class="col-md-3">
+                    <label for="schoolType" class="form-label">School Type <span style="color: red;">*</span></label>
+                    <select id="gender" class="form-control form-input" required>
+                        <option value="" disabled selected>Select School Type</option>
+                        <option value="Public">Public</option>
+                        <option value="Private">Private</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label for="startDate" class="form-label">Start Date <span style="color: red;">*</span></label>
+                    <input type="date" id="startDate" class="form-control form-input" required>
+                </div>
+                <div class="col-md-4">
+                    <label for="endDate" class="form-label">End Date <span style="color: red;">*</span></label>
+                    <input type="date" id="endDate" class="form-control form-input" required>
+                </div>
+            </div>
+
+            <!-- Back and Next Buttons -->
+            <div class="text-end">
+                <a href="@Url.Action("Family", "AdmissionPortal")" class="btn-next text-decoration-none">Back</a>
+                <button asp-action="Document" type="submit" class="btn-next">Next</button>
+            </div>
+        </div>
+    </div>
 
 </form>

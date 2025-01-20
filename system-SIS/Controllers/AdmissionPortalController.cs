@@ -8,7 +8,6 @@ namespace system_SIS.Controllers
 		{
             ViewData["ActiveMenu"] = "Index";
             return View();
-     
 		}
 
 		public IActionResult Contact()
@@ -46,9 +45,15 @@ namespace system_SIS.Controllers
 
 		}
 
+        public IActionResult Submit_application()
+        {
+            ViewData["ActiveMenu"] = "Submit_application";
+            return View();
+
+        }
 
 
 
 
-	}
+    }
 }
