@@ -1,10 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using system_SIS.Models;
+using system_SIS.Controllers;
 
 namespace system_SIS.Services
 {
-	public class ApplicationDBContext : IdentityDbContext
+	public class ApplicationDBContext : IdentityDbContext<User>
 	{
 		public ApplicationDBContext(DbContextOptions options) : base(options)
 		{

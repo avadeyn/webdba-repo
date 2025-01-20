@@ -1,5 +1,7 @@
 using system_SIS.Services;
-using Microsoft.EntityFrameworkCore;    
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
+using system_SIS.Controllers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +13,18 @@ builder.Services.AddDbContext<ApplicationDBContext>(options =>
 	var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 	options.UseSqlServer(connectionString);
 });
+
+builder.Services.AddIdentity<User, IdentityRole>(options =>
+{
+	options.Password.RequireDigit = false;
+	options.Password.RequireLowercase = false;
+	options.Password.RequireUppercase = false;
+	options.Password.RequireNonAlphanumeric = false;
+	options.Password.RequiredLength = 6;
+})
+
+	.AddRoles<IdentityRole>()
+	.AddEntityFrameworkStores<ApplicationDBContext>();
 
 var app = builder.Build();    
 
