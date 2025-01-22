@@ -1,5 +1,7 @@
-﻿@{
-    Layout = "Account";  // Specifies the layout to use
+﻿@model Account;
+
+@{
+    Layout = "_Account";  // Specifies the layout to use
     ViewData["Title"] = "Signup";
 }
    
@@ -19,46 +21,48 @@
                             <p class="text-center mb-4">Create Your Account</p>
 
                             <!-- Form Section -->
-                            <form>
+                            <form asp-action="Signup" method="post">
+                                @Html.AntiForgeryToken()
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                                 <!-- First Name and Last Name Inputs Side-by-Side -->
                                 <div class="row">
                                     <!-- First Name Input -->
                                     <div class="col-md-6 mb-3">
-                                        <label for="firstName" class="form-label">First Name</label>
-                                        <input type="text" class="form-control" id="firstName"
-                                               placeholder="Enter your first name">
+                                        <label for="FirstName" class="form-label">First Name</label>
+                                        <input type="text" class="form-control" name="firstName" id="firstName" placeholder="Enter your first name">
+                                        <span asp-validation-for="FirstName" class="text-danger"></span>
                                     </div>
                                     <!-- Last Name Input -->
                                     <div class="col-md-6 mb-3">
-                                        <label for="lastName" class="form-label">Last Name</label>
-                                        <input type="text" class="form-control" id="lastName"
-                                               placeholder="Enter your last name">
+                                        <label for="LastName" class="form-label">Last Name</label>
+                                        <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Enter your last name">
+                                        <span asp-validation-for="LastName" class="text-danger"></span>
                                     </div>
                                 </div>
 
                                 <!-- Email Input -->
                                 <div class="mb-3">
-                                    <label for="email" class="form-label">Email Address</label>
-                                    <input type="email" class="form-control" id="email"
-                                           placeholder="Enter your email">
+                                    <label for="Email" class="form-label">Email Address</label>
+                                    <input type="Email" class="form-control" name="email" id="email" placeholder="Enter your email">
+                                    <span asp-validation-for="Email" class="text-danger"></span>
                                 </div>
 
                                 <!-- Password Input -->
                                 <div class="mb-4">
-                                    <label for="password" class="form-label">Password</label>
-                                    <input type="password" class="form-control" id="password"
-                                           placeholder="Enter your password">
+                                    <label for="Password" class="form-label">Password</label>
+                                    <input type="Password" class="form-control" name="password" id="password" placeholder="Enter your password">
+                                    <span asp-validation-for="Password" class="text-danger"></span>
                                 </div>
 
                                 <!-- Confirm Password Input -->
                                 <div class="mb-4">
-                                    <label for="password" class="form-label"> Confirm Password</label>
-                                    <input type="password" class="form-control" id="confirmPassword"
-                                           placeholder="Enter your password">
+                                    <label for="ConfirmPassword" class="form-label">ConfirmPassword</label>
+                                    <input type="Password" class="form-control" id="ConfirmPassword" placeholder="Enter your password">
+                                    @* <span asp-validation-for="ConfirmPassword" class="text-danger"></span> *@
                                 </div>
-
                                 <!-- Sign Up Button -->
-                                <button type="submit" class="btn btn-primary w-100 fs-4 mb-4 rounded-2">
+
+                                <button type="submit" value="Signup" class="btn btn-primary w-100 fs-4 mb-4 rounded-2">
                                     Sign Up
                                 </button>
 
