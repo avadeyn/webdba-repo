@@ -3,8 +3,6 @@
     ViewData["Title"] = "Admission";
 }
 
-
-
 <!-- Progress Steps -->
 <div class="form-progress">
     <div class="progress-step">
@@ -35,7 +33,7 @@
 
 <hr />
 <form>
-    <h4 class="fw-bold" style="color: #172154"> PARENT'S / GUARDIAN'S INFORMATION</h4>
+    <h4 class="fw-bold" style="color: #172154">PARENT'S / GUARDIAN'S INFORMATION</h4>
     <div class="container mt-4">
         <!-- Mother's Information -->
         <h6 class="fw-bold" style="color: #172154">Parent / Guardian's Name - Primary</h6>
@@ -45,7 +43,7 @@
                 <input type="text" id="FirstName" class="form-control form-input" required>
             </div>
             <div class="col-md-4">
-                <label for="maidenName" class="form-label">Maiden Name </label>
+                <label for="maidenName" class="form-label">Maiden Name</label>
                 <input type="text" id="maidenName" class="form-control form-input">
             </div>
             <div class="col-md-4">
@@ -54,7 +52,7 @@
             </div>
             <div class="col-md-4">
                 <label for="ContactNo" class="form-label">Contact Number <span style="color: red;">*</span></label>
-                <input type="text" id="ContactNo" class="form-control form-input" required>
+                <input type="tel" id="ContactNo" class="form-control form-input" required pattern="^\d{11}$" title="Contact number must be exactly 11 digits.">
             </div>
             <div class="col-md-4">
                 <label for="relationship" class="form-label">Relationship<span style="color: red;">*</span></label>
@@ -66,34 +64,32 @@
         <h6 class="fw-bold" style="color: #172154">Parent / Guardian's Name - Secondary</h6>
         <div class="row mb-3">
             <div class="col-md-4">
-                <label for="FirstName" class="form-label">First Name <span style="color: red;">*</span></label>
-                <input type="text" id="FirstName" class="form-control form-input" required>
+                <label for="FatherFirstName" class="form-label">First Name <span style="color: red;">*</span></label>
+                <input type="text" id="FatherFirstName" class="form-control form-input" required>
             </div>
             <div class="col-md-4">
                 <label for="MiddleName" class="form-label">Middle Name</label>
                 <input type="text" id="MiddleName" class="form-control form-input">
             </div>
             <div class="col-md-4">
-                <label for="LastName" class="form-label">Last Name <span style="color: red;">*</span></label>
-                <input type="text" id="LastName" class="form-control form-input" required>
+                <label for="FatherLastName" class="form-label">Last Name <span style="color: red;">*</span></label>
+                <input type="text" id="FatherLastName" class="form-control form-input" required>
             </div>
             <div class="col-md-4">
-                <label for="ContactNo" class="form-label">Contact Number <span style="color: red;">*</span></label>
-                <input type="text" id="ContactNo" class="form-control form-input" required>
+                <label for="FatherContactNo" class="form-label">Contact Number <span style="color: red;">*</span></label>
+                <input type="tel" id="FatherContactNo" class="form-control form-input" required pattern="^\d{11}$" title="Contact number must be exactly 11 digits.">
             </div>
             <div class="col-md-4">
-                <label for="relationship" class="form-label">Relationship<span style="color: red;">*</span></label>
-                <input type="text" id="relationship" class="form-control form-input" required>
+                <label for="FatherRelationship" class="form-label">Relationship<span style="color: red;">*</span></label>
+                <input type="text" id="FatherRelationship" class="form-control form-input" required>
             </div>
         </div>
     </div>
-
 
     <!-- Back and Next Buttons -->
     <div class="text-end">
         <a href="@Url.Action("Contact", "AdmissionPortal")" class="btn-next text-decoration-none">Back</a>
         <button asp-action="School" type="submit" class="btn-next">Next</button>
     </div>
-
 
 </form>

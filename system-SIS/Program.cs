@@ -37,8 +37,8 @@ app.MapControllerRoute(
     //PORTALS
     //pattern: "{controller=FacultyPortal}/{action=Index}/{id?}")
     //pattern: "{controller=AdminPortal}/{action=Index}/{id?}")
-    pattern: "{controller=StudentsPortal}/{action=Home}/{id?}")
-    //pattern: "{controller=AdmissionPortal}/{action=Index}/{id?}")
+    //pattern: "{controller=StudentsPortal}/{action=Home}/{id?}")
+    pattern: "{controller=AdmissionPortal}/{action=Home}/{id?}")
 
     .WithStaticAssets();
 

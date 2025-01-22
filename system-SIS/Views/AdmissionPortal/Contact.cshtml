@@ -39,51 +39,25 @@
         <h6 class="fw-bold" style="color: #172154">Contact Information</h6>
         <div class="row mb-3">
             <div class="col-md-6">
-                <label for="email" class="form-label">Email <span style="color: red;">*</span></label>
-                <input type="email" id="email" class="form-control form-input" required>
-            </div>
-            <div class="col-md-6">
                 <label for="phone" class="form-label">Phone Number <span style="color: red;">*</span></label>
-                <input type="text" id="phone" class="form-control form-input" required>
+                <input type="tel" id="phone" class="form-control form-input" required pattern="^\d{11}$" title="Phone number must be exactly 11 digits.">
             </div>
         </div>
 
-        <!-- Current Address -->
-        <h6 class="fw-bold" style="color: #172154">Current Address</h6>
         <div class="row mb-3">
-            <div class="col-md-6">
-                <label for="currentHouseNo" class="form-label">House No./Lot/Block <span style="color: red;">*</span></label>
-                <input type="text" id="currentHouseNo" class="form-control form-input" required>
+            <!-- Current Address -->
+            <h6 class="fw-bold" style="color: #172154">Current Address</h6>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="currentAddress" class="form-label">Address <span style="color: red;">*</span></label>
+                    <input type="text" id="currentAddress" class="form-control form-input" style="height: 45px; font-size: 16px; padding: 10px;" required>
+                </div>
             </div>
-            <div class="col-md-6">
-                <label for="currentStreetName" class="form-label">Street Name <span style="color: red;">*</span></label>
-                <input type="text" id="currentStreetName" class="form-control form-input" required>
-            </div>
-        </div>
-        <div class="row mb-3">
-            <div class="col-md-6">
-                <label for="currentVillage" class="form-label">Village/Subdivision <span style="color: red;">*</span></label>
-                <input type="text" id="currentVillage" class="form-control form-input" required>
-            </div>
-            <div class="col-md-6">
-                <label for="currentBarangay" class="form-label">Barangay <span style="color: red;">*</span></label>
-                <input type="text" id="currentBarangay" class="form-control form-input" required>
-            </div>
-        </div>
-        <div class="row mb-3">
-            <div class="col-md-6">
-                <label for="currentCity" class="form-label">City/Municipality <span style="color: red;">*</span></label>
-                <input type="text" id="currentCity" class="form-control form-input" required>
-            </div>
-            <div class="col-md-6">
-                <label for="currentProvince" class="form-label">Province <span style="color: red;">*</span></label>
-                <input type="text" id="currentProvince" class="form-control form-input" required>
-            </div>
-        </div>
-        <div class="row mb-3">
-            <div class="col-md-6">
-                <label for="currentZipCode" class="form-label">Zip Code <span style="color: red;">*</span></label>
-                <input type="text" id="currentZipCode" class="form-control form-input" required>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="currentZipCode" class="form-label">Zip Code <span style="color: red;">*</span></label>
+                    <input type="text" id="currentZipCode" class="form-control form-input" style="height: 45px; font-size: 16px; padding: 10px;" required pattern="^\d{4}$" title="Zip code must be exactly 4 digits.">
+                </div>
             </div>
         </div>
 
@@ -95,42 +69,46 @@
                 Same as Current Address
             </label>
         </div>
+
         <div class="row mb-3">
-            <div class="col-md-6">
-                <label for="permanentHouseNo" class="form-label">House No./Lot/Block <span style="color: red;">*</span></label>
-                <input type="text" id="permanentHouseNo" class="form-control form-input" required>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="permanentAddress" class="form-label">Address <span style="color: red;">*</span></label>
+                    <input type="text" id="permanentAddress" class="form-control form-input" style="height: 45px; font-size: 16px; padding: 10px;" required>
+                </div>
             </div>
-            <div class="col-md-6">
-                <label for="permanentStreetName" class="form-label">Street Name <span style="color: red;">*</span></label>
-                <input type="text" id="permanentStreetName" class="form-control form-input" required>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="permanentZipCode" class="form-label">Zip Code <span style="color: red;">*</span></label>
+                    <input type="text" id="permanentZipCode" class="form-control form-input" style="height: 45px; font-size: 16px; padding: 10px;" required pattern="^\d{4}$" title="Zip code must be exactly 4 digits.">
+                </div>
             </div>
         </div>
+
+        <!-- In case of Emergency -->
+        <h6 class="fw-bold" style="color: #172154;">In case of Emergency</h6>
         <div class="row mb-3">
             <div class="col-md-6">
-                <label for="permanentVillage" class="form-label">Village/Subdivision <span style="color: red;">*</span></label>
-                <input type="text" id="permanentVillage" class="form-control form-input" required>
+                <label for="contactPerson" class="form-label">Contact Person <span style="color: red;">*</span></label>
+                <input type="text" id="contactPerson" class="form-control form-input" style="height: 45px; font-size: 16px; padding: 10px;" required>
             </div>
             <div class="col-md-6">
-                <label for="permanentBarangay" class="form-label">Barangay <span style="color: red;">*</span></label>
-                <input type="text" id="permanentBarangay" class="form-control form-input" required>
+                <label for="contactNumber" class="form-label">Contact Number <span style="color: red;">*</span></label>
+                <input type="tel" id="contactNumber" class="form-control form-input" style="height: 45px; font-size: 16px; padding: 10px;" required pattern="^\d{11}$" title="Contact number must be exactly 11 digits.">
             </div>
         </div>
+
         <div class="row mb-3">
             <div class="col-md-6">
-                <label for="permanentCity" class="form-label">City/Municipality <span style="color: red;">*</span></label>
-                <input type="text" id="permanentCity" class="form-control form-input" required>
+                <label for="relationship" class="form-label">Relationship <span style="color: red;">*</span></label>
+                <input type="text" id="relationship" class="form-control form-input" style="height: 45px; font-size: 16px; padding: 10px;" required>
             </div>
             <div class="col-md-6">
-                <label for="permanentProvince" class="form-label">Province <span style="color: red;">*</span></label>
-                <input type="text" id="permanentProvince" class="form-control form-input" required>
+                <label for="emergencyAddress" class="form-label">Address <span style="color: red;">*</span></label>
+                <input type="text" id="emergencyAddress" class="form-control form-input" style="height: 45px; font-size: 16px; padding: 10px;" required>
             </div>
         </div>
-        <div class="row mb-3">
-            <div class="col-md-6">
-                <label for="permanentZipCode" class="form-label">Zip Code <span style="color: red;">*</span></label>
-                <input type="text" id="permanentZipCode" class="form-control form-input" required>
-            </div>
-        </div>
+
     </div>
 
     <!-- Back and Next Buttons -->
@@ -139,3 +117,16 @@
         <button asp-action="Family" type="submit" class="btn-next">Next</button>
     </div>
 </form>
+
+<script>
+    // Copy current address to permanent address if checkbox is checked
+    function copyCurrentAddress() {
+        if (document.getElementById("sameAsCurrentAddress").checked) {
+            document.getElementById("permanentAddress").value = document.getElementById("currentAddress").value;
+            document.getElementById("permanentZipCode").value = document.getElementById("currentZipCode").value;
+        } else {
+            document.getElementById("permanentAddress").value = '';
+            document.getElementById("permanentZipCode").value = '';
+        }
+    }
+</script>
