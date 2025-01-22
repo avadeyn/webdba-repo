@@ -1,0 +1,104 @@
+﻿@{
+    Layout = "Student_Layout";  // Specifies the layout to use
+    ViewData["Title"] = "Grades";
+}
+
+<div class="container">
+    <div class="grades-card">
+        <!-- Header -->
+        <div class="grades-header">Grades</div>
+        <!-- Information Bar -->
+        <div class="information-bar"></div>
+        <!-- Table -->
+        <div class="table-container">
+            <table class="table grades-table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Teacher</th>
+                        <th>Subject</th>
+                        <th>1st Quarter</th>
+                        <th>2nd Quarter</th>
+                        <th>3rd Quarter</th>
+                        <th>4th Quarter</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Nadine Borja</td>
+                        <td>Filipino</td>
+                        <td>78</td>
+                        <td>98</td>
+                        <td>99</td>
+                        <td>75</td>
+                    </tr>
+                    <tr>
+                        <td>Nadine Borja</td>
+                        <td>English</td>
+                        <td>78</td>
+                        <td>98</td>
+                        <td>99</td>
+                        <td>75</td>
+                    </tr>
+                    <tr>
+                        <td>John Mark</td>
+                        <td>Subject</td>
+                        <td>78</td>
+                        <td>98</td>
+                        <td>99</td>
+                        <td>75</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+<style>
+    body {
+        font-family: arial, sans-serif;
+        background-color: #f8f9fa;
+        padding: 20px;
+    }
+
+    .grades-card {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+    }
+
+    .grades-header {
+        background-color: #DCE8FD;
+        color: #1566FF;
+        padding: 10px 20px;
+        font-size: 1.25rem;
+        font-weight: bold;
+    }
+
+    /* .information-bar { */
+    /*     background-color: #6c63ff; */
+    /*     height: 10px; */
+    /* } */
+
+    .table-container {
+        padding: 20px;
+    }
+
+    .grades-table th {
+        background-color: #172154;
+        color: #FAFAFA;
+        text-align: center;
+    }
+
+    .grades-table td {
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .grades-table tbody tr:nth-child(even) {
+        background-color: #DCE8FD;
+        color: #172154;
+    }
+</style>

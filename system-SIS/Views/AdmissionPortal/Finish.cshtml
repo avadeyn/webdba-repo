@@ -1,0 +1,100 @@
+﻿@{
+    Layout = "_AdmissionLayout";  // Specifies the layout to use
+    ViewData["Title"] = "Admission";
+}
+
+<div class="container mt-5">
+    <!-- Step Title -->
+    <h4 class="fw-bold mb-4" style="color: #172154;">Finish Your Application</h4>
+    <p class="text-muted">Please review the information you provided. If everything is correct, click "Submit Application". If you need to make changes, use the "Back" button to go back to the specific step.</p>
+
+    <!-- Personal Information Section -->
+    <div class="card mb-4">
+        <div class="card-header bg-primary text-white fw-bold">Personal Information</div>
+        <div class="card-body">
+            <div class="row mb-2">
+                <div class="col-md-4"><strong>First Name:</strong></div>
+                <div class="col-md-8">Nadine</div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-md-4"><strong>Middle Name:</strong></div>
+                <div class="col-md-8">A</div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-md-4"><strong>Last Name:</strong></div>
+                <div class="col-md-8">Borja</div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-md-4"><strong>Date of Birth:</strong></div>
+                <div class="col-md-8">Febuary 0, 2000</div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-md-4"><strong>Gender:</strong></div>
+                <div class="col-md-8">Female</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Information Section -->
+    <div class="card mb-4">
+        <div class="card-header bg-primary text-white fw-bold">Contact Information</div>
+        <div class="card-body">
+            <div class="row mb-2">
+                <div class="col-md-4"><strong>Email:</strong></div>
+                <div class="col-md-8">nadineanona@gmail.com</div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-md-4"><strong>Phone Number:</strong></div>
+                <div class="col-md-8">09123456789</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Address Information Section -->
+    <div class="card mb-4">
+        <div class="card-header bg-primary text-white fw-bold">Address</div>
+        <div class="card-body">
+            <div class="row mb-2">
+                <div class="col-md-4"><strong>House No./Lot/Block:</strong></div>
+                <div class="col-md-8">123</div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-md-4"><strong>Street Name:</strong></div>
+                <div class="col-md-8">Dyanlang Street</div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-md-4"><strong>City/Municipality:</strong></div>
+                <div class="col-md-8">Quezon</div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-md-4"><strong>Province:</strong></div>
+                <div class="col-md-8">Metro Manila</div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-md-4"><strong>Zip Code:</strong></div>
+                <div class="col-md-8">0000</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Family Information Section -->
+    <div class="card mb-4">
+        <div class="card-header bg-primary text-white fw-bold">Family Information</div>
+        <div class="card-body">
+            <div class="row mb-2">
+                <div class="col-md-4"><strong>Mother's Name:</strong></div>
+                <div class="col-md-8">Mama France</div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-md-4"><strong>Father's Name:</strong></div>
+                <div class="col-md-8">Papa Wilson</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Submit Section -->
+    <div class="text-center mt-4">
+        <a href="@Url.Action("Document", "AdmissionPortal")" class="btn btn-outline-primary me-3">Back</a>
+        <button type="button" class="btn btn-success">Submit Application</button>
+    </div>
+</div>
