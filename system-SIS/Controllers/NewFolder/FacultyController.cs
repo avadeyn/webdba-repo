@@ -8,14 +8,11 @@ namespace system_SIS.Controllers.NewFolder
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class FacultyController : ControllerBase
+    // Using primary constructor syntax, which is more concise
+    public class FacultyController(IFacultyService facultyService) : ControllerBase
     {
-        private readonly IFacultyService _facultyService;
-
-        public FacultyController(IFacultyService facultyService)
-        {
-            _facultyService = facultyService;
-        }
+        // The service is now automatically assigned through the primary constructor
+        private readonly IFacultyService _facultyService = facultyService;
 
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Faculty>>> GetAllFaculty()
