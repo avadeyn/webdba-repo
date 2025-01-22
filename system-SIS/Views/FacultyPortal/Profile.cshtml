@@ -96,28 +96,28 @@
                     </div>
                     <div class="card-body text-muted">
                         <div class="d-flex justify-content-between mb-2">
-                            <span>House no.</span>
-                            <span class="text-dark fw-semibold">1103</span>
+                            <span>House No.</span>
+                            <span class="text-dark fw-semibold">@Model.HouseNumber</span>
                         </div>
                         <div class="d-flex justify-content-between mb-2">
-                            <span>Street name</span>
-                            <span class="text-dark fw-semibold">Hev Abi</span>
+                            <span>Street Name</span>
+                            <span class="text-dark fw-semibold">@Model.StreetName</span>
                         </div>
                         <div class="d-flex justify-content-between mb-2">
                             <span>Barangay</span>
-                            <span class="text-dark fw-semibold">Holy Spirit</span>
+                            <span class="text-dark fw-semibold">@Model.Barangay</span>
                         </div>
                         <div class="d-flex justify-content-between mb-2">
                             <span>City or Municipality</span>
-                            <span class="text-dark fw-semibold">Quezon City</span>
+                                        <span class="text-dark fw-semibold">@Model.CityOrMunicipality</span>
                         </div>
                         <div class="d-flex justify-content-between mb-2">
                             <span>Province</span>
-                            <span class="text-dark fw-semibold">Metro Manila</span>
+                            <span class="text-dark fw-semibold">@Model.Province</span>
                         </div>
                         <div class="d-flex justify-content-between mb-2">
                             <span>Zip Code</span>
-                            <span class="text-dark fw-semibold">1008</span>
+                            <span class="text-dark fw-semibold">@Model.ZipCode</span>
                         </div>
                     </div>
                 </div>
@@ -203,39 +203,39 @@
 
     <!-- Modal for Editing Address -->
     <div class="modal fade" id="editAddressModal" tabindex="-1" aria-labelledby="editAddressModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog" style="max-width: 40%;">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="editAddressModalLabel">Edit Address</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form>
+                <form asp-action="EditAddress" asp-controller="Faculty_UserProfile" method="post">
                     <div class="modal-body">
-                       <div class="row">
+                        <div class="row">
                             <div class="col-md-4 mb-3">
-                                <label for="houseNo" class="form-label">House no.</label>
-                                <input type="text" class="form-control" id="houseNo" placeholder="10B">
+                                <label for="houseNo" class="form-label">House No.</label>
+                                <input type="text" class="form-control" id="houseNo" asp-for="HouseNumber" placeholder="Enter house number">
                             </div>
                             <div class="col-md-4 mb-3">
                                 <label for="streetName" class="form-label">Street Name</label>
-                                <input type="text" class="form-control" id="streetName" placeholder="Manggahan">
+                                <input type="text" class="form-control" id="streetName" asp-for="StreetName" placeholder="Enter street name">
                             </div>
                             <div class="col-md-4 mb-3">
                                 <label for="barangay" class="form-label">Barangay</label>
-                                <input type="text" class="form-control" id="barangay" placeholder="Holy Spirit">
+                                <input type="text" class="form-control" id="barangay" asp-for="Barangay" placeholder="Enter barangay">
                             </div>
-                       </div>
+                        </div>
                         <div class="mb-3">
                             <label for="city" class="form-label">City/Municipality</label>
-                            <input type="text" class="form-control" id="city" placeholder="Quezon City">
+                            <input type="text" class="form-control" id="city" asp-for="CityOrMunicipality" placeholder="Enter city or municipality">
                         </div>
                         <div class="mb-3">
                             <label for="province" class="form-label">Province</label>
-                            <input type="text" class="form-control" id="province" placeholder="Metro Manila">
+                            <input type="text" class="form-control" id="province" asp-for="Province" placeholder="Enter province">
                         </div>
                         <div class="mb-3">
                             <label for="zipCode" class="form-label">Zip Code</label>
-                            <input type="text" class="form-control" id="zipCode" placeholder="1008">
+                            <input type="text" class="form-control" id="zipCode" asp-for="ZipCode" placeholder="Enter zip code">
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -245,5 +245,6 @@
             </div>
         </div>
     </div>
+
 
 </body>
