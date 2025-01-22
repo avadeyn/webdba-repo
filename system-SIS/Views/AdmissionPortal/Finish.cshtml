@@ -3,6 +3,37 @@
     ViewData["Title"] = "Admission";
 }
 
+
+<!-- Progress Steps -->
+<div class="form-progress">
+    <div class="progress-step">
+        <div class="progress-circle"></div>
+        <small>Personal Information</small>
+    </div>
+    <div class="progress-step">
+        <div class="progress-circle"></div>
+        <small>Contact</small>
+    </div>
+    <div class="progress-step">
+        <div class="progress-circle"></div>
+        <small>Family</small>
+    </div>
+    <div class="progress-step">
+        <div class="progress-circle"></div>
+        <small>School</small>
+    </div>
+    <div class="progress-step">
+        <div class="progress-circle"></div>
+        <small>Documents</small>
+    </div>
+    <div class="progress-step active">
+        <div class="progress-circle active"></div>
+        <small>Finish</small>
+    </div>
+</div>
+
+<hr />
+
 <div class="container mt-5">
     <!-- Step Title -->
     <h4 class="fw-bold mb-4" style="color: #172154;">Finish Your Application</h4>
@@ -82,19 +113,20 @@
         <div class="card-header bg-primary text-white fw-bold">Family Information</div>
         <div class="card-body">
             <div class="row mb-2">
-                <div class="col-md-4"><strong>Mother's Name:</strong></div>
+                <div class="col-md-4"><strong>Parent / Guardian's Name - Primary</strong></div>
                 <div class="col-md-8">Mama France</div>
             </div>
             <div class="row mb-2">
-                <div class="col-md-4"><strong>Father's Name:</strong></div>
+                <div class="col-md-4"><strong>Parent / Guardian's Name - Secondary</strong></div>
                 <div class="col-md-8">Papa Wilson</div>
             </div>
         </div>
     </div>
 
-    <!-- Submit Section -->
-    <div class="text-center mt-4">
-        <a href="@Url.Action("Document", "AdmissionPortal")" class="btn btn-outline-primary me-3">Back</a>
-        <button type="button" class="btn btn-success">Submit Application</button>
+    <!-- Back and Next Buttons -->
+    <div class="text-end">
+        <a href="@Url.Action("Document", "AdmissionPortal")" class="btn-next text-decoration-none">Back</a>
+        <a href="@Url.Action("Submit_application", "AdmissionPortal")" class="btn btn-success text-decoration-none">Submit Application</a>
     </div>
+
 </div>
