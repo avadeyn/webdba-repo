@@ -14,11 +14,6 @@ namespace system_SIS.Controllers
             ViewData["ActiveMenu"] = "Enrollments";
             return View();
         }
-        public IActionResult SISAccount()
-        {
-            ViewData["ActiveMenu"] = "SISAccount";
-            return View();
-        }
 
         public IActionResult Faculty()
         {

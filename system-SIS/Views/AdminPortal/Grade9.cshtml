@@ -3,6 +3,7 @@
     ViewData["Title"] = "Grade 7 Page"; // Ensure the title is descriptive
 }
 
+
 <body class="position-relative bg-image" style="font-family: 'Poppins', sans-serif; overflow-x: hidden; height: 100vh; width: 100vw; margin: 0;">
     <!-- Background Image -->
     <img src="~/images/bgjr.png"
@@ -20,7 +21,6 @@
                 <a asp-controller="AdminPortal" asp-action="Student" class="text-black" style="text-decoration: none;">Student</a> / Grade 9 
             </p>
         </section>
-
         <div class="mt-4">
             <!-- Navigation -->
             <ul class="navbar-nav mx-auto mb-2 mb-lg-0 d-flex flex-row">
@@ -60,25 +60,24 @@
                         Grade 10
                     </a>
                 </li>
-
-                <!-- Filter Dropdown -->
-                <li class="nav-item ms-auto">
-                    <select class="form-select" aria-label="Filter by Year">
-                        <option value="2020-2021">2020 - 2021</option>
-                        <option value="2021-2022">2021 - 2022</option>
-                        <option value="2022-2023">2022 - 2023</option>
-                        <option value="2023-2024">2023 - 2024</option>
-                        <option value="2024-2025">2024 - 2025</option>
-                    </select>
-                </li>
             </ul>
         </div>
 
+        <div class="d-flex justify-content-between align-items-center mt-4">
+            <!-- Add Section Button -->
+            <button type="button" class="btn btn-danger me-2" data-bs-toggle="modal" data-bs-target="#addSectionModal">
+                Add Section
+            </button>
 
-        <!-- Add Section Button -->
-        <button type="button" class="btn btn-danger  mt-4" data-bs-toggle="modal" data-bs-target="#addSectionModal">
-            Add Section
-        </button>
+            <!-- Filter Dropdown -->
+            <select class="form-select w-auto" aria-label="Filter by Year">
+                <option value="2020-2021">2020 - 2021</option>
+                <option value="2021-2022">2021 - 2022</option>
+                <option value="2022-2023">2022 - 2023</option>
+                <option value="2023-2024">2023 - 2024</option>
+                <option value="2024-2025">2024 - 2025</option>
+            </select>
+        </div>
 
         <!-- Table -->
         <table class="table table-bordered mt-2">
@@ -99,12 +98,12 @@
                     <td>Mr. John Doe</td>
                     <td>
                         <!-- Edit Button -->
-                        <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#editSectionModal" id="editBtn">
+                        <button type="button" class="btn btn-primary btn-sm  mb-1" data-bs-toggle="modal" data-bs-target="#editSectionModal" id="editBtn">
                             <i class="fas fa-edit"></i>
                         </button>
 
                         <!-- Delete Button -->
-                        <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteSectionModal" id="deleteBtn">
+                        <button type="button" class="btn btn-danger btn-sm  mb-1" data-bs-toggle="modal" data-bs-target="#deleteSectionModal" id="deleteBtn">
                             <i class="fas fa-trash-alt"></i>
                         </button>
                     </td>
@@ -199,23 +198,24 @@
     </div>
 
     <script>
-        // Select the buttons by their IDs
+                // Select the buttons by their IDs
         const editBtn = document.getElementById('editBtn');
         const deleteBtn = document.getElementById('deleteBtn');
 
         // Add event listeners to the buttons to stop event propagation
         if (editBtn) {
-            editBtn.addEventListener('click', function(event) {
+            editBtn.addEventListener('click', function (event) {
                 event.stopPropagation(); // Prevent row click from being triggered
             });
         }
 
         if (deleteBtn) {
-            deleteBtn.addEventListener('click', function(event) {
+            deleteBtn.addEventListener('click', function (event) {
                 event.stopPropagation(); // Prevent row click from being triggered
             });
         }
     </script>
+
 
 </body>
 

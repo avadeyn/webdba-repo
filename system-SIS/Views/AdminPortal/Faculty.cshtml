@@ -3,7 +3,6 @@
     ViewData["Title"] = "Home Page";
 }
 
-<script src="~/js/admin_portal/faculty.js"></script>
 
 <body class="position-relative bg-image" style="font-family: 'Poppins', sans-serif; overflow-x: hidden; height: 100vh; width: 100vw; margin: 0;">
     <!-- Background Image -->
@@ -312,5 +311,19 @@
                 </div>
             </div>
         </div>
-      
+
+        <script>
+                    // Function to select/deselect all checkboxes
+        function selectAllCheckboxes(source) {
+            const checkboxes = document.querySelectorAll('.studentCheckbox');
+            checkboxes.forEach(checkbox => checkbox.checked = source.checked);
+        }
+
+        const deleteBtn = document.getElementById('deleteBtn');
+        if (deleteBtn) {
+            deleteBtn.addEventListener('click', function (event) {
+                event.stopPropagation(); // Prevent row click from being triggered
+            });
+        }
+        </script>
 </body>

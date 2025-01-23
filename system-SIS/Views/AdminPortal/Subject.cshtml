@@ -11,19 +11,18 @@
          style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
 
     <!-- Main Content -->
-    <div style="background-color: rgba(220, 232, 253, 0.9); padding: 20px; border-radius: 10px;">
-        <section class="fixed ml-72 px-11 py-6 w-full top-20 left-0" style="font-weight: bold;">
-            <p class="text-sm text-black fs-5">
-                <i class="fas fa-user text-black fs-5"></i>
-                <a asp-controller="AdminPortal" asp-action="Subject" class="text-black" style="text-decoration: none;">Subject</a>
+    <div class="bg-light p-3 rounded-3">
+        <section class="d-flex align-items-center justify-content-between mb-3">
+            <p class="text-sm text-black fs-5 fw-bold mb-0">
+                <i class="fas fa-user text-black fs-5 me-2"></i>
+                <a asp-controller="AdminPortal" asp-action="Subject" class="text-black text-decoration-none">Subject</a>
             </p>
+            <!-- Button to open the "Add Subject" Modal -->
+            <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#addSubjectModal">+ Subject</button>
         </section>
 
-        <!-- Button to open the "Add Subject" Modal -->
-        <button type="button" class="btn btn-primary" style="position: relative; top: -4px; margin-left: auto; display: block;" data-bs-toggle="modal" data-bs-target="#addSubjectModal">+ Subject</button>
-
-        <div class="container mt-2">
-            <table class="table mt-2">
+        <div class="table-responsive mt-2">
+            <table class="table table-striped">
                 <thead class="table-secondary text-white">
                     <tr>
                         <th>Subject Name</th>
@@ -43,22 +42,12 @@
                         <td>Regular</td>
                         <td>
                             <div class="dropdown">
-                                <button class="btn btn-light btn-sm dropdown-toggle"
-                                        type="button"
-                                        id="dropdownMenuButton"
-                                        data-bs-toggle="dropdown"
-                                        aria-expanded="false"
-                                        style="border: none; background: none;">
-                                    <i class="fas fa-ellipsis-v"></i> <!-- Ellipsis icon -->
+                                <button class="btn btn-light btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fas fa-ellipsis-v"></i>
                                 </button>
-
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                     <li>
-                                        <a class="dropdown-item"
-                                           href="#"
-                                           data-bs-toggle="modal"
-                                           data-bs-target="#editSubjectModal"
-                                           id="editSubjectLink">
+                                        <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#editSubjectModal">
                                             <i class="fas fa-edit me-2"></i> Edit
                                         </a>
                                     </li>
@@ -71,11 +60,12 @@
         </div>
     </div>
 
+
     <!-- Modal for adding a new subject -->
     <div class="modal fade" id="addSubjectModal" tabindex="-1" aria-labelledby="addSubjectModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header bg-primary text-white">
                     <h5 class="modal-title" id="addSubjectModalLabel">Add New Subject</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>

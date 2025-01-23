@@ -3,6 +3,7 @@
     ViewData["Title"] = "Grade 7 Page"; // Ensure the title is descriptive
 }
 
+
 <body class="position-relative bg-image" style="font-family: 'Poppins', sans-serif; overflow-x: hidden; height: 100vh; width: 100vw; margin: 0;">
     <!-- Background Image -->
     <img src="~/images/bgjr.png"
@@ -21,13 +22,6 @@
                         <a asp-controller="AdminPortal" asp-action="Grade10" class="text-black" style="text-decoration: none;">/ Grade 10</a>/ Section Name
                     </div>
 
-                    <select class="form-select w-auto ms-auto" aria-label="Filter by Year">
-                        <option value="2020-2021">2020 - 2021</option>
-                        <option value="2021-2022">2021 - 2022</option>
-                        <option value="2022-2023">2022 - 2023</option>
-                        <option value="2023-2024">2023 - 2024</option>
-                        <option value="2024-2025">2024 - 2025</option>
-                    </select>
                 </div>
         </section>
 
@@ -177,24 +171,24 @@
         </div>
     </div>
 
-
     <script>
-        // Select the buttons by their IDs
+                // Select the buttons by their IDs
         const editBtn = document.getElementById('editBtn');
         const deleteBtn = document.getElementById('deleteBtn');
 
         // Add event listeners to the buttons to stop event propagation
         if (editBtn) {
-            editBtn.addEventListener('click', function(event) {
+            editBtn.addEventListener('click', function (event) {
                 event.stopPropagation(); // Prevent row click from being triggered
             });
         }
 
         if (deleteBtn) {
-            deleteBtn.addEventListener('click', function(event) {
+            deleteBtn.addEventListener('click', function (event) {
                 event.stopPropagation(); // Prevent row click from being triggered
             });
         }
+
 
 
     </script>

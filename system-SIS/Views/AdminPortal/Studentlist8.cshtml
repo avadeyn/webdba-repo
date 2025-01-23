@@ -21,13 +21,6 @@
                     <a asp-controller="AdminPortal" asp-action="Grade8" class="text-black" style="text-decoration: none;">/ Grade 8</a>/ Section Name
                 </div>
 
-                <select class="form-select w-auto ms-auto" aria-label="Filter by Year">
-                    <option value="2020-2021">2020 - 2021</option>
-                    <option value="2021-2022">2021 - 2022</option>
-                    <option value="2022-2023">2022 - 2023</option>
-                    <option value="2023-2024">2023 - 2024</option>
-                    <option value="2024-2025">2024 - 2025</option>
-                </select>
             </div>
         </section>
 
@@ -274,22 +267,23 @@
 
 
     <script>
-        // Select the buttons by their IDs
+                // Select the buttons by their IDs
         const editBtn = document.getElementById('editBtn');
         const deleteBtn = document.getElementById('deleteBtn');
 
         // Add event listeners to the buttons to stop event propagation
         if (editBtn) {
-            editBtn.addEventListener('click', function(event) {
+            editBtn.addEventListener('click', function (event) {
                 event.stopPropagation(); // Prevent row click from being triggered
             });
         }
 
         if (deleteBtn) {
-            deleteBtn.addEventListener('click', function(event) {
+            deleteBtn.addEventListener('click', function (event) {
                 event.stopPropagation(); // Prevent row click from being triggered
             });
         }
+
 
 
     </script>

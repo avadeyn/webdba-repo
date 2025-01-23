@@ -3,7 +3,6 @@
     ViewData["Title"] = "Home Page";
 }
 
-<script src="~/js/admin_portal/enrollment.js"></script>
 
 <body class="position-relative bg-image" style="font-family: 'Poppins', sans-serif; overflow-x: hidden; height: 100vh; width: 100vw; margin: 0;">
     <!-- Background Image -->
@@ -23,7 +22,7 @@
 
         <div class="row d-flex justify-content-between">
             <!-- Incoming Grade Dropdown -->
-            <div class="col-auto">
+            <div class="col-auto mb-3">
                 <label for="dropdownIncomingGradeLevel" class="form-label fs-4 visually-hidden">Select Incoming Grade</label>
                 <select class="form-select fs-6" id="dropdownIncomingGradeLevel" aria-label="Select Incoming Grade">
                     <option value="" disabled selected>Select Incoming Grade</option>
@@ -35,7 +34,7 @@
             </div>
 
             <!-- Section Dropdown -->
-            <div class="col-auto">
+            <div class="col-auto mb-3">
                 <label for="dropdownSection" class="form-label fs-4 visually-hidden">Select Section</label>
                 <select class="form-select fs-6" id="dropdownSection" aria-label="Select Section">
                     <option value="" disabled selected>Select Section</option>
@@ -47,7 +46,7 @@
             </div>
 
             <!-- Add Section Button -->
-            <div class="col-auto ms-auto">
+            <div class="col-auto ms-auto mb-3">
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addSectionModal">
                     Enroll Student
                 </button>
@@ -80,5 +79,13 @@
             </table>
         </div>
     </div>
+
+    <script>
+                // Function to select/deselect all checkboxes
+        function selectAllCheckboxes(source) {
+            const checkboxes = document.querySelectorAll('.studentCheckbox');
+            checkboxes.forEach(checkbox => checkbox.checked = source.checked);
+        }
+    </script>
 
 </body>
