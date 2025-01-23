@@ -61,7 +61,17 @@
 
                         <!-- Management Dropdown -->
                         <li class="nav-item dropdown me-3">
-                            <a class="nav-link dropdown-toggle @(ViewData["ActiveMenu"]?.ToString() == "Management" ? "active fw-bold" : "")" href="#" id="managementDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle @(ViewData["ActiveMenu"]?.ToString() == "Management" ||
+        ViewData["ActiveMenu"]?.ToString() == "Faculty" ||
+        ViewData["ActiveMenu"]?.ToString() == "Admission" ||
+        ViewData["ActiveMenu"]?.ToString() == "Student" ||
+        ViewData["ActiveMenu"]?.ToString() == "Classes" ||
+        ViewData["ActiveMenu"]?.ToString() == "Subject" ? "active fw-bold" : "")"
+                               href="#"
+                               id="managementDropdown"
+                               role="button"
+                               data-bs-toggle="dropdown"
+                               aria-expanded="false">
                                 <i class="fas fa-cogs"></i> Management
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="managementDropdown">
