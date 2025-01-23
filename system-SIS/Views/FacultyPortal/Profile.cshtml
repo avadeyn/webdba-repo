@@ -13,7 +13,7 @@
 
     <!-- Main Content -->
     <div class="container-fluid p-3" style="background-color: rgba(220, 232, 253, 0.9); border-radius: 10px;">
-        <section class="fixed ml-72 px-11 py-6 w-full top-20 left-0" style="font-weight: bold;">
+        <section class="fixed ml-72 px-11 py-6 w-100 top-20 left-0" style="font-weight: bold;">
             <p class="text-sm text-black fs-5">
                 <i class="fas fa-user text-black"></i>
                 <a asp-controller="FacultyPortal" asp-action="Profile" class="text-black" style="text-decoration: none;">Profile</a>
@@ -22,7 +22,7 @@
 
         <div class="bg-light rounded p-3 mb-3">
             <!-- Profile Image and Info with Edit Button -->
-            <div class="d-flex align-items-center justify-content-between">
+            <div class="d-flex flex-column flex-md-row align-items-center justify-content-between">
                 <div class="d-flex align-items-center">
                     <img src="~/images/profile-placeholder.png" alt="User Photo" class="rounded-circle me-2" style="width: 40px; height: 40px; object-fit: cover;" />
                     <div class="w-20 h-20 bg-white rounded-circle" id="profileImage"></div>
@@ -41,7 +41,7 @@
                     </div>
                 </div>
                 <!-- Edit Button for Upload Photo -->
-                <button class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#uploadProfileModal">Edit Photo</button>
+                <button class="btn btn-dark btn-sm mt-3 mt-md-0" data-bs-toggle="modal" data-bs-target="#uploadProfileModal">Edit Photo</button>
             </div>
         </div>
 
@@ -130,11 +130,6 @@
                 <button type="submit" class="btn btn-danger">Log Out</button>
             </form>
         </div>
-
-
-
-
-
     </div>
 
     <!-- Modal for Uploading Profile Picture -->
@@ -214,7 +209,7 @@
                 </div>
                 <form>
                     <div class="modal-body">
-                       <div class="row">
+                        <div class="row">
                             <div class="col-md-4 mb-3">
                                 <label for="houseNo" class="form-label">House no.</label>
                                 <input type="text" class="form-control" id="houseNo" placeholder="10B">
@@ -225,11 +220,11 @@
                             </div>
                             <div class="col-md-4 mb-3">
                                 <label for="barangay" class="form-label">Barangay</label>
-                                <input type="text" class="form-control" id="barangay" placeholder="Holy Spirit">
+                                <input type="text" class="form-control" id="barangay" placeholder="Beverly Hills">
                             </div>
-                       </div>
+                        </div>
                         <div class="mb-3">
-                            <label for="city" class="form-label">City/Municipality</label>
+                            <label for="city" class="form-label">City</label>
                             <input type="text" class="form-control" id="city" placeholder="Quezon City">
                         </div>
                         <div class="mb-3">

@@ -15,10 +15,12 @@
 
     <!-- Main Content -->
     <div class="container-fluid p-3" style="background-color: rgba(220, 232, 253, 0.9); border-radius: 10px;">
+
+        <!-- Navigation Section -->
         <section class="fixed ml-72 px-11 py-6 w-full top-20 left-0" style="font-weight: bold;">
             <p class="text-sm text-black fs-5">
                 <i class="fas fa-user-check text-black"></i>
-                <a asp-controller="FacultyPortal" asp-action="Index" class="text-black" style="text-decoration: none; font-size: 14px;">Class Advisory</a>
+                <a asp-controller="FacultyPortal" asp-action="Index" class="text-black" style="text-decoration: none;">Class Advisory</a>
             </p>
         </section>
 
@@ -50,14 +52,10 @@
                         <strong>Grade Level:</strong>
                         <span>7</span>
                     </h6>
-                    <!-- Program -->
-                    <h6 class="me-2 custom-font">
-                        <strong>Program:</strong>
-                        <span>Regular</span>
-                    </h6>
                 </div>
             </div>
 
+            <!-- Table Section -->
             <div class="table-responsive">
                 <table class="table align-items-center" style="font-size: 14px;">
                     <thead>
@@ -80,20 +78,16 @@
                             </td>
                             <td>Aspen, Abigail Reyes Sr.</td>
                             <td>
-                                <input type="text" style="width: 90px; "
-                                class="form-control" maxlength="3" data-grade="true" oninput="validateGrade(this)">
+                                <input type="text" style="width: 90px;" class="form-control" maxlength="3" data-grade="true" oninput="validateGrade(this)">
                             </td>
                             <td>
-                                <input type="text" style="width: 90px;"
-                                class="form-control" maxlength="3" data-grade="true" oninput="validateGrade(this)">
+                                <input type="text" style="width: 90px;" class="form-control" maxlength="3" data-grade="true" oninput="validateGrade(this)">
                             </td>
                             <td>
-                                <input type="text" style="width: 90px;"
-                                class="form-control" maxlength="3" data-grade="true" oninput="validateGrade(this)">
+                                <input type="text" style="width: 90px;" class="form-control" maxlength="3" data-grade="true" oninput="validateGrade(this)">
                             </td>
                             <td>
-                                <input type="text" style="width: 90px;"
-                                class="form-control" maxlength="3" data-grade="true" oninput="validateGrade(this)">
+                                <input type="text" style="width: 90px;" class="form-control" maxlength="3" data-grade="true" oninput="validateGrade(this)">
                             </td>
                             <td class="final-grade">-</td>
                             <td class="remark">-</td>
@@ -101,8 +95,6 @@
                     </tbody>
                 </table>
             </div>
-
-
 
         </div>
     </div>
