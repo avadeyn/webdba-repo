@@ -29,13 +29,13 @@
                                     <!-- First Name Input -->
                                     <div class="col-md-6 mb-3">
                                         <label for="FirstName" class="form-label">First Name</label>
-                                        <input type="text" class="form-control" name="firstName" id="firstName" placeholder="Enter your first name">
+                                        <input type="text" class="form-control" name="firstName" id="firstName" placeholder="Enter your first name" value="@ViewData["FirstName"]">
                                         <span asp-validation-for="FirstName" class="text-danger"></span>
                                     </div>
                                     <!-- Last Name Input -->
                                     <div class="col-md-6 mb-3">
                                         <label for="LastName" class="form-label">Last Name</label>
-                                        <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Enter your last name">
+                                        <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Enter your last name" value="@ViewData["LastName"]">
                                         <span asp-validation-for="LastName" class="text-danger"></span>
                                     </div>
                                 </div>
@@ -43,7 +43,7 @@
                                 <!-- Email Input -->
                                 <div class="mb-3">
                                     <label for="Email" class="form-label">Email Address</label>
-                                    <input type="Email" class="form-control" name="email" id="email" placeholder="Enter your email">
+                                    <input type="Email" class="form-control" name="email" id="email" placeholder="Enter your email" value="@ViewData["Email"]">
                                     <span asp-validation-for="Email" class="text-danger"></span>
                                 </div>
 
@@ -52,16 +52,17 @@
                                     <label for="Password" class="form-label">Password</label>
                                     <input type="Password" class="form-control" name="password" id="password" placeholder="Enter your password">
                                     <span asp-validation-for="Password" class="text-danger"></span>
+                                    
                                 </div>
 
                                 <!-- Confirm Password Input -->
                                 <div class="mb-4">
-                                    <label for="ConfirmPassword" class="form-label">ConfirmPassword</label>
-                                    <input type="Password" class="form-control" id="ConfirmPassword" placeholder="Enter your password">
+                                    <label for="ConfirmPassword" class="form-label">Confirm Password</label>
+                                    <input type="ConfirmPassword" class="form-control" name="confirmPassword" id="ConfirmPassword" placeholder="Enter your password">
                                     @* <span asp-validation-for="ConfirmPassword" class="text-danger"></span> *@
                                 </div>
-                                <!-- Sign Up Button -->
 
+                                <!-- Sign Up Button -->
                                 <button type="submit" value="Signup" class="btn btn-primary w-100 fs-4 mb-4 rounded-2">
                                     Sign Up
                                 </button>
@@ -69,7 +70,7 @@
                                 <!-- Sign In Link -->
                                 <div class="d-flex align-items-center justify-content-center">
                                     <p class="fs-4 mb-0 fw-bold">Already have an Account?</p>
-                                    <a class="text-primary fw-bold ms-2" href="@Url.Action("Signin", "Account")">
+                                    <a class="text-primary fw-bold ms-2" asp-controller="Account" asp-action="Signin">
                                         Sign In
                                     </a>
                                 </div>
@@ -82,10 +83,11 @@
     </div>
 </div>
 
-
-
-
-
+@section scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
 
 
 
