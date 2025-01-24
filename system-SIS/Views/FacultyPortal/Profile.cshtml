@@ -1,10 +1,7 @@
-﻿@model Faculty_UserProfile
-
-@{
-    Layout = "Faculty_Layout";
-    ViewData["Title"] = "Profile";
+﻿@{
+    Layout = "Faculty_Layout";  // Specifies the layout to use
+    ViewData["Title"] = "Home Page";
 }
-
 
 <body class="position-relative bg-image" style="font-family: 'Poppins', sans-serif; overflow-x: hidden; height: 100vh; margin: 0;">
 
@@ -16,16 +13,16 @@
 
     <!-- Main Content -->
     <div class="container-fluid p-3" style="background-color: rgba(220, 232, 253, 0.9); border-radius: 10px;">
-        <section class="fixed ml-72 px-11 py-6 w-100 top-20 left-0" style="font-weight: bold;">
+        <section class="fixed ml-72 px-11 py-6 w-full top-20 left-0" style="font-weight: bold;">
             <p class="text-sm text-black fs-5">
                 <i class="fas fa-user text-black"></i>
                 <a asp-controller="FacultyPortal" asp-action="Profile" class="text-black" style="text-decoration: none;">Profile</a>
             </p>
-        </section>    
+        </section>
 
-        <div class="bg-light rounded p-3 mb-3">    
+        <div class="bg-light rounded p-3 mb-3">
             <!-- Profile Image and Info with Edit Button -->
-            <div class="d-flex flex-column flex-md-row align-items-center justify-content-between">
+            <div class="d-flex align-items-center justify-content-between">
                 <div class="d-flex align-items-center">
                     <img src="~/images/profile-placeholder.png" alt="User Photo" class="rounded-circle me-2" style="width: 40px; height: 40px; object-fit: cover;" />
                     <div class="w-20 h-20 bg-white rounded-circle" id="profileImage"></div>
@@ -44,7 +41,7 @@
                     </div>
                 </div>
                 <!-- Edit Button for Upload Photo -->
-                <button class="btn btn-dark btn-sm mt-3 mt-md-0" data-bs-toggle="modal" data-bs-target="#uploadProfileModal">Edit Photo</button>
+                <button class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#uploadProfileModal">Edit Photo</button>
             </div>
         </div>
 
@@ -59,33 +56,36 @@
                     </div>
                     <div class="card-body text-muted">
                         <div class="d-flex justify-content-between mb-2">
-                            <span>First Name</span>
-                            <span class="text-dark fw-semibold">@Model.FirstName</span>
+                            <span>Name</span>
+                            <span class="text-dark fw-semibold">Althea Amor</span>
                         </div>
                         <div class="d-flex justify-content-between mb-2">
                             <span>Middle Initial</span>
-                            <span class="text-dark fw-semibold">@Model.MiddleName</span>
+                            <span class="text-dark fw-semibold">J</span>
                         </div>
                         <div class="d-flex justify-content-between mb-2">
                             <span>Last Name</span>
-                            <span class="text-dark fw-semibold">@Model.LastName</span>
+                            <span class="text-dark fw-semibold">Asis</span>
                         </div>
                         <div class="d-flex justify-content-between mb-2">
                             <span>Bio</span>
-                            <span class="text-dark fw-semibold">@Model.Bio</span>
+                            <span class="text-dark fw-semibold">Student</span>
                         </div>
                         <div class="d-flex justify-content-between mb-2">
                             <span>Date of Birth</span>
-                            <span class="text-dark fw-semibold">@Model.DateOfBirth.ToString("MMMM dd, yyyy")</span>
+                            <span class="text-dark fw-semibold">March 02, 2004</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Email address</span>
+                            <span class="text-dark fw-semibold">altheaamorjasis@gmail.com</span>
                         </div>
                         <div class="d-flex justify-content-between mb-2">
                             <span>Phone No.</span>
-                            <span class="text-dark fw-semibold">@Model.PhoneNumber</span>
+                            <span class="text-dark fw-semibold">+639123456789</span>
                         </div>
                     </div>
                 </div>
             </div>
-
 
             <!-- Address Section -->
             <div class="col-12 col-md-6">
@@ -96,28 +96,28 @@
                     </div>
                     <div class="card-body text-muted">
                         <div class="d-flex justify-content-between mb-2">
-                            <span>House No.</span>
-                            <span class="text-dark fw-semibold">@Model.HouseNumber</span>
+                            <span>House no.</span>
+                            <span class="text-dark fw-semibold">1103</span>
                         </div>
                         <div class="d-flex justify-content-between mb-2">
-                            <span>Street Name</span>
-                            <span class="text-dark fw-semibold">@Model.StreetName</span>
+                            <span>Street name</span>
+                            <span class="text-dark fw-semibold">Hev Abi</span>
                         </div>
                         <div class="d-flex justify-content-between mb-2">
                             <span>Barangay</span>
-                            <span class="text-dark fw-semibold">@Model.Barangay</span>
+                            <span class="text-dark fw-semibold">Holy Spirit</span>
                         </div>
                         <div class="d-flex justify-content-between mb-2">
                             <span>City or Municipality</span>
-                                        <span class="text-dark fw-semibold">@Model.CityOrMunicipality</span>
+                            <span class="text-dark fw-semibold">Quezon City</span>
                         </div>
                         <div class="d-flex justify-content-between mb-2">
                             <span>Province</span>
-                            <span class="text-dark fw-semibold">@Model.Province</span>
+                            <span class="text-dark fw-semibold">Metro Manila</span>
                         </div>
                         <div class="d-flex justify-content-between mb-2">
                             <span>Zip Code</span>
-                            <span class="text-dark fw-semibold">@Model.ZipCode</span>
+                            <span class="text-dark fw-semibold">1008</span>
                         </div>
                     </div>
                 </div>
@@ -125,11 +125,14 @@
         </div>
 
         <!-- Logout Button - Positioned to the Right -->
-        <div class="text-end mt-4">
+        <div class="text-end">
             <form action="@Url.Action("Faculty_Logout", "Account")" method="post" style="display:inline;">
                 <button type="submit" class="btn btn-danger">Log Out</button>
             </form>
         </div>
+
+
+
 
 
     </div>
@@ -163,81 +166,33 @@
                     <h5 class="modal-title" id="editPIModalLabel">Edit Personal Information</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form asp-action="EditPersonalInfo" asp-controller="Faculty_UserProfile" method="post">
+                <form>
                     <div class="modal-body">
                         <div class="row">
                             <div class="col-md-4 mb-3">
                                 <label for="firstName" class="form-label">First Name</label>
-                                <input type="text" class="form-control" id="firstName" asp-for="FirstName">
+                                <input type="text" class="form-control" id="firstName" placeholder="Althea Amor">
                             </div>
                             <div class="col-md-4 mb-3">
                                 <label for="middleInitial" class="form-label">Middle Initial</label>
-                                <input type="text" class="form-control" id="middleInitial" asp-for="MiddleName">
+                                <input type="text" class="form-control" id="middleInitial" placeholder="J">
                             </div>
                             <div class="col-md-4 mb-3">
                                 <label for="lastName" class="form-label">Last Name</label>
-                                <input type="text" class="form-control" id="lastName" asp-for="LastName">
+                                <input type="text" class="form-control" id="lastName" placeholder="Asis">
                             </div>
                         </div>
                         <div class="mb-3">
                             <label for="phoneNo" class="form-label">Phone No.</label>
-                            <input type="text" class="form-control" id="phoneNo" asp-for="PhoneNumber">
+                            <input type="text" class="form-control" id="phoneNo" placeholder="+639123456789">
                         </div>
                         <div class="mb-3">
                             <label for="dob" class="form-label">Date of Birth</label>
-                            <input type="date" class="form-control" id="dob" asp-for="DateOfBirth" value="@Model.DateOfBirth.ToString("yyyy-MM-dd")">
+                            <input type="date" class="form-control" id="dob" value="2004-03-02">
                         </div>
                         <div class="mb-3">
                             <label for="bio" class="form-label">Bio</label>
-                            <textarea class="form-control" id="bio" asp-for="Bio" rows="3"></textarea>
-                        </div>
-                    </div>
-                    <div class="modal-footer"> 
-                        <button type="submit" class="btn btn-primary">Save</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-
-
-    <!-- Modal for Editing Address -->
-    <div class="modal fade" id="editAddressModal" tabindex="-1" aria-labelledby="editAddressModalLabel" aria-hidden="true">
-        <div class="modal-dialog" style="max-width: 40%;">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="editAddressModalLabel">Edit Address</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <form asp-action="EditAddress" asp-controller="Faculty_UserProfile" method="post">
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col-md-4 mb-3">
-                                <label for="houseNo" class="form-label">House No.</label>
-                                <input type="text" class="form-control" id="houseNo" asp-for="HouseNumber" placeholder="Enter house number">
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <label for="streetName" class="form-label">Street Name</label>
-                                <input type="text" class="form-control" id="streetName" asp-for="StreetName" placeholder="Enter street name">
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <label for="barangay" class="form-label">Barangay</label>
-
-                                <input type="text" class="form-control" id="barangay" asp-for="Barangay" placeholder="Enter barangay">
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="city" class="form-label">City/Municipality</label>
-                            <input type="text" class="form-control" id="city" asp-for="CityOrMunicipality" placeholder="Enter city or municipality">
-                        </div>
-                        <div class="mb-3">
-                            <label for="province" class="form-label">Province</label>
-                            <input type="text" class="form-control" id="province" asp-for="Province" placeholder="Enter province">
-                        </div>
-                        <div class="mb-3">
-                            <label for="zipCode" class="form-label">Zip Code</label>
-                            <input type="text" class="form-control" id="zipCode" asp-for="ZipCode" placeholder="Enter zip code">
+                            <textarea class="form-control" id="bio" rows="3" placeholder="I AM A STUDENT OF POLYTECHNIC UNIVERSITY OF THE PHILIPPINES"></textarea>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -248,5 +203,50 @@
         </div>
     </div>
 
+
+    <!-- Modal for Editing Address -->
+    <div class="modal fade" id="editAddressModal" tabindex="-1" aria-labelledby="editAddressModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editAddressModalLabel">Edit Address</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form>
+                    <div class="modal-body">
+                       <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <label for="houseNo" class="form-label">House no.</label>
+                                <input type="text" class="form-control" id="houseNo" placeholder="10B">
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label for="streetName" class="form-label">Street Name</label>
+                                <input type="text" class="form-control" id="streetName" placeholder="Manggahan">
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label for="barangay" class="form-label">Barangay</label>
+                                <input type="text" class="form-control" id="barangay" placeholder="Holy Spirit">
+                            </div>
+                       </div>
+                        <div class="mb-3">
+                            <label for="city" class="form-label">City/Municipality</label>
+                            <input type="text" class="form-control" id="city" placeholder="Quezon City">
+                        </div>
+                        <div class="mb-3">
+                            <label for="province" class="form-label">Province</label>
+                            <input type="text" class="form-control" id="province" placeholder="Metro Manila">
+                        </div>
+                        <div class="mb-3">
+                            <label for="zipCode" class="form-label">Zip Code</label>
+                            <input type="text" class="form-control" id="zipCode" placeholder="1008">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
 </body>

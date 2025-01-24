@@ -3,6 +3,11 @@
     ViewData["Title"] = "Home Page";
 }
 
+@{
+    Layout = "Admin_Layout";  // Specifies the layout to use
+    ViewData["Title"] = "Home Page";
+}
+
 <body class="position-relative bg-image" style="font-family: 'Poppins', sans-serif; overflow-x: hidden; height: 100vh; width: 100vw; margin: 0;">
     <!-- Background Image -->
     <img src="~/images/bgjr.png"
@@ -19,10 +24,12 @@
             </p>
         </section>
 
+        <h6 class="mb-0 me-3">Admission Management</h6>
+
         <!-- Dropdown Section -->
         <div class="row mb-3 justify-content-end align-items-center">
             <!-- Incoming Grade -->
-            <div class="col-auto mb-2">
+            <div class="col-auto">
                 <label for="dropdownIncomingGradeLevel" class="form-label fs-6 visually-hidden">Select Incoming Grade</label>
                 <select class="form-select fs-6" id="dropdownIncomingGradeLevel" aria-label="Select Incoming Grade">
                     <option value="" disabled selected>Select Incoming Grade</option>
@@ -34,7 +41,7 @@
             </div>
 
             <!-- Subject Dropdown -->
-            <div class="col-auto mb-2">
+            <div class="col-auto">
                 <label for="dropdownSubject" class="form-label fs-6 visually-hidden">Select Subject</label>
                 <select class="form-select fs-6" id="dropdownSubject">
                     <option value="returnee">Returnee</option>
@@ -44,7 +51,7 @@
             </div>
 
             <!-- School Year Dropdown -->
-            <div class="col-auto mb-2">
+            <div class="col-auto">
                 <label for="dropdownSchoolYear" class="form-label fs-6 visually-hidden">Select School Year</label>
                 <select class="form-select fs-6" id="dropdownSchoolYear" aria-label="Select School Year">
                     <option value="" disabled selected>Select School Year</option>

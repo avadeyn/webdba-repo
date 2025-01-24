@@ -1,4 +1,5 @@
 using system_SIS.Services;
+using system_SIS.Services.NewFolder; 
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,21 +9,12 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<ApplicationDBContext>(options =>
 {
-	var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-	options.UseSqlServer(connectionString);
+    var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+    options.UseSqlServer(connectionString);
 });
 
-builder.Services.AddLogging(builder =>
-{
-    builder.AddConsole();
-    builder.AddDebug();
-});
-builder.Services.AddSession(options =>
-{
-    options.IdleTimeout = TimeSpan.FromMinutes(30);
-    options.Cookie.HttpOnly = true;
-    options.Cookie.IsEssential = true;
-});
+// Fix the service registration
+builder.Services.AddScoped<IFacultyService, FacultyService>();
 
 var app = builder.Build();    
 
@@ -38,7 +30,7 @@ app.UseHttpsRedirection();
 app.UseRouting();
 
 app.UseAuthorization();
-app.UseSession();
+
 app.MapStaticAssets();
 
 app.MapControllerRoute(
@@ -47,11 +39,10 @@ app.MapControllerRoute(
     //pattern: "{controller=Account}/{action=Signin}/{id?}")
     //pattern: "{controller=Account}/{action=Signup}/{id?}")
     //PORTALS
-    pattern: "{controller=FacultyPortal}/{action=Index}/{id?}")
-    //pattern: "{controller=AdminPortal}/{action=Index}/{id?}")
+    //pattern: "{controller=FacultyPortal}/{action=Index}/{id?}")
+    pattern: "{controller=AdminPortal}/{action=Index}/{id?}")
     //pattern: "{controller=StudentsPortal}/{action=Home}/{id?}")
     //pattern: "{controller=AdmissionPortal}/{action=Index}/{id?}")
-
     .WithStaticAssets();
 
 app.Run();
