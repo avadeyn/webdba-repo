@@ -3,6 +3,7 @@
     ViewData["Title"] = "Home Page";
 }
 
+
 <style>
     .container {
         background-color: #dce8fd;
@@ -16,7 +17,7 @@
     <img src="~/images/bgjr.png" alt="Background Image" class="img-fluid w-100" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
 
     <section class="fixed ml-72 px-11 py-6 w-full top-20 left-0" style="font-weight: bold;">
-        <p class="text-sm text-black">
+        <p class="text-sm text-black fs-5">
             <i class="fas fa-home text-black"></i>
             <a asp-controller="AdminPortal" asp-action="Student" class="text-black" style="text-decoration: none;">Student</a> / Student Information
         </p>
@@ -88,13 +89,9 @@
     </div>
 
     <script>
-        function goBack() {
+                function goBack() {
             // Redirect to the previous page or another route
             window.history.back();
         }
     </script>
-
-
-
-
 </body>
