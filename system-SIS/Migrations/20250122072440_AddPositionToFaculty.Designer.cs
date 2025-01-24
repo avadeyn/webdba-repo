@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using system_SIS.Services;
 
@@ -11,9 +12,11 @@ using system_SIS.Services;
 namespace system_SIS.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    partial class ApplicationDBContextModelSnapshot : ModelSnapshot
+    [Migration("20250122072440_AddPositionToFaculty")]
+    partial class AddPositionToFaculty
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -220,7 +223,6 @@ namespace system_SIS.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-
             modelBuilder.Entity("system_SIS.Models.NewFolder.Faculty", b =>
                 {
                     b.Property<int>("Id")
@@ -255,9 +257,6 @@ namespace system_SIS.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
                     b.Property<string>("Position")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -269,7 +268,6 @@ namespace system_SIS.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Faculties");
-
                 });
 
             modelBuilder.Entity("system_SIS.Models.Students", b =>

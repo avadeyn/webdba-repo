@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using system_SIS.Services;
 
+
 public class Program
 {
 	public static async Task Main(string[] args)
@@ -10,6 +11,7 @@ public class Program
 
 		// Add services to the container.
 		builder.Services.AddControllersWithViews();
+
 
 		builder.Services.AddDbContext<ApplicationDBContext>(options =>
 		{
@@ -28,6 +30,7 @@ public class Program
 		})
 			.AddRoles<IdentityRole>()
 			.AddEntityFrameworkStores<ApplicationDBContext>();
+
 
 		var app = builder.Build();
 
