@@ -47,6 +47,13 @@
                                     <span asp-validation-for="Email" class="text-danger"></span>
                                 </div>
 
+                                <!-- Email Input -->
+                                <div class="mb-3">
+                                    <label for="PhoneNumber" class="form-label">Phone Number</label>
+                                    <input type="PhoneNumber" class="form-control" name="phoneNumber" id="phoneNumber" placeholder="Enter your phone number">
+                                    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                                </div>
+
                                 <!-- Password Input -->
                                 <div class="mb-4">
                                     <label for="Password" class="form-label">Password</label>
@@ -62,14 +69,14 @@
                                 </div>
                                 <!-- Sign Up Button -->
 
-                                <button type="submit" value="Signup" class="btn btn-primary w-100 fs-4 mb-4 rounded-2">
+                                <button type="submit" value="Signup" asp-controller="Account" asp-action="EnterCode" class="btn btn-primary w-100 fs-4 mb-4 rounded-2">
                                     Sign Up
                                 </button>
 
                                 <!-- Sign In Link -->
                                 <div class="d-flex align-items-center justify-content-center">
                                     <p class="fs-4 mb-0 fw-bold">Already have an Account?</p>
-                                    <a class="text-primary fw-bold ms-2" href="@Url.Action("Signin", "Account")">
+                                    <a class="text-primary fw-bold ms-2" asp-controller="Account" asp-action="Signin">
                                         Sign In
                                     </a>
                                 </div>

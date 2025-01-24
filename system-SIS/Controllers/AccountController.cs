@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using system_SIS.Models;
 using system_SIS.Services;
+using Twilio.Types;
 
 namespace system_SIS.Controllers
 {
@@ -108,7 +109,7 @@ namespace system_SIS.Controllers
 		}
 
 		[HttpPost]
-		public async Task<IActionResult> Signup(string firstName, string lastName, string email, string password)
+		public async Task<IActionResult> Signup(string firstName, string lastName, string email, string password, string phoneNumber)
 		{
 			// Check if the email already exists
 			var existingUser = await _userManager.FindByEmailAsync(email);
@@ -124,7 +125,8 @@ namespace system_SIS.Controllers
 			{
 				UserName = email, // Use email as the username
 				Email = email,
-				
+				PhoneNumber = phoneNumber
+
 
 			};
 
@@ -137,16 +139,17 @@ namespace system_SIS.Controllers
 				await _userManager.AddToRoleAsync(user, "Applicant");
 
 				// Save additional user details to your custom Account table
-				var applicantDetails = new Account
-				{
-					//AccountId = user.Id, // Foreign key to AspNetUsers
-					FirstName = firstName,
-					LastName = lastName,
-					Email = email,
-					Password = password
-				};
-				Context1.Account.Add(applicantDetails);
-				await Context1.SaveChangesAsync();
+				//var applicantDetails = new Account
+				//{
+				//	//AccountId = user.Id, // Foreign key to AspNetUsers
+				//	FirstName = firstName,
+				//	LastName = lastName,
+				//	Email = email,
+				//	PhoneNumber = phoneNumber,
+				//	Password = password
+				//};
+				//Context1.Account.Add(applicantDetails);
+				//await Context1.SaveChangesAsync();
 
 				// Redirect to the Signin page
 				return RedirectToAction("Signin", "Account");
