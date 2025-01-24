@@ -9,9 +9,10 @@ namespace system_SIS.Services
     {
         public DbSet<Students> Students { get; set; }
         public DbSet<Faculty> Faculties { get; set; }
-    }
-  
-        public DbSet<Students> Students { get; set; }
-        public DbSet<Account> Account { get; set; }
+		public DbSet<Account> Account { get; set; }
+
+	}
+
+
 
 }
