@@ -25,7 +25,7 @@
                                 <!-- Username Input -->
                                 <div class="mb-3">
                                     <label asp-for="Email" class="form-label">Email</label>
-                                    <input type="text" class="form-control" name="email" id="email" placeholder="Enter your email">
+                                    <input type="text" class="form-control" name="email" id="email" placeholder="Enter your email" value="@ViewData["Email"]">
                                     <span asp-validation-for="Email" class="text-danger"></span>
                                 </div>
 

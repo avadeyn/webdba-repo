@@ -1,8 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Identity;
 
 namespace system_SIS.Models
 {
-	public class Account
+	public class Account : IdentityUser
 	{
 
 		[Key]
@@ -21,8 +22,13 @@ namespace system_SIS.Models
 		public required string Email { get; set; }
 
 		[Required(ErrorMessage = "Password is required.")]
-		[StringLength(20, MinimumLength = 6, ErrorMessage = "The password must be at least {2} and at max {1} characters long.")]
+		[StringLength(20, MinimumLength = 6)]
 		[DataType(DataType.Password)]
+		[Compare("ConfirmPassword", ErrorMessage ="Passwprds don't match.")]
 		public required string Password { get; set; }
+
+		[Required(ErrorMessage = "Confirm Password is required.")]
+		[DataType(DataType.Password)]
+		public required string ConfirmPassword { get; set; }
 	}
 }
