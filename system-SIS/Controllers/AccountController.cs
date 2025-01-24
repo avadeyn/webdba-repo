@@ -1,18 +1,27 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using system_SIS.Models;
 using system_SIS.Services;
 
 namespace system_SIS.Controllers
 {
+	
 	public class AccountController : Controller
 	{
-		private readonly ApplicationDBContext Context;
-		private readonly ILogger<AccountController> _logger;
+		//[Authorize(Roles = "Applicant")]
 
-		public AccountController(ILogger<AccountController> logger, ApplicationDBContext context)
+		private readonly ApplicationDBContext Context;
+		//private readonly ILogger<AccountController> _logger;
+		private readonly UserManager<IdentityUser> _userManager;
+		private readonly SignInManager<IdentityUser> _signInManager;
+
+		public ApplicationDBContext Context1 => Context;
+
+		public AccountController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, ApplicationDBContext context)
 		{
-			_logger = logger;
+			_userManager = userManager;
+			_signInManager = signInManager;
 			this.Context = context;
 		}
 
@@ -25,31 +34,81 @@ namespace system_SIS.Controllers
 
 
 		[HttpPost]
-		public IActionResult Signin(string email, string password)
+		public async Task<IActionResult> Signin(string email, string password)
 		{
-			var admin = new Account()
+			// Validate if email and password are provided
+			if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
 			{
-				FirstName = "Nadine",
-				LastName = "Admin",
-				Email = "nadineadmin@gmail.com",
-				Password = "Admin123",
-				Role = Account.Roles.Admin
+				ModelState.AddModelError(string.Empty, "Email and password are required.");
+				return View();
+			}
 
-			};
+			// Find the user by email
+			var user = await _userManager.FindByEmailAsync(email);
 
+			if (user == null)
+			{
+				// User not found, return error
+				ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+				return View();
+			}
+
+			// Check if the user is in a valid role (e.g., "Admin" or "Applicant")
+			var isAdmin = await _userManager.IsInRoleAsync(user, "Admin");
+			var isApplicant = await _userManager.IsInRoleAsync(user, "Applicant");
+
+			if (!isAdmin && !isApplicant)
+			{
+				// The user is not in any authorized role
+				ModelState.AddModelError(string.Empty, "You are not authorized.");
+				return View();
+			}
+
+			// Attempt to sign in the user with the provided password
+			var result = await _signInManager.PasswordSignInAsync(user.UserName, password, isPersistent: false, lockoutOnFailure: false);
+
+			if (result.Succeeded)
+			{
+				// Redirect based on role
+				if (isAdmin)
+				{
+					return RedirectToAction("Index", "AdminPortal");
+				}
+				else if (isApplicant)
+				{
+					return RedirectToAction("Index", "AdmissionPortal");
+				}
+			}
+
+			// Login failed (e.g., incorrect password)
+			ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+			return View();
+
+			//var admin = new Account()
+			//{
+			//	FirstName = "Nadine",
+			//	LastName = "Admin",
+			//	Email = "nadineadmin@gmail.com",
+			//	Password = "Admin123",
+			//	Role = Account.Roles.Admin
+
+			//};
 
 			// Check if the email and password match an account in the database
-			var account = Context.Account.FirstOrDefault(a => a.Email == email && a.Password == password);
-			if (account == null)
-			{
-				// No account found, return an error or show a message
-				ModelState.AddModelError("Email", "Invalid email or password.");
-				return View(); // Return the same view to show the error
-			}
-			else
-			{
-				return RedirectToAction("SetNewPassword", "Account");
-			}
+			//var account = Context.Account.FirstOrDefault(a => a.Email == email && a.Password == password);
+
+
+
+			//if (account == null)
+			//{
+			//	// No account found, return an error or show a message
+			//	ModelState.AddModelError("Email", "Invalid email or password.");
+			//	return View(); // Return the same view to show the error
+			//}
+			//else
+			//{
+			//	return RedirectToAction("SetNewPassword", "Account");
+			//}
 		}
 
 
@@ -59,34 +118,60 @@ namespace system_SIS.Controllers
 		}
 
 		[HttpPost]
-		public IActionResult Signup(string firstName, string lastName, string email, string password)
+		public async Task<IActionResult> Signup(string firstName, string lastName, string email, string password)
 		{
-			_logger.LogInformation("FirstName: {0}", firstName);
-			//Debug.WriteLine(FirstName); 
-
-			// Check if the email already exists in the database
-			var existingAccount = Context.Account.FirstOrDefault(a => a.Email == email);
-			if (existingAccount != null)
+			// Check if the email already exists
+			var existingUser = await _userManager.FindByEmailAsync(email);
+			if (existingUser != null)
 			{
-				// Email already exists, return an error or show a message
+				// Email already exists, return an error
 				ModelState.AddModelError("Email", "An account with this email already exists.");
-				return View(); // Return the same view to show the error
+				return View(); // Return the view to show the error
 			}
 
-			// If no account exists, create a new one
-			var account = new Account()
+			// Create a new IdentityUser
+			var user = new IdentityUser
 			{
-				FirstName = firstName,
-				LastName = lastName,
-				Email = email,
-				Password = password // Make sure to hash the password before saving
+				UserName = email, // Use email as the username
+				Email = email
 			};
 
-			Context.Account.Add(account);
-			Context.SaveChanges();
+			// Create the user with the specified password
+			var result = await _userManager.CreateAsync(user, password);
 
-			return RedirectToAction("Signin", "Account");
+			if (result.Succeeded)
+			{
+				// Add the user to the "Applicant" role
+				await _userManager.AddToRoleAsync(user, "Applicant");
+
+				// Save additional user details to your custom Account table
+				var applicantDetails = new Account
+				{
+					//AccountId = user.Id, // Foreign key to AspNetUsers
+					FirstName = firstName,
+					LastName = lastName,
+					Email = email,
+					Password = password
+				};
+				Context1.Account.Add(applicantDetails);
+				await Context1.SaveChangesAsync();
+
+				// Redirect to the Signin page
+				return RedirectToAction("Signin", "Account");
+			}
+			else
+			{
+				// Add any errors from the Identity result to ModelState
+				foreach (var error in result.Errors)
+				{
+					ModelState.AddModelError(string.Empty, error.Description);
+				}
+				return View();
+			}
 		}
+
+
+
 
 		public IActionResult ForgotPassword()
 		{

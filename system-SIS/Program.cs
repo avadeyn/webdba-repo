@@ -5,8 +5,8 @@ using Microsoft.Extensions.DependencyInjection;
 
 public class Program
 {
-    public static void Main(string[] args)
-    {
+	public static async Task Main(string[] args)
+	{
 		var builder = WebApplication.CreateBuilder(args);
 
 		// Add services to the container.
@@ -18,13 +18,17 @@ public class Program
 			options.UseSqlServer(connectionString);
 		});
 
-		//builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
-		//{
-		//	// Configure identity options here
-		//})
-		//	.AddRoles<IdentityRole>()
-		//	.AddEntityFrameworkStores<ApplicationDBContext>();
-
+		builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
+		{
+			// Configure identity options here
+			options.Password.RequireDigit = true;
+			options.Password.RequireLowercase = true;
+			options.Password.RequireUppercase = true;
+			options.Password.RequireNonAlphanumeric = true;
+			options.Password.RequiredLength = 8;
+		})
+			.AddRoles<IdentityRole>()
+			.AddEntityFrameworkStores<ApplicationDBContext>();
 
 		var app = builder.Build();
 
@@ -45,21 +49,47 @@ public class Program
 
 		app.MapControllerRoute(
 			name: "default",
-			//pattern: "{controller=Students}/{action=Index}/{id?}")
 			pattern: "{controller=Account}/{action=Signin}/{id?}")
-			//pattern: "{controller=Account}/{action=Signup}/{id?}")
-			//PORTALS
-			//pattern: "{controller=FacultyPortal}/{action=Index}/{id?}")
-			//pattern: "{controller=AdminPortal}/{action=Index}/{id?}")
-			//pattern: "{controller=StudentsPortal}/{action=Home}/{id?}")
-			//pattern: "{controller=AdmissionPortal}/{action=Index}/{id?}")
 			.WithStaticAssets();
+
+
 
 		//using (var scope = app.Services.CreateScope())
 		//{
-		//	var services = scope.ServiceProvider;
-		//	var context = services.GetRequiredService<ApplicationDBContext>();
-		//	context.Database.Migrate();
+		//	var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+
+		//	var roles = new string[] { "Admin", "Faculty", "Student", "Applicant" };
+
+		//	foreach (var role in roles)
+		//	{
+		//		if (!await roleManager.RoleExistsAsync(role))
+		//		{
+		//			await roleManager.CreateAsync(new IdentityRole(role));
+		//		}
+		//	}
+		//}
+
+		//using (var scope = app.Services.CreateScope())
+		//{
+		//	var userManager = scope.ServiceProvider.GetRequiredService<UserManager<IdentityUser>>();
+
+		//	string email = "nadinexschool@gmail.com";
+		//	string password = "@Admin123";
+
+		//	if(await userManager.FindByEmailAsync(email) == null)
+		//	{
+		//		var user = new IdentityUser();
+		//		user.Email = email;
+		//		user.UserName = email;
+
+		//		Console.WriteLine("Creating user: " + email);
+		//		await userManager.CreateAsync(user, password);
+
+		//		await userManager.AddToRoleAsync(user, "Admin");
+		//	}
+
+		
+			 
 		//}
 
 
@@ -68,19 +98,8 @@ public class Program
 
 
 
-
-
-
-
-
-
 		app.Run();
-
-
-
-
 	}
-
 }
        
 
