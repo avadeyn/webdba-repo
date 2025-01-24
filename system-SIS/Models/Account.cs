@@ -4,15 +4,6 @@ namespace system_SIS.Models
 {
 	public class Account
 	{
-		//public enum Roles
-		//{
-		//	Admin = 1,
-		//	Faculty = 2,
-		//	Student = 3,
-		//	Applicant = 4
-		//}
-
-		//public Roles Role { get; set; }
 
 		[Key]
 		public int AccountId { get; set; }

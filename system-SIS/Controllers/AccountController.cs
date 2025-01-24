@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
 using system_SIS.Models;
 using system_SIS.Services;
 
@@ -39,10 +40,10 @@ namespace system_SIS.Controllers
 			// Validate if email and password are provided
 			if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
 			{
-				//ModelState.AddModelError(string.Empty, "Email and password are required.");
+				ViewData["Email"] = email; // Retain entered email
+				//ViewData["Error"] = "Email and password are required.";
 				return View();
 			}
-
 			// Find the user by email
 			var user = await _userManager.FindByEmailAsync(email);
 
@@ -97,10 +98,19 @@ namespace system_SIS.Controllers
 		}
 
 		[HttpPost]
-		public async Task<IActionResult> Signup(string firstName, string lastName, string email, string password)
+		public async Task<IActionResult> Signup(Account model)
 		{
+
+			/// Check if the model is valid
+			if (!ModelState.IsValid)
+			{
+				// Return the view with validation errors
+				return View(model);
+			}
+
+
 			// Check if the email already exists
-			var existingUser = await _userManager.FindByEmailAsync(email);
+			var existingUser = await _userManager.FindByEmailAsync(model.Email);
 			if (existingUser != null)
 			{
 				// Email already exists, return an error
@@ -111,14 +121,14 @@ namespace system_SIS.Controllers
 			// Create a new IdentityUser
 			var user = new IdentityUser
 			{
-				UserName = email, // Use email as the username
-				Email = email,
+				UserName = model.Email, // Use email as the username
+				Email = model.Email,
 				
 
 			};
 
 			// Create the user with the specified password
-			var result = await _userManager.CreateAsync(user, password);
+			var result = await _userManager.CreateAsync(user, model.Password);
 
 			if (result.Succeeded)
 			{
@@ -129,10 +139,10 @@ namespace system_SIS.Controllers
 				var applicantDetails = new Account
 				{
 					//AccountId = user.Id, // Foreign key to AspNetUsers
-					FirstName = firstName,
-					LastName = lastName,
-					Email = email,
-					Password = password
+					FirstName = model.FirstName,
+					LastName = model.LastName,
+					Email = model.Email,
+					Password = model.Password
 				};
 				Context1.Account.Add(applicantDetails);
 				await Context1.SaveChangesAsync();
