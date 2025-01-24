@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace system_SIS.Controllers
 {
-	[Authorize(Roles = "Admin")]
+	[Authorize(Roles = "Faculty")]
 
 	public class FacultyPortalController : Controller
     {

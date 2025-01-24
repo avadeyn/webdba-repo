@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
@@ -33,8 +35,17 @@ namespace system_SIS.Controllers
 			return View();
 		}
 
+        [HttpPost]
+        public async Task<IActionResult> Admin_Logout()
+        {
+            // Sign out the user
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
 
-		[HttpPost]
+            // Redirect to login page or any other route
+            return RedirectToAction("Signin", "Account");
+        }
+
+        [HttpPost]
 		public async Task<IActionResult> Signin(string email, string password)
 		{
 			// Validate if email and password are provided
