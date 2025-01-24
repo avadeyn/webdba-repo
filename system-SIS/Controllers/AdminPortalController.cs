@@ -1,10 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
 namespace system_SIS.Controllers
 {
 	public class AdminPortalController : Controller
 	{
-		public IActionResult Index()
+        [Authorize(Roles = "Admin")]
+
+        public IActionResult Index()
 		{
             ViewData["ActiveMenu"] = "Index";
             return View();

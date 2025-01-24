@@ -1,7 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
+
 namespace system_SIS.Controllers
 {
-    public class FacultyPortalController : Controller
+	[Authorize(Roles = "Admin")]
+
+	public class FacultyPortalController : Controller
     {
         public IActionResult Index()
         {
