@@ -3,15 +3,70 @@
     ViewData["Title"] = "Admission";
 }
 
+
+
+<!-- Progress Steps -->
+<div class="form-progress">
+    <div class="progress-step active">
+        <div class="progress-circle"></div>
+        <small>Personal Information</small>
+    </div>
+    <div class="progress-step">
+        <div class="progress-circle"></div>
+        <small>Contact</small>
+    </div>
+    <div class="progress-step">
+        <div class="progress-circle"></div>
+        <small>Family</small>
+    </div>
+    <div class="progress-step">
+        <div class="progress-circle"></div>
+        <small>School</small>
+    </div>
+    <div class="progress-step active">
+        <div class="progress-circle active"></div>
+        <small>Documents</small>
+    </div>
+    <div class="progress-step">
+        <div class="progress-circle"></div>
+        <small>Finish</small>
+    </div>
+</div>
+
+<hr />
+
+
 <form>
     <div class="container mt-4">
-        <p>nice</p>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Upload a file</h5>
+                <p class="text-muted">Files Supported: PDF, DOCX, PNG, JPEG, JPG</p>
+                <div class="alert alert-danger d-none" id="error-message">
+                    File upload is required. Please upload a file to proceed.
+                </div>
+                <form id="uploadForm" runat="server" enctype="multipart/form-data" method="post">
+                    <div class="mb-3">
+                        <label for="fileUpload" class="form-label">Drag file(s) here to upload.</label>
+                        <div class="border border-secondary p-4 text-center" style="border-radius: 10px;">
+                            <input type="file" class="form-control" id="fileUpload" name="fileUpload" multiple />
+                            <p class="mt-2">
+                                Alternatively, you can select a file by
+                                <a href="#" onclick="document.getElementById('fileUpload').click(); return false;">clicking here</a>.
+                            </p>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Upload</button>
+                </form>
+            </div>
+        </div>
 
         <!-- Back and Next Buttons -->
         <div class="text-end">
-            <a href="@Url.Action("School", "AdmissionPortal")" class="btn-next">Back</a>
+            <a href="@Url.Action("School", "AdmissionPortal")" class="btn-next text-decoration-none">Back</a>
             <button asp-action="Finish" type="submit" class="btn-next">Next</button>
         </div>
+    </div>
 
 
 </form>
