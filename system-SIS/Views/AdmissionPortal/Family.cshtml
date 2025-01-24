@@ -1,51 +1,86 @@
-﻿@{
-    Layout = "_AdmissionLayout";  // Specifies the layout to use
-    ViewData["Title"] = "Admission";
+﻿@model system_SIS.Models.StudentAdmission
+
+@{
+    Layout = "_AdmissionLayout";
+    ViewData["Title"] = "Family Information";
 }
 
-<form>
+<!-- Keeping the original progress steps HTML -->
+<div class="form-progress">
+    <!-- Progress steps remain exactly the same -->
+</div>
+
+<hr />
+
+<form asp-controller="AdmissionPortal" asp-action="Family" method="post">
+    <h4 class="fw-bold" style="color: #172154">PARENT'S / GUARDIAN'S INFORMATION</h4>
     <div class="container mt-4">
-        <!-- Mother's Information -->
-        <h6 class="fw-bold" style="color: #172154">Mother's Information</h6>
+        <!-- Primary Guardian Section -->
+        <h6 class="fw-bold" style="color: #172154">Parent / Guardian's Name - Primary</h6>
         <div class="row mb-3">
             <div class="col-md-4">
-                <label for="motherFirstName" class="form-label">Mother's Name <span style="color: red;">*</span></label>
-                <input type="text" id="motherFirstName" class="form-control form-input" required>
+                <label for="PrimaryGuardianFirstName" class="form-label">First Name <span style="color: red;">*</span></label>
+                <input type="text" id="PrimaryGuardianFirstName" name="PrimaryGuardianFirstName"
+                       class="form-control form-input" required value="@Model.PrimaryGuardianFirstName">
             </div>
             <div class="col-md-4">
-                <label for="maidenName" class="form-label">Maiden Name </label>
-                <input type="text" id="maidenName" class="form-control form-input">
+                <label for="PrimaryGuardianMaidenName" class="form-label">Maiden Name</label>
+                <input type="text" id="PrimaryGuardianMaidenName" name="PrimaryGuardianMaidenName"
+                       class="form-control form-input" value="@Model.PrimaryGuardianMaidenName">
             </div>
             <div class="col-md-4">
-                <label for="motherLastName" class="form-label">Last Name <span style="color: red;">*</span></label>
-                <input type="text" id="motherLastName" class="form-control form-input" required>
+                <label for="PrimaryGuardianLastName" class="form-label">Last Name <span style="color: red;">*</span></label>
+                <input type="text" id="PrimaryGuardianLastName" name="PrimaryGuardianLastName"
+                       class="form-control form-input" required value="@Model.PrimaryGuardianLastName">
+            </div>
+            <div class="col-md-4">
+                <label for="PrimaryGuardianContactNo" class="form-label">Contact Number <span style="color: red;">*</span></label>
+                <input type="tel" id="PrimaryGuardianContactNo" name="PrimaryGuardianContactNo"
+                       class="form-control form-input" required pattern="^\d{11}$"
+                       title="Contact number must be exactly 11 digits." value="@Model.PrimaryGuardianContactNo">
+            </div>
+            <div class="col-md-4">
+                <label for="PrimaryGuardianRelationship" class="form-label">Relationship <span style="color: red;">*</span></label>
+                <input type="text" id="PrimaryGuardianRelationship" name="PrimaryGuardianRelationship"
+                       class="form-control form-input" required value="@Model.PrimaryGuardianRelationship">
             </div>
         </div>
 
-        <!-- Father's Information -->
-        <h6 class="fw-bold" style="color: #172154">Father's Information</h6>
+        <!-- Secondary Guardian Section -->
+        <h6 class="fw-bold" style="color: #172154">Parent / Guardian's Name - Secondary</h6>
         <div class="row mb-3">
             <div class="col-md-4">
-                <label for="fatherFirstName" class="form-label">Father's Name <span style="color: red;">*</span></label>
-                <input type="text" id="fatherFirstName" class="form-control form-input" required>
+                <label for="SecondaryGuardianFirstName" class="form-label">First Name <span style="color: red;">*</span></label>
+                <input type="text" id="SecondaryGuardianFirstName" name="SecondaryGuardianFirstName"
+                       class="form-control form-input" required value="@Model.SecondaryGuardianFirstName">
             </div>
             <div class="col-md-4">
-                <label for="fatherMiddleName" class="form-label">Middle Name</label>
-                <input type="text" id="fatherMiddleName" class="form-control form-input">
+                <label for="SecondaryGuardianMiddleName" class="form-label">Middle Name</label>
+                <input type="text" id="SecondaryGuardianMiddleName" name="SecondaryGuardianMiddleName"
+                       class="form-control form-input" value="@Model.SecondaryGuardianMiddleName">
             </div>
             <div class="col-md-4">
-                <label for="fatherLastName" class="form-label">Last Name <span style="color: red;">*</span></label>
-                <input type="text" id="fatherLastName" class="form-control form-input" required>
+                <label for="SecondaryGuardianLastName" class="form-label">Last Name <span style="color: red;">*</span></label>
+                <input type="text" id="SecondaryGuardianLastName" name="SecondaryGuardianLastName"
+                       class="form-control form-input" required value="@Model.SecondaryGuardianLastName">
+            </div>
+            <div class="col-md-4">
+                <label for="SecondaryGuardianContactNo" class="form-label">Contact Number <span style="color: red;">*</span></label>
+                <input type="tel" id="SecondaryGuardianContactNo" name="SecondaryGuardianContactNo"
+                       class="form-control form-input" required pattern="^\d{11}$"
+                       title="Contact number must be exactly 11 digits." value="@Model.SecondaryGuardianContactNo">
+            </div>
+            <div class="col-md-4">
+                <label for="SecondaryGuardianRelationship" class="form-label">Relationship <span style="color: red;">*</span></label>
+                <input type="text" id="SecondaryGuardianRelationship" name="SecondaryGuardianRelationship"
+                       class="form-control form-input" required value="@Model.SecondaryGuardianRelationship">
             </div>
         </div>
     </div>
-
 
     <!-- Back and Next Buttons -->
     <div class="text-end">
-        <a href="@Url.Action("Contact", "AdmissionPortal")" class="btn-next">Back</a>
-        <button asp-action="School" type="submit" class="btn-next">Next</button>
+        <a href="@Url.Action("Contact", "AdmissionPortal")" class="btn-next text-decoration-none">Back</a>
+        <button type="submit" class="btn-next">Next</button>
     </div>
-
-
 </form>

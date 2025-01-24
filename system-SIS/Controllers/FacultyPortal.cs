@@ -36,35 +36,35 @@ namespace system_SIS.Controllers
 
         public IActionResult ViewClassAd()
         {
-            ViewData["ActiveMenu"] = "ViewClassAd";
+            ViewData["ActiveMenu"] = "Home";
             return View();
         }
         public IActionResult ListReportCard()
         {
-            ViewData["ActiveMenu"] = "ListReportCard";
+            ViewData["ActiveMenu"] = "Home";
             return View();
         }
         public IActionResult CardGradeReport()
         {
-            ViewData["ActiveMenu"] = "CardGradeReport";
+            ViewData["ActiveMenu"] = "Grades";
             return View();
         }
 
         public IActionResult EncodeGrades()
         {
-            ViewData["ActiveMenu"] = "EncodeGrades";
+            ViewData["ActiveMenu"] = "Grades";
             return View();
         }
 
         public IActionResult ChangeRG()
         {
-            ViewData["ActiveMenu"] = "ChangeRG";
+            ViewData["ActiveMenu"] = "Grades";
             return View();
         }
 
         public IActionResult RCgrades()
         {
-            ViewData["ActiveMenu"] = "RCgrades";
+            ViewData["ActiveMenu"] = "Grades";
             return View();
         }
 

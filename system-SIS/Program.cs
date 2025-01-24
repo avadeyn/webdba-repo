@@ -12,6 +12,18 @@ builder.Services.AddDbContext<ApplicationDBContext>(options =>
 	options.UseSqlServer(connectionString);
 });
 
+builder.Services.AddLogging(builder =>
+{
+    builder.AddConsole();
+    builder.AddDebug();
+});
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
+
 var app = builder.Build();    
 
 // Configure the HTTP request pipeline.
@@ -26,7 +38,7 @@ app.UseHttpsRedirection();
 app.UseRouting();
 
 app.UseAuthorization();
-
+app.UseSession();
 app.MapStaticAssets();
 
 app.MapControllerRoute(
@@ -39,6 +51,7 @@ app.MapControllerRoute(
     //pattern: "{controller=AdminPortal}/{action=Index}/{id?}")
     //pattern: "{controller=StudentsPortal}/{action=Home}/{id?}")
     //pattern: "{controller=AdmissionPortal}/{action=Index}/{id?}")
+
     .WithStaticAssets();
 
 app.Run();

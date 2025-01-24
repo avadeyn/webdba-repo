@@ -1,17 +1,66 @@
-﻿@{
-    Layout = "_AdmissionLayout";  // Specifies the layout to use
-    ViewData["Title"] = "Admission";
+﻿@model system_SIS.Models.StudentAdmission
+
+@{
+    Layout = "_AdmissionLayout";
+    ViewData["Title"] = "School Information";
 }
 
-<form>
+<!-- Progress Steps remain exactly the same -->
+<div class="form-progress">
+    <!-- Original progress steps HTML -->
+</div>
+
+<hr />
+
+<form asp-controller="AdmissionPortal" asp-action="School" method="post">
     <div class="container mt-4">
-        <p>gello</p>
-        
-    <!-- Back and Next Buttons -->
-    <div class="text-end">
-        <a href="@Url.Action("Family", "AdmissionPortal")" class="btn-next">Back</a>
-        <button asp-action="Document" type="submit" class="btn-next">Next</button>
+        <h4 class="fw-bold" style="color: #172154">LAST SCHOOL ATTENDED</h4>
+        <div class="container mt-4">
+            <!-- Previous School Information -->
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <label for="SchoolName" class="form-label">Name of Previous School <span style="color: red;">*</span></label>
+                    <input type="text" id="SchoolName" name="SchoolName" class="form-control form-input" 
+                           required value="@Model.SchoolName">
+                </div>
+                <div class="col-md-4">
+                    <label for="SchoolAddress" class="form-label">School Address <span style="color: red;">*</span></label>
+                    <input type="text" id="SchoolAddress" name="SchoolAddress" class="form-control form-input" 
+                           required value="@Model.SchoolAddress">
+                </div>
+                <div class="col-md-4">
+                    <label for="SchoolContact" class="form-label">School Contact Number <span style="color: red;">*</span></label>
+                    <input type="tel" id="SchoolContact" name="SchoolContact" class="form-control form-input" 
+                           required pattern="^\d{11}$" title="School contact number must be exactly 11 digits." 
+                           value="@Model.SchoolContact">
+                </div>
+            </div>
+
+            <!-- School Type and School Year -->
+            <div class="row mb-3">
+                <div class="col-md-3">
+                    <label for="SchoolType" class="form-label">School Type <span style="color: red;">*</span></label>
+                    <select id="SchoolType" name="SchoolType" class="form-control form-input" required>
+                        <option value="">Select School Type</option>
+                        <option value="Public" selected="@(Model.SchoolType == "Public")">Public</option>
+                        <option value="Private" selected="@(Model.SchoolType == "Private")">Private</option>
+                        <option value="Other" selected="@(Model.SchoolType == "Other")">Other</option>
+                    </select>
+
+                </div>
+                <div class="col-md-4">
+                    <label for="YearOfGraduation" class="form-label">Year of Graduation <span style="color: red;">*</span></label>
+                    <input type="text" id="YearOfGraduation" name="YearOfGraduation" class="form-control form-input" 
+                           required pattern="^\d{4}$" title="Please enter a valid year (4 digits)." 
+                           value="@Model.YearOfGraduation">
+                </div>
+            </div>
+
+            <!-- Back and Next Buttons -->
+            <div class="text-end">
+                <a href="@Url.Action("Family", "AdmissionPortal")" class="btn-next text-decoration-none">Back</a>
+                <button type="submit" class="btn-next">Next</button>
+            </div>
+        </div>
     </div>
-
-
 </form>
