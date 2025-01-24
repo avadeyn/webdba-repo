@@ -39,7 +39,7 @@ namespace system_SIS.Controllers
 			// Validate if email and password are provided
 			if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
 			{
-				ModelState.AddModelError(string.Empty, "Email and password are required.");
+				//ModelState.AddModelError(string.Empty, "Email and password are required.");
 				return View();
 			}
 
@@ -56,8 +56,9 @@ namespace system_SIS.Controllers
 			// Check if the user is in a valid role (e.g., "Admin" or "Applicant")
 			var isAdmin = await _userManager.IsInRoleAsync(user, "Admin");
 			var isApplicant = await _userManager.IsInRoleAsync(user, "Applicant");
+			var isFaculty = await _userManager.IsInRoleAsync(user, "Faculty");
 
-			if (!isAdmin && !isApplicant)
+			if (!isAdmin && !isApplicant && !isFaculty)
 			{
 				// The user is not in any authorized role
 				ModelState.AddModelError(string.Empty, "You are not authorized.");
@@ -78,37 +79,15 @@ namespace system_SIS.Controllers
 				{
 					return RedirectToAction("Index", "AdmissionPortal");
 				}
+				else if (isFaculty)
+				{
+					return RedirectToAction("Index", "FacultyPortal");
+				}
 			}
 
 			// Login failed (e.g., incorrect password)
 			ModelState.AddModelError(string.Empty, "Invalid login attempt.");
 			return View();
-
-			//var admin = new Account()
-			//{
-			//	FirstName = "Nadine",
-			//	LastName = "Admin",
-			//	Email = "nadineadmin@gmail.com",
-			//	Password = "Admin123",
-			//	Role = Account.Roles.Admin
-
-			//};
-
-			// Check if the email and password match an account in the database
-			//var account = Context.Account.FirstOrDefault(a => a.Email == email && a.Password == password);
-
-
-
-			//if (account == null)
-			//{
-			//	// No account found, return an error or show a message
-			//	ModelState.AddModelError("Email", "Invalid email or password.");
-			//	return View(); // Return the same view to show the error
-			//}
-			//else
-			//{
-			//	return RedirectToAction("SetNewPassword", "Account");
-			//}
 		}
 
 
@@ -133,7 +112,9 @@ namespace system_SIS.Controllers
 			var user = new IdentityUser
 			{
 				UserName = email, // Use email as the username
-				Email = email
+				Email = email,
+				
+
 			};
 
 			// Create the user with the specified password
