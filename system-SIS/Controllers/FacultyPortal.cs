@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using system_SIS.Models;
 namespace system_SIS.Controllers
 {
     public class FacultyPortalController : Controller
@@ -36,49 +35,42 @@ namespace system_SIS.Controllers
 
         public IActionResult ViewClassAd()
         {
-            ViewData["ActiveMenu"] = "Home";
+            ViewData["ActiveMenu"] = "ViewClassAd";
             return View();
         }
         public IActionResult ListReportCard()
         {
-            ViewData["ActiveMenu"] = "Home";
+            ViewData["ActiveMenu"] = "ListReportCard";
             return View();
         }
         public IActionResult CardGradeReport()
         {
-            ViewData["ActiveMenu"] = "Grades";
+            ViewData["ActiveMenu"] = "CardGradeReport";
             return View();
         }
 
         public IActionResult EncodeGrades()
         {
-            ViewData["ActiveMenu"] = "Grades";
+            ViewData["ActiveMenu"] = "EncodeGrades";
             return View();
         }
 
         public IActionResult ChangeRG()
         {
-            ViewData["ActiveMenu"] = "Grades";
+            ViewData["ActiveMenu"] = "ChangeRG";
             return View();
         }
 
         public IActionResult RCgrades()
         {
-            ViewData["ActiveMenu"] = "Grades";
+            ViewData["ActiveMenu"] = "RCgrades";
             return View();
         }
 
         public IActionResult Profile()
         {
-            var model = new Faculty_UserProfile();
-            return View(model);
-        }
-
-        public IActionResult Edit()
-        {
-            ViewData["ActiveMenu"] = "Edit";
+            ViewData["ActiveMenu"] = "Profile";
             return View();
         }
-
     }
 }

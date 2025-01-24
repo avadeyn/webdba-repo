@@ -1,6 +1,4 @@
-﻿@model system_SIS.Models.StudentAdmission
-
-@{
+﻿@{
     Layout = "_AdmissionLayout";  // Specifies the layout to use
     ViewData["Title"] = "Admission";
 }
@@ -55,29 +53,30 @@
     }
 </style>
 
-<form asp-controller="AdmissionPortal" asp-action="Index" method="post">
+
+<form>
     <div class="row mb-3 align-items-end">
         <div class="card-body">
 
             <div class="row mb-5">
                 <!-- First Name -->
                 <div class="col-md-4">
-                    <label for="FirstName" class="form-label">First Name <span style="color: red;">*</span></label>
-                    <input type="text" id="FirstName" name="FirstName" class="form-control form-input" required pattern="[A-Za-z]+" title="Only letters allowed." value="@Model.FirstName">
+                    <label for="firstName" class="form-label">First Name <span style="color: red;">*</span></label>
+                    <input type="text" id="firstName" class="form-control form-input" required pattern="[A-Za-z]+" title="Only letters allowed.">
                     <small id="firstNameError" class="error-message"></small>
                 </div>
 
                 <!-- Middle Name -->
                 <div class="col-md-4">
-                    <label for="MiddleName" class="form-label">Middle Name</label>
-                    <input type="text" id="MiddleName" name="MiddleName" class="form-control form-input" pattern="[A-Za-z]+" title="Only letters allowed." value="@Model.MiddleName">
+                    <label for="middleName" class="form-label">Middle Name</label>
+                    <input type="text" id="middleName" class="form-control form-input" pattern="[A-Za-z]+" title="Only letters allowed.">
                     <small id="middleNameError" class="error-message"></small>
                 </div>
 
                 <!-- Last Name -->
                 <div class="col-md-4">
-                    <label for="LastName" class="form-label">Last Name <span style="color: red;">*</span></label>
-                    <input type="text" id="LastName" name="LastName" class="form-control form-input" required pattern="[A-Za-z]+" title="Only letters allowed." value="@Model.LastName">
+                    <label for="lastName" class="form-label">Last Name <span style="color: red;">*</span></label>
+                    <input type="text" id="lastName" class="form-control form-input" required pattern="[A-Za-z]+" title="Only letters allowed.">
                     <small id="lastNameError" class="error-message"></small>
                 </div>
             </div>
@@ -85,20 +84,20 @@
             <div class="row mb-5">
                 <!-- LRN -->
                 <div class="col-md-4">
-                    <label for="LRN" class="form-label">Learner Reference No. (LRN) <span style="color: red;">*</span></label>
-                    <input type="text" id="LRN" name="LRN" class="form-control form-input" required pattern="^\d{12}$" maxlength="12" title="LRN must be exactly 12 digits and only integers." value="@Model.LRN">
+                    <label for="lrn" class="form-label">Learner Reference No. (LRN) <span style="color: red;">*</span></label>
+                    <input type="text" id="lrn" class="form-control form-input" required pattern="^\d{12}$" maxlength="12" title="LRN must be exactly 12 digits and only integers.">
                     <small id="lrnError" class="error-message"></small>
                 </div>
                 <!-- GWA -->
                 <div class="col-md-4">
-                    <label for="GWA" class="form-label">GWA <span style="color: red;">*</span></label>
-                    <input type="number" id="GWA" name="GWA" class="form-control form-input" required min="64" max="100" step="0.01" title="GWA must be between 64 and 100." value="@Model.GWA">
+                    <label for="gwa" class="form-label">GWA <span style="color: red;">*</span></label>
+                    <input type="number" id="gwa" class="form-control form-input" required min="64" max="100" step="0.01" title="GWA must be between 64 and 100.">
                     <small id="gwaError" class="error-message"></small>
                 </div>
                 <!-- Email Address -->
                 <div class="col-md-4">
-                    <label for="Email" class="form-label">E-mail Address</label>
-                    <input type="email" id="Email" name="Email" class="form-control form-input" required title="Please enter a valid email address." value="@Model.Email">
+                    <label for="email" class="form-label">E-mail Address</label>
+                    <input type="email" id="email" class="form-control form-input" required title="Please enter a valid email address.">
                     <small id="emailError" class="error-message"></small>
                 </div>
             </div>
@@ -106,14 +105,14 @@
             <div class="row mb-5">
                 <!-- Date of Birth -->
                 <div class="col-md-4">
-                    <label for="DateOfBirth" class="form-label">Date of Birth</label>
-                    <input type="date" id="DateOfBirth" name="DateOfBirth" class="form-control form-input" required value="@Model.DateOfBirth.ToString("yyyy-MM-dd")">
+                    <label for="dob" class="form-label">Date of Birth</label>
+                    <input type="date" id="dob" class="form-control form-input" required>
                     <small id="dobError" class="error-message"></small>
                 </div>
                 <!-- Religion -->
                 <div class="col-md-4">
-                    <label for="Religion" class="form-label">Religion</label>
-                    <input type="text" id="Religion" name="Religion" class="form-control form-input" required value="@Model.Religion">
+                    <label for="religion" class="form-label">Religion</label>
+                    <input type="text" id="religion" class="form-control form-input" required>
                     <small id="religionError" class="error-message"></small>
                 </div>
             </div>
@@ -121,15 +120,15 @@
             <div class="row mb-5">
                 <!-- Height -->
                 <div class="col-md-4">
-                    <label for="Height" class="form-label">Height (cm)</label>
-                    <input type="number" id="Height" name="Height" class="form-control form-input" required min="0" title="Height must be a positive number." value="@Model.Height">
+                    <label for="height" class="form-label">Height (cm)</label>
+                    <input type="number" id="height" class="form-control form-input" required min="0" title="Height must be a positive number.">
                     <small id="heightError" class="error-message"></small>
                 </div>
 
                 <!-- Weight -->
                 <div class="col-md-4">
-                    <label for="Weight" class="form-label">Weight (kg)</label>
-                    <input type="number" id="Weight" name="Weight" class="form-control form-input" required min="0" title="Weight must be a positive number." value="@Model.Weight">
+                    <label for="weight" class="form-label">Weight (kg)</label>
+                    <input type="number" id="weight" class="form-control form-input" required min="0" title="Weight must be a positive number.">
                     <small id="weightError" class="error-message"></small>
                 </div>
             </div>
@@ -138,54 +137,54 @@
                 <h4>Other Info:</h4>
                 <!-- Place of Birth -->
                 <div class="col-md-4">
-                    <label for="PlaceOfBirth" class="form-label">Place of Birth</label>
-                    <input type="text" id="PlaceOfBirth" name="PlaceOfBirth" class="form-control form-input" required value="@Model.PlaceOfBirth">
+                    <label for="placeOfBirth" class="form-label">Place of Birth</label>
+                    <input type="text" id="placeOfBirth" class="form-control form-input" required>
                     <small id="placeOfBirthError" class="error-message"></small>
                 </div>
                 <!-- Sex -->
                 <div class="col-md-4">
-                    <label for="Sex" class="form-label">Sex</label>
-                    <select id="Sex" name="Sex" class="form-control form-input" required>
+                    <label for="sex" class="form-label">Sex</label>
+                    <select id="sex" class="form-control form-input" required>
                         <option value="">Select</option>
-                        <option value="Male" selected="@Model.Sex == " Male"">Male</option>
-                        <option value="Female" selected="@Model.Sex == " Female"">Female</option>
-                        <option value="Other" selected="@Model.Sex == " Other"">Other</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
                     </select>
                     <small id="sexError" class="error-message"></small>
                 </div>
 
                 <!-- Gender -->
                 <div class="col-md-4">
-                    <label for="Gender" class="form-label">Gender</label>
-                    <input type="text" id="Gender" name="Gender" class="form-control form-input" required value="@Model.Gender">
+                    <label for="gender" class="form-label">Gender</label>
+                    <input type="text" id="gender" class="form-control form-input" required>
                     <small id="genderError" class="error-message"></small>
                 </div>
 
                 <!-- Civil Status -->
                 <div class="col-md-4">
-                    <label for="CivilStatus" class="form-label">Civil Status</label>
-                    <input type="text" id="CivilStatus" name="CivilStatus" class="form-control form-input" required value="@Model.CivilStatus">
+                    <label for="civilStatus" class="form-label">Civil Status</label>
+                    <input type="text" id="civilStatus" class="form-control form-input" required>
                     <small id="civilStatusError" class="error-message"></small>
                 </div>
 
                 <!-- Disability -->
                 <div class="col-md-4">
-                    <label for="Disability" class="form-label">Disability</label>
-                    <input type="text" id="Disability" name="Disability" class="form-control form-input" value="@Model.Disability">
+                    <label for="disability" class="form-label">Disability</label>
+                    <input type="text" id="disability" class="form-control form-input">
                     <small id="disabilityError" class="error-message"></small>
                 </div>
 
                 <!-- Ethnicity -->
                 <div class="col-md-4">
-                    <label for="Ethnicity" class="form-label">Ethnicity</label>
-                    <input type="text" id="Ethnicity" name="Ethnicity" class="form-control form-input" required value="@Model.Ethnicity">
+                    <label for="ethnicity" class="form-label">Ethnicity</label>
+                    <input type="text" id="ethnicity" class="form-control form-input" required>
                     <small id="ethnicityError" class="error-message"></small>
                 </div>
 
                 <!-- Mother Tongue -->
                 <div class="col-md-4">
-                    <label for="MotherTongue" class="form-label">Mother Tongue, Dialect</label>
-                    <input type="text" id="MotherTongue" name="MotherTongue" class="form-control form-input" required value="@Model.MotherTongue">
+                    <label for="motherTongue" class="form-label">Mother Tongue, Dialect</label>
+                    <input type="text" id="motherTongue" class="form-control form-input" required>
                     <small id="motherTongueError" class="error-message"></small>
                 </div>
             </div>
@@ -195,23 +194,6 @@
     <!-- Back and Next Buttons -->
     <div class="text-end">
         <a href="@Url.Action("Index", "AdmissionPortal")" class="btn-next text-decoration-none">Back</a>
-        <button type="submit" class="btn-next">Next</button>
+        <button asp-action="Contact" type="submit" class="btn-next">Next</button>
     </div>
 </form>
-
-<script>
-        document.addEventListener("DOMContentLoaded", function () {
-        // Validate LRN for exactly 12 digits and only integers
-        document.getElementById("lrn").addEventListener("input", function () {
-            const lrnField = this;
-            const lrnValue = lrnField.value;
-
-            // Only allow numbers and ensure the value has exactly 12 digits
-            if (/^\d{12}$/.test(lrnValue)) {
-                lrnField.setCustomValidity("");  // Valid input, no error
-            } else {
-                lrnField.setCustomValidity("LRN must be exactly 12 digits and only integers.");  // Invalid input, error message
-            }
-        });
-    });
-</script>

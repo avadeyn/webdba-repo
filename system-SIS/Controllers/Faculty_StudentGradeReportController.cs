@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PdfSharpCore.Pdf;
 using PdfSharpCore.Drawing;
-using PdfSharpCore.Drawing.Layout;
 using System.IO;
 
 namespace system_SIS.Controllers
@@ -32,7 +31,7 @@ namespace system_SIS.Controllers
                 GeneralAverage = 89
             };
 
-            // Create PDF document
+            // Create PDF
             var pdf = new PdfDocument();
             var page = pdf.AddPage();
             var graphics = XGraphics.FromPdfPage(page);
@@ -48,96 +47,117 @@ namespace system_SIS.Controllers
                 var logo = XImage.FromFile(logoPath);
                 var logoWidth = 100;
                 logoHeight = (logo.PixelHeight / (double)logo.PixelWidth) * logoWidth;
-                double logoX = (page.Width - logoWidth) / 2; // Center the logo horizontally
-                double logoY = 20; // Position the logo at the top
-                graphics.DrawImage(logo, logoX, logoY, logoWidth, logoHeight);
+                graphics.DrawImage(logo, (page.Width - logoWidth) / 2, 30, logoWidth, logoHeight);
             }
 
-            // Header
-            double headerY = 30 + logoHeight; // Adjust header Y to move below the logo
-            graphics.DrawString("Laurelcrest High School", titleFont, XBrushes.Black,
-                new XRect(0, headerY, page.Width, 30), XStringFormats.TopCenter);
-            graphics.DrawString("LEARNER'S PROGRESS REPORT CARD", font, XBrushes.Black,
-                new XRect(0, headerY + 40, page.Width, 20), XStringFormats.TopCenter);
+            // Header Texts
+            double headerStartY = 30 + logoHeight + 10; // Position below the logo
+            graphics.DrawString("Jose Rizal High School", titleFont, XBrushes.Black, new XRect(0, headerStartY, page.Width, 30), XStringFormats.TopCenter);
+            graphics.DrawString("Junior High School", font, XBrushes.Black, new XRect(0, headerStartY + 20, page.Width, 20), XStringFormats.TopCenter);
+            graphics.DrawString("LEARNER'S PROGRESS REPORT CARD", font, XBrushes.Black, new XRect(0, headerStartY + 40, page.Width, 20), XStringFormats.TopCenter);
 
-            // Student Info
-            double infoY = headerY + 90;
-            graphics.DrawString($"Name: {student.Name}", boldFont, XBrushes.Black, new XPoint(40, infoY));
-            graphics.DrawString($"Age: {student.Age}", boldFont, XBrushes.Black, new XPoint(300, infoY));
-            graphics.DrawString($"Grade: {student.Grade}", boldFont, XBrushes.Black, new XPoint(40, infoY + 20));
-            graphics.DrawString($"Sex: {student.Sex}", boldFont, XBrushes.Black, new XPoint(300, infoY + 20));
-            graphics.DrawString($"School Year: {student.SchoolYear}", boldFont, XBrushes.Black, new XPoint(40, infoY + 40));
-            graphics.DrawString($"Section: {student.Section}", boldFont, XBrushes.Black, new XPoint(300, infoY + 40));
-            graphics.DrawString($"LRN: {student.LRN}", boldFont, XBrushes.Black, new XPoint(40, infoY + 60));
+            // Add Margin Above the Name Section
+            double marginAboveName = 30;
+
+            // Student Info Table
+            double infoStartY = headerStartY + 70 + marginAboveName;
+            double rowHeight = 20;
+            double tableWidth = 400; // Approximate width of the table
+            double centerX = (page.Width - tableWidth) / 2;
+
+            graphics.DrawString("Name:", boldFont, XBrushes.Black, new XPoint(centerX, infoStartY));
+            graphics.DrawString(student.Name, font, XBrushes.Black, new XPoint(centerX + 80, infoStartY));
+            graphics.DrawString("Age:", boldFont, XBrushes.Black, new XPoint(centerX + 250, infoStartY));
+            graphics.DrawString(student.Age, font, XBrushes.Black, new XPoint(centerX + 300, infoStartY));
+
+            graphics.DrawString("Grade:", boldFont, XBrushes.Black, new XPoint(centerX, infoStartY + rowHeight));
+            graphics.DrawString(student.Grade, font, XBrushes.Black, new XPoint(centerX + 80, infoStartY + rowHeight));
+            graphics.DrawString("Sex:", boldFont, XBrushes.Black, new XPoint(centerX + 250, infoStartY + rowHeight));
+            graphics.DrawString(student.Sex, font, XBrushes.Black, new XPoint(centerX + 300, infoStartY + rowHeight));
+
+            graphics.DrawString("School Year:", boldFont, XBrushes.Black, new XPoint(centerX, infoStartY + 2 * rowHeight));
+            graphics.DrawString(student.SchoolYear, font, XBrushes.Black, new XPoint(centerX + 80, infoStartY + 2 * rowHeight));
+            graphics.DrawString("Section:", boldFont, XBrushes.Black, new XPoint(centerX + 250, infoStartY + 2 * rowHeight));
+            graphics.DrawString(student.Section, font, XBrushes.Black, new XPoint(centerX + 300, infoStartY + 2 * rowHeight));
+
+            graphics.DrawString("LRN:", boldFont, XBrushes.Black, new XPoint(centerX, infoStartY + 3 * rowHeight));
+            graphics.DrawString(student.LRN, font, XBrushes.Black, new XPoint(centerX + 80, infoStartY + 3 * rowHeight));
 
             // Grades Table
-            double tableY = infoY + 100;
-            double[] columnWidths = { 150, 40, 40, 40, 40, 80, 100 }; // Column widths
-            double tableX = 40;
+            double gradesStartY = infoStartY + 4 * rowHeight + 40; // Increased margin above the table
 
-            // Draw Table Header
-            var headerHeight = 30;
-            graphics.DrawRectangle(XPens.Black, tableX, tableY, columnWidths.Sum(), headerHeight);
-            var headerTitles = new[] { "Learning Areas", "1st", "2nd", "3rd", "4th", "Final Grade", "Remarks" };
+            // Adjust column widths for better presentation
+            double learningAreaWidth = 180; // Wider space for the "Learning Areas" column
+            double quarterWidth = 60; // Narrower columns for quarters
+            double finalGradeWidth = 80; // Wider space for "Final Grade"
+            double remarksWidth = 100; // Wider space for "Remarks"
+            double totalTableWidth = learningAreaWidth + 4 * quarterWidth + finalGradeWidth + remarksWidth; // Total width
 
-            double xPosition = tableX;
-            for (int i = 0; i < headerTitles.Length; i++)
+            // Table Header with lines (First Row)
+            graphics.DrawRectangle(XPens.Black, centerX, gradesStartY, totalTableWidth, rowHeight * 2); // Double height for the header
+            graphics.DrawString("Learning Areas", boldFont, XBrushes.Black, new XRect(centerX, gradesStartY, learningAreaWidth, rowHeight * 2), XStringFormats.Center);
+            graphics.DrawString("Quarter", boldFont, XBrushes.Black, new XRect(centerX + learningAreaWidth, gradesStartY, 4 * quarterWidth, rowHeight), XStringFormats.Center); // Span quarters over 4 columns
+            graphics.DrawString("Final Grade", boldFont, XBrushes.Black, new XRect(centerX + learningAreaWidth + 4 * quarterWidth, gradesStartY, finalGradeWidth, rowHeight), XStringFormats.Center);
+            graphics.DrawString("Remarks", boldFont, XBrushes.Black, new XRect(centerX + learningAreaWidth + 4 * quarterWidth + finalGradeWidth, gradesStartY, remarksWidth, rowHeight), XStringFormats.Center);
+
+            // Draw lines for the first row (Learning Areas and Quarter)
+            graphics.DrawLine(XPens.Black, centerX, gradesStartY + rowHeight * 2, centerX + totalTableWidth, gradesStartY + rowHeight * 2); // Horizontal line under the header
+            graphics.DrawLine(XPens.Black, centerX, gradesStartY, centerX, gradesStartY + rowHeight * 2); // Left line for the first column
+            graphics.DrawLine(XPens.Black, centerX + totalTableWidth, gradesStartY, centerX + totalTableWidth, gradesStartY + rowHeight * 2); // Right line for the last column
+
+            // Draw vertical lines between each column in the header
+            for (int i = 1; i <= 5; i++) // 5 divisions (Learning Areas, Quarter 1-4, Final Grade, Remarks)
             {
-                graphics.DrawRectangle(XPens.Black, xPosition, tableY, columnWidths[i], headerHeight);
-                graphics.DrawString(headerTitles[i], boldFont, XBrushes.Black,
-                    new XRect(xPosition, tableY, columnWidths[i], headerHeight), XStringFormats.Center);
-                xPosition += columnWidths[i];
+                double xPosition = centerX + i * quarterWidth;
+                if (i == 1) xPosition = centerX + learningAreaWidth; // Adjust the first quarter line after the learning area
+                if (i == 5) xPosition = centerX + learningAreaWidth + 4 * quarterWidth; // Adjust after the quarters
+                graphics.DrawLine(XPens.Black, xPosition, gradesStartY, xPosition, gradesStartY + rowHeight * 2);
             }
 
-            // Draw Table Rows
-            double currentY = tableY + headerHeight;
+            // Quarter labels (Second Row, underneath "Quarter" label)
+            graphics.DrawString("1st", boldFont, XBrushes.Black, new XRect(centerX + learningAreaWidth, gradesStartY + rowHeight, quarterWidth, rowHeight), XStringFormats.Center);
+            graphics.DrawString("2nd", boldFont, XBrushes.Black, new XRect(centerX + learningAreaWidth + quarterWidth, gradesStartY + rowHeight, quarterWidth, rowHeight), XStringFormats.Center);
+            graphics.DrawString("3rd", boldFont, XBrushes.Black, new XRect(centerX + learningAreaWidth + 2 * quarterWidth, gradesStartY + rowHeight, quarterWidth, rowHeight), XStringFormats.Center);
+            graphics.DrawString("4th", boldFont, XBrushes.Black, new XRect(centerX + learningAreaWidth + 3 * quarterWidth, gradesStartY + rowHeight, quarterWidth, rowHeight), XStringFormats.Center);
+
+            double currentY = gradesStartY + rowHeight * 2; // Start drawing rows after the header row
+
+            // Draw rows for each subject
             foreach (var subject in student.Subjects)
             {
-                double rowHeight = 30;
-                double rowX = tableX;
+                // Draw the rows with lines
+                graphics.DrawRectangle(XPens.Black, centerX, currentY, totalTableWidth, rowHeight);
+                graphics.DrawString(subject.Name, font, XBrushes.Black, new XRect(centerX, currentY, learningAreaWidth, rowHeight), XStringFormats.CenterLeft);
 
-                // Learning Areas
-                var learningAreaFormatter = new XTextFormatter(graphics);
-                var learningAreaRect = new XRect(rowX + 5, currentY + 5, columnWidths[0] - 10, rowHeight - 10); // Padding
-                learningAreaFormatter.DrawString(subject.Name, font, XBrushes.Black, learningAreaRect);
-                rowX += columnWidths[0];
-
-                // Quarter Grades
+                // Draw quarter grades inline under each quarter label
                 for (int i = 0; i < subject.QuarterGrades.Length; i++)
                 {
-                    graphics.DrawString(subject.QuarterGrades[i].ToString(), font, XBrushes.Black,
-                        new XRect(rowX, currentY, columnWidths[i + 1], rowHeight), XStringFormats.Center);
-                    rowX += columnWidths[i + 1];
+                    graphics.DrawString(subject.QuarterGrades[i].ToString(), font, XBrushes.Black, new XRect(centerX + learningAreaWidth + i * quarterWidth, currentY, quarterWidth, rowHeight), XStringFormats.Center);
                 }
 
-                // Final Grade
-                graphics.DrawString(subject.FinalGrade.ToString(), font, XBrushes.Black,
-                    new XRect(rowX, currentY, columnWidths[5], rowHeight), XStringFormats.Center);
-                rowX += columnWidths[5];
+                graphics.DrawString(subject.FinalGrade.ToString(), font, XBrushes.Black, new XRect(centerX + learningAreaWidth + 4 * quarterWidth, currentY, finalGradeWidth, rowHeight), XStringFormats.Center);
+                graphics.DrawString(subject.Remarks, font, XBrushes.Black, new XRect(centerX + learningAreaWidth + 4 * quarterWidth + finalGradeWidth, currentY, remarksWidth, rowHeight), XStringFormats.Center);
 
-                // Remarks
-                graphics.DrawString(subject.Remarks, font, XBrushes.Black,
-                    new XRect(rowX, currentY, columnWidths[6], rowHeight), XStringFormats.Center);
+                // Draw the lines around each row
+                graphics.DrawLine(XPens.Black, centerX, currentY + rowHeight, centerX + totalTableWidth, currentY + rowHeight); // Bottom line for each row
+                graphics.DrawLine(XPens.Black, centerX, currentY, centerX, currentY + rowHeight); // Left line for the first cell
+                graphics.DrawLine(XPens.Black, centerX + totalTableWidth, currentY, centerX + totalTableWidth, currentY + rowHeight); // Right line for the last cell
 
-                // Draw Row Border
-                graphics.DrawRectangle(XPens.Black, tableX, currentY, columnWidths.Sum(), rowHeight);
+                // Draw vertical lines between each column in the rows (skip the line between Learning Areas and the first quarter)
+                for (int i = 1; i <= 4; i++) // 4 quarters and Final Grade + Remarks
+                {
+                    graphics.DrawLine(XPens.Black, centerX + learningAreaWidth + i * quarterWidth, currentY, centerX + learningAreaWidth + i * quarterWidth, currentY + rowHeight);
+                }
+                graphics.DrawLine(XPens.Black, centerX + learningAreaWidth + 4 * quarterWidth, currentY, centerX + learningAreaWidth + 4 * quarterWidth, currentY + rowHeight); // Line after the 4th Quarter
+                graphics.DrawLine(XPens.Black, centerX + learningAreaWidth + 4 * quarterWidth + finalGradeWidth, currentY, centerX + learningAreaWidth + 4 * quarterWidth + finalGradeWidth, currentY + rowHeight); // Line after the Final Grade column
                 currentY += rowHeight;
             }
 
-            // Footer
-            double footerY = page.Height - 40; // Positioning the footer 40 units above the bottom of the page
-            string footerText = "Generated by Laurelcrest High School - Confidential";
-
-            graphics.DrawString(footerText, font, XBrushes.Black,
-                new XRect(0, footerY, page.Width, 20), XStringFormats.Center);
-
-
-
-            // Save PDF
-            using (var memoryStream = new MemoryStream())
+            // Save the document to a MemoryStream
+            using (var ms = new MemoryStream())
             {
-                pdf.Save(memoryStream);
-                return File(memoryStream.ToArray(), "application/pdf", "grade_report.pdf");
+                pdf.Save(ms);
+                return File(ms.ToArray(), "application/pdf", "StudentGradeReport.pdf");
             }
         }
     }

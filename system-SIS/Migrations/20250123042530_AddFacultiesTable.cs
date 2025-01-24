@@ -5,7 +5,7 @@
 namespace system_SIS.Migrations
 {
     /// <inheritdoc />
-    public partial class UpdateStudentAdmissionsTable : Migration
+    public partial class AddFacultiesTable : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

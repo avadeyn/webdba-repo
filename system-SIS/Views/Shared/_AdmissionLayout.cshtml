@@ -1,5 +1,4 @@
-﻿﻿
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -17,6 +16,7 @@
         .logo {
             width: 60px;
             height: 60px;
+            background-color: #0056D2;
             border-radius: 50%;
         }
 
@@ -101,7 +101,7 @@
             <!-- Left Section: Logo and School Name -->
             <div class="d-flex align-items-center">
                 <img src="~/images/logo.png" alt="Logo" class="logo me-3" />
-                <h5 class="mb-0 fw-bold">Laurelcrest High School</h5> <!-- School Name -->
+                <h5 class="mb-0 fw-bold">Jose Rizal High School</h5> <!-- School Name -->
             </div>
 
             <!-- Right Section: Applicant Information and Sign Out -->
@@ -138,6 +138,44 @@
             <!-- Right: Main Content -->
             <div class="col-md-8">
                 <div class="form-container">
+                    <!-- Application ID -->
+                    <p class="text-primary fw-bold px-3 py-2 rounded-pill"
+                       style="background-color: #DCE8FD; display: inline-block;">
+                        Application Id: 123456789
+                    </p>
+                    <hr />
+
+
+                    <!-- Progress Steps -->
+                    <div class="form-progress">
+                        <div class="progress-step active">
+                            <div class="progress-circle active"></div>
+                            <small>Personal Information</small>
+                        </div>
+                        <div class="progress-step">
+                            <div class="progress-circle"></div>
+                            <small>Contact</small>
+                        </div>
+                        <div class="progress-step">
+                            <div class="progress-circle"></div>
+                            <small>Family</small>
+                        </div>
+                        <div class="progress-step">
+                            <div class="progress-circle"></div>
+                            <small>School</small>
+                        </div>
+                        <div class="progress-step">
+                            <div class="progress-circle"></div>
+                            <small>Documents</small>
+                        </div>
+                        <div class="progress-step">
+                            <div class="progress-circle"></div>
+                            <small>Finish</small>
+                        </div>
+                    </div>
+
+                    <hr />
+
                     <!-- Dynamic Page Content -->
                     <div class="container">
                         <main role="main" class="pb-3">
@@ -153,6 +191,5 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
-
 </body>
 </html>
