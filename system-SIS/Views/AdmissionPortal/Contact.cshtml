@@ -1,9 +1,12 @@
-﻿@{
-    Layout = "_AdmissionLayout";  // Specifies the layout to use
-    ViewData["Title"] = "Admission";
+﻿@model system_SIS.Models.StudentAdmission
+
+@{
+    Layout = "_AdmissionLayout";
+    ViewData["Title"] = "Contact Information";
 }
 
-<!-- Progress Steps -->
+<script src="~/js/admission_portal/contact.js"></script>
+
 <div class="form-progress">
     <div class="progress-step">
         <div class="progress-circle"></div>
@@ -33,100 +36,112 @@
 
 <hr />
 
-<form>
-    <div class="container mt-4">
-        <!-- Contact Information -->
-        <h6 class="fw-bold" style="color: #172154">Contact Information</h6>
-        <div class="row mb-3">
-            <div class="col-md-6">
-                <label for="phone" class="form-label">Phone Number <span style="color: red;">*</span></label>
-                <input type="tel" id="phone" class="form-control form-input" required pattern="^\d{11}$" title="Phone number must be exactly 11 digits.">
-            </div>
-        </div>
+<style>
+    input:focus:invalid, select:focus:invalid {
+        border: 1px solid red;
+    }
 
-        <div class="row mb-3">
-            <!-- Current Address -->
-            <h6 class="fw-bold" style="color: #172154">Current Address</h6>
-            <div class="row mb-3">
-                <div class="col-md-6">
-                    <label for="currentAddress" class="form-label">Address <span style="color: red;">*</span></label>
-                    <input type="text" id="currentAddress" class="form-control form-input" style="height: 45px; font-size: 16px; padding: 10px;" required>
+    input:focus:valid, select:focus:valid {
+        border: 1px solid green;
+    }
+
+    .error-message {
+        color: red;
+        font-size: 0.875em;
+        margin-top: 0.25em;
+    }
+</style>
+
+<form asp-controller="AdmissionPortal" asp-action="Contact" method="post">
+    <div class="row mb-3 align-items-end">
+        <div class="card-body">
+            <div class="row mb-5">
+                <div class="col-md-4">
+                    <label for="Phone" class="form-label">Phone <span style="color: red;">*</span></label>
+                    <input type="text" id="Phone" name="Phone" class="form-control form-input"
+                           required pattern="\d+" title="Only numbers allowed." value="@Model.Phone">
+                    <small id="phoneError" class="error-message"></small>
+                </div>
+
+                <div class="col-md-4">
+                    <label for="CurrentAddress" class="form-label">Current Address <span style="color: red;">*</span></label>
+                    <input type="text" id="CurrentAddress" name="CurrentAddress" class="form-control form-input"
+                           required value="@Model.CurrentAddress">
+                    <small id="currentAddressError" class="error-message"></small>
+                </div>
+
+                <div class="col-md-4">
+                    <label for="CurrentZipCode" class="form-label">Current Zip Code <span style="color: red;">*</span></label>
+                    <input type="text" id="CurrentZipCode" name="CurrentZipCode" class="form-control form-input"
+                           required pattern="\d+" title="Only numbers allowed." value="@Model.CurrentZipCode">
+                    <small id="currentZipCodeError" class="error-message"></small>
                 </div>
             </div>
-            <div class="row mb-3">
-                <div class="col-md-6">
-                    <label for="currentZipCode" class="form-label">Zip Code <span style="color: red;">*</span></label>
-                    <input type="text" id="currentZipCode" class="form-control form-input" style="height: 45px; font-size: 16px; padding: 10px;" required pattern="^\d{4}$" title="Zip code must be exactly 4 digits.">
+
+            <div class="row mb-5">
+                <div class="col-md-4">
+                    <label for="PermanentAddress" class="form-label">Permanent Address <span style="color: red;">*</span></label>
+                    <input type="text" id="PermanentAddress" name="PermanentAddress" class="form-control form-input"
+                           required value="@Model.PermanentAddress">
+                    <small id="permanentAddressError" class="error-message"></small>
+                </div>
+
+                <div class="col-md-4">
+                    <label for="PermanentZipCode" class="form-label">Permanent Zip Code <span style="color: red;">*</span></label>
+                    <input type="text" id="PermanentZipCode" name="PermanentZipCode" class="form-control form-input"
+                           required pattern="\d+" title="Only numbers allowed." value="@Model.PermanentZipCode">
+                    <small id="permanentZipCodeError" class="error-message"></small>
+                </div>
+            </div>
+
+            <div class="row mb-5">
+                <div class="col-md-4">
+                    <label for="EmergencyContactPerson" class="form-label">Emergency Contact Person <span style="color: red;">*</span></label>
+                    <input type="text" id="EmergencyContactPerson" name="EmergencyContactPerson" class="form-control form-input"
+                           required value="@Model.EmergencyContactPerson">
+                    <small id="emergencyContactPersonError" class="error-message"></small>
+                </div>
+
+                <div class="col-md-4">
+                    <label for="EmergencyContactNumber" class="form-label">Emergency Contact Number <span style="color: red;">*</span></label>
+                    <input type="text" id="EmergencyContactNumber" name="EmergencyContactNumber" class="form-control form-input"
+                           required pattern="\d+" title="Only numbers allowed." value="@Model.EmergencyContactNumber">
+                    <small id="emergencyContactNumberError" class="error-message"></small>
+                </div>
+
+                <div class="col-md-4">
+                    <label for="EmergencyRelationship" class="form-label">Emergency Relationship <span style="color: red;">*</span></label>
+                    <input type="text" id="EmergencyRelationship" name="EmergencyRelationship" class="form-control form-input"
+                           required value="@Model.EmergencyRelationship">
+                    <small id="emergencyRelationshipError" class="error-message"></small>
+                </div>
+            </div>
+
+            <div class="row mb-5">
+                <div class="col-md-4">
+                    <label for="EmergencyAddress" class="form-label">Emergency Address <span style="color: red;">*</span></label>
+                    <input type="text" id="EmergencyAddress" name="EmergencyAddress" class="form-control form-input"
+                           required value="@Model.EmergencyAddress">
+                    <small id="emergencyAddressError" class="error-message"></small>
                 </div>
             </div>
         </div>
-
-        <!-- Permanent Address -->
-        <h6 class="fw-bold" style="color: #172154">Permanent Address</h6>
-        <div class="form-check mb-3">
-            <input class="form-check-input" type="checkbox" id="sameAsCurrentAddress" onclick="copyCurrentAddress()">
-            <label class="form-check-label" for="sameAsCurrentAddress">
-                Same as Current Address
-            </label>
-        </div>
-
-        <div class="row mb-3">
-            <div class="row mb-3">
-                <div class="col-md-6">
-                    <label for="permanentAddress" class="form-label">Address <span style="color: red;">*</span></label>
-                    <input type="text" id="permanentAddress" class="form-control form-input" style="height: 45px; font-size: 16px; padding: 10px;" required>
-                </div>
-            </div>
-            <div class="row mb-3">
-                <div class="col-md-6">
-                    <label for="permanentZipCode" class="form-label">Zip Code <span style="color: red;">*</span></label>
-                    <input type="text" id="permanentZipCode" class="form-control form-input" style="height: 45px; font-size: 16px; padding: 10px;" required pattern="^\d{4}$" title="Zip code must be exactly 4 digits.">
-                </div>
-            </div>
-        </div>
-
-        <!-- In case of Emergency -->
-        <h6 class="fw-bold" style="color: #172154;">In case of Emergency</h6>
-        <div class="row mb-3">
-            <div class="col-md-6">
-                <label for="contactPerson" class="form-label">Contact Person <span style="color: red;">*</span></label>
-                <input type="text" id="contactPerson" class="form-control form-input" style="height: 45px; font-size: 16px; padding: 10px;" required>
-            </div>
-            <div class="col-md-6">
-                <label for="contactNumber" class="form-label">Contact Number <span style="color: red;">*</span></label>
-                <input type="tel" id="contactNumber" class="form-control form-input" style="height: 45px; font-size: 16px; padding: 10px;" required pattern="^\d{11}$" title="Contact number must be exactly 11 digits.">
-            </div>
-        </div>
-
-        <div class="row mb-3">
-            <div class="col-md-6">
-                <label for="relationship" class="form-label">Relationship <span style="color: red;">*</span></label>
-                <input type="text" id="relationship" class="form-control form-input" style="height: 45px; font-size: 16px; padding: 10px;" required>
-            </div>
-            <div class="col-md-6">
-                <label for="emergencyAddress" class="form-label">Address <span style="color: red;">*</span></label>
-                <input type="text" id="emergencyAddress" class="form-control form-input" style="height: 45px; font-size: 16px; padding: 10px;" required>
-            </div>
-        </div>
-
     </div>
 
-    <!-- Back and Next Buttons -->
     <div class="text-end">
         <a href="@Url.Action("Index", "AdmissionPortal")" class="btn-next text-decoration-none">Back</a>
-        <button asp-action="Family" type="submit" class="btn-next">Next</button>
+        <button type="submit" class="btn-next">Next</button>
     </div>
 </form>
 
 <script>
-    // Copy current address to permanent address if checkbox is checked
     function copyCurrentAddress() {
         if (document.getElementById("sameAsCurrentAddress").checked) {
-            document.getElementById("permanentAddress").value = document.getElementById("currentAddress").value;
-            document.getElementById("permanentZipCode").value = document.getElementById("currentZipCode").value;
+            document.getElementById("PermanentAddress").value = document.getElementById("CurrentAddress").value;
+            document.getElementById("PermanentZipCode").value = document.getElementById("CurrentZipCode").value;
         } else {
-            document.getElementById("permanentAddress").value = '';
-            document.getElementById("permanentZipCode").value = '';
+            document.getElementById("PermanentAddress").value = '';
+            document.getElementById("PermanentZipCode").value = '';
         }
     }
 </script>
