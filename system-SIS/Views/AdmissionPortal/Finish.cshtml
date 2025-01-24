@@ -1,8 +1,9 @@
-﻿@{
+﻿@model system_SIS.Models.StudentAdmission
+
+@{
     Layout = "_AdmissionLayout";  // Specifies the layout to use
     ViewData["Title"] = "Admission";
 }
-
 
 <!-- Progress Steps -->
 <div class="form-progress">
@@ -39,94 +40,203 @@
     <h4 class="fw-bold mb-4" style="color: #172154;">Finish Your Application</h4>
     <p class="text-muted">Please review the information you provided. If everything is correct, click "Submit Application". If you need to make changes, use the "Back" button to go back to the specific step.</p>
 
-    <!-- Personal Information Section -->
-    <div class="card mb-4">
-        <div class="card-header bg-primary text-white fw-bold">Personal Information</div>
-        <div class="card-body">
-            <div class="row mb-2">
-                <div class="col-md-4"><strong>First Name:</strong></div>
-                <div class="col-md-8">Nadine</div>
-            </div>
-            <div class="row mb-2">
-                <div class="col-md-4"><strong>Middle Name:</strong></div>
-                <div class="col-md-8">A</div>
-            </div>
-            <div class="row mb-2">
-                <div class="col-md-4"><strong>Last Name:</strong></div>
-                <div class="col-md-8">Borja</div>
-            </div>
-            <div class="row mb-2">
-                <div class="col-md-4"><strong>Date of Birth:</strong></div>
-                <div class="col-md-8">Febuary 0, 2000</div>
-            </div>
-            <div class="row mb-2">
-                <div class="col-md-4"><strong>Gender:</strong></div>
-                <div class="col-md-8">Female</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Contact Information Section -->
-    <div class="card mb-4">
-        <div class="card-header bg-primary text-white fw-bold">Contact Information</div>
-        <div class="card-body">
-            <div class="row mb-2">
-                <div class="col-md-4"><strong>Email:</strong></div>
-                <div class="col-md-8">nadineanona@gmail.com</div>
-            </div>
-            <div class="row mb-2">
-                <div class="col-md-4"><strong>Phone Number:</strong></div>
-                <div class="col-md-8">09123456789</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Address Information Section -->
-    <div class="card mb-4">
-        <div class="card-header bg-primary text-white fw-bold">Address</div>
-        <div class="card-body">
-            <div class="row mb-2">
-                <div class="col-md-4"><strong>House No./Lot/Block:</strong></div>
-                <div class="col-md-8">123</div>
-            </div>
-            <div class="row mb-2">
-                <div class="col-md-4"><strong>Street Name:</strong></div>
-                <div class="col-md-8">Dyanlang Street</div>
-            </div>
-            <div class="row mb-2">
-                <div class="col-md-4"><strong>City/Municipality:</strong></div>
-                <div class="col-md-8">Quezon</div>
-            </div>
-            <div class="row mb-2">
-                <div class="col-md-4"><strong>Province:</strong></div>
-                <div class="col-md-8">Metro Manila</div>
-            </div>
-            <div class="row mb-2">
-                <div class="col-md-4"><strong>Zip Code:</strong></div>
-                <div class="col-md-8">0000</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Family Information Section -->
-    <div class="card mb-4">
-        <div class="card-header bg-primary text-white fw-bold">Family Information</div>
-        <div class="card-body">
-            <div class="row mb-2">
-                <div class="col-md-4"><strong>Parent / Guardian's Name - Primary</strong></div>
-                <div class="col-md-8">Mama France</div>
-            </div>
-            <div class="row mb-2">
-                <div class="col-md-4"><strong>Parent / Guardian's Name - Secondary</strong></div>
-                <div class="col-md-8">Papa Wilson</div>
+    <form asp-action="Submit_application" method="post">
+        <!-- Personal Information Section -->
+        <div class="card mb-4">
+            <div class="card-header bg-primary text-white fw-bold">Personal Information</div>
+            <div class="card-body">
+                <div class="row mb-2">
+                    <div class="col-md-4"><strong>First Name:</strong></div>
+                    <div class="col-md-8">@Model.FirstName</div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-md-4"><strong>Middle Name:</strong></div>
+                    <div class="col-md-8">@Model.MiddleName</div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-md-4"><strong>Last Name:</strong></div>
+                    <div class="col-md-8">@Model.LastName</div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-md-4"><strong>LRN:</strong></div>
+                    <div class="col-md-8">@Model.LRN</div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-md-4"><strong>GWA:</strong></div>
+                    <div class="col-md-8">@Model.GWA</div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-md-4"><strong>Email:</strong></div>
+                    <div class="col-md-8">@Model.Email</div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-md-4"><strong>Date of Birth:</strong></div>
+                    <div class="col-md-8">@Model.DateOfBirth.ToShortDateString()</div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-md-4"><strong>Religion:</strong></div>
+                    <div class="col-md-8">@Model.Religion</div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-md-4"><strong>Height:</strong></div>
+                    <div class="col-md-8">@Model.Height</div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-md-4"><strong>Weight:</strong></div>
+                    <div class="col-md-8">@Model.Weight</div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-md-4"><strong>Place of Birth:</strong></div>
+                    <div class="col-md-8">@Model.PlaceOfBirth</div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-md-4"><strong>Sex:</strong></div>
+                    <div class="col-md-8">@Model.Sex</div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-md-4"><strong>Gender:</strong></div>
+                    <div class="col-md-8">@Model.Gender</div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-md-4"><strong>Civil Status:</strong></div>
+                    <div class="col-md-8">@Model.CivilStatus</div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-md-4"><strong>Disability:</strong></div>
+                    <div class="col-md-8">@Model.Disability</div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-md-4"><strong>Ethnicity:</strong></div>
+                    <div class="col-md-8">@Model.Ethnicity</div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-md-4"><strong>Mother Tongue:</strong></div>
+                    <div class="col-md-8">@Model.MotherTongue</div>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- Back and Next Buttons -->
-    <div class="text-end">
-        <a href="@Url.Action("Document", "AdmissionPortal")" class="btn-next text-decoration-none">Back</a>
-        <a href="@Url.Action("Submit_application", "AdmissionPortal")" class="btn btn-success text-decoration-none">Submit Application</a>
-    </div>
+        <!-- Contact Information Section -->
+        <div class="card mb-4">
+            <div class="card-header bg-primary text-white fw-bold">Contact Information</div>
+            <div class="card-body">
+                <div class="row mb-2">
+                    <div class="col-md-4"><strong>Phone:</strong></div>
+                    <div class="col-md-8">@Model.Phone</div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-md-4"><strong>Current Address:</strong></div>
+                    <div class="col-md-8">@Model.CurrentAddress</div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-md-4"><strong>Current Zip Code:</strong></div>
+                    <div class="col-md-8">@Model.CurrentZipCode</div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-md-4"><strong>Permanent Address:</strong></div>
+                    <div class="col-md-8">@Model.PermanentAddress</div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-md-4"><strong>Permanent Zip Code:</strong></div>
+                    <div class="col-md-8">@Model.PermanentZipCode</div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-md-4"><strong>Emergency Contact Person:</strong></div>
+                    <div class="col-md-8">@Model.EmergencyContactPerson</div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-md-4"><strong>Emergency Contact Number:</strong></div>
+                    <div class="col-md-8">@Model.EmergencyContactNumber</div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-md-4"><strong>Emergency Relationship:</strong></div>
+                    <div class="col-md-8">@Model.EmergencyRelationship</div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-md-4"><strong>Emergency Address:</strong></div>
+                    <div class="col-md-8">@Model.EmergencyAddress</div>
+                </div>
+            </div>
+        </div>
 
+        <!-- Family Information Section -->
+        <div class="card mb-4">
+            <div class="card-header bg-primary text-white fw-bold">Family Information</div>
+            <div class="card-body">
+                <div class="row mb-2">
+                    <div class="col-md-4"><strong>Primary Guardian First Name:</strong></div>
+                    <div class="col-md-8">@Model.PrimaryGuardianFirstName</div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-md-4"><strong>Primary Guardian Maiden Name:</strong></div>
+                    <div class="col-md-8">@Model.PrimaryGuardianMaidenName</div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-md-4"><strong>Primary Guardian Last Name:</strong></div>
+                    <div class="col-md-8">@Model.PrimaryGuardianLastName</div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-md-4"><strong>Primary Guardian Contact No:</strong></div>
+                    <div class="col-md-8">@Model.PrimaryGuardianContactNo</div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-md-4"><strong>Primary Guardian Relationship:</strong></div>
+                    <div class="col-md-8">@Model.PrimaryGuardianRelationship</div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-md-4"><strong>Secondary Guardian First Name:</strong></div>
+                    <div class="col-md-8">@Model.SecondaryGuardianFirstName</div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-md-4"><strong>Secondary Guardian Middle Name:</strong></div>
+                    <div class="col-md-8">@Model.SecondaryGuardianMiddleName</div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-md-4"><strong>Secondary Guardian Last Name:</strong></div>
+                    <div class="col-md-8">@Model.SecondaryGuardianLastName</div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-md-4"><strong>Secondary Guardian Contact No:</strong></div>
+                    <div class="col-md-8">@Model.SecondaryGuardianContactNo</div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-md-4"><strong>Secondary Guardian Relationship:</strong></div>
+                    <div class="col-md-8">@Model.SecondaryGuardianRelationship</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- School Information Section -->
+        <div class="card mb-4">
+            <div class="card-header bg-primary text-white fw-bold">School Information</div>
+            <div class="card-body">
+                <div class="row mb-2">
+                    <div class="col-md-4"><strong>School Name:</strong></div>
+                    <div class="col-md-8">@Model.SchoolName</div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-md-4"><strong>School Address:</strong></div>
+                    <div class="col-md-8">@Model.SchoolAddress</div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-md-4"><strong>School Contact:</strong></div>
+                    <div class="col-md-8">@Model.SchoolContact</div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-md-4"><strong>School Type:</strong></div>
+                    <div class="col-md-8">@Model.SchoolType</div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-md-4"><strong>Year of Graduation:</strong></div>
+                    <div class="col-md-8">@Model.YearOfGraduation</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Back and Next Buttons -->
+        <div class="text-end">
+            <a href="@Url.Action("Document", "AdmissionPortal")" class="btn-next text-decoration-none">Back</a>
+            <button type="submit" class="btn btn-success text-decoration-none">Submit Application</button>
+        </div>
+    </form>
 </div>
