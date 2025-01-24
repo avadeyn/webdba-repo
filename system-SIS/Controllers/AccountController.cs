@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
 using system_SIS.Models;
 using system_SIS.Services;
 using Twilio.Types;
@@ -51,16 +52,19 @@ namespace system_SIS.Controllers
 			// Validate if email and password are provided
 			if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
 			{
-				//ModelState.AddModelError(string.Empty, "Email and password are required.");
+				ViewData["Email"] = email; // Retain entered email
+				ViewData["Password"] = password;
+				//ViewData["Error"] = "Email and password are required.";
 				return View();
 			}
-
 			// Find the user by email
 			var user = await _userManager.FindByEmailAsync(email);
 
 			if (user == null)
 			{
 				// User not found, return error
+				ViewData["Email"] = email; // Retain entered email
+				ViewData["Password"] = password; // Retain entered password
 				ModelState.AddModelError(string.Empty, "Invalid login attempt.");
 				return View();
 			}
@@ -73,12 +77,14 @@ namespace system_SIS.Controllers
 			if (!isAdmin && !isApplicant && !isFaculty)
 			{
 				// The user is not in any authorized role
+				ViewData["Email"] = email; // Retain entered email
+				ViewData["Password"] = password; 
 				ModelState.AddModelError(string.Empty, "You are not authorized.");
 				return View();
 			}
 
 			// Attempt to sign in the user with the provided password
-			var result = await _signInManager.PasswordSignInAsync(user.UserName, password, isPersistent: false, lockoutOnFailure: false);
+			var result = await _signInManager.PasswordSignInAsync(user.Email, password, isPersistent: false, lockoutOnFailure: false);
 
 			if (result.Succeeded)
 			{
@@ -98,6 +104,8 @@ namespace system_SIS.Controllers
 			}
 
 			// Login failed (e.g., incorrect password)
+			ViewData["Email"] = email; // Retain entered email
+			ViewData["Password"] = password;
 			ModelState.AddModelError(string.Empty, "Invalid login attempt.");
 			return View();
 		}
@@ -108,16 +116,48 @@ namespace system_SIS.Controllers
 			return View();
 		}
 
+
 		[HttpPost]
-		public async Task<IActionResult> Signup(string firstName, string lastName, string email, string password, string phoneNumber)
+		public async Task<IActionResult> Signup(string firstName, string lastName, string email, string password, string confirmPassword)
 		{
+			// Check if any of the fields are null or empty
+			if (string.IsNullOrEmpty(firstName) || string.IsNullOrEmpty(lastName) || string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password) || string.IsNullOrEmpty(confirmPassword))
+			{
+				ModelState.AddModelError(string.Empty, "All fields are required.");
+
+				// Use ViewData to retain the values entered by the user in case of error
+				ViewData["FirstName"] = firstName;
+				ViewData["LastName"] = lastName;
+				ViewData["Email"] = email;
+
+				return View(); // Return the view to show the error and reload the form
+			}
+
+			// Check if the password and confirm password match
+			if (password != confirmPassword)
+			{
+				ModelState.AddModelError("ConfirmPassword", "Passwords do not match.");
+
+				// Retain the values entered by the user
+				ViewData["FirstName"] = firstName;
+				ViewData["LastName"] = lastName;
+				ViewData["Email"] = email;
+
+				return View(); // Return the view with the error
+			}
+
 			// Check if the email already exists
 			var existingUser = await _userManager.FindByEmailAsync(email);
 			if (existingUser != null)
 			{
-				// Email already exists, return an error
 				ModelState.AddModelError("Email", "An account with this email already exists.");
-				return View(); // Return the view to show the error
+
+				// Retain the values entered by the user in case of error
+				ViewData["FirstName"] = firstName;
+				ViewData["LastName"] = lastName;
+				ViewData["Email"] = email;
+
+				return View(); // Return the view to show the error and reload the form
 			}
 
 			// Create a new IdentityUser
@@ -127,7 +167,9 @@ namespace system_SIS.Controllers
 				Email = email,
 				PhoneNumber = phoneNumber
 
-
+				// Add first name and last name
+				FirstName = firstName,
+				LastName = lastName
 			};
 
 			// Create the user with the specified password
@@ -137,19 +179,6 @@ namespace system_SIS.Controllers
 			{
 				// Add the user to the "Applicant" role
 				await _userManager.AddToRoleAsync(user, "Applicant");
-
-				// Save additional user details to your custom Account table
-				//var applicantDetails = new Account
-				//{
-				//	//AccountId = user.Id, // Foreign key to AspNetUsers
-				//	FirstName = firstName,
-				//	LastName = lastName,
-				//	Email = email,
-				//	PhoneNumber = phoneNumber,
-				//	Password = password
-				//};
-				//Context1.Account.Add(applicantDetails);
-				//await Context1.SaveChangesAsync();
 
 				// Redirect to the Signin page
 				return RedirectToAction("Signin", "Account");
@@ -161,6 +190,12 @@ namespace system_SIS.Controllers
 				{
 					ModelState.AddModelError(string.Empty, error.Description);
 				}
+
+				// Retain the form values in case of an error
+				ViewData["FirstName"] = firstName;
+				ViewData["LastName"] = lastName;
+				ViewData["Email"] = email;
+
 				return View();
 			}
 		}
