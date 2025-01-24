@@ -14,12 +14,8 @@ namespace system_SIS.Services
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<StudentAdmission>(entity =>
-            {
-                entity.Property(e => e.GWA).HasColumnType("decimal(18,2)");
-                entity.Property(e => e.Height).HasColumnType("decimal(18,2)");
-                entity.Property(e => e.Weight).HasColumnType("decimal(18,2)");
-            });
-        }
-    }
+
+		// Students in white color is the name of the table in the database (dbSis)
+		public DbSet<Faculty_UserProfile> Faculty_UserProfiles { get; set; }   
+	}
 }
