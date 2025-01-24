@@ -2,203 +2,218 @@
     Layout = "Admin_Layout";  // Specifies the layout to use
     ViewData["Title"] = "Home Page";
 }
+<body class="position-relative bg-image" style="font-family: 'Poppins', sans-serif; overflow-x: hidden; height: 100vh; width: 100vw; margin: 0;">
+    <!-- Background Image -->
+    <img src="~/images/bgjr.png"
+         alt="Decorative background representing Grade 7"
+         class="img-fluid w-100"
+         style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
 
-<div class="row mb-3">
-    <div class="col-12 p-4">
-        <div class="welcome-container bg-secondary text-white rounded p-4 d-flex flex-column flex-md-row justify-content-between align-items-center mx-3">
-            <!-- Left Section: Text -->
-            <div class="welcome-text text-center text-md-start">
-                <h2 class="text-3xl font-bold mt-1" style="font-family: 'Potta One', sans-serif;">Welcome to Jose Rizal High School</h2>
-                <p class="mt-3 text-sm md:text-base">
-                    Access the Administrator Portal to efficiently manage student enrollments, monitor academic progress, <br> schedule classes, and ensure smooth daily operations at Jose Rizal High School.
+    <div class="row mb-3">
+        <div class="col-12 p-4">
+            <div class="welcome-container text-white rounded p-4 d-flex flex-column flex-md-row justify-content-between align-items-center mx-3" style=" background-color: #172154;">
+                <div class="row align-items-center">
+                    <!-- Left Section: Text -->
+                    <div class="col-md-8">
+                        <h2 class="text-3xl font-bold mt-1" style="font-family: 'Potta One', sans-serif;">
+                            Welcome to Laurelcrest High School
+                        </h2>
+                        <p class="mt-3 text-sm md:text-base">
+                            Access the Administrator Portal to efficiently manage student enrollments, monitor academic progress,
+                            schedule classes, and ensure smooth daily operations at Laurelcrest High School.
+                        </p>
+                    </div>
+                    <!-- Right Section: Image -->
+                    <div class="col-md-4 text-end">
+                        <img src="~/images/welcome.png" alt="Books illustration" class="img-fluid" style="max-width: 150px;">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row g-4">
+            <!-- Graph for Students -->
+            <div class="col-md-4">
+                <div class="chart-container bg-white rounded p-3 shadow">
+                    <h3 class="text-center mb-3">Students</h3>
+                    <canvas id="studentsChart" class="chart"></canvas>
+                </div>
+            </div>
+
+            <!-- Graph for Faculty -->
+            <div class="col-md-4">
+                <div class="chart-container bg-white rounded p-3 shadow">
+                    <h3 class="text-center mb-3">Faculty</h3>
+                    <canvas id="facultyChart" class="chart"></canvas>
+                </div>
+            </div>
+
+            <!-- Graph for Subjects -->
+            <div class="col-md-4">
+                <div class="chart-container bg-white rounded p-3 shadow">
+                    <h3 class="text-center mb-3">Subjects</h3>
+                    <canvas id="subjectsChart" class="chart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-4">
+        <div class="note p-2 rounded shadow-sm" style=" background-color: #172154;">
+            <div class="d-flex justify-content-between align-items-center px-3 py-2">
+                <!-- Announcement Title on the Left -->
+                <h4 class="text-white">Announcement</h4>
+
+                <!-- Add Section Button on the Right -->
+                <button type="button" class="btn btn-primary rounded-circle"
+                        style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;"
+                        data-bs-toggle="modal" data-bs-target="#addSectionModal">
+                    +
+                    <span class="visually-hidden">Add Announcement</span>
+                </button>
+            </div>
+
+            <div class="announce-section bg-white p-3 rounded shadow mb-2 transition-effect">
+                <h5 class="fw-bold mb-2 fs-5">New Enrollees</h5>
+                <p class="mb-0 fs-6">
+                    Access the Administrator Portal to efficiently manage student enrollments, monitor academic progress,
+                    schedule classes, and ensure smooth daily operations at Jose Rizal High School.
                 </p>
             </div>
         </div>
     </div>
-</div>
 
+    <div class="modal fade" id="addSectionModal" tabindex="-1" aria-labelledby="addSectionModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="addSectionModalLabel">Add Announcement</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
 
-<div class="container">
-    <div class="row g-4">
-        <!-- Graph for Students -->
-        <div class="col-md-4">
-            <div class="chart-container bg-white rounded p-3 shadow">
-                <h3 class="text-center mb-3">Students</h3>
-                <canvas id="studentsChart" class="chart"></canvas>
-            </div>
-        </div>
+                <!-- Modal Body -->
+                <div class="modal-body">
+                    <form>
+                        <!-- Header Field -->
+                        <div class="mb-3">
+                            <label for="announcementHeader" class="form-label">Header</label>
+                            <input type="text" class="form-control" id="announcementHeader" placeholder="Enter header text">
+                        </div>
+                        <!-- Detailed Information Field -->
+                        <div class="mb-3">
+                            <label for="announcementDetails" class="form-label">Detailed Information</label>
+                            <textarea class="form-control" id="announcementDetails" rows="4" placeholder="Enter detailed information"></textarea>
+                        </div>
+                    </form>
+                </div>
 
-        <!-- Graph for Faculty -->
-        <div class="col-md-4">
-            <div class="chart-container bg-white rounded p-3 shadow">
-                <h3 class="text-center mb-3">Faculty</h3>
-                <canvas id="facultyChart" class="chart"></canvas>
-            </div>
-        </div>
-
-        <!-- Graph for Subjects -->
-        <div class="col-md-4">
-            <div class="chart-container bg-white rounded p-3 shadow">
-                <h3 class="text-center mb-3">Subjects</h3>
-                <canvas id="subjectsChart" class="chart"></canvas>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<div class="container mt-4">
-    <div class="note bg-secondary p-2 rounded shadow-sm">
-        <div class="d-flex justify-content-between align-items-center" style="padding-right: 10px; padding-top: 7px;">
-            <!-- Announcement Title on the Left -->
-            <h4 class="text-white">Announcement</h4>
-
-            <!-- Add Section Button on the Right -->
-            <button type="button" class="btn btn-primary rounded-circle mb-2"
-                    style="width: 40px; height: 40px; padding: 5px; display: flex; align-items: center; justify-content: center; margin-left: 10px;"
-                    data-bs-toggle="modal" data-bs-target="#addSectionModal">
-                +
-            </button>
-        </div>
-
-        <div class="announce-section bg-white p-3 rounded shadow mb-2 transition-effect">
-            <h5 class="fw-bold mb-2 fs-5">New Enrollees</h5>
-            <p class="mb-0 fs-6">
-                Access the Administrator Portal to efficiently manage student enrollments, monitor academic progress,
-                schedule classes, and ensure smooth daily operations at Jose Rizal High School.
-            </p>
-        </div>
-    </div>
-</div>
-
-
-<div class="modal fade" id="addSectionModal" tabindex="-1" aria-labelledby="addSectionModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <!-- Modal Header -->
-            <div class="modal-header">
-                <h5 class="modal-title" id="addSectionModalLabel">Add Announcement</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-
-            <!-- Modal Body -->
-            <div class="modal-body">
-                <form>
-                    <!-- Header Field -->
-                    <div class="mb-3">
-                        <label for="announcementHeader" class="form-label">Header</label>
-                        <input type="text" class="form-control" id="announcementHeader" placeholder="Enter header text">
-                    </div>
-                    <!-- Detailed Information Field -->
-                    <div class="mb-3">
-                        <label for="announcementDetails" class="form-label">Detailed Information</label>
-                        <textarea class="form-control" id="announcementDetails" rows="4" placeholder="Enter detailed information"></textarea>
-                    </div>
-                </form>
-            </div>
-
-            <!-- Modal Footer -->
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save</button>
+                <!-- Modal Footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success">Save</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-
-
-
-<style>
-    .transition-effect {
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-        .transition-effect:hover {
-            transform: scale(1.05);
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    <style>
+        .transition-effect {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-</style>
+
+            .transition-effect:hover {
+                transform: scale(1.05);
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+            }
+
+        .chart-container {
+            height: 300px;
+        }
+    </style>
 
 
+    <script>
+            // Data for Students, Faculty, and Subjects
+        const studentsData = {
+            labels: ['Grade 7', 'Grade 8', 'Grade 9', 'Grade 10'],
+            datasets: [{
+                label: 'Number of Students',
+                data: [120, 200, 180, 150],  // Example data
+                backgroundColor: '#4CAF50',
+                borderColor: '#388E3C',
+                borderWidth: 1
+            }]
+        };
 
-<script>
-    // Data for Students, Faculty, and Subjects
-    const studentsData = {
-        labels: ['Grade 7', 'Grade 8', 'Grade 9', 'Grade 10'],
-        datasets: [{
-            label: 'Number of Students',
-            data: [120, 200, 180, 150],  // Example data
-            backgroundColor: '#4CAF50',
-            borderColor: '#388E3C',
-            borderWidth: 1
-        }]
-    };
+        const facultyData = {
+            labels: ['Filipino','English', 'Mathematics', 'Science', 'AP', 'ESP', 'TLE', 'MAPEH'],
+            datasets: [{
+                label: 'Faculty Members',
+                data: [15, 20, 10, 12, 8, 14, 18, 9, 6],
+                backgroundColor: '#2196F3',
+                borderColor: '#1976D2',
+                borderWidth: 1
+            }]
+        };
 
-    const facultyData = {
-        labels: ['Math', 'Science', 'History', 'English', 'Physical Ed', 'Chemistry', 'Biology', 'Computer Science'],
-        datasets: [{
-            label: 'Faculty Members',
-            data: [15, 20, 10, 12, 8, 14, 18, 9],
-            backgroundColor: '#2196F3',
-            borderColor: '#1976D2',
-            borderWidth: 1
-        }]
-    };
+        const subjectsData = {
+            labels: ['Filipino','English', 'Mathematics', 'Science', 'AP', 'ESP', 'TLE', 'MAPEH'],
+            datasets: [{
+                label: 'Subjects Offered',
+                data: [10, 12, 8, 9, 7],
+                backgroundColor: '#FFC107',
+                borderColor: '#FF9800',
+                borderWidth: 1
+            }]
+        };
 
-    const subjectsData = {
-        labels: ['Mathematics', 'Biology', 'Physics', 'Chemistry', 'History'],
-        datasets: [{
-            label: 'Subjects Offered',
-            data: [10, 12, 8, 9, 7],
-            backgroundColor: '#FFC107',
-            borderColor: '#FF9800',
-            borderWidth: 1
-        }]
-    };
-
-    // Students Chart
-    const studentsCtx = document.getElementById('studentsChart').getContext('2d');
-    new Chart(studentsCtx, {
-        type: 'bar',
-        data: studentsData,
-        options: {
-            responsive: true,
-            scales: {
-                y: {
-                    beginAtZero: true
+        // Students Chart
+        const studentsCtx = document.getElementById('studentsChart').getContext('2d');
+        new Chart(studentsCtx, {
+            type: 'bar',
+            data: studentsData,
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
                 }
             }
-        }
-    });
+        });
 
-    // Faculty Chart
-    const facultyCtx = document.getElementById('facultyChart').getContext('2d');
-    new Chart(facultyCtx, {
-        type: 'bar',
-        data: facultyData,
-        options: {
-            responsive: true,
-            scales: {
-                y: {
-                    beginAtZero: true
+        // Faculty Chart
+        const facultyCtx = document.getElementById('facultyChart').getContext('2d');
+        new Chart(facultyCtx, {
+            type: 'bar',
+            data: facultyData,
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
                 }
             }
-        }
-    });
+        });
 
-    // Subjects Chart
-    const subjectsCtx = document.getElementById('subjectsChart').getContext('2d');
-    new Chart(subjectsCtx, {
-        type: 'bar',
-        data: subjectsData,
-        options: {
-            responsive: true,
-            scales: {
-                y: {
-                    beginAtZero: true
+        // Subjects Chart
+        const subjectsCtx = document.getElementById('subjectsChart').getContext('2d');
+        new Chart(subjectsCtx, {
+            type: 'bar',
+            data: subjectsData,
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
                 }
             }
-        }
-    });
-</script>
+        });
+    </script>
+
+</body>

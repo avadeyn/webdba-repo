@@ -1,22 +1,20 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace system_SIS.Controllers
 {
-	public class AdminPortalController : Controller
-	{
-        [Authorize(Roles = "Admin")]
-
+    public class AdminPortalController : Controller
+    {
         public IActionResult Index()
-		{
+        {
             ViewData["ActiveMenu"] = "Index";
             return View();
-		}
+        }
         public IActionResult Enrollments()
         {
             ViewData["ActiveMenu"] = "Enrollments";
             return View();
         }
+
         public IActionResult Faculty()
         {
             ViewData["ActiveMenu"] = "Faculty";
@@ -30,6 +28,7 @@ namespace system_SIS.Controllers
         public IActionResult Scheduleclass()
         {
             ViewData["ActiveMenu"] = "Scheduleclass";
+            ViewData["ActiveMenu"] = "Classes";
             return View();
         }
         public IActionResult Student()
@@ -69,21 +68,25 @@ namespace system_SIS.Controllers
         public IActionResult Studentlist7()
         {
             ViewData["ActiveMenu"] = "Studentlist7";
+            ViewData["ActiveMenu"] = "Student";
             return View();
         }
         public IActionResult Studentlist8()
         {
             ViewData["ActiveMenu"] = "Studentlist8";
+            ViewData["ActiveMenu"] = "Student";
             return View();
         }
         public IActionResult Studentlist9()
         {
             ViewData["ActiveMenu"] = "Studentlist9";
+            ViewData["ActiveMenu"] = "Student";
             return View();
         }
         public IActionResult Studentlist10()
         {
             ViewData["ActiveMenu"] = "Studentlist10";
+            ViewData["ActiveMenu"] = "Student";
             return View();
         }
         public IActionResult StudentDetail()
@@ -101,11 +104,7 @@ namespace system_SIS.Controllers
             ViewData["ActiveMenu"] = "SubjectLoads";
             return View();
         }
-        public IActionResult SISAccount()
-        {
-            ViewData["ActiveMenu"] = "SISAccount";
-            return View();
-        }
+
         public IActionResult Admission()
         {
             ViewData["ActiveMenu"] = "Admission";
@@ -114,11 +113,18 @@ namespace system_SIS.Controllers
         public IActionResult ReviewApp()
         {
             ViewData["ActiveMenu"] = "ReviewApp";
+            ViewData["ActiveMenu"] = "Admission";
             return View();
         }
         public IActionResult Profile()
         {
             ViewData["ActiveMenu"] = "Profile";
+            return View();
+        }
+
+        public IActionResult Signin()
+        {
+            ViewData["ActiveMenu"] = "Signin";
             return View();
         }
     }
