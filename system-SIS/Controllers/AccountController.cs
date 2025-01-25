@@ -16,7 +16,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace system_SIS.Controllers
 {
-	
+
 	public class AccountController : Controller
 	{
 		//[Authorize(Roles = "Applicant")]
@@ -42,17 +42,17 @@ namespace system_SIS.Controllers
 			return View();
 		}
 
-        [HttpPost]
-        public async Task<IActionResult> Admin_Logout()
-        {
-            // Sign out the user
-            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+		[HttpPost]
+		public async Task<IActionResult> Admin_Logout()
+		{
+			// Sign out the user
+			await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
 
-            // Redirect to login page or any other route
-            return RedirectToAction("Signin", "Account");
-        }
+			// Redirect to login page or any other route
+			return RedirectToAction("Signin", "Account");
+		}
 
-        [HttpPost]
+		[HttpPost]
 		public async Task<IActionResult> Signin(string email, string password)
 		{
 			// Validate if email and password are provided

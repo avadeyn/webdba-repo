@@ -18,15 +18,15 @@
         </section>
 
         <!-- Table -->
-        <div class="table-responsive mt-3">
+        <div class="table-responsive mt-2">
             <table class="table">
-                <thead class="table-secondary text-white">
+                <thead>
                     <tr>
-                        <th>Grade/Section</th>
-                        <th>Subject Name</th>
-                        <th>Semester</th>
-                        <th>Schedule</th>
-                        <th>File</th>
+                        <th style="background-color: #162051; color: white; border-top-left-radius: 10px;">Grade/Section</th>
+                        <th style="background-color: #162051; color: white;">Subject Name</th>
+                        <th style="background-color: #162051; color: white;">Semester</th>
+                        <th style="background-color: #162051; color: white;">Schedule</th>
+                        <th style="background-color: #162051; color: white; border-top-right-radius: 10px;">File</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -34,9 +34,14 @@
                         <td>7-Mars</td>
                         <td>Araling Panlipunan</td>
                         <td>Regular</td>
-                        <td>Wednesday 02:00 PM - 03:00 PM<br>Monday 09:00 AM - 10:00 AM</td>
                         <td>
-                            <a asp-controller="Faculty_Masterlist" asp-action="GeneratePdf" class="dropdown-item btn-outline-info">
+                            Wednesday 02:00 PM - 03:00 PM<br>
+                            Monday 09:00 AM - 10:00 AM
+                        </td>
+                        <td>
+                            <a asp-controller="Faculty_Masterlist"
+                               asp-action="GeneratePdf"
+                               class="dropdown-item text-primary">
                                 <i class="fas fa-download"></i> PDF File
                             </a>
                         </td>

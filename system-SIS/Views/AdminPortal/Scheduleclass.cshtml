@@ -174,43 +174,76 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header bg-warning">
-                    <h5 class="modal-title" id="editModalLabel">Edit Section Details</h5>
+                    <h5 class="modal-title" id="editModalLabel">Edit Schdule Details</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
+                <!-- Modal Body -->
                 <div class="modal-body">
-                    <form id="editForm">
-                        <div class="mb-3">
-                            <h6>Section</h6>
-                            <select class="form-select fs-6" id="dropdownSection" aria-label="Select Section">
+                    <!-- Day and Session Fields -->
+                    <div class="row mb-3">
+                        <div class="col-12 col-md-6">
+                            <label for="scheduleDay" class="form-label fs-6">Day</label>
+                            <select class="form-select fs-6 w-100" id="scheduleDay" name="scheduleDay" required>
+                                <option value="" disabled selected>Select Day</option>
+                                <option value="monday">Monday</option>
+                                <option value="tuesday">Tuesday</option>
+                                <option value="wednesday">Wednesday</option>
+                                <option value="thursday">Thursday</option>
+                                <option value="friday">Friday</option>
+                            </select>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label for="scheduleSession" class="form-label fs-6">Session</label>
+                            <select class="form-select fs-6 w-100" id="scheduleSession" name="scheduleSession" required>
+                                <option value="" disabled selected>Select Session</option>
+                                <option value="morning">Morning</option>
+                                <option value="afternoon">Afternoon</option>
+                                <option value="evening">Evening</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Section and Subject Fields -->
+                    <div class="row mb-3">
+                        <div class="col-12 col-md-6">
+                            <label for="scheduleSection" class="form-label fs-6">Section</label>
+                            <select class="form-select fs-6 w-100" id="scheduleSection" name="scheduleSection" required>
+                                <option value="" disabled selected>Select Section</option>
                                 <option value="palladium">Palladium</option>
                                 <option value="ruby">Ruby</option>
                                 <option value="emerald">Emerald</option>
                                 <option value="sapphire">Sapphire</option>
                             </select>
                         </div>
-                        <div class="mb-3">
-                            <h6>Grade Level</h6>
-                            <select class="form-select fs-6" id="dropdownIncomingGradeLevel" aria-label="Select Incoming Grade">
-                                <option value="7">Grade 7</option>
-                                <option value="8">Grade 8</option>
-                                <option value="9">Grade 9</option>
-                                <option value="10">Grade 10</option>
+                        <div class="col-12 col-md-6">
+                            <label for="scheduleSubject" class="form-label fs-6">Subject</label>
+                            <select class="form-select fs-6 w-100" id="scheduleSubject" name="scheduleSubject" required>
+                                <option value="" disabled selected>Select Subject</option>
+                                <option value="english">English</option>
+                                <option value="math">Math</option>
+                                <option value="science">Science</option>
+                                <option value="history">History</option>
                             </select>
                         </div>
-                        <div class="mb-3">
-                            <label for="subjectInput" class="form-label">Subject</label>
-                            <input type="text" class="form-control" id="subjectInput">
-                        </div>
+                    </div>
 
-                        <div class="mb-3">
-                            <label for="facultyInput" class="form-label">Faculty</label>
-                            <input type="text" class="form-control" id="facultyInput">
+                    <!-- Time Fields -->
+                    <div class="row mb-3">
+                        <div class="col-12 col-md-6">
+                            <label for="scheduleStartTime" class="form-label">Start Time</label>
+                            <input type="time" class="form-control" id="scheduleStartTime" name="scheduleStartTime" required>
                         </div>
-
-                    </form>
+                        <div class="col-12 col-md-6">
+                            <label for="scheduleEndTime" class="form-label">End Time</label>
+                            <input type="time" class="form-control" id="scheduleEndTime" name="scheduleEndTime" required>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- Modal Footer -->
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-success" id="saveChangesButton">Save changes</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success" id="saveScheduleBtn">Save Schedule</button>
                 </div>
             </div>
         </div>
