@@ -1,10 +1,14 @@
-﻿//using System;
+﻿//using Microsoft.AspNetCore.Mvc;
+//using Microsoft.EntityFrameworkCore.Metadata.Internal;
+//using System;
 //using System.Collections.Generic;
 //using Twilio;
 //using Twilio.Rest.Api.V2010.Account;
 //using Twilio.Rest.Verify.V2.Service;
 //using Twilio.Types;
 
+
+//[HttpPost]
 //class VerificationCode
 //{
 //	static void Main(string[] args)

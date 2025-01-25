@@ -1,15 +1,16 @@
 ﻿using SixLabors.ImageSharp;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Identity;
 using System.Web.Http;
 using Twilio.Types;
 
 namespace system_SIS.Models
 {
-	public class Account : IdentityUser
+	public class Account
 	{
 
 		[Key]
-		public int AccountId { get; set; }
+		//public int AccountId { get; set; }
 
 		[Required(ErrorMessage = "First name is required")]
 		[StringLength(30, ErrorMessage = "First name cannot exceed 50 characters")]
@@ -37,4 +38,5 @@ namespace system_SIS.Models
 		[DataType(DataType.Password)]
 		public required string ConfirmPassword { get; set; }
 	}
+
 }
