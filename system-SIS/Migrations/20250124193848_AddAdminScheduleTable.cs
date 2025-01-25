@@ -6,23 +6,26 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace system_SIS.Migrations
 {
     /// <inheritdoc />
-    public partial class studentFirstMigration : Migration
+    public partial class AddAdminScheduleTable : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Students",
+                name: "AdminSchedules",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    DateofBirth = table.Column<DateOnly>(type: "date", nullable: false)
+                    Day = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    Session = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    Subject = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Start = table.Column<TimeSpan>(type: "time", nullable: false),
+                    End = table.Column<TimeSpan>(type: "time", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Students", x => x.Id);
+                    table.PrimaryKey("PK_AdminSchedules", x => x.Id);
                 });
         }
 
@@ -30,7 +33,7 @@ namespace system_SIS.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Students");
+                name: "AdminSchedules");
         }
     }
 }

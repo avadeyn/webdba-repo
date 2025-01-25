@@ -59,15 +59,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr style="cursor: pointer;" onclick="window.location.href='@Url.Action("Scheduleclass", "AdminPortal", new { area = "", id = 1 })';">
-                        <td>MAPEH</td>
-                        <td>
-                            Tuesday 07:00 AM - 08:00 AM<br>
-                            Wednesday 07:00 AM - 08:00 AM<br>
-                            Monday 07:00 AM - 08:00 AM
-                        </td>
-                        <td>Ryan Deludo Vasquez</td>
-                    </tr>
+                    <!-- This will be populated dynamically by JavaScript -->
                 </tbody>
             </table>
         </div>
@@ -130,15 +122,192 @@
             </div>
         </div>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', async function() {
+            // Load faculty options when creating a new class
+            await loadFacultyOptions();
 
+            // Handle class creation
+            const saveClassBtn = document.querySelector('#createClassModal .btn-success');
+            saveClassBtn.addEventListener('click', createClass);
 
+            await loadClassData();
+        });
 
+        async function loadFacultyOptions() {
+            try {
+                const response = await fetch('/api/Faculty');
+                const faculty = await response.json();
 
+                const facultySelect = document.getElementById('faculty');
+                facultySelect.innerHTML = '<option value="">Choose...</option>';
 
+                faculty.forEach(f => {
+                    const option = document.createElement('option');
+                    option.value = f.id;
+                    option.textContent = f.facultyName;
+                    facultySelect.appendChild(option);
+                });
+            } catch (error) {
+                console.error('Error loading faculty:', error);
+            }
+        }
 
+        async function createClass() {
+            const section = document.getElementById('dropdownSection').value;
+            const subject = document.getElementById('dropdownSubject').value;
+            const facultySelect = document.getElementById('faculty');
+            const facultyName = facultySelect.options[facultySelect.selectedIndex].text;
+            const gradeLevel = document.getElementById('dropdownIncomingGradeLevel').value;
 
+            const classData = {
+                section: section,
+                faculty: facultyName,
+                subject: subject,
+                gradeLevel: gradeLevel
+            };
 
+            try {
+                const response = await fetch('/api/AdminClass', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(classData)
+                });
 
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
 
+                const result = await response.json();
 
+                // Close modal and show success message
+                const modal = bootstrap.Modal.getInstance(document.getElementById('createClassModal'));
+                modal.hide();
+
+                // Show success alert
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Class has been created successfully',
+                    icon: 'success',
+                    confirmButtonText: 'OK'
+                }).then(() => {
+                    window.location.reload();
+                });
+            } catch (error) {
+                console.error('Error:', error);
+                Swal.fire({
+                    title: 'Error!',
+                    text: 'Failed to create class: ' + error.message,
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                });
+            }
+        }
+                async function createClass() {
+            const section = document.getElementById('dropdownSection').value;
+            const subject = document.getElementById('dropdownSubject').value;
+            const facultySelect = document.getElementById('faculty');
+            const facultyName = facultySelect.options[facultySelect.selectedIndex].text;
+            const gradeLevel = document.getElementById('dropdownIncomingGradeLevel').value;
+
+            const classData = {
+                section: section,
+                faculty: facultyName,
+                subject: subject,
+                gradeLevel: gradeLevel
+            };
+
+            try {
+                const response = await fetch('/api/AdminClass', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(classData)
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const result = await response.json();
+
+                // Close modal and show success message
+                const modal = bootstrap.Modal.getInstance(document.getElementById('createClassModal'));
+                modal.hide();
+
+                // Reload the class data table
+                await loadClassData();
+
+                // Show success alert
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Class has been created successfully',
+                    icon: 'success',
+                    confirmButtonText: 'OK'
+                });
+            } catch (error) {
+                console.error('Error:', error);
+                Swal.fire({
+                    title: 'Error!',
+                    text: 'Failed to create class: ' + error.message,
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                });
+            }
+        }
+
+        // Modify loadClassData to match the Classes.cshtml table structure
+                async function loadClassData() {
+            try {
+                const response = await fetch('/api/AdminClass');
+                const classes = await response.json();
+
+                const tableBody = document.querySelector('.table tbody');
+                tableBody.innerHTML = '';
+
+                for (const classItem of classes) {
+                    // Fetch schedules for this class
+                    const scheduleResponse = await fetch(`/api/AdminSchedule/class/${classItem.id}`);
+                    const schedules = await scheduleResponse.json();
+
+                    // Format schedule display
+                    let scheduleDisplay = 'No schedule';
+                    if (schedules && schedules.length > 0) {
+                        scheduleDisplay = schedules.map(schedule =>
+                            `${schedule.day} (${formatTime(schedule.start)} - ${formatTime(schedule.end)})`
+                        ).join(', ');
+                    }
+
+                    const row = `
+                        <tr style="cursor: pointer;" onclick="window.location.href='/AdminPortal/Scheduleclass?id=${classItem.id}'">
+                            <td>${classItem.subject}</td>
+                            <td>${scheduleDisplay}</td>
+                            <td>${classItem.faculty}</td>
+                        </tr>
+                    `;
+                    tableBody.insertAdjacentHTML('beforeend', row);
+                }
+            } catch (error) {
+                console.error('Error loading class data:', error);
+            }
+        }
+
+        // Helper function to format time
+        function formatTime(timeString) {
+            try {
+                const time = new Date(`2000-01-01T${timeString}`);
+                return time.toLocaleTimeString('en-US', {
+                    hour: 'numeric',
+                    minute: '2-digit',
+                    hour12: true
+                });
+            } catch (error) {
+                console.error('Error formatting time:', error);
+                return timeString;
+            }
+        }
+    </script>
 </body>

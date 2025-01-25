@@ -5,14 +5,14 @@
 namespace system_SIS.Migrations
 {
     /// <inheritdoc />
-    public partial class AddIsDeletedToFaculty : Migration
+    public partial class AddIsDeletedToAdminClass : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AddColumn<bool>(
                 name: "IsDeleted",
-                table: "Faculties",
+                table: "AdminClasses",
                 type: "bit",
                 nullable: false,
                 defaultValue: false);
@@ -23,7 +23,7 @@ namespace system_SIS.Migrations
         {
             migrationBuilder.DropColumn(
                 name: "IsDeleted",
-                table: "Faculties");
+                table: "AdminClasses");
         }
     }
 }
