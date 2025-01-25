@@ -78,11 +78,18 @@
                 <input type="hidden" name="@prop.Name" value="@prop.GetValue(Model)" />
             }
         }
-
         <!-- Back and Next Buttons -->
-        <div class="text-end mt-4">
-            <a href="@Url.Action("School", "AdmissionPortal")" class="btn-next text-decoration-none">Back</a>
-            <button type="submit" class="btn-next">Next</button>
+        <div class="text-end">
+            <a href="@Url.Action("School", "AdmissionPortal")"
+               class="text-decoration-none"
+               style="display: inline-block; background-color: gray; color: white; padding: 10px 20px; border-radius: 4px; text-align: center; border: none; font-size: 16px;">
+                Back
+            </a>
+            <button asp-action="Finish" type="submit" class="btn-next"
+                    style="padding: 10px 20px; border-radius: 4px; font-size: 16px;">
+                Next
+            </button>
         </div>
+
     </div>
 </form>

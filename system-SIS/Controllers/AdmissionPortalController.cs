@@ -278,7 +278,7 @@ namespace system_SIS.Controllers
             }
 
             ModelState.AddModelError("", "No application data found. Please fill out the form.");
-            return RedirectToAction("Index");
+            return RedirectToAction("SubmissionSuccess");
         }
 
         public IActionResult SubmissionSuccess()
