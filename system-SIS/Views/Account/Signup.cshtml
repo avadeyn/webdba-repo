@@ -1,5 +1,6 @@
 ﻿@model Account;
 
+
 @{
     Layout = "_Account";  // Specifies the layout to use
     ViewData["Title"] = "Signup";
@@ -67,32 +68,40 @@
                                         <span asp-validation-for="Password" class="text-danger"></span>
                                     </div>
 
-                                    <!-- Confirm Password Input -->
-                                    <div class="mb-4">
-                                        <label for="ConfirmPassword" class="form-label">Confirm Password</label>
-                                        <div class="input-group">
-                                            <input type="password" class="form-control" id="ConfirmPassword" placeholder="Confirm your password">
-                                            <span class="input-group-text" id="toggle-confirm-password">
-                                                <i class="bi bi-eye-slash" id="eye-icon-confirm"></i>
-                                            </span>
-                                        </div>
-                                        <!-- <span asp-validation-for="ConfirmPassword" class="text-danger"></span> -->
-                                    </div>
-                                    <!-- Sign Up Button -->
+                                <!-- Email Input -->
+                                <div class="mb-3">
+                                    <label for="PhoneNumber" class="form-label">Phone Number</label>
+                                    <input type="PhoneNumber" class="form-control" name="phoneNumber" id="phoneNumber" placeholder="Enter your phone number" value="@ViewData["PhoneNumber"]">
+                                    <span asp-validation-for="Password" class="text-danger"></span>
+                                </div>
 
-                                    <button type="submit" value="Signup" class="btn btn-primary w-100 fs-4 mb-4 rounded-2">
-                                        Sign Up
-                                    </button>
+                                <!-- Password Input -->
+                                <div class="mb-4">
+                                    <label for="Password" class="form-label">Password</label>
+                                    <input type="Password" class="form-control" name="password" id="password" placeholder="Enter your password">
+                                    <span asp-validation-for="Password" class="text-danger"></span>
+                                    
+                                </div>
 
-                                    <!-- Sign In Link -->
-                                    <div class="d-flex align-items-center justify-content-center">
-                                        <p class="fs-6 mb-0 fw-bold">Already have an Account?</p>
-                                        <a class="text-primary fw-bold ms-2" href="@Url.Action("Signin", "Account")">
-                                            Sign In
-                                        </a>
-                                    </div>
-                                </form>
-                            </div>
+                                <!-- Confirm Password Input -->
+                                <div class="mb-4">
+                                    <label for="ConfirmPassword" class="form-label">Confirm Password</label>
+                                    <input type="Password" class="form-control" name="confirmPassword" id="ConfirmPassword" placeholder="Enter your password">
+                                    @* <span asp-validation-for="ConfirmPassword" class="text-danger"></span> *@
+                                </div>
+
+                                <button type="submit" value="Signup" class="btn btn-primary w-100 fs-4 mb-4 rounded-2">
+                                    Sign Up
+                                </button>
+
+                                <!-- Sign In Link -->
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <p class="fs-4 mb-0 fw-bold">Already have an Account?</p>
+                                    <a class="text-primary fw-bold ms-2" asp-controller="Account" asp-action="Signin">
+                                        Sign In
+                                    </a>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>

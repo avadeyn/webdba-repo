@@ -38,7 +38,15 @@ public class Program
             options.Cookie.IsEssential = true;
         });
 
+		//var TwilioAccountSid = builder.Configuration["Twilio:AccountSid"];
+		//var TwilioAuthToken = builder.Configuration["Twilio:AuthToken"];
+		//var TwilioPhoneNumber = builder.Configuration["Twilio:PhoneNumber"];
+
+		//builder.Services.AddSingleton<ISmsService>(new TwilioSmsService(TwilioAccountSid, TwilioAuthToken, TwilioPhoneNumber));
+
+
         var app = builder.Build();
+
 
         // Configure the HTTP request pipeline.
         if (!app.Environment.IsDevelopment())

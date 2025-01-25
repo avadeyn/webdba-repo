@@ -6,6 +6,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using system_SIS.Models;
 using system_SIS.Services;
+using Twilio.Types;
+using Twilio.Rest.Api.V2010.Account;
+using Twilio.Rest.Verify.V2.Service;
+using Twilio;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+
 
 namespace system_SIS.Controllers
 {
@@ -117,7 +124,7 @@ namespace system_SIS.Controllers
 
 
 		[HttpPost]
-		public async Task<IActionResult> Signup(string firstName, string lastName, string email, string password, string confirmPassword)
+		public async Task<IActionResult> Signup(string firstName, string lastName, string email, string password, string confirmPassword, string phoneNumber)
 		{
 			// Check if any of the fields are null or empty
 			if (string.IsNullOrEmpty(firstName) || string.IsNullOrEmpty(lastName) || string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password) || string.IsNullOrEmpty(confirmPassword))
@@ -128,6 +135,7 @@ namespace system_SIS.Controllers
 				ViewData["FirstName"] = firstName;
 				ViewData["LastName"] = lastName;
 				ViewData["Email"] = email;
+				ViewData["PhoneNumber"] = phoneNumber;
 
 				return View(); // Return the view to show the error and reload the form
 			}
@@ -141,6 +149,7 @@ namespace system_SIS.Controllers
 				ViewData["FirstName"] = firstName;
 				ViewData["LastName"] = lastName;
 				ViewData["Email"] = email;
+				ViewData["PhoneNumber"] = phoneNumber;
 
 				return View(); // Return the view with the error
 			}
@@ -155,6 +164,7 @@ namespace system_SIS.Controllers
 				ViewData["FirstName"] = firstName;
 				ViewData["LastName"] = lastName;
 				ViewData["Email"] = email;
+				ViewData["PhoneNumber"] = phoneNumber;
 
 				return View(); // Return the view to show the error and reload the form
 			}
@@ -164,11 +174,11 @@ namespace system_SIS.Controllers
 			{
 				UserName = email, // Use email as the username
 				Email = email,
-        
-				// Add first name and last name
-				FirstName = firstName,
-				LastName = lastName
+				PhoneNumber = phoneNumber,
 
+				// Add first name and last name
+				//FirstName = firstName,
+				//LastName = lastName
 			};
 
 			// Create the user with the specified password
@@ -179,8 +189,16 @@ namespace system_SIS.Controllers
 				// Add the user to the "Applicant" role
 				await _userManager.AddToRoleAsync(user, "Applicant");
 
-				// Redirect to the Signin page
-				return RedirectToAction("Signin", "Account");
+				//// Redirect to login page or any other route
+				//return RedirectToAction("Signin", "Account");
+
+				//return EnterCode(phoneNumber);
+				//return View(EnterCode, phoneNumber);
+
+				//return EnterCode(phoneNumber);
+
+				//return RedirectToAction("Account", EnterCode(phoneNumber));
+				return SendOTP(phoneNumber);
 			}
 			else
 			{
@@ -194,6 +212,7 @@ namespace system_SIS.Controllers
 				ViewData["FirstName"] = firstName;
 				ViewData["LastName"] = lastName;
 				ViewData["Email"] = email;
+				ViewData["PhoneNumber"] = phoneNumber;
 
 				return View();
 			}
@@ -204,17 +223,61 @@ namespace system_SIS.Controllers
 
 		public IActionResult ForgotPassword()
 		{
+			
+
 			return View();
 		}
 
+
+		
 		public IActionResult EnterCode()
 		{
-			return View();
+
+			//var accountSid = "ACf318bccd2b7b397279659c101a85ef4a";
+			//var authToken = "db8a952cd3fbc05d0cea3aac0e3d836d";
+			//TwilioClient.Init(accountSid, authToken);
+
+			//var verification = VerificationResource.Create(
+			//	to: phoneNumber,
+			//	channel: "sms",
+			//	pathServiceSid: "VA03960829216dedab8d7ae3e4794fdf74"
+			//);
+
+			//Console.WriteLine(verification.Sid);
+
+			//// Return the view wit
+			return RedirectToAction("EnterCode", "Account");
 		}
 
 		public IActionResult SetNewPassword()
 		{
 			return View();
+		}
+
+		[HttpPost]
+		public IActionResult SendOTP(string phoneNumber)
+		{
+			var number = phoneNumber.Substring(1);
+			var finalNumber = "+63" + number;
+
+
+			var accountSid = "ACf318bccd2b7b397279659c101a85ef4a";
+			var authToken = "618114b49848bc577cad4ed26bd9953f";
+			TwilioClient.Init(accountSid, authToken);
+
+			var verification = VerificationResource.Create(
+				to: finalNumber,
+				channel: "sms",
+				pathServiceSid: "VA03960829216dedab8d7ae3e4794fdf74"
+			);
+
+			
+
+
+
+
+			return RedirectToAction("EnterCode", "Account");
+
 		}
 	}
 }
