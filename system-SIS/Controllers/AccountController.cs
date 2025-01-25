@@ -9,7 +9,7 @@ using system_SIS.Services;
 
 namespace system_SIS.Controllers
 {
-	
+
 	public class AccountController : Controller
 	{
 		//[Authorize(Roles = "Applicant")]
@@ -35,17 +35,17 @@ namespace system_SIS.Controllers
 			return View();
 		}
 
-        [HttpPost]
-        public async Task<IActionResult> Admin_Logout()
-        {
-            // Sign out the user
-            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+		[HttpPost]
+		public async Task<IActionResult> Admin_Logout()
+		{
+			// Sign out the user
+			await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
 
-            // Redirect to login page or any other route
-            return RedirectToAction("Signin", "Account");
-        }
+			// Redirect to login page or any other route
+			return RedirectToAction("Signin", "Account");
+		}
 
-        [HttpPost]
+		[HttpPost]
 		public async Task<IActionResult> Signin(string email, string password)
 		{
 			// Validate if email and password are provided
@@ -164,9 +164,11 @@ namespace system_SIS.Controllers
 			{
 				UserName = email, // Use email as the username
 				Email = email,
+        
 				// Add first name and last name
 				FirstName = firstName,
 				LastName = lastName
+
 			};
 
 			// Create the user with the specified password

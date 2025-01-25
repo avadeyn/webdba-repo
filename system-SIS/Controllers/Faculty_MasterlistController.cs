@@ -30,14 +30,13 @@ namespace system_SIS.Controllers
             if (System.IO.File.Exists(logoPath))
             {
                 var logo = XImage.FromFile(logoPath);
-                // Resize the logo to a smaller size (example: 100px wide)
                 var logoWidth = 100; // Set the desired width
                 var logoHeight = (logo.PixelHeight / (double)logo.PixelWidth) * logoWidth; // Maintain aspect ratio
                 graphics.DrawImage(logo, (page.Width - logoWidth) / 2, 30, logoWidth, logoHeight);  // Center the logo
             }
 
             // Draw school name below the logo and center it
-            graphics.DrawString("Jose Rizal High School", titleFont, XBrushes.Black, new XPoint(page.Width / 2, 150), XStringFormats.Center);
+            graphics.DrawString("Laurelcrest High School", titleFont, XBrushes.Black, new XPoint(page.Width / 2, 150), XStringFormats.Center);
 
             // Add spacing
             graphics.DrawString("", font, XBrushes.Black, new XPoint(page.Width / 2, 170), XStringFormats.Center);

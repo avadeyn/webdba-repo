@@ -1,0 +1,120 @@
+﻿@model system_SIS.Models.StudentAdmission
+
+@{
+    Layout = "_AdmissionLayout";  // Specifies the layout to use
+    ViewData["Title"] = "Admission";
+}
+
+<!-- Progress Steps -->
+<div class="form-progress">
+    <div class="progress-step active" id="startStep">
+        <div class="progress-circle active"></div>
+        <small>Start</small>
+    </div>
+    <div class="progress-step" id="personalInfoStep">
+        <div class="progress-circle"></div>
+        <small>Personal Information</small>
+    </div>
+    <div class="progress-step" id="contactStep">
+        <div class="progress-circle"></div>
+        <small>Contact</small>
+    </div>
+    <div class="progress-step" id="familyStep">
+        <div class="progress-circle"></div>
+        <small>Family</small>
+    </div>
+    <div class="progress-step" id="schoolStep">
+        <div class="progress-circle"></div>
+        <small>School</small>
+    </div>
+    <div class="progress-step" id="documentsStep">
+        <div class="progress-circle"></div>
+        <small>Documents</small>
+    </div>
+    <div class="progress-step" id="finishStep">
+        <div class="progress-circle"></div>
+        <small>Finish</small>
+    </div>
+</div>
+
+<hr />
+
+<!-- Modal Body for Terms and Conditions -->
+<div class="modal-body">
+    <p>Please read and accept the following terms and conditions before proceeding with the admission process:</p>
+    <ul>
+        <li>You must provide accurate and complete information.</li>
+        <li>All information provided will be used for admission purposes only.</li>
+        <li>False or misleading information may result in disqualification.</li>
+        <li>By continuing, you agree to comply with the rules and regulations of the institution.</li>
+    </ul>
+
+    <!-- Checkbox to accept the Terms and Conditions -->
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="acceptTerms" required>
+        <label class="form-check-label" for="acceptTerms">I accept the Terms and Conditions</label>
+    </div>
+</div>
+
+<div class="buttonstart mt-5">
+    <!-- Start Button, Initially Disabled -->
+    <button type="button" class="btn btn-primary" id="startButton" disabled>
+        I understand the terms and conditions
+    </button>
+</div>
+
+
+<form asp-controller="AdmissionPortal" asp-action="Start" method="post">
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <label for="gradeLevel" class="form-label">Grade Level to Enroll <span style="color: red;">*</span></label>
+            <select id="gradeLevel" name="GradeLevel" class="form-select" required>
+                <option value="Grade7" selected="@Model.GradeLevel == "Grade7"">Grade 7</option>
+                <option value="Grade8" selected="@Model.GradeLevel == "Grade8"">Grade 8</option>
+                <option value="Grade9" selected="@Model.GradeLevel == "Grade9"">Grade 9</option>
+                <option value="Grade10" selected="@Model.GradeLevel == "Grade10"">Grade 10</option>
+            </select>
+        </div>
+    </div>
+</form>
+
+
+<!-- Script to Enable/Disable Start Button Based on Terms Acceptance -->
+<script>
+    const acceptTermsCheckbox = document.getElementById("acceptTerms");
+    const startButton = document.getElementById("startButton");
+    const gradeLevelDropdown = document.getElementById("gradeLevel");
+    const startStep = document.getElementById("startStep");
+    const personalInfoStep = document.getElementById("personalInfoStep");
+
+    // Disable the Start button initially
+    startButton.disabled = true;
+
+    // Function to check if both conditions are met
+    function canEnableStartButton() {
+        return acceptTermsCheckbox.checked && gradeLevelDropdown.value !== "";
+    }
+
+    // Listen for changes on the checkbox and dropdown
+    acceptTermsCheckbox.addEventListener("change", function () {
+        startButton.disabled = !canEnableStartButton();
+    });
+
+    gradeLevelDropdown.addEventListener("change", function () {
+        startButton.disabled = !canEnableStartButton();
+    });
+
+    // When the button is clicked, navigate to the next step
+    startButton.addEventListener("click", function () {
+        // Mark the "Start" step as completed
+        startStep.classList.remove("active");
+        startStep.querySelector(".progress-circle").classList.remove("active");
+
+        // Mark the "Personal Information" step as active
+        personalInfoStep.classList.add("active");
+        personalInfoStep.querySelector(".progress-circle").classList.add("active");
+
+        // Redirect to the Admission Portal
+        window.location.href = '@Url.Action("Index", "AdmissionPortal")';
+    });
+</script>
