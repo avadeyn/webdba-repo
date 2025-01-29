@@ -252,6 +252,109 @@ namespace system_SIS.Migrations
                     b.ToTable("Account");
                 });
 
+
+            modelBuilder.Entity("system_SIS.Models.AdminBackEnd.AdminClass", b => // first conflict start
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Faculty")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("GradeLevel")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Section")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("Subject")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("AdminClasses");
+                });
+
+            modelBuilder.Entity("system_SIS.Models.AdminBackEnd.AdminSchedule", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("ClassId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Day")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<TimeSpan>("End")
+                        .HasColumnType("time");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Session")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<TimeSpan>("Start")
+                        .HasColumnType("time");
+
+                    b.Property<string>("Subject")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("AdminSchedules");
+                });
+
+            modelBuilder.Entity("system_SIS.Models.AdminBackEnd.Announcements", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Details")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Header")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Announcements");
+                });
+ // first conflict end
+
             modelBuilder.Entity("system_SIS.Models.NewFolder.Faculty", b =>
                 {
                     b.Property<int>("Id")
@@ -300,6 +403,8 @@ namespace system_SIS.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Faculties");
+ // second conflict start
+
                 });
 
             modelBuilder.Entity("system_SIS.Models.StudentAdmission", b =>
@@ -499,6 +604,7 @@ namespace system_SIS.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("studentadmissions");
+
                 });
 
             modelBuilder.Entity("system_SIS.Models.Students", b =>
@@ -575,4 +681,4 @@ namespace system_SIS.Migrations
 #pragma warning restore 612, 618
         }
     }
-}
+} // second conflict end

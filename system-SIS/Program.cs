@@ -1,6 +1,11 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using system_SIS.Services;
+using system_SIS.Services.NewFolder;
+using system_SIS.Services.AdminBackEnd;
+using system_SIS.Controllers.AdminBackEnd;
+using system_SIS.Data;
+
 
 public class Program
 {
@@ -10,6 +15,12 @@ public class Program
 
         // Add services to the container.
         builder.Services.AddControllersWithViews();
+        builder.Services.AddRazorPages();
+        builder.Services.AddScoped<AdminClassController>();
+        builder.Services.AddScoped<IAdminClassService, AdminClassService>();
+        builder.Services.AddScoped<IAdminScheduleService, AdminScheduleService>();
+        builder.Services.AddAutoMapper(typeof(Program).Assembly);
+        builder.Services.AddScoped<IAdminClassService, AdminClassService>();
 
         builder.Services.AddDbContext<ApplicationDBContext>(options =>
         {
@@ -29,6 +40,30 @@ public class Program
         .AddRoles<IdentityRole>()
         .AddEntityFrameworkStores<ApplicationDBContext>();
 
+
+        // Register IFacultyService and its implementation
+        builder.Services.AddScoped<IFacultyService, FacultyService>();
+
+        builder.Services.AddCors(options =>
+        {
+            options.AddPolicy("AllowAll", policy =>
+            {
+                policy.AllowAnyOrigin()
+                      .AllowAnyMethod()
+                      .AllowAnyHeader()
+                      .WithExposedHeaders("Content-Disposition");
+            });
+        });
+
+        builder.Services.AddLogging(logging =>
+        {
+            logging.ClearProviders();
+            logging.AddConsole();
+            logging.AddDebug();
+        });
+
+        var app = builder.Build();
+
         // Add session services
         builder.Services.AddDistributedMemoryCache();
         builder.Services.AddSession(options =>
@@ -47,11 +82,13 @@ public class Program
 
         var app = builder.Build();
 
-
         // Configure the HTTP request pipeline.
         if (!app.Environment.IsDevelopment())
         {
             app.UseExceptionHandler("/Home/Error");
+
+            // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+
             app.UseHsts();
         }
 
@@ -59,17 +96,28 @@ public class Program
         app.UseStaticFiles();
 
         app.UseRouting();
+        app.UseCors("AllowAll");
+        app.UseAuthentication();
+        app.UseAuthorization();
+        app.MapRazorPages();
+        app.MapControllerRoute(
+            name: "default",
+            pattern: "{controller=Account}/{action=Signin}/{id?}");
+
+
+        app.UseRouting(); // Already stated in the AdminBackend code
 
         app.UseSession(); // Ensure this line is present and before UseAuthorization
 
-        app.UseAuthorization();
+        app.UseAuthorization(); // Already stated in the AdminBackend code
 
         app.MapStaticAssets();
 
-        app.MapControllerRoute(
+        app.MapControllerRoute( // Already stated in the AdminBackend code
             name: "default",
             pattern: "{controller=Account}/{action=Signin}/{id?}")
             .WithStaticAssets();
+
 
         using (var scope = app.Services.CreateScope())
         {
@@ -128,4 +176,4 @@ public class Program
 
         app.Run();
     }
-}
+

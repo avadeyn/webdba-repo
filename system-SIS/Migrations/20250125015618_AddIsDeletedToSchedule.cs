@@ -5,25 +5,25 @@
 namespace system_SIS.Migrations
 {
     /// <inheritdoc />
-    public partial class AddPositionToFaculty : Migration
+    public partial class AddIsDeletedToSchedule : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AddColumn<string>(
-                name: "Position",
-                table: "Faculties",
-                type: "nvarchar(max)",
+            migrationBuilder.AddColumn<bool>(
+                name: "IsDeleted",
+                table: "AdminSchedules",
+                type: "bit",
                 nullable: false,
-                defaultValue: "");
+                defaultValue: false);
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropColumn(
-                name: "Position",
-                table: "Faculties");
+                name: "IsDeleted",
+                table: "AdminSchedules");
         }
     }
 }

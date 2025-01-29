@@ -62,12 +62,9 @@
     </div>
 
     <div class="container mt-4">
-        <div class="note p-2 rounded shadow-sm" style=" background-color: #172154;">
+        <div class="note p-2 rounded shadow-sm" style="background-color: #172154;">
             <div class="d-flex justify-content-between align-items-center px-3 py-2">
-                <!-- Announcement Title on the Left -->
                 <h4 class="text-white">Announcement</h4>
-
-                <!-- Add Section Button on the Right -->
                 <button type="button" class="btn btn-primary rounded-circle"
                         style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;"
                         data-bs-toggle="modal" data-bs-target="#addSectionModal">
@@ -75,49 +72,45 @@
                     <span class="visually-hidden">Add Announcement</span>
                 </button>
             </div>
-
-            <div class="announce-section bg-white p-3 rounded shadow mb-2 transition-effect">
-                <h5 class="fw-bold mb-2 fs-5">New Enrollees</h5>
-                <p class="mb-0 fs-6">
-                    Access the Administrator Portal to efficiently manage student enrollments, monitor academic progress,
-                    schedule classes, and ensure smooth daily operations at Jose Rizal High School.
-                </p>
+            <div id="announcements-container">
+                <!-- Announcements will be loaded here dynamically -->
             </div>
         </div>
     </div>
 
-    <div class="modal fade" id="addSectionModal" tabindex="-1" aria-labelledby="addSectionModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <!-- Modal Header -->
-                <div class="modal-header bg-primary text-white">
-                    <h5 class="modal-title" id="addSectionModalLabel">Add Announcement</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
+    <form method="post" action="/api/Announcements/Create">
+        @Html.AntiForgeryToken()
+        <div class="modal fade" id="addSectionModal" tabindex="-1" aria-labelledby="addSectionModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header bg-primary text-white">
+                        <h5 class="modal-title" id="addSectionModalLabel">Add Announcement</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
 
-                <!-- Modal Body -->
-                <div class="modal-body">
-                    <form>
+                    <!-- Modal Body -->
+                    <div class="modal-body">
                         <!-- Header Field -->
                         <div class="mb-3">
                             <label for="announcementHeader" class="form-label">Header</label>
-                            <input type="text" class="form-control" id="announcementHeader" placeholder="Enter header text">
+                            <input type="text" class="form-control" id="announcementHeader" name="Header" placeholder="Enter header text" required>
                         </div>
                         <!-- Detailed Information Field -->
                         <div class="mb-3">
                             <label for="announcementDetails" class="form-label">Detailed Information</label>
-                            <textarea class="form-control" id="announcementDetails" rows="4" placeholder="Enter detailed information"></textarea>
+                            <textarea class="form-control" id="announcementDetails" name="Details" rows="4" placeholder="Enter detailed information" required></textarea>
                         </div>
-                    </form>
-                </div>
+                    </div>
 
-                <!-- Modal Footer -->
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-success">Save</button>
+                    <!-- Modal Footer -->
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-success">Save</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </form>
 
     <style>
         .transition-effect {
@@ -212,6 +205,74 @@
                         beginAtZero: true
                     }
                 }
+            }
+        });
+                // Function to load announcements
+        function loadAnnouncements() {
+            fetch('/api/Announcements')
+                .then(response => response.json())
+                .then(announcements => {
+                    const container = document.getElementById('announcements-container');
+                    container.innerHTML = ''; // Clear existing announcements
+
+                    if (announcements && announcements.length > 0) {
+                        announcements.forEach(announcement => {
+                            const date = new Date(announcement.createdAt).toLocaleString();
+                            container.innerHTML += `
+                                <div class="announce-section bg-white p-3 rounded shadow mb-2 transition-effect">
+                                    <h5 class="fw-bold mb-2 fs-5">${announcement.header}</h5>
+                                    <p class="mb-0 fs-6">${announcement.details}</p>
+                                    <small class="text-muted">Posted: ${date}</small>
+                                </div>
+                            `;
+                        });
+                    } else {
+                        container.innerHTML = `
+                            <div class="announce-section bg-white p-3 rounded shadow mb-2">
+                                <p class="mb-0">No announcements yet.</p>
+                            </div>
+                        `;
+                    }
+                })
+                .catch(error => console.error('Error loading announcements:', error));
+        }
+
+        // Load announcements when page loads
+        document.addEventListener('DOMContentLoaded', loadAnnouncements);
+
+        // Form submission handler
+        document.querySelector('form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const formData = new FormData(this);
+            const token = document.querySelector('input[name="__RequestVerificationToken"]').value;
+
+            try {
+                const response = await fetch('/api/Announcements/Create', {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'RequestVerificationToken': token
+                    }
+                });
+
+                if (response.ok) {
+                    // Close the modal
+                    const modal = bootstrap.Modal.getInstance(document.getElementById('addSectionModal'));
+                    modal.hide();
+
+                    // Clear the form
+                    this.reset();
+
+                    // Reload announcements instead of page refresh
+                    loadAnnouncements();
+                } else {
+                    console.error('Server returned:', response.status);
+                    alert('Failed to save announcement. Please try again.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Failed to save announcement. Please try again.');
             }
         });
     </script>
