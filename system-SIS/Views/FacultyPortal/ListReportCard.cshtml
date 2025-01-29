@@ -26,7 +26,6 @@
             <div class="col-12 col-md-4 mb-2">
                 <label for="dropdownSubject" class="form-label fs-6 visually-hidden">Select Subject</label>
                 <select class="form-select fs-6 w-100" id="dropdownSubject" aria-label="Choose Subject">
-                    <option value="" disabled selected>Select Subject</option>
                     <option value="filipino">Filipino</option>
                     <option value="english">English</option>
                     <option value="math">Mathematics</option>
@@ -44,18 +43,18 @@
             </div>
         </div>
 
-        <div class="container d-flex justify-content-center align-items-center mt-4">
-            <table class="table table-bordered text-center">
-                <thead class="table-secondary text-white">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
                     <tr>
-                        <th>LRN</th>
-                        <th>Student Name</th>
-                        <th>1st Quarter</th>
-                        <th>2nd Quarter</th>
-                        <th>3rd Quarter</th>
-                        <th>4th Quarter</th>
-                        <th>Final Grade</th>
-                        <th>Remarks</th>
+                        <th style="background-color: #162051; color: white; border-top-left-radius: 10px;">LRN</th>
+                        <th style="background-color: #162051; color: white;">Student Name</th>
+                        <th style="background-color: #162051; color: white;">1st Quarter</th>
+                        <th style="background-color: #162051; color: white;">2nd Quarter</th>
+                        <th style="background-color: #162051; color: white;">3rd Quarter</th>
+                        <th style="background-color: #162051; color: white;">4th Quarter</th>
+                        <th style="background-color: #162051; color: white;">Final Grade</th>
+                        <th style="background-color: #162051; color: white; border-top-right-radius: 10px;">Remarks</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -72,139 +71,8 @@
                 </tbody>
             </table>
         </div>
+
     </div>
 
-    <!-- Report Card Modal -->
-    <div class="modal fade" id="reportCardModal" tabindex="-1" aria-labelledby="reportCardLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="reportCardLabel">Student Grade Report</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="d-flex justify-content-between mb-3">
-                        <div style="flex: 1;">
-                            <div style="display: block; margin-bottom: 5px;">
-                                <p style="display: inline; margin-right: 5px;"><strong>Student Number:</strong></p>
-                                <p style="display: inline;">406494150200</p>
-                            </div>
-                            <div style="display: block;">
-                                <p style="display: inline; margin-right: 5px;"><strong>Student Name:</strong></p>
-                                <p style="display: inline;">Joshua Cuerdo</p>
-                            </div>
-                        </div>
-
-                        <div style="flex: 1; text-align: right;">
-                            <div style="display: block; margin-bottom: 5px;">
-                                <p style="display: inline; margin-right: 5px;"><strong>Status:</strong></p>
-                                <p style="display: inline;">No Status</p>
-                            </div>
-                            <div>
-                                <a href="#" class="text-decoration-none">CSV Download</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <table class="table table-bordered">
-                        <thead class="table-primary">
-                            <tr>
-                                <th>#</th>
-                                <th>Subjects</th>
-                                <th>1st Quarter</th>
-                                <th>2nd Quarter</th>
-                                <th>3rd Quarter</th>
-                                <th>4th Quarter</th>
-                                <th>Final Grade</th>
-                                <th>Remarks</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Filipino</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>English</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <!-- Add additional subjects here -->
-                        </tbody>
-                    </table>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Finalize Grade Status</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- View Student Modal -->
-    <div class="modal fade" id="ViewStudent" tabindex="-1" aria-labelledby="ViewStudentLabel" aria-hidden="true">
-        <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title d-flex align-items-center" id="ViewStudentLabel">
-                        <span contenteditable="true">Edit Student Personal Data</span>
-                        <i class="bi bi-pencil ms-2"></i>
-                    </h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <!-- Student Information -->
-                        <div class="col-md-6">
-                            <div class="d-flex align-items-center mb-3">
-                                <label class="form-label me-3"><strong>LRN:</strong></label>
-                                <label class="form-label me-3"><strong>406494150200</strong></label>
-                            </div>
-                            <!-- Additional Student Information Here -->
-                        </div>
-
-                        <!-- Guardian Information -->
-                        <div class="col-md-6">
-                            <div class="d-flex align-items-center mb-3">
-                                <label class="form-label me-3"><strong>Parent/Guardian 1 Name:</strong></label>
-                                <p class="mb-0 me-2 border rounded px-2" contenteditable="true">Mendoza, Isabella Cruz (Father)</p>
-                            </div>
-                            <!-- Additional Guardian Information Here -->
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary">Save Changes</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- JavaScript -->
-    <script>
-        // Report Card Modal Trigger
-        document.getElementById('reportCardLink').addEventListener('click', function (event) {
-            event.preventDefault(); // Prevent default link action
-            console.log('Report Card modal triggered');
-        });
-
-        // View Student Modal Trigger
-        document.getElementById('viewStudentLink').addEventListener('click', function (event) {
-            event.preventDefault(); // Prevent default link action
-            console.log('View Student modal triggered');
-        });
-    </script>
 
 </body>

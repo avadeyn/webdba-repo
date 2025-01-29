@@ -1,21 +1,16 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using SixLabors.ImageSharp;
+using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Identity;
+using System.Web.Http;
+using Twilio.Types;
 
 namespace system_SIS.Models
 {
 	public class Account
 	{
-		//public enum Roles
-		//{
-		//	Admin = 1,
-		//	Faculty = 2,
-		//	Student = 3,
-		//	Applicant = 4
-		//}
-
-		//public Roles Role { get; set; }
 
 		[Key]
-		public int AccountId { get; set; }
+		//public int AccountId { get; set; }
 
 		[Required(ErrorMessage = "First name is required")]
 		[StringLength(30, ErrorMessage = "First name cannot exceed 50 characters")]
@@ -29,9 +24,19 @@ namespace system_SIS.Models
 		[EmailAddress(ErrorMessage = "Invalid email address.")]
 		public required string Email { get; set; }
 
+		[Required(ErrorMessage = "Phone number is required.")]
+		[Phone(ErrorMessage = "Invalid phone number.")]
+		public required string PhoneNumber { get; set; }
+
 		[Required(ErrorMessage = "Password is required.")]
-		[StringLength(20, MinimumLength = 6, ErrorMessage = "The password must be at least {2} and at max {1} characters long.")]
+		[StringLength(20, MinimumLength = 6)]
 		[DataType(DataType.Password)]
+		[Compare("ConfirmPassword", ErrorMessage ="Passwprds don't match.")]
 		public required string Password { get; set; }
+
+		[Required(ErrorMessage = "Confirm Password is required.")]
+		[DataType(DataType.Password)]
+		public required string ConfirmPassword { get; set; }
 	}
+
 }

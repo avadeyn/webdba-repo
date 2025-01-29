@@ -171,6 +171,9 @@
             <div class="modal-content">
                 <div class="modal-header bg-warning">
                     <h5 class="modal-title" id="editModalLabel">Edit Schedule Details</h5>
+
+<!--                     <h5 class="modal-title" id="editModalLabel">Edit Schdule Details</h5> -->
+
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <!-- Modal Body -->
@@ -180,6 +183,10 @@
                         <div class="col-12 col-md-6">
                             <label for="editScheduleDay" class="form-label fs-6">Day</label>
                             <select class="form-select fs-6 w-100" id="editScheduleDay" name="scheduleDay" required>
+
+<!--                             <label for="scheduleDay" class="form-label fs-6">Day</label>
+                            <select class="form-select fs-6 w-100" id="scheduleDay" name="scheduleDay" required> -->
+
                                 <option value="" disabled selected>Select Day</option>
                                 <option value="monday">Monday</option>
                                 <option value="tuesday">Tuesday</option>
@@ -189,8 +196,13 @@
                             </select>
                         </div>
                         <div class="col-12 col-md-6">
+
                             <label for="editScheduleSession" class="form-label fs-6">Session</label>
                             <select class="form-select fs-6 w-100" id="editScheduleSession" name="scheduleSession" required>
+
+<!--                             <label for="scheduleSession" class="form-label fs-6">Session</label>
+                            <select class="form-select fs-6 w-100" id="scheduleSession" name="scheduleSession" required> -->
+
                                 <option value="" disabled selected>Select Session</option>
                                 <option value="morning">Morning</option>
                                 <option value="afternoon">Afternoon</option>
@@ -215,6 +227,7 @@
                             <label for="scheduleSubject" class="form-label fs-6">Subject</label>
                             <select class="form-select fs-6 w-100" id="scheduleSubject" name="scheduleSubject" required>
                                 <option value="" disabled selected>Select Subject</option>
+
                                 <option value="English">English</option>
                                 <option value="Math">Math</option>
                                 <option value="Science">Science</option>
@@ -222,6 +235,37 @@
                             </select>
                         </div>
                     </div>
+
+<!--                                 <option value="english">English</option>
+                                <option value="math">Math</option>
+                                <option value="science">Science</option>
+                                <option value="history">History</option>
+                            </select> -->
+                        </div>
+                    </div>
+
+                    <!-- Time Fields -->
+                    <div class="row mb-3">
+                        <div class="col-12 col-md-6">
+                            <label for="scheduleStartTime" class="form-label">Start Time</label>
+                            <input type="time" class="form-control" id="scheduleStartTime" name="scheduleStartTime" required>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label for="scheduleEndTime" class="form-label">End Time</label>
+                            <input type="time" class="form-control" id="scheduleEndTime" name="scheduleEndTime" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal Footer -->
+<!--                 <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success" id="saveScheduleBtn">Save Schedule</button>
+                </div> -->
+            </div>
+        </div>
+    </div>
+
 
                     <!-- Time Fields -->
                     <div class="row mb-3">

@@ -6,6 +6,7 @@ using system_SIS.Services.AdminBackEnd;
 using system_SIS.Controllers.AdminBackEnd;
 using system_SIS.Data;
 
+
 public class Program
 {
     public static async Task Main(string[] args)
@@ -20,6 +21,7 @@ public class Program
         builder.Services.AddScoped<IAdminScheduleService, AdminScheduleService>();
         builder.Services.AddAutoMapper(typeof(Program).Assembly);
         builder.Services.AddScoped<IAdminClassService, AdminClassService>();
+
         builder.Services.AddDbContext<ApplicationDBContext>(options =>
         {
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
@@ -37,6 +39,7 @@ public class Program
         })
         .AddRoles<IdentityRole>()
         .AddEntityFrameworkStores<ApplicationDBContext>();
+
 
         // Register IFacultyService and its implementation
         builder.Services.AddScoped<IFacultyService, FacultyService>();
@@ -61,16 +64,37 @@ public class Program
 
         var app = builder.Build();
 
+        // Add session services
+        builder.Services.AddDistributedMemoryCache();
+        builder.Services.AddSession(options =>
+        {
+            options.IdleTimeout = TimeSpan.FromMinutes(30);
+            options.Cookie.HttpOnly = true;
+            options.Cookie.IsEssential = true;
+        });
+
+		//var TwilioAccountSid = builder.Configuration["Twilio:AccountSid"];
+		//var TwilioAuthToken = builder.Configuration["Twilio:AuthToken"];
+		//var TwilioPhoneNumber = builder.Configuration["Twilio:PhoneNumber"];
+
+		//builder.Services.AddSingleton<ISmsService>(new TwilioSmsService(TwilioAccountSid, TwilioAuthToken, TwilioPhoneNumber));
+
+
+        var app = builder.Build();
+
         // Configure the HTTP request pipeline.
         if (!app.Environment.IsDevelopment())
         {
             app.UseExceptionHandler("/Home/Error");
+
             // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+
             app.UseHsts();
         }
 
         app.UseHttpsRedirection();
         app.UseStaticFiles();
+
         app.UseRouting();
         app.UseCors("AllowAll");
         app.UseAuthentication();
@@ -79,6 +103,21 @@ public class Program
         app.MapControllerRoute(
             name: "default",
             pattern: "{controller=Account}/{action=Signin}/{id?}");
+
+
+        app.UseRouting(); // Already stated in the AdminBackend code
+
+        app.UseSession(); // Ensure this line is present and before UseAuthorization
+
+        app.UseAuthorization(); // Already stated in the AdminBackend code
+
+        app.MapStaticAssets();
+
+        app.MapControllerRoute( // Already stated in the AdminBackend code
+            name: "default",
+            pattern: "{controller=Account}/{action=Signin}/{id?}")
+            .WithStaticAssets();
+
 
         using (var scope = app.Services.CreateScope())
         {
@@ -137,4 +176,4 @@ public class Program
 
         app.Run();
     }
-}
+

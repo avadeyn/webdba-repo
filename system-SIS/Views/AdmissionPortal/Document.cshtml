@@ -1,13 +1,13 @@
-﻿@{
-    Layout = "_AdmissionLayout";  // Specifies the layout to use
-    ViewData["Title"] = "Admission";
+﻿@model system_SIS.Models.StudentAdmission
+
+@{
+    Layout = "_AdmissionLayout";
+    ViewData["Title"] = "Document Upload";
 }
-
-
 
 <!-- Progress Steps -->
 <div class="form-progress">
-    <div class="progress-step active">
+    <div class="progress-step">
         <div class="progress-circle"></div>
         <small>Personal Information</small>
     </div>
@@ -35,38 +35,61 @@
 
 <hr />
 
-
-<form>
+<form asp-controller="AdmissionPortal" asp-action="Document" method="post" enctype="multipart/form-data">
     <div class="container mt-4">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">Upload a file</h5>
+                <h5 class="card-title">Upload Required Documents</h5>
                 <p class="text-muted">Files Supported: PDF, DOCX, PNG, JPEG, JPG</p>
-                <div class="alert alert-danger d-none" id="error-message">
-                    File upload is required. Please upload a file to proceed.
-                </div>
-                <form id="uploadForm" runat="server" enctype="multipart/form-data" method="post">
-                    <div class="mb-3">
-                        <label for="fileUpload" class="form-label">Drag file(s) here to upload.</label>
-                        <div class="border border-secondary p-4 text-center" style="border-radius: 10px;">
-                            <input type="file" class="form-control" id="fileUpload" name="fileUpload" multiple />
-                            <p class="mt-2">
-                                Alternatively, you can select a file by
-                                <a href="#" onclick="document.getElementById('fileUpload').click(); return false;">clicking here</a>.
-                            </p>
-                        </div>
+                @if (!string.IsNullOrEmpty(ViewData["ErrorMessage"] as string))
+                {
+                    <div class="alert alert-danger">
+                        @ViewData["ErrorMessage"]
                     </div>
-                    <button type="submit" class="btn btn-primary">Upload</button>
-                </form>
+                }
+                <div class="mb-3">
+                    <label for="documentUpload" class="form-label">Required Documents:</label>
+                    <div class="border border-secondary p-4 text-center" style="border-radius: 10px;">
+                        <input type="file" class="form-control" id="documentUpload" name="documents" multiple accept=".pdf,.docx,.png,.jpeg,.jpg" />
+                        <p class="mt-2 text-muted">
+                            Maximum file size: 5MB per file
+                        </p>
+                    </div>
+                    <div class="mt-2">
+                        <small class="text-muted">
+                            Please ensure you have all required documents ready before proceeding:
+                            <ul>
+                                <li>Report Card/Form 137</li>
+                                <li>Birth Certificate</li>
+                                <li>Good Moral Certificate</li>
+                                <li>2x2 ID Picture</li>
+                            </ul>
+                        </small>
+                    </div>
+                </div>
             </div>
         </div>
 
+        <!-- Hidden fields to preserve model data -->
+        @foreach (var prop in Model.GetType().GetProperties())
+        {
+            if (prop.Name != "Id" && prop.GetValue(Model) != null)
+            {
+                <input type="hidden" name="@prop.Name" value="@prop.GetValue(Model)" />
+            }
+        }
         <!-- Back and Next Buttons -->
         <div class="text-end">
-            <a href="@Url.Action("School", "AdmissionPortal")" class="btn-next text-decoration-none">Back</a>
-            <button asp-action="Finish" type="submit" class="btn-next">Next</button>
+            <a href="@Url.Action("School", "AdmissionPortal")"
+               class="text-decoration-none"
+               style="display: inline-block; background-color: gray; color: white; padding: 10px 20px; border-radius: 4px; text-align: center; border: none; font-size: 16px;">
+                Back
+            </a>
+            <button asp-action="Finish" type="submit" class="btn-next"
+                    style="padding: 10px 20px; border-radius: 4px; font-size: 16px;">
+                Next
+            </button>
         </div>
+
     </div>
-
-
 </form>

@@ -3,12 +3,20 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
 using system_SIS.Models;
 using system_SIS.Services;
+using Twilio.Types;
+using Twilio.Rest.Api.V2010.Account;
+using Twilio.Rest.Verify.V2.Service;
+using Twilio;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+
 
 namespace system_SIS.Controllers
 {
-	
+
 	public class AccountController : Controller
 	{
 		//[Authorize(Roles = "Applicant")]
@@ -34,32 +42,35 @@ namespace system_SIS.Controllers
 			return View();
 		}
 
-        [HttpPost]
-        public async Task<IActionResult> Admin_Logout()
-        {
-            // Sign out the user
-            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+		[HttpPost]
+		public async Task<IActionResult> Admin_Logout()
+		{
+			// Sign out the user
+			await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
 
-            // Redirect to login page or any other route
-            return RedirectToAction("Signin", "Account");
-        }
+			// Redirect to login page or any other route
+			return RedirectToAction("Signin", "Account");
+		}
 
-        [HttpPost]
+		[HttpPost]
 		public async Task<IActionResult> Signin(string email, string password)
 		{
 			// Validate if email and password are provided
 			if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
 			{
-				//ModelState.AddModelError(string.Empty, "Email and password are required.");
+				ViewData["Email"] = email; // Retain entered email
+				ViewData["Password"] = password;
+				//ViewData["Error"] = "Email and password are required.";
 				return View();
 			}
-
 			// Find the user by email
 			var user = await _userManager.FindByEmailAsync(email);
 
 			if (user == null)
 			{
 				// User not found, return error
+				ViewData["Email"] = email; // Retain entered email
+				ViewData["Password"] = password; // Retain entered password
 				ModelState.AddModelError(string.Empty, "Invalid login attempt.");
 				return View();
 			}
@@ -72,12 +83,14 @@ namespace system_SIS.Controllers
 			if (!isAdmin && !isApplicant && !isFaculty)
 			{
 				// The user is not in any authorized role
+				ViewData["Email"] = email; // Retain entered email
+				ViewData["Password"] = password; 
 				ModelState.AddModelError(string.Empty, "You are not authorized.");
 				return View();
 			}
 
 			// Attempt to sign in the user with the provided password
-			var result = await _signInManager.PasswordSignInAsync(user.UserName, password, isPersistent: false, lockoutOnFailure: false);
+			var result = await _signInManager.PasswordSignInAsync(user.Email, password, isPersistent: false, lockoutOnFailure: false);
 
 			if (result.Succeeded)
 			{
@@ -97,6 +110,8 @@ namespace system_SIS.Controllers
 			}
 
 			// Login failed (e.g., incorrect password)
+			ViewData["Email"] = email; // Retain entered email
+			ViewData["Password"] = password;
 			ModelState.AddModelError(string.Empty, "Invalid login attempt.");
 			return View();
 		}
@@ -107,16 +122,51 @@ namespace system_SIS.Controllers
 			return View();
 		}
 
+
 		[HttpPost]
-		public async Task<IActionResult> Signup(string firstName, string lastName, string email, string password)
+		public async Task<IActionResult> Signup(string firstName, string lastName, string email, string password, string confirmPassword, string phoneNumber)
 		{
+			// Check if any of the fields are null or empty
+			if (string.IsNullOrEmpty(firstName) || string.IsNullOrEmpty(lastName) || string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password) || string.IsNullOrEmpty(confirmPassword))
+			{
+				ModelState.AddModelError(string.Empty, "All fields are required.");
+
+				// Use ViewData to retain the values entered by the user in case of error
+				ViewData["FirstName"] = firstName;
+				ViewData["LastName"] = lastName;
+				ViewData["Email"] = email;
+				ViewData["PhoneNumber"] = phoneNumber;
+
+				return View(); // Return the view to show the error and reload the form
+			}
+
+			// Check if the password and confirm password match
+			if (password != confirmPassword)
+			{
+				ModelState.AddModelError("ConfirmPassword", "Passwords do not match.");
+
+				// Retain the values entered by the user
+				ViewData["FirstName"] = firstName;
+				ViewData["LastName"] = lastName;
+				ViewData["Email"] = email;
+				ViewData["PhoneNumber"] = phoneNumber;
+
+				return View(); // Return the view with the error
+			}
+
 			// Check if the email already exists
 			var existingUser = await _userManager.FindByEmailAsync(email);
 			if (existingUser != null)
 			{
-				// Email already exists, return an error
 				ModelState.AddModelError("Email", "An account with this email already exists.");
-				return View(); // Return the view to show the error
+
+				// Retain the values entered by the user in case of error
+				ViewData["FirstName"] = firstName;
+				ViewData["LastName"] = lastName;
+				ViewData["Email"] = email;
+				ViewData["PhoneNumber"] = phoneNumber;
+
+				return View(); // Return the view to show the error and reload the form
 			}
 
 			// Create a new IdentityUser
@@ -124,8 +174,11 @@ namespace system_SIS.Controllers
 			{
 				UserName = email, // Use email as the username
 				Email = email,
-				
+				PhoneNumber = phoneNumber,
 
+				// Add first name and last name
+				//FirstName = firstName,
+				//LastName = lastName
 			};
 
 			// Create the user with the specified password
@@ -136,20 +189,16 @@ namespace system_SIS.Controllers
 				// Add the user to the "Applicant" role
 				await _userManager.AddToRoleAsync(user, "Applicant");
 
-				// Save additional user details to your custom Account table
-				var applicantDetails = new Account
-				{
-					//AccountId = user.Id, // Foreign key to AspNetUsers
-					FirstName = firstName,
-					LastName = lastName,
-					Email = email,
-					Password = password
-				};
-				Context1.Account.Add(applicantDetails);
-				await Context1.SaveChangesAsync();
+				//// Redirect to login page or any other route
+				//return RedirectToAction("Signin", "Account");
 
-				// Redirect to the Signin page
-				return RedirectToAction("Signin", "Account");
+				//return EnterCode(phoneNumber);
+				//return View(EnterCode, phoneNumber);
+
+				//return EnterCode(phoneNumber);
+
+				//return RedirectToAction("Account", EnterCode(phoneNumber));
+				return SendOTP(phoneNumber);
 			}
 			else
 			{
@@ -158,6 +207,13 @@ namespace system_SIS.Controllers
 				{
 					ModelState.AddModelError(string.Empty, error.Description);
 				}
+
+				// Retain the form values in case of an error
+				ViewData["FirstName"] = firstName;
+				ViewData["LastName"] = lastName;
+				ViewData["Email"] = email;
+				ViewData["PhoneNumber"] = phoneNumber;
+
 				return View();
 			}
 		}
@@ -167,17 +223,61 @@ namespace system_SIS.Controllers
 
 		public IActionResult ForgotPassword()
 		{
+			
+
 			return View();
 		}
 
+
+		
 		public IActionResult EnterCode()
 		{
-			return View();
+
+			//var accountSid = "ACf318bccd2b7b397279659c101a85ef4a";
+			//var authToken = "db8a952cd3fbc05d0cea3aac0e3d836d";
+			//TwilioClient.Init(accountSid, authToken);
+
+			//var verification = VerificationResource.Create(
+			//	to: phoneNumber,
+			//	channel: "sms",
+			//	pathServiceSid: "VA03960829216dedab8d7ae3e4794fdf74"
+			//);
+
+			//Console.WriteLine(verification.Sid);
+
+			//// Return the view wit
+			return RedirectToAction("EnterCode", "Account");
 		}
 
 		public IActionResult SetNewPassword()
 		{
 			return View();
+		}
+
+		[HttpPost]
+		public IActionResult SendOTP(string phoneNumber)
+		{
+			var number = phoneNumber.Substring(1);
+			var finalNumber = "+63" + number;
+
+
+			var accountSid = "ACf318bccd2b7b397279659c101a85ef4a";
+			var authToken = "618114b49848bc577cad4ed26bd9953f";
+			TwilioClient.Init(accountSid, authToken);
+
+			var verification = VerificationResource.Create(
+				to: finalNumber,
+				channel: "sms",
+				pathServiceSid: "VA03960829216dedab8d7ae3e4794fdf74"
+			);
+
+			
+
+
+
+
+			return RedirectToAction("EnterCode", "Account");
+
 		}
 	}
 }
