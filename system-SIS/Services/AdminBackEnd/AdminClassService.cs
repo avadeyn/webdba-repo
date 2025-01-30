@@ -1,7 +1,5 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-using Org.BouncyCastle.Crypto;
-using system_SIS.Data;
 using system_SIS.Models.AdminBackEnd;
 
 namespace system_SIS.Services.AdminBackEnd
@@ -96,6 +94,17 @@ namespace system_SIS.Services.AdminBackEnd
                 return false;
 
             adminClass.IsDeleted = true;
+
+            // Also mark related schedules as deleted
+            var relatedSchedules = await _context.AdminSchedules
+                .Where(s => s.ClassId == id)
+                .ToListAsync();
+
+            foreach (var schedule in relatedSchedules)
+            {
+                schedule.IsDeleted = true;
+            }
+
             await _context.SaveChangesAsync();
             return true;
         }
