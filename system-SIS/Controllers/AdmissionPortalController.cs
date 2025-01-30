@@ -163,7 +163,7 @@ namespace system_SIS.Controllers
                 existingData.YearOfGraduation = model.YearOfGraduation;
 
                 HttpContext.Session.SetObject("AdmissionData", existingData);
-                return RedirectToAction("Document");
+                return RedirectToAction("Document", "AdmissionPortal");
             }
             return View(model);
         }
@@ -175,8 +175,8 @@ namespace system_SIS.Controllers
             if (model == null)
             {
                 _logger.LogWarning("No admission data found in session at Document page");
-                return RedirectToAction("Finish");
-            }
+				return RedirectToAction("Finish", "AdmissionPortal");
+			}
             return View(model);
         }
 
@@ -191,7 +191,7 @@ namespace system_SIS.Controllers
                     if (existingData == null)
                     {
                         _logger.LogWarning("No existing data found in session during Document submission");
-                        return RedirectToAction("Document");
+                        return RedirectToAction("Document", "AdmissionPortal");
                     }
 
                     if (documents != null && documents.Count > 0)
@@ -224,7 +224,7 @@ namespace system_SIS.Controllers
                     // Save data and proceed
                     HttpContext.Session.SetObject("AdmissionData", existingData);
                     _logger.LogInformation("Document step completed successfully");
-                    return RedirectToAction("Finish");
+                    return RedirectToAction("Finish", "AdmissionPortal");
                 }
                 catch (Exception ex)
                 {

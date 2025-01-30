@@ -31,7 +31,7 @@ namespace system_SIS.Models
 		[Required(ErrorMessage = "Password is required.")]
 		[StringLength(20, MinimumLength = 6)]
 		[DataType(DataType.Password)]
-		[Compare("ConfirmPassword", ErrorMessage ="Passwprds don't match.")]
+		[Compare("ConfirmPassword", ErrorMessage ="Passwords don't match.")]
 		public required string Password { get; set; }
 
 		[Required(ErrorMessage = "Confirm Password is required.")]

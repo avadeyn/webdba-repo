@@ -38,13 +38,13 @@
                                         <!-- First Name Input -->
                                         <div class="col-md-6 mb-3">
                                             <label for="FirstName" class="form-label">First Name</label>
-                                            <input type="text" class="form-control" name="firstName" id="firstName" placeholder="Enter your first name">
+                                            <input type="text" class="form-control" name="firstName" id="firstName" placeholder="Enter your first name" value="@ViewData["FirstName"]">
                                             <span asp-validation-for="FirstName" class="text-danger"></span>
                                         </div>
                                         <!-- Last Name Input -->
                                         <div class="col-md-6 mb-3">
                                             <label for="LastName" class="form-label">Last Name</label>
-                                            <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Enter your last name">
+                                            <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Enter your last name" value="@ViewData["LastName"]">
                                             <span asp-validation-for="LastName" class="text-danger"></span>
                                         </div>
                                     </div>
@@ -52,8 +52,15 @@
                                     <!-- Email Input -->
                                     <div class="mb-3">
                                         <label for="Email" class="form-label">Email Address</label>
-                                        <input type="Email" class="form-control" name="email" id="email" placeholder="Enter your email">
+                                        <input type="Email" class="form-control" name="email" id="email" placeholder="Enter your email" value="@ViewData["Email"]">
                                         <span asp-validation-for="Email" class="text-danger"></span>
+                                    </div>
+
+                                    <!-- Phone Number Input -->
+                                    <div class="mb-3">
+                                        <label for="PhoneNumber" class="form-label">Phone Number</label>
+                                        <input type="PhoneNumber" class="form-control" name="phoneNumber" id="phoneNumber" placeholder="Enter your phone number" value="@ViewData["PhoneNumber"]">
+                                        <span asp-validation-for="Password" class="text-danger"></span>
                                     </div>
 
                                     <!-- Password Input -->
@@ -68,26 +75,17 @@
                                         <span asp-validation-for="Password" class="text-danger"></span>
                                     </div>
 
-                                <!-- Email Input -->
-                                <div class="mb-3">
-                                    <label for="PhoneNumber" class="form-label">Phone Number</label>
-                                    <input type="PhoneNumber" class="form-control" name="phoneNumber" id="phoneNumber" placeholder="Enter your phone number" value="@ViewData["PhoneNumber"]">
-                                    <span asp-validation-for="Password" class="text-danger"></span>
-                                </div>
-
-                                <!-- Password Input -->
-                                <div class="mb-4">
-                                    <label for="Password" class="form-label">Password</label>
-                                    <input type="Password" class="form-control" name="password" id="password" placeholder="Enter your password">
-                                    <span asp-validation-for="Password" class="text-danger"></span>
-                                    
-                                </div>
 
                                 <!-- Confirm Password Input -->
                                 <div class="mb-4">
                                     <label for="ConfirmPassword" class="form-label">Confirm Password</label>
-                                    <input type="Password" class="form-control" name="confirmPassword" id="ConfirmPassword" placeholder="Enter your password">
-                                    @* <span asp-validation-for="ConfirmPassword" class="text-danger"></span> *@
+                                        <div class="input-group">
+                                            <input type="Password" class="form-control" name="confirmPassword" id="ConfirmPassword" placeholder="Confirm your password">
+                                            <span class="input-group-text" id="toggle-password">
+                                                <i class="bi bi-eye-slash" id="eye-icon"></i>
+                                            </span>
+                                        </div>
+                                    <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
                                 </div>
 
                                 <button type="submit" value="Signup" class="btn btn-primary w-100 fs-4 mb-4 rounded-2">
