@@ -6,10 +6,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using system_SIS.Models;
 using system_SIS.Services;
-using Twilio.Types;
-using Twilio.Rest.Api.V2010.Account;
-using Twilio.Rest.Verify.V2.Service;
-using Twilio;
+//using Twilio.Types;
+//using Twilio.Rest.Api.V2010.Account;
+//using Twilio.Rest.Verify.V2.Service;
+//using Twilio;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
@@ -42,7 +42,7 @@ namespace system_SIS.Controllers
 			return View();
 		}
 
-		[HttpPost]
+		[HttpPost] // not working
 		public async Task<IActionResult> Admin_Logout()
 		{
 			// Sign out the user
@@ -101,7 +101,7 @@ namespace system_SIS.Controllers
 				}
 				else if (isApplicant)
 				{
-					return RedirectToAction("Index", "AdmissionPortal");
+					return RedirectToAction("Start", "AdmissionPortal");
 				}
 				else if (isFaculty)
 				{
@@ -175,10 +175,6 @@ namespace system_SIS.Controllers
 				UserName = email, // Use email as the username
 				Email = email,
 				PhoneNumber = phoneNumber,
-
-				// Add first name and last name
-				//FirstName = firstName,
-				//LastName = lastName
 			};
 
 			// Create the user with the specified password
@@ -189,16 +185,8 @@ namespace system_SIS.Controllers
 				// Add the user to the "Applicant" role
 				await _userManager.AddToRoleAsync(user, "Applicant");
 
-				//// Redirect to login page or any other route
-				//return RedirectToAction("Signin", "Account");
-
-				//return EnterCode(phoneNumber);
-				//return View(EnterCode, phoneNumber);
-
-				//return EnterCode(phoneNumber);
-
-				//return RedirectToAction("Account", EnterCode(phoneNumber));
-				return SendOTP(phoneNumber);
+				//return SendOTP(phoneNumber);
+				return RedirectToAction("Signin", "Account");
 			}
 			else
 			{
@@ -233,20 +221,7 @@ namespace system_SIS.Controllers
 		public IActionResult EnterCode()
 		{
 
-			//var accountSid = "ACf318bccd2b7b397279659c101a85ef4a";
-			//var authToken = "db8a952cd3fbc05d0cea3aac0e3d836d";
-			//TwilioClient.Init(accountSid, authToken);
-
-			//var verification = VerificationResource.Create(
-			//	to: phoneNumber,
-			//	channel: "sms",
-			//	pathServiceSid: "VA03960829216dedab8d7ae3e4794fdf74"
-			//);
-
-			//Console.WriteLine(verification.Sid);
-
-			//// Return the view wit
-			return RedirectToAction("EnterCode", "Account");
+			return View();
 		}
 
 		public IActionResult SetNewPassword()
@@ -254,30 +229,25 @@ namespace system_SIS.Controllers
 			return View();
 		}
 
-		[HttpPost]
-		public IActionResult SendOTP(string phoneNumber)
-		{
-			var number = phoneNumber.Substring(1);
-			var finalNumber = "+63" + number;
+		//[HttpPost]
+		//public IActionResult SendOTP(string phoneNumber)
+		//{
+		//	var number = phoneNumber.Substring(1);
+		//	var finalNumber = "+63" + number;
 
 
-			var accountSid = "ACf318bccd2b7b397279659c101a85ef4a";
-			var authToken = "618114b49848bc577cad4ed26bd9953f";
-			TwilioClient.Init(accountSid, authToken);
+		//	var accountSid = "ACf318bccd2b7b397279659c101a85ef4a";
+		//	var authToken = "618114b49848bc577cad4ed26bd9953f";
+		//	TwilioClient.Init(accountSid, authToken);
 
-			var verification = VerificationResource.Create(
-				to: finalNumber,
-				channel: "sms",
-				pathServiceSid: "VA03960829216dedab8d7ae3e4794fdf74"
-			);
+		//	var verification = VerificationResource.Create(
+		//		to: finalNumber,
+		//		channel: "sms",
+		//		pathServiceSid: "VA03960829216dedab8d7ae3e4794fdf74"
+		//	);
 
-			
+		//	return RedirectToAction("EnterCode", "Account");
 
-
-
-
-			return RedirectToAction("EnterCode", "Account");
-
-		}
+		//}
 	}
 }
