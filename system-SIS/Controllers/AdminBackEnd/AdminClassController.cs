@@ -108,5 +108,23 @@ namespace system_SIS.Controllers.AdminBackEnd
                 return StatusCode(500, $"Internal server error: {ex.Message}");
             }
         }
+        [HttpPost("{id}/softdelete")]  // Changed to POST from DELETE
+        public async Task<IActionResult> SoftDelete(int id)
+        {
+            try
+            {
+                var result = await _classService.SoftDeleteClassAsync(id);
+                if (!result)
+                {
+                    return NotFound($"Class with ID {id} not found");
+                }
+                return NoContent();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error occurred while soft deleting class {Id}", id);
+                return StatusCode(500, new { message = "Internal server error", details = ex.Message });
+            }
+        }
     }
 }

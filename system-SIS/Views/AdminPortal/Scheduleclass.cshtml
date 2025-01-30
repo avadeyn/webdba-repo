@@ -171,9 +171,6 @@
             <div class="modal-content">
                 <div class="modal-header bg-warning">
                     <h5 class="modal-title" id="editModalLabel">Edit Schedule Details</h5>
-
-<!--                     <h5 class="modal-title" id="editModalLabel">Edit Schdule Details</h5> -->
-
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <!-- Modal Body -->
@@ -183,10 +180,6 @@
                         <div class="col-12 col-md-6">
                             <label for="editScheduleDay" class="form-label fs-6">Day</label>
                             <select class="form-select fs-6 w-100" id="editScheduleDay" name="scheduleDay" required>
-
-<!--                             <label for="scheduleDay" class="form-label fs-6">Day</label>
-                            <select class="form-select fs-6 w-100" id="scheduleDay" name="scheduleDay" required> -->
-
                                 <option value="" disabled selected>Select Day</option>
                                 <option value="monday">Monday</option>
                                 <option value="tuesday">Tuesday</option>
@@ -196,13 +189,8 @@
                             </select>
                         </div>
                         <div class="col-12 col-md-6">
-
                             <label for="editScheduleSession" class="form-label fs-6">Session</label>
                             <select class="form-select fs-6 w-100" id="editScheduleSession" name="scheduleSession" required>
-
-<!--                             <label for="scheduleSession" class="form-label fs-6">Session</label>
-                            <select class="form-select fs-6 w-100" id="scheduleSession" name="scheduleSession" required> -->
-
                                 <option value="" disabled selected>Select Session</option>
                                 <option value="morning">Morning</option>
                                 <option value="afternoon">Afternoon</option>
@@ -227,7 +215,6 @@
                             <label for="scheduleSubject" class="form-label fs-6">Subject</label>
                             <select class="form-select fs-6 w-100" id="scheduleSubject" name="scheduleSubject" required>
                                 <option value="" disabled selected>Select Subject</option>
-
                                 <option value="English">English</option>
                                 <option value="Math">Math</option>
                                 <option value="Science">Science</option>
@@ -235,37 +222,6 @@
                             </select>
                         </div>
                     </div>
-
-<!--                                 <option value="english">English</option>
-                                <option value="math">Math</option>
-                                <option value="science">Science</option>
-                                <option value="history">History</option>
-                            </select> -->
-                        </div>
-                    </div>
-
-                    <!-- Time Fields -->
-                    <div class="row mb-3">
-                        <div class="col-12 col-md-6">
-                            <label for="scheduleStartTime" class="form-label">Start Time</label>
-                            <input type="time" class="form-control" id="scheduleStartTime" name="scheduleStartTime" required>
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <label for="scheduleEndTime" class="form-label">End Time</label>
-                            <input type="time" class="form-control" id="scheduleEndTime" name="scheduleEndTime" required>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Modal Footer -->
-<!--                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-success" id="saveScheduleBtn">Save Schedule</button>
-                </div> -->
-            </div>
-        </div>
-    </div>
-
 
                     <!-- Time Fields -->
                     <div class="row mb-3">
@@ -279,7 +235,7 @@
                         </div>
                     </div>
 
-                <!-- Modal Footer -->
+                    <!-- Modal Footer -->
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                         <button type="button" class="btn btn-success" id="editScheduleBtn">Save Changes</button>
@@ -300,7 +256,8 @@
                     <p>Are you sure you want to delete this schedule?</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger">Delete</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-danger" onclick="removeClass()">Remove Class</button>
                 </div>
             </div>
         </div>
@@ -372,43 +329,43 @@
                 }
             }
 
-            async function editSchedule(scheduleId) {
-                try {
-                    console.log('Editing schedule:', scheduleId);
-                    currentEditingScheduleId = scheduleId; // Set the current editing ID
+        async function editSchedule(scheduleId) {
+            try {
+                console.log('Editing schedule:', scheduleId);
+                currentEditingScheduleId = scheduleId;
 
-                    // Find the schedule row
-                    const row = document.querySelector(`tr[data-schedule-id="${scheduleId}"]`);
-                    if (!row) {
-                        throw new Error('Schedule row not found');
-                    }
-
-                    // Get data from the table cells
-                    const cells = row.getElementsByTagName('td');
-                    const day = cells[0].textContent.trim();
-                    const session = cells[1].textContent.trim();
-                    const subject = cells[2].textContent.trim();
-                    const startTime = cells[3].textContent.trim();
-                    const endTime = cells[4].textContent.trim();
-
-                    console.log('Retrieved values:', { day, session, subject, startTime, endTime });
-
-                    // Populate the edit modal
-                    document.getElementById('editScheduleDay').value = day.toLowerCase();
-                    document.getElementById('editScheduleSession').value = session.toLowerCase();
-                    document.getElementById('scheduleSubject').value = subject.toLowerCase();
-                    document.getElementById('editScheduleStartTime').value = convertTo24Hour(startTime);
-                    document.getElementById('editScheduleEndTime').value = convertTo24Hour(endTime);
-
-                    // Show the modal (not needed if using data-bs-toggle)
-                    // const editModal = new bootstrap.Modal(document.getElementById('editModal'));
-                    // editModal.show();
-
-                } catch (error) {
-                    console.error('Error preparing edit:', error);
-                    alert('Error preparing edit form: ' + error.message);
+                const row = document.querySelector(`tr[data-schedule-id="${scheduleId}"]`);
+                if (!row) {
+                    throw new Error('Schedule row not found');
                 }
+
+                // Get data from the table cells
+                const cells = row.getElementsByTagName('td');
+                const day = cells[0].textContent.trim();
+                const session = cells[1].textContent.trim();
+                const subject = cells[2].textContent.trim();
+                const startTime = cells[3].textContent.trim();
+                const endTime = cells[4].textContent.trim();
+
+                console.log('Retrieved values:', { day, session, subject, startTime, endTime });
+
+                // Populate the edit modal with correct values
+                document.getElementById('editScheduleDay').value = day.toLowerCase();
+                document.getElementById('editScheduleSession').value = session.toLowerCase();
+                // Fix: Use the correct ID for subject and ensure proper casing
+                document.getElementById('scheduleSubject').value = subject;
+                document.getElementById('editScheduleStartTime').value = convertTo24Hour(startTime);
+                document.getElementById('editScheduleEndTime').value = convertTo24Hour(endTime);
+
+            } catch (error) {
+                console.error('Error preparing edit:', error);
+                Swal.fire({
+                    title: 'Error!',
+                    text: 'Error preparing edit form: ' + error.message,
+                    icon: 'error'
+                });
             }
+        }
 
         async function updateSchedule() {
             try {
@@ -417,12 +374,20 @@
                     throw new Error('No schedule selected for editing');
                 }
 
-                // Get the class ID from URL
                 const classId = parseInt(new URLSearchParams(window.location.search).get('id'));
 
-                // Format the day and session with first letter capitalized
+                // Get values and format them properly
                 const day = document.getElementById('editScheduleDay').value;
                 const session = document.getElementById('editScheduleSession').value;
+                const subject = document.getElementById('scheduleSubject').value;
+                const startTime = document.getElementById('editScheduleStartTime').value;
+                const endTime = document.getElementById('editScheduleEndTime').value;
+
+                // Validate all fields are filled
+                if (!day || !session || !subject || !startTime || !endTime) {
+                    throw new Error('All fields are required');
+                }
+
                 const formattedDay = day.charAt(0).toUpperCase() + day.slice(1).toLowerCase();
                 const formattedSession = session.charAt(0).toUpperCase() + session.slice(1).toLowerCase();
 
@@ -431,19 +396,13 @@
                     classId: classId,
                     day: formattedDay,
                     session: formattedSession,
-                    subject: document.getElementById('scheduleSubject').value,
-                    start: document.getElementById('editScheduleStartTime').value,
-                    end: document.getElementById('editScheduleEndTime').value,
+                    subject: subject, // Use the direct value from the select
+                    start: startTime,
+                    end: endTime,
                     isDeleted: false
                 };
 
                 console.log('Sending updated schedule:', updatedSchedule);
-
-                // Validate required fields
-                if (!updatedSchedule.day || !updatedSchedule.session || !updatedSchedule.subject ||
-                    !updatedSchedule.start || !updatedSchedule.end) {
-                    throw new Error('All fields are required');
-                }
 
                 const response = await fetch(`/api/AdminSchedule/${currentEditingScheduleId}`, {
                     method: 'PUT',
@@ -454,10 +413,11 @@
                 });
 
                 if (!response.ok) {
-                    // Try to get more detailed error message from response
                     const errorText = await response.text();
                     throw new Error(`HTTP error! status: ${response.status}, message: ${errorText}`);
                 }
+
+                await loadScheduleData();
 
                 // Close the modal
                 const editModal = bootstrap.Modal.getInstance(document.getElementById('editModal'));
@@ -465,91 +425,87 @@
                     editModal.hide();
                 }
 
-                // Refresh the schedule list
-                await loadScheduleData();
+                // Show success message
+                await Swal.fire({
+                    title: 'Success!',
+                    text: 'Schedule updated successfully',
+                    icon: 'success',
+                    timer: 1500
+                });
 
-                alert('Schedule updated successfully');
             } catch (error) {
                 console.error('Error updating schedule:', error);
-                alert('Error updating schedule: ' + error.message);
+                await Swal.fire({
+                    title: 'Error!',
+                    text: 'Error updating schedule: ' + error.message,
+                    icon: 'error'
+                });
             }
         }
 
-            async function loadScheduleData() {
-                try {
-                    const urlParams = new URLSearchParams(window.location.search);
-                    const classId = urlParams.get('id');
+        async function loadScheduleData() {
+            try {
+                const urlParams = new URLSearchParams(window.location.search);
+                const classId = urlParams.get('id');
 
-                    if (!classId) {
-                        throw new Error('No class ID provided');
-                    }
-
-                    // Updated endpoint to match the controller route
-                    const response = await fetch(`/api/AdminSchedule/class/${classId}`);
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
-                    }
-
-                    const schedules = await response.json();
-                    console.log('Received schedules:', schedules);
-
-                    const tableBody = document.querySelector('.schedule-table tbody');
-                    if (!tableBody) {
-                        throw new Error('Schedule table body not found');
-                    }
-
-                    // Clear existing rows
-                    tableBody.innerHTML = '';
-
-                    // Check if we have any schedules
-                    if (!schedules || schedules.length === 0) {
-                        tableBody.innerHTML = `
-                            <tr>
-                                <td colspan="6" class="text-center">
-                                    No schedules found for this class.
-                                </td>
-                            </tr>
-                        `;
-                        return;
-                    }
-
-                    // Populate table with schedule data
-                    schedules.forEach(schedule => {
-                        const row = `
-                <tr data-schedule-id="${schedule.id}">
-                    <td>${schedule.day}</td>
-                    <td>${schedule.session}</td>
-                    <td>${schedule.subject}</td>
-                    <td>${formatTime(schedule.start)}</td>
-                    <td>${formatTime(schedule.end)}</td>
-                    <td>
-                        <button type="button"
-                                class="btn btn-warning btn-sm edit-schedule-btn"
-                                data-bs-toggle="modal"
-                                data-bs-target="#editModal"
-                                onclick="editSchedule(${schedule.id})">
-                            Edit
-                        </button>
-                        <button class="btn btn-danger btn-sm" onclick="deleteSchedule(${schedule.id})">Remove</button>
-                    </td>
-                </tr>
-            `;
-                        tableBody.insertAdjacentHTML('beforeend', row);
-                    });
-                } catch (error) {
-                    console.error('Error loading schedule data:', error);
-                    const tableBody = document.querySelector('.schedule-table tbody');
-                    if (tableBody) {
-                        tableBody.innerHTML = `
-                            <tr>
-                                <td colspan="6" class="text-center text-danger">
-                                    Error loading schedules. Please try again.
-                                </td>
-                            </tr>
-                        `;
-                    }
+                if (!classId) {
+                    throw new Error('No class ID provided');
                 }
+
+                const response = await fetch(`/api/AdminSchedule/class/${classId}`);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const schedules = await response.json();
+                console.log('Received schedules:', schedules);
+
+                const tableBody = document.querySelector('.schedule-table tbody');
+                if (!tableBody) {
+                    throw new Error('Schedule table body not found');
+                }
+
+                // Filter out schedules without times and sort them
+                const validSchedules = schedules
+                    .filter(schedule => schedule.start && schedule.end && !schedule.isDeleted)
+                    .sort((a, b) => {
+                        // Sort by day first
+                        const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+                        const dayDiff = days.indexOf(a.day) - days.indexOf(b.day);
+                        if (dayDiff !== 0) return dayDiff;
+
+                        // Then sort by start time
+                        return a.start.localeCompare(b.start);
+                    });
+
+                // Update table with filtered schedules
+                tableBody.innerHTML = validSchedules.map(schedule => `
+                    <tr data-schedule-id="${schedule.id}">
+                        <td>${schedule.day || ''}</td>
+                        <td>${schedule.session || ''}</td>
+                        <td>${schedule.subject || ''}</td>
+                        <td>${formatTime(schedule.start) || ''}</td>
+                        <td>${formatTime(schedule.end) || ''}</td>
+                        <td>
+                            <button type="button" class="btn btn-warning btn-sm me-2"
+                                    onclick="editSchedule(${schedule.id})"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#editModal">
+                                Edit
+                            </button>
+                            <button type="button" class="btn btn-danger btn-sm"
+                                    onclick="deleteSchedule(${schedule.id})">
+                                Delete
+                            </button>
+                        </td>
+                    </tr>
+                `).join('');
+
+            } catch (error) {
+                console.error('Error loading schedules:', error);
+                handleScheduleLoadError(error);
             }
+        }
 
         async function loadClassData() {
             try {
@@ -604,7 +560,7 @@
                 // Show SweetAlert2 confirmation
                 const result = await Swal.fire({
                     title: 'Are you sure?',
-                    text: "This will remove the class and all associated schedules. This action can be undone by an administrator.",
+                    text: "This will remove the class and all associated schedules.",
                     icon: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#d33',
@@ -615,7 +571,7 @@
 
                 if (result.isConfirmed) {
                     const response = await fetch(`/api/AdminClass/${classId}/softdelete`, {
-                        method: 'PUT',
+                        method: 'POST',  // Changed from PUT to POST
                         headers: {
                             'Content-Type': 'application/json',
                         }
@@ -641,6 +597,53 @@
                 await Swal.fire({
                     title: 'Error!',
                     text: 'Failed to remove class: ' + error.message,
+                    icon: 'error'
+                });
+            }
+        }
+
+        async function deleteSchedule(scheduleId) {
+            try {
+                // Show confirmation dialog
+                const result = await Swal.fire({
+                    title: 'Are you sure?',
+                    text: "You want to delete this schedule?",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#d33',
+                    cancelButtonColor: '#3085d6',
+                    confirmButtonText: 'Yes, delete it!'
+                });
+
+                if (result.isConfirmed) {
+                    // Match the controller's endpoint
+                    const response = await fetch(`/api/AdminSchedule/${scheduleId}`, {
+                        method: 'DELETE',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+
+                    // Show success message
+                    await Swal.fire({
+                        title: 'Deleted!',
+                        text: 'Schedule has been deleted successfully.',
+                        icon: 'success',
+                        timer: 1500
+                    });
+
+                    // Refresh the schedule table
+                    await loadScheduleData();
+                }
+            } catch (error) {
+                console.error('Error deleting schedule:', error);
+                await Swal.fire({
+                    title: 'Error!',
+                    text: 'Failed to delete schedule: ' + error.message,
                     icon: 'error'
                 });
             }

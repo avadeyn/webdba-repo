@@ -9,6 +9,7 @@ namespace system_SIS.Services.AdminBackEnd
         Task<AdminClassDTO> AddClassAsync(AdminClassDTO classDto);
         Task<AdminClassDTO?> UpdateClassAsync(AdminClassDTO classDto);
         Task DeleteClassAsync(int id);
+        Task<bool> SoftDeleteClassAsync(int id);
     }
 }
     
