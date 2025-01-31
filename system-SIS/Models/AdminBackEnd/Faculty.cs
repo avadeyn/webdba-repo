@@ -1,4 +1,4 @@
-﻿namespace system_SIS.Models.NewFolder
+﻿namespace system_SIS.Models.AdminBackEnd
 {
     public class Faculty
     {

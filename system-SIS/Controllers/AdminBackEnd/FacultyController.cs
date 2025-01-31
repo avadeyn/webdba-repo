@@ -1,17 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using system_SIS.Models.NewFolder;
-using system_SIS.Services.NewFolder;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+using system_SIS.Models.AdminBackEnd;
+using system_SIS.Services.AdminBackEnd;
 
-namespace system_SIS.Controllers.NewFolder
+namespace system_SIS.Controllers.AdminBackEnd
 {
     [ApiController]
     [Route("api/[controller]")]
-    // Using primary constructor syntax, which is more concise
     public class FacultyController(IFacultyService facultyService) : ControllerBase
     {
-        // The service is now automatically assigned through the primary constructor
         private readonly IFacultyService _facultyService = facultyService;
 
         [HttpGet]

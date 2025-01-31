@@ -7,6 +7,7 @@
         public required string Faculty { get; set; }
         public required string Subject { get; set; }
         public required string GradeLevel { get; set; }
+        public required string SchoolYear { get; set; }
         public bool IsDeleted { get; set; }
     }
 }

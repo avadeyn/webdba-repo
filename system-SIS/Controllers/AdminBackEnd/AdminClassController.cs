@@ -15,17 +15,18 @@ namespace system_SIS.Controllers.AdminBackEnd
         private readonly ILogger<AdminClassController> _logger = logger;
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<AdminClassDTO>>> GetAllClasses()
+        public async Task<ActionResult<IEnumerable<AdminClass>>> GetClasses()
         {
             try
             {
                 var classes = await _classService.GetAllClassesAsync();
-                return Ok(classes);
+                // Filter out deleted classes
+                var activeClasses = classes.Where(c => !c.IsDeleted).ToList();
+                return Ok(activeClasses);
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error occurred while fetching all classes");
-                return StatusCode(500, $"Internal server error: {ex.Message}");
+                return StatusCode(500, new { message = "Internal server error", details = ex.Message });
             }
         }
 
