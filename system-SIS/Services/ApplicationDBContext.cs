@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using system_SIS.Models;
-using system_SIS.Models.NewFolder;
 using system_SIS.Models.AdminBackEnd;
 
 namespace system_SIS.Services
