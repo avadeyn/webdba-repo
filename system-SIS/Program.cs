@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using system_SIS.Services;
-using system_SIS.Services.NewFolder;
 using system_SIS.Services.AdminBackEnd;
 using system_SIS.Controllers.AdminBackEnd;
 using AutoMapper;

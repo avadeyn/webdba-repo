@@ -1,5 +1,4 @@
-﻿// Models/AdminBackEnd/AdminSchedule.cs
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
@@ -9,7 +8,7 @@ namespace system_SIS.Models.AdminBackEnd
     {
         [Key]
         public int Id { get; set; }
-       
+
         [Required]
         public int ClassId { get; set; }
 

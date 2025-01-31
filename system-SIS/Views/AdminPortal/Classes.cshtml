@@ -26,9 +26,10 @@
 
         <div class="row g-2 align-items-center mb-4">
             <!-- Incoming Grade -->
-            <div class="col-12 col-md-6 col-lg-4">
-                <label for="dropdownIncomingGradeLevel" class="form-label visually-hidden">Select Incoming Grade</label>
-                <select class="form-select" id="dropdownIncomingGradeLevel" aria-label="Select Incoming Grade">
+            <div class="col-12 col-md-6 col-lg-3">
+                <label for="dropdownIncomingGradeLevel" class="form-label">Grade Level</label>
+                <select class="form-select" id="dropdownIncomingGradeLevel">
+                    <option value="">Show All Grades</option>
                     <option value="7">Grade 7</option>
                     <option value="8">Grade 8</option>
                     <option value="9">Grade 9</option>
@@ -37,15 +38,22 @@
             </div>
 
             <!-- School Year -->
-            <div class="col-12 col-md-6 col-lg-4">
-                <label for="dropdownSchoolYear" class="form-label visually-hidden">Select School Year</label>
-                <select class="form-select" id="dropdownSchoolYear" aria-label="Select School Year">
+            <div class="col-12 col-md-6 col-lg-3">
+                <label for="dropdownSchoolYear" class="form-label">School Year</label>
+                <select class="form-select" id="dropdownSchoolYear">
+                    <option value="">Show All Years</option>
                     <option value="2020-2021">2020 - 2021</option>
                     <option value="2021-2022">2021 - 2022</option>
                     <option value="2022-2023">2022 - 2023</option>
                     <option value="2023-2024">2023 - 2024</option>
                     <option value="2024-2025">2024 - 2025</option>
                 </select>
+            </div>
+
+            <!-- Reset Button -->
+            <div class="col-12 col-md-6 col-lg-2">
+                <label class="form-label">&nbsp;</label>
+                <button class="btn btn-secondary w-100" onclick="resetFilters()">Reset Filters</button>
             </div>
         </div>
 
@@ -55,7 +63,9 @@
                     <tr>
                         <th style="background-color: #162051; color: white; border-top-left-radius: 10px;">Subject</th>
                         <th style="background-color: #162051; color: white;">Schedule</th>
-                        <th style="background-color: #162051; color: white; border-top-right-radius: 10px;">Faculty</th>
+                        <th style="background-color: #162051; color: white;">Faculty</th>
+                        <th style="background-color: #162051; color: white;">Grade Level</th>
+                        <th style="background-color: #162051; color: white; border-top-right-radius: 10px;">School Year</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -96,6 +106,18 @@
                         </select>
                     </div>
 
+                    <!-- Year Level -->
+                    <div class="mb-3">
+                        <label for="dropdownYearLevel" class="form-label fs-6">School Year</label>
+                        <select class="form-select fs-6 w-100" id="dropdownYearLevel" aria-label="Select School Year">
+                            <option value="1">2020-2021</option>
+                            <option value="2">2021-2022</option>
+                            <option value="3">2022-2023</option>
+                            <option value="4">2023-2024</option>
+                            <option value="5">2024-2025</option>
+                        </select>
+                    </div>
+
                     <!-- Faculty and Incoming Grade -->
                     <div class="mb-3">
                         <label for="faculty" class="form-label fs-6">Faculty</label>
@@ -104,9 +126,10 @@
                             <!-- Add faculty options here -->
                         </select>
                     </div>
+                    <!-- In the create class modal -->
                     <div class="mb-3">
-                        <label for="dropdownIncomingGradeLevel" class="form-label fs-6">Select Incoming Grade</label>
-                        <select class="form-select fs-6 w-100" id="dropdownIncomingGradeLevel" aria-label="Select Incoming Grade">
+                        <label for="createGradeLevel" class="form-label fs-6">Select Incoming Grade</label>
+                        <select class="form-select fs-6 w-100" id="createGradeLevel" aria-label="Select Incoming Grade">
                             <option value="7">Grade 7</option>
                             <option value="8">Grade 8</option>
                             <option value="9">Grade 9</option>
@@ -132,6 +155,10 @@
             saveClassBtn.addEventListener('click', createClass);
 
             await loadClassData();
+
+            // Add filter event listeners
+            document.getElementById('dropdownIncomingGradeLevel').addEventListener('change', loadClassData);
+            document.getElementById('dropdownSchoolYear').addEventListener('change', loadClassData);
         });
 
         async function loadFacultyOptions() {
@@ -154,20 +181,42 @@
         }
 
         async function createClass() {
-            const section = document.getElementById('dropdownSection').value;
-            const subject = document.getElementById('dropdownSubject').value;
-            const facultySelect = document.getElementById('faculty');
-            const facultyName = facultySelect.options[facultySelect.selectedIndex].text;
-            const gradeLevel = document.getElementById('dropdownIncomingGradeLevel').value;
-
-            const classData = {
-                section: section,
-                faculty: facultyName,
-                subject: subject,
-                gradeLevel: gradeLevel
-            };
-
             try {
+                const section = document.getElementById('dropdownSection').value;
+                const subject = document.getElementById('dropdownSubject').value;
+                const facultySelect = document.getElementById('faculty');
+                const facultyName = facultySelect.options[facultySelect.selectedIndex].text;
+                const gradeLevel = document.getElementById('createGradeLevel').value; // Updated ID
+                const yearLevelSelect = document.getElementById('dropdownYearLevel');
+
+                // Map the year level value to actual school year
+                const schoolYearMap = {
+                    "1": "2020-2021",
+                    "2": "2021-2022",
+                    "3": "2022-2023",
+                    "4": "2023-2024",
+                    "5": "2024-2025"
+                };
+
+                const schoolYear = schoolYearMap[yearLevelSelect.value];
+
+                // Validate required fields
+                if (!section) throw new Error('Section is required');
+                if (!subject) throw new Error('Subject is required');
+                if (!facultyName || facultyName === 'Choose...') throw new Error('Faculty is required');
+                if (!gradeLevel) throw new Error('Grade Level is required');
+                if (!schoolYear) throw new Error('School Year is required');
+
+                const classData = {
+                    section: section,
+                    faculty: facultyName,
+                    subject: subject,
+                    gradeLevel: gradeLevel,
+                    schoolYear: schoolYear
+                };
+
+                console.log('Creating class with data:', classData); // Debug log
+
                 const response = await fetch('/api/AdminClass', {
                     method: 'POST',
                     headers: {
@@ -177,7 +226,8 @@
                 });
 
                 if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
+                    const errorText = await response.text();
+                    throw new Error(`Failed to create class: ${errorText}`);
                 }
 
                 const result = await response.json();
@@ -186,63 +236,18 @@
                 const modal = bootstrap.Modal.getInstance(document.getElementById('createClassModal'));
                 modal.hide();
 
-                // Show success alert
-                Swal.fire({
-                    title: 'Success!',
-                    text: 'Class has been created successfully',
-                    icon: 'success',
-                    confirmButtonText: 'OK'
-                }).then(() => {
-                    window.location.reload();
-                });
-            } catch (error) {
-                console.error('Error:', error);
-                Swal.fire({
-                    title: 'Error!',
-                    text: 'Failed to create class: ' + error.message,
-                    icon: 'error',
-                    confirmButtonText: 'OK'
-                });
-            }
-        }
-                async function createClass() {
-            const section = document.getElementById('dropdownSection').value;
-            const subject = document.getElementById('dropdownSubject').value;
-            const facultySelect = document.getElementById('faculty');
-            const facultyName = facultySelect.options[facultySelect.selectedIndex].text;
-            const gradeLevel = document.getElementById('dropdownIncomingGradeLevel').value;
-
-            const classData = {
-                section: section,
-                faculty: facultyName,
-                subject: subject,
-                gradeLevel: gradeLevel
-            };
-
-            try {
-                const response = await fetch('/api/AdminClass', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(classData)
-                });
-
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-
-                const result = await response.json();
-
-                // Close modal and show success message
-                const modal = bootstrap.Modal.getInstance(document.getElementById('createClassModal'));
-                modal.hide();
+                // Reset form
+                document.getElementById('dropdownSection').value = 'palladium';
+                document.getElementById('dropdownSubject').value = 'english';
+                document.getElementById('faculty').value = '';
+                document.getElementById('createGradeLevel').value = '7';
+                document.getElementById('dropdownYearLevel').value = '1';
 
                 // Reload the class data table
                 await loadClassData();
 
                 // Show success alert
-                Swal.fire({
+                await Swal.fire({
                     title: 'Success!',
                     text: 'Class has been created successfully',
                     icon: 'success',
@@ -250,30 +255,45 @@
                 });
             } catch (error) {
                 console.error('Error:', error);
-                Swal.fire({
+                await Swal.fire({
                     title: 'Error!',
-                    text: 'Failed to create class: ' + error.message,
+                    text: error.message,
                     icon: 'error',
                     confirmButtonText: 'OK'
                 });
             }
         }
 
-        // Modify loadClassData to match the Classes.cshtml table structure
-                async function loadClassData() {
+
+        async function loadClassData() {
             try {
                 const response = await fetch('/api/AdminClass');
-                const classes = await response.json();
+                let classes = await response.json();
+
+                // Get filter values
+                const selectedGrade = document.getElementById('dropdownIncomingGradeLevel').value;
+                const selectedYear = document.getElementById('dropdownSchoolYear').value;
+
+                // Apply filters if they are set
+                if (selectedGrade) {
+                    classes = classes.filter(c => c.gradeLevel === selectedGrade);
+                }
+                if (selectedYear) {
+                    classes = classes.filter(c => c.schoolYear === selectedYear);
+                }
 
                 const tableBody = document.querySelector('.table tbody');
                 tableBody.innerHTML = '';
 
+                if (classes.length === 0) {
+                    tableBody.innerHTML = '<tr><td colspan="5" class="text-center">No classes available</td></tr>';
+                    return;
+                }
+
                 for (const classItem of classes) {
-                    // Fetch schedules for this class
                     const scheduleResponse = await fetch(`/api/AdminSchedule/class/${classItem.id}`);
                     const schedules = await scheduleResponse.json();
 
-                    // Format schedule display
                     let scheduleDisplay = 'No schedule';
                     if (schedules && schedules.length > 0) {
                         scheduleDisplay = schedules.map(schedule =>
@@ -286,16 +306,23 @@
                             <td>${classItem.subject}</td>
                             <td>${scheduleDisplay}</td>
                             <td>${classItem.faculty}</td>
+                            <td>Grade ${classItem.gradeLevel || 'N/A'}</td>
+                            <td>${classItem.schoolYear || 'N/A'}</td>
                         </tr>
                     `;
                     tableBody.insertAdjacentHTML('beforeend', row);
                 }
             } catch (error) {
                 console.error('Error loading class data:', error);
+                Swal.fire({
+                    title: 'Error!',
+                    text: 'Failed to load class data: ' + error.message,
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                });
             }
         }
 
-        // Helper function to format time
         function formatTime(timeString) {
             try {
                 const time = new Date(`2000-01-01T${timeString}`);
@@ -309,5 +336,16 @@
                 return timeString;
             }
         }
+
+        function resetFilters() {
+            const gradeLevelDropdown = document.getElementById('dropdownIncomingGradeLevel');
+            const schoolYearDropdown = document.getElementById('dropdownSchoolYear');
+            
+            gradeLevelDropdown.value = '';
+            schoolYearDropdown.value = '';
+            
+            loadClassData();
+        }
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>

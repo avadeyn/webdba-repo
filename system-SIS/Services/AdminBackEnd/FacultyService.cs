@@ -1,25 +1,16 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using system_SIS.Models.NewFolder;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+using system_SIS.Models.AdminBackEnd;
 
-namespace system_SIS.Services.NewFolder
+namespace system_SIS.Services.AdminBackEnd
 {
-    public interface IFacultyService
+    public class FacultyService : IFacultyService
     {
-        Task<Faculty> AddFacultyAsync(Faculty faculty);
-        Task<IEnumerable<Faculty>> GetAllFacultyAsync();
-        Task<Faculty> GetFacultyByIdAsync(int id);
-        Task<Faculty> UpdateFacultyAsync(Faculty faculty);
-        Task SoftDeleteFacultyAsync(int id);
-        Task<IEnumerable<Faculty>> GetDeletedFacultyAsync();
-        Task RestoreFacultyAsync(int id);
-    }
+        private readonly ApplicationDBContext _context;
 
-    // Using primary constructor syntax
-    public class FacultyService(ApplicationDBContext context) : IFacultyService
-    {
-        private readonly ApplicationDBContext _context = context;
+        public FacultyService(ApplicationDBContext context)
+        {
+            _context = context;
+        }
 
         public async Task<Faculty> AddFacultyAsync(Faculty faculty)
         {
